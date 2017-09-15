@@ -1,9 +1,9 @@
 package com.startup.project;
 
 import com.startup.project.configurations.ModelConfiguration;
+import com.startup.project.dao.StartupDao;
 import com.startup.project.entities.*;
-import com.startup.project.services.UserRoleService;
-import com.startup.project.services.UserService;
+import com.startup.project.services.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.math.BigDecimal;
@@ -21,38 +21,87 @@ public class TestAppClass {
 
             UserRoleService userRoleService = ctx.getBean(UserRoleService.class);
             UserService userService = ctx.getBean(UserService.class);
+            StartupService startupService = ctx.getBean(StartupService.class);
+            StartupDetailService startupDetailService = ctx.getBean(StartupDetailService.class);
+            InvestorService investorService = ctx.getBean(InvestorService.class);
 
 //            System.out.println(userService.getAll());
-
-            User user = new User();
-            user.setFirstName("Gustavo");
-            user.setLastName("Guam");
-            user.setEmail("some@email");
-            user.setPassword("111");
-
-            UserRole userRole = userRoleService.getById(1);
-
-            Set<UserRole> userRoleSet = new HashSet<>();
-            userRoleSet.add(userRole);
-
-            user.setUserRoles(userRoleSet);
-            user.setStartupList(new ArrayList<>());
-
-            userService.save(user);
+//
+//            User user = userService.getById(1);
+//
+//            System.out.println(user);
+//
+//            System.out.println(user.getStartupList().isEmpty());
+//            System.out.println(user.getStartupList());
 
 
+
+//            User user = new User();
+//            user.setFirstName("Roman");
+//            user.setLastName("Abramovich");
+//            user.setEmail("abram@email.com");
+//            user.setPassword("0000");
+//
+////            UserRole userRole = userRoleService.getById(1);
+//
+//            Set<UserRole> userRoleSet = new HashSet<>();
+//            UserRole userRole = new UserRole();
+//            userRole.setId(1);
+//
+//            userRoleService.save(userRole);
+//
+//            userRoleSet.add(userRole);
+//
+//            user.setUserRoles(userRoleSet);
+//            user.setStartupList(new ArrayList<>());
+//
+//            userService.save(user);
+
+
+//            Investor investor = new Investor();
+//            investor.setInvestments(new BigDecimal(10_000));
+//            investor.setInvestorUserId(1);
+//
+//            investorService.save(investor);
+//
+//            List<Investor> investorList = new ArrayList<>();
+//            investorList.add(investor);
+//
+//
+//            StartupDetail startupDetail = new StartupDetail();
+//            startupDetail.setCurrentState("idea for startup");
+//            startupDetail.setBusinessModel("Sales");
+//            startupDetail.setCompetitors("Internet sellers");
+//            startupDetail.setGrossProfit("120 000 $");
+//            startupDetail.setNetIncome("45 000 $");
+//            startupDetail.setTypeOfProperty("private business");
+//            startupDetail.setProperty("office + car");
+//            startupDetail.setProblemOrOpportunity("Many competitors on market");
+//
+//            startupDetailService.save(startupDetail);
+//
 //            Startup startup = new Startup();
 //            startup.setStartupName("Something New");
 //            startup.setDescription("new Startup");
 //            startup.setIdea("todoSomething");
+//            startup.setProjectStage("Only on paper");
 //            startup.setIndustry("IT");
 //            startup.setCountry("us");
-//            startup.setInvestorList(new ArrayList<>());
-//            startup.setOwnerUser(user);
-//            startup.setBusinessPlan(new BusinessPlan());
+//            startup.setInvestorList(investorList);
+//            startup.setOwnerUser(userService.getById(2));
+//            startup.setStartupDetail(startupDetail);
 //            startup.setStartupCost(new BigDecimal(100_000));
+//            startup.setOwnerUser(userService.getByEmail("abram@email.com"));
+//
+//            startupService.save(startup);
 
+            Startup startup = startupService.getById(1);
 
+            StartupDetail startupDetail = startup.getStartupDetail();
+
+            startupService.delete(startup);
+
+            startupDetailService.delete(startupDetail);
 
             ctx.close();
         }

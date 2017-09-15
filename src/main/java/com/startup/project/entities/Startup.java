@@ -32,13 +32,15 @@ public class Startup {
     private Timestamp time;
     @ManyToOne
     private User ownerUser;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     @JoinTable(name = "startups_investors",
             joinColumns = @JoinColumn(name = "STARTUP_ID"),
             inverseJoinColumns = @JoinColumn(name = "INVESTOR_ID"))
     private List<Investor> investorList;
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH) // todo , mappedBy = "startup_id" создать переменную в BusinessPlan
-    private BusinessPlan businessPlan;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "STARTUP_DETAILS_ID")
+    private StartupDetail startupDetail;
 
     public Integer getId() {
         return id;
@@ -128,12 +130,12 @@ public class Startup {
         this.investorList = investorList;
     }
 
-    public BusinessPlan getBusinessPlan() {
-        return businessPlan;
+    public StartupDetail getStartupDetail() {
+        return startupDetail;
     }
 
-    public void setBusinessPlan(BusinessPlan businessPlan) {
-        this.businessPlan = businessPlan;
+    public void setStartupDetail(StartupDetail startupDetail) {
+        this.startupDetail = startupDetail;
     }
 
     @Override
@@ -149,7 +151,7 @@ public class Startup {
                 ", time=" + time +
                 ", ownerUser=" + ownerUser +
                 ", investorList=" + investorList +
-                ", businessPlan=" + businessPlan +
+                ", startupDetail=" + startupDetail +
                 '}';
     }
 }

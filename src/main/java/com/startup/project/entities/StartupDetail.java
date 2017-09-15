@@ -7,8 +7,8 @@ import java.util.Optional;
  * Created by Sonik on 14.09.2017.
  */
 @Entity
-@Table(name = "business_plan")
-public class BusinessPlan {
+@Table(name = "startup_details")
+public class StartupDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -28,6 +28,9 @@ public class BusinessPlan {
     private String competitors;             //Конкуренты
     @Column(name = "BUSINESS_MODEL")
     private String businessModel;           //Бизнес-модель
+
+//    @OneToOne(mappedBy = "startupDetail")
+//    private Startup startup;
 
     public Integer getId() {
         return id;
@@ -101,5 +104,18 @@ public class BusinessPlan {
         this.businessModel = businessModel;
     }
 
-
+    @Override
+    public String toString() {
+        return "StartupDetail{" +
+                "id=" + id +
+                ", currentState='" + currentState + '\'' +
+                ", grossProfit='" + grossProfit + '\'' +
+                ", netIncome='" + netIncome + '\'' +
+                ", typeOfProperty='" + typeOfProperty + '\'' +
+                ", property='" + property + '\'' +
+                ", problemOrOpportunity='" + problemOrOpportunity + '\'' +
+                ", competitors='" + competitors + '\'' +
+                ", businessModel='" + businessModel + '\'' +
+                '}';
+    }
 }
