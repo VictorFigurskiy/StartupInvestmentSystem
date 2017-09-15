@@ -14,7 +14,7 @@ public class Startup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "STATUP_NAME")
+    @Column(name = "STARTUP_NAME")
     private String startupName;
     @Column(name = "DESCRIPTION")
     private String description;
