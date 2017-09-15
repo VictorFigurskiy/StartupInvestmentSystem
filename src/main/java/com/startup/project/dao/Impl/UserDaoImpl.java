@@ -22,8 +22,14 @@ public class UserDaoImpl extends AbstractGenericDaoImpl<Integer, User> implement
 
     @Override
     public User getByEmail(String email) {
-        return sessionFactory.getCurrentSession()
+        User userById = sessionFactory.getCurrentSession()
                 .createQuery("select user from User user where user.email = :email", User.class)
                 .setParameter("email", email).getSingleResult();
+        if (userById != null) {
+            getLogger().info("User with email: " + email + " found!");
+        } else {
+            getLogger().warn("User with email: " + email + "not found!");
+        }
+        return userById;
     }
 }

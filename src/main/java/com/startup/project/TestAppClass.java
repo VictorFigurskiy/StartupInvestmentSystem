@@ -21,7 +21,7 @@ public class TestAppClass {
 
             UserRoleService userRoleService = ctx.getBean(UserRoleService.class);
             UserService userService = ctx.getBean(UserService.class);
-
+//            System.out.println(userService.getById(2));
 //            System.out.println(userService.getAll());
 
             User user = new User();
@@ -30,15 +30,16 @@ public class TestAppClass {
             user.setEmail("some@email");
             user.setPassword("111");
 
-            UserRole userRole = userRoleService.getById(1);
-
-            Set<UserRole> userRoleSet = new HashSet<>();
-            userRoleSet.add(userRole);
-
-            user.setUserRoles(userRoleSet);
-            user.setStartupList(new ArrayList<>());
-
-            userService.save(user);
+            UserRole userRole = userRoleService.getById(3);
+            System.out.println(userRole);
+//
+//            Set<UserRole> userRoleSet = new HashSet<>();
+//            userRoleSet.add(userRole);
+//
+//            user.setUserRoles(userRoleSet);
+//            user.setStartupList(new ArrayList<>());
+//
+//            userService.save(user);
 
 
 //            Startup startup = new Startup();
