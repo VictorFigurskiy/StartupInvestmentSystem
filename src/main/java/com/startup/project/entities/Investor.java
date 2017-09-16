@@ -12,7 +12,7 @@ public class Investor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "INVESTOR_USER_ID")
+    @Column(name = "INVESTOR_USER_ID", length = 20)
     private Integer investorUserId;
     @Column(name = "INVESTMENTS")
     private BigDecimal investments;

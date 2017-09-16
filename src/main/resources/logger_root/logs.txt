@@ -1,0 +1,64 @@
+2017-09-16 11:23:08 INFO  UserRole:64 - UserRole saved successfully!
+2017-09-16 11:23:08 INFO  User:64 - User saved successfully!
+2017-09-16 11:24:13 INFO  Investor:64 - Investor saved successfully!
+2017-09-16 11:24:13 WARN  User:42 - User with id: 2 not found!
+2017-09-16 11:24:13 INFO  User:29 - User with email: abram@email.com found!
+2017-09-16 11:24:13 INFO  Startup:64 - Startup saved successfully!
+2017-09-16 11:25:28 INFO  Startup:40 - Startup with id: 1 found!
+2017-09-16 11:25:28 INFO  Startup:76 - Startup deleted successfully!
+2017-09-16 11:45:40 INFO  Investor:64 - Investor saved successfully!
+2017-09-16 11:45:40 WARN  Startup:42 - Startup with id: 1 not found!
+2017-09-16 11:47:41 INFO  Investor:64 - Investor saved successfully!
+2017-09-16 11:47:41 WARN  User:42 - User with id: 2 not found!
+2017-09-16 11:47:41 INFO  User:29 - User with email: abram@email.com found!
+2017-09-16 11:47:41 INFO  Startup:64 - Startup saved successfully!
+2017-09-16 11:47:59 INFO  Investor:64 - Investor saved successfully!
+2017-09-16 11:47:59 WARN  Startup:42 - Startup with id: 1 not found!
+2017-09-16 11:48:34 INFO  Investor:64 - Investor saved successfully!
+2017-09-16 11:48:34 INFO  Startup:40 - Startup with id: 2 found!
+2017-09-16 11:48:34 INFO  Startup:70 - Startup updated successfully!
+2017-09-16 11:54:06 INFO  Startup:40 - Startup with id: 2 found!
+2017-09-16 11:54:06 INFO  Startup:70 - Startup updated successfully!
+2017-09-16 11:54:06 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance beforeQuery flushing: com.startup.project.entities.Investor]
+2017-09-16 12:04:16 INFO  UserRole:64 - UserRole saved successfully!
+2017-09-16 12:04:16 INFO  User:64 - User saved successfully!
+2017-09-16 12:04:16 WARN  User:42 - User with id: 2 not found!
+2017-09-16 12:04:16 INFO  User:29 - User with email: abram@email.com found!
+2017-09-16 12:04:16 INFO  Startup:64 - Startup saved successfully!
+2017-09-16 12:08:44 WARN  Startup:42 - Startup with id: 2 not found!
+2017-09-16 12:09:14 INFO  Startup:40 - Startup with id: 1 found!
+2017-09-16 12:09:14 INFO  Startup:70 - Startup updated successfully!
+2017-09-16 12:09:37 INFO  Startup:40 - Startup with id: 1 found!
+2017-09-16 12:09:37 INFO  Startup:70 - Startup updated successfully!
+2017-09-16 12:09:43 INFO  Startup:40 - Startup with id: 1 found!
+2017-09-16 12:09:43 INFO  Startup:70 - Startup updated successfully!
+2017-09-16 12:13:40 INFO  Investor:40 - Investor with id: 4 found!
+2017-09-16 12:13:40 INFO  Investor:76 - Investor deleted successfully!
+2017-09-16 12:13:40 WARN  SqlExceptionHelper:129 - SQL Error: 1451, SQLState: 23000
+2017-09-16 12:13:40 ERROR SqlExceptionHelper:131 - Cannot delete or update a parent row: a foreign key constraint fails (`startups_db`.`startups_investors`, CONSTRAINT `FK76ej85r26lsia3qnsuwjmmprr` FOREIGN KEY (`INVESTOR_ID`) REFERENCES `investors` (`id`))
+2017-09-16 12:13:40 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2017-09-16 12:16:15 INFO  Investor:40 - Investor with id: 4 found!
+2017-09-16 12:16:15 INFO  Investor:76 - Investor deleted successfully!
+2017-09-16 12:23:02 INFO  Startup:40 - Startup with id: 1 found!
+2017-09-16 12:23:02 INFO  Startup:76 - Startup deleted successfully!
+2017-09-16 12:35:45 WARN  User:42 - User with id: 2 not found!
+2017-09-16 12:41:26 INFO  UserRole:64 - UserRole saved successfully!
+2017-09-16 12:41:26 WARN  User:42 - User with id: 2 not found!
+2017-09-16 12:43:02 INFO  UserRole:64 - UserRole saved successfully!
+2017-09-16 12:43:02 INFO  User:64 - User saved successfully!
+2017-09-16 12:43:02 INFO  User:40 - User with id: 1 found!
+2017-09-16 12:43:02 INFO  User:29 - User with email: abram@email.com found!
+2017-09-16 12:43:02 INFO  Startup:64 - Startup saved successfully!
+2017-09-16 12:45:03 INFO  User:40 - User with id: 1 found!
+2017-09-16 12:45:03 INFO  User:76 - User deleted successfully!
+2017-09-16 12:45:03 WARN  SqlExceptionHelper:129 - SQL Error: 1451, SQLState: 23000
+2017-09-16 12:45:03 ERROR SqlExceptionHelper:131 - Cannot delete or update a parent row: a foreign key constraint fails (`startups_db`.`startups`, CONSTRAINT `FKrm3fyaftmf1ca8hexokhm7xtj` FOREIGN KEY (`ownerUser_id`) REFERENCES `users` (`id`))
+2017-09-16 12:45:03 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2017-09-16 12:51:50 INFO  UserRole:64 - UserRole saved successfully!
+2017-09-16 12:51:50 INFO  User:64 - User saved successfully!
+2017-09-16 12:51:51 INFO  User:29 - User with email: abram@email.com found!
+2017-09-16 12:51:51 INFO  Startup:64 - Startup saved successfully!
+2017-09-16 13:09:23 INFO  UserRole:64 - UserRole saved successfully!
+2017-09-16 13:09:23 INFO  User:64 - User saved successfully!
+2017-09-16 13:09:23 INFO  User:29 - User with email: abram@email.com found!
+2017-09-16 13:09:23 INFO  Startup:64 - Startup saved successfully!

@@ -13,20 +13,22 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "FIRST_NAME")
+    @Column(name = "FIRST_NAME", length = 30)
     private String firstName;
-    @Column(name = "LAST_NAME")
+    @Column(name = "LAST_NAME", length = 30)
     private String lastName;
-    @Column(name = "EMAIL", unique = true, nullable = false)
+    @Column(name = "EMAIL", unique = true, nullable = false, length = 60)
     private String email;
-    @Column(name = "PASSWORD", nullable = false)
+    @Column(name = "PASSWORD", nullable = false, length = 50)
     private String password;
+
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     @JoinTable(name = "users_roles",
         joinColumns = @JoinColumn(name = "USER_ID"),
         inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
     private Set<UserRole> userRoles;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ownerUser")
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ownerUser", cascade = CascadeType.REFRESH)
     private List<Startup> startupList;
 
 

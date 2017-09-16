@@ -14,31 +14,33 @@ public class Startup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "STARTUP_NAME")
+    @Column(name = "STARTUP_NAME", length = 150)
     private String startupName;
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 1000)
     private String description;
-    @Column(name = "IDEA")
+    @Column(name = "IDEA", length = 1000)
     private String idea;
-    @Column(name = "INDUSTRY")
+    @Column(name = "INDUSTRY", length = 30)
     private String industry;
-    @Column(name = "COUNTRY")
+    @Column(name = "COUNTRY", length = 30)
     private String country;
-    @Column(name = "PROJECT_STAGE")
+    @Column(name = "PROJECT_STAGE", length = 50)
     private String projectStage;
     @Column(name = "STARTUP_COST")
     private BigDecimal startupCost;
     @Column(name = "TIME", insertable = false)
     private Timestamp time;
+
     @ManyToOne
     private User ownerUser;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "startups_investors",
             joinColumns = @JoinColumn(name = "STARTUP_ID"),
             inverseJoinColumns = @JoinColumn(name = "INVESTOR_ID"))
     private List<Investor> investorList;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "STARTUP_DETAILS_ID")
     private StartupDetail startupDetail;
 

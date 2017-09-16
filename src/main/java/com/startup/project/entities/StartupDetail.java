@@ -12,21 +12,21 @@ public class StartupDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "CURRENT_STATE")
+    @Column(name = "CURRENT_STATE", length = 500)
     private String currentState;            //Текущее состояние
-    @Column(name = "GROSS_PROFIT")
+    @Column(name = "GROSS_PROFIT", length = 500)
     private String grossProfit;             //Годовой объем продаж, $
-    @Column(name = "NET_INCOME")
+    @Column(name = "NET_INCOME", length = 500)
     private String netIncome;               //Годовой объем чистой прибыли, $
-    @Column(name = "TYPE_OF_PROPERTY")
+    @Column(name = "TYPE_OF_PROPERTY", length = 500)
     private String typeOfProperty;          //Тип имущества
-    @Column(name = "PROPERTY")
+    @Column(name = "PROPERTY", length = 500)
     private String property;                //Имущество и активы
-    @Column(name = "PROBLEM_OR_OPPORTUNITY")
+    @Column(name = "PROBLEM_OR_OPPORTUNITY", length = 500)
     private String problemOrOpportunity;    //Проблема или Возможность
-    @Column(name = "COMPETITORS")
+    @Column(name = "COMPETITORS", length = 500)
     private String competitors;             //Конкуренты
-    @Column(name = "BUSINESS_MODEL")
+    @Column(name = "BUSINESS_MODEL", length = 500)
     private String businessModel;           //Бизнес-модель
 
 //    @OneToOne(mappedBy = "startupDetail")
