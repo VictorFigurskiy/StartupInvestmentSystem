@@ -22,7 +22,7 @@ public class User {
     @Column(name = "PASSWORD", nullable = false, length = 50)
     private String password;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinTable(name = "users_roles",
         joinColumns = @JoinColumn(name = "USER_ID"),
         inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
@@ -97,6 +97,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", userRoles=" + userRoles +
+                ", startupList=" + startupList +
                 '}';
     }
 }

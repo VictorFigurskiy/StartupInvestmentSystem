@@ -21,13 +21,13 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         // Overriding this method, we will be able to specify where the resources of our project will lie, such as css, image, js and others.
-//        registry.addResourceHandler("/jpeg/**").addResourceLocations("/WEB-INF/jpeg/");
+        registry.addResourceHandler("/jpeg/**").addResourceLocations("/WEB-INF/jpeg/");
         super.addResourceHandlers(registry);
     }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addRedirectViewController("/", "/welcome");
+        registry.addRedirectViewController("/", "/index");
         super.addViewControllers(registry);
     }
 
@@ -35,7 +35,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     public InternalResourceViewResolver viewResolver(){
     InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
     viewResolver.setViewClass(JstlView.class);
-    viewResolver.setPrefix("/WEB-INF/pages");
+    viewResolver.setPrefix("/WEB-INF/pages/");
     viewResolver.setSuffix(".jsp");
     return viewResolver;
     }

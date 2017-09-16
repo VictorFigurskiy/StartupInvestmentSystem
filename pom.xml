@@ -8,6 +8,8 @@
     <artifactId>StartupInvestmentSystem</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>war</packaging>
+
     <properties>
         <java.version>1.8</java.version>
         <mysql.connector.ver>5.1.42</mysql.connector.ver>

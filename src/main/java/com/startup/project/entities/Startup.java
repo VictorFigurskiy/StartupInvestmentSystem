@@ -150,8 +150,8 @@ public class Startup {
                 ", industry='" + industry + '\'' +
                 ", country='" + country + '\'' +
                 ", projectStage='" + projectStage + '\'' +
+                ", startupCost=" + startupCost +
                 ", time=" + time +
-                ", ownerUser=" + ownerUser +
                 ", investorList=" + investorList +
                 ", startupDetail=" + startupDetail +
                 '}';
