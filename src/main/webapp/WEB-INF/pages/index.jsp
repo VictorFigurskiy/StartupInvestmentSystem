@@ -12,13 +12,13 @@
     <title>Modern Business - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../../static/css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,34 +47,34 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                 	<li>
-                        <a href="../../resources/view/account.html">Account</a>
+                        <a href="../../static/account.html">Account</a>
                     </li>
                     <li>
-                        <a href="../../resources/view/about.html">About</a>
+                        <a href="../../static/about.html">About</a>
                     </li>
                     <li>
-                        <a href="../../resources/view/services.html">Services</a>
+                        <a href="../../static/services.html">Services</a>
                     </li>
                     <li>
-                        <a href="../../resources/view/contact.html">Contact</a>
+                        <a href="../../static/contact.html">Contact</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="../../resources/view/portfolio-1-col.html">1 Column Portfolio</a>
+                                <a href="../../static/portfolio-1-col.html">1 Column Portfolio</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/portfolio-2-col.html">2 Column Portfolio</a>
+                                <a href="../../static/portfolio-2-col.html">2 Column Portfolio</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/portfolio-3-col.html">3 Column Portfolio</a>
+                                <a href="../../static/portfolio-3-col.html">3 Column Portfolio</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/portfolio-4-col.html">4 Column Portfolio</a>
+                                <a href="../../static/portfolio-4-col.html">4 Column Portfolio</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/portfolio-item.html">Single Portfolio Item</a>
+                                <a href="../../static/portfolio-item.html">Single Portfolio Item</a>
                             </li>
                         </ul>
                     </li>
@@ -82,13 +82,13 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="../../resources/view/blog-home-1.html">Blog Home 1</a>
+                                <a href="../../static/blog-home-1.html">Blog Home 1</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/blog-home-2.html">Blog Home 2</a>
+                                <a href="../../static/blog-home-2.html">Blog Home 2</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/blog-post.html">Blog Post</a>
+                                <a href="../../static/blog-post.html">Blog Post</a>
                             </li>
                         </ul>
                     </li>
@@ -96,19 +96,19 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="../../resources/view/full-width.html">Full Width Page</a>
+                                <a href="../../static/full-width.html">Full Width Page</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/sidebar.html">Sidebar Page</a>
+                                <a href="../../static/sidebar.html">Sidebar Page</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/faq.html">FAQ</a>
+                                <a href="../../static/faq.html">FAQ</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/404.html">404</a>
+                                <a href="../../static/404.html">404</a>
                             </li>
                             <li>
-                                <a href="../../resources/view/pricing.html">Pricing Table</a>
+                                <a href="../../static/pricing.html">Pricing Table</a>
                             </li>
                         </ul>
                     </li>
@@ -119,8 +119,8 @@
 				 <form method="">
 					 <input id="email" class="form-control" type="text" placeholder="Email" name="email">
 					 <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-					 <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-					 <input class="btn btn-default btn-register" type="button" value="Create account" name="commit">
+					 <input class="btn btn-default btn-register" type="button" value="Enter" name="commit">
+					 <li style="float: right; font-size: 18px;">Or <a style="color: white;" href="../../static/register.html"> create account</a></li>
 				 </form>
 			 </div>
             <!-- /.navbar-collapse -->
@@ -298,10 +298,10 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../../static/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
 
     <!-- Script to Activate the Carousel -->
     <script>

@@ -15,9 +15,9 @@ public class UserDaoImpl extends AbstractGenericDaoImpl<Integer, User> implement
     private SessionFactory sessionFactory;
 
     @Autowired
-    public UserDaoImpl(SessionFactory sessionFactory, SessionFactory sessionFactory1) {
+    public UserDaoImpl(SessionFactory sessionFactory) {
         super(sessionFactory);
-        this.sessionFactory = sessionFactory1;
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
