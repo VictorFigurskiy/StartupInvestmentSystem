@@ -2,7 +2,9 @@ package com.startup.project.dao.Impl;
 
 import com.startup.project.dao.UserDao;
 import com.startup.project.entities.User;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

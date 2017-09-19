@@ -35,7 +35,7 @@
 </head>
 
 <body>
-
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!-- Navigation -->
 <nav class="navbar navbar-background" role="navigation">
     <div class="container">
@@ -131,7 +131,7 @@
                         <input id="password" class="form-control" type="password" placeholder="Password"
                                name="j_password">
                         <input class="btn btn-default btn-register" type="submit" value="Войти">
-                        <li style="float: right; font-size: 18px;">Or <a style="color: white;" href="WEB-INF/pages/register.jsp"> create account</a></li>
+                        <li style="float: right; font-size: 18px;">Or <a style="color: white;" href="${contextPath}/registration"> create account</a></li>
                     </form>
                 </div>
                 <!-- /.navbar-collapse -->

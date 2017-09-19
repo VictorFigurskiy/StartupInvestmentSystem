@@ -21,6 +21,10 @@ public class User {
     private String email;
     @Column(name = "PASSWORD", nullable = false, length = 50)
     private String password;
+    @Transient
+    private String confirmPassword;
+    @Column(name = "PHONE",length = 14)
+    private String phone;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinTable(name = "users_roles",
@@ -86,6 +90,22 @@ public class User {
 
     public void setStartupList(List<Startup> startupList) {
         this.startupList = startupList;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
