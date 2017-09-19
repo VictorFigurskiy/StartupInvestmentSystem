@@ -1,18 +1,22 @@
 package com.startup.project.services;
 
 import com.startup.project.entities.UserRole;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by Sonik on 16.09.2017.
  */
+@Service
 public class UserDetailedServiceImpl implements UserDetailsService {
 
     private final UserService userService;
 
+    @Autowired
     public UserDetailedServiceImpl(UserService userService) {
         this.userService = userService;
     }

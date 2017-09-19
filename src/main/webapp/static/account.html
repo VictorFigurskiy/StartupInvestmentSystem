@@ -120,511 +120,99 @@
     <!-- Page Content -->
     <div class="container">
 
-	<div id="fb-root"></div>
-	<div id="panel"></div>
-
-	
-	<div class="wrapper">		
-				
-		<div class="info_box_l1 view3">
-			<div class="info_box_l2">
-				<div class="info_box_l3 pb"> 					
-<div class="profile_wrapper">
-	<input type="hidden" name="sending_request" value="N" />
-	<input type="hidden" name="sessid" id="sessid_1" value="8e656556ee33931aecce518ca6eb441a" />		
-	
-	
-<form id="profile_personal_photo_big" action="" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="sessid" id="sessid" value="8e656556ee33931aecce518ca6eb441a" />	<input type="hidden" name="action" value="save_profile_photo_big" />
-	<input type="hidden" name="ID" value=71020 />
-	<div style="display:none;">
-		<input type="file" name="UF_PP_BIG" accept="image/*" onchange="selectedFileLoad(event);">
-	</div>
-</form>
-<form id="profile_personal_photo" action="" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="sessid" id="sessid" value="8e656556ee33931aecce518ca6eb441a" />	<input type="hidden" name="action" value="save_profile_photo" />
-	<input type="hidden" name="ID" value=71020 />
-	<div style="display:none;">
-		<input type="file" name="PERSONAL_PHOTO" accept="image/*" onchange="selectedFileLoad(event);">
-	</div>
-</form>
-
-
-<div class="up_e_c">
-	<div class="up_e_c_t">
-		<div class="up_e_tc vis">
-			Фотография персональной страницы (большая) <div id="error_photo_big" class="errortext"></div>
-			<div id="personal_photo_big" class="big_photo_c"  >
-				<i class="material-icons md-48" >add_a_photo</i>
-				<div class='photo_tt'>Выбрать&nbsp;файл</div>
-				<div class="wait box1"></div>
-			</div>
-			<div class="clear"></div>
-      <form name="partFormUser">
-			<div class="yt_c">
-				Ваше видеообращение				<input type="text" name="UF_YTLINK" value="" placeholder="ссылка на YouTube" />
-				<div class="error_input_desc yt_error">Только ссылки с YouTube</div>
-			</div>
-      </form>
-			<div class="clear"></div>
-
-
-			<div id="experEducBox">
-			<br /><br />
-			<div class="experEducBox">
-				<span class="blockTitle">О себе:</span><br />
-				<textarea id="personalNotesEdit" name="PERSONAL_NOTES" class="wide">
-
-</textarea>
-			</div>
-			<br />
-			<div class="experEducBox">
-				<div class="col0">
-					<span class="blockTitle">Опыт работы:</span>
-				</div>
-
-				
-				<br><span class="addNewExperience">+Добавить новое место работы</span>
-				<form name="addExperience" id="addExperience">
-					<div class="col1">
-						<label>Компания<span class="form-required">*</span></label><br />
-						<input type="text" name="COMPANY_NAME" class="" autocomplete="off" required><br />
-					</div>
-					<div class="col2">
-						<label>Опыт работы<span class="form-required">*</span></label><br />
-						<label>с:</label>
-						<select name="experience_FROMMON" class="" required>
-							<option value=''>мес</option><option value='1'>янв</option><option value='2'>фев</option><option value='3'>мар</option><option value='4'>апр</option><option value='5'>май</option><option value='6'>июн</option><option value='7'>июл</option><option value='8'>авг</option><option value='9'>сент</option><option value='10'>окт</option><option value='11'>ноя</option><option value='12'>дек</option>						</select>
-						<select name="experience_FROMYEAR" class="" required>
-							<option value=''>год</option><option value='2017'>2017</option><option value='2016'>2016</option><option value='2015'>2015</option><option value='2014'>2014</option><option value='2013'>2013</option><option value='2012'>2012</option><option value='2011'>2011</option><option value='2010'>2010</option><option value='2009'>2009</option><option value='2008'>2008</option><option value='2007'>2007</option><option value='2006'>2006</option><option value='2005'>2005</option><option value='2004'>2004</option><option value='2003'>2003</option><option value='2002'>2002</option><option value='2001'>2001</option><option value='2000'>2000</option><option value='1999'>1999</option><option value='1998'>1998</option><option value='1997'>1997</option><option value='1996'>1996</option><option value='1995'>1995</option><option value='1994'>1994</option><option value='1993'>1993</option><option value='1992'>1992</option><option value='1991'>1991</option><option value='1990'>1990</option><option value='1989'>1989</option><option value='1988'>1988</option><option value='1987'>1987</option><option value='1986'>1986</option><option value='1985'>1985</option><option value='1984'>1984</option><option value='1983'>1983</option><option value='1982'>1982</option><option value='1981'>1981</option><option value='1980'>1980</option><option value='1979'>1979</option><option value='1978'>1978</option><option value='1977'>1977</option><option value='1976'>1976</option><option value='1975'>1975</option><option value='1974'>1974</option><option value='1973'>1973</option><option value='1972'>1972</option><option value='1971'>1971</option><option value='1970'>1970</option><option value='1969'>1969</option><option value='1968'>1968</option>						</select><br />
-					</div>
-					<div class="col1">
-						<label>Должность<span class="form-required">*</span></label><br />
-						<input type="text" name="POSITION_NAME" class="" autocomplete="off" required>
-					</div>
-					<div class="col2">
-						<br /><label>по:</label>
-						<select name="experience_TO_MON" class="" >
-							<option value=''>мес</option><option value='1'>янв</option><option value='2'>фев</option><option value='3'>мар</option><option value='4'>апр</option><option value='5'>май</option><option value='6'>июн</option><option value='7'>июл</option><option value='8'>авг</option><option value='9'>сент</option><option value='10'>окт</option><option value='11'>ноя</option><option value='12'>дек</option>						</select>
-						<select name="experience_TO_YEAR" class="" >
-							<option value=''>год</option><option value='2017'>2017</option><option value='2016'>2016</option><option value='2015'>2015</option><option value='2014'>2014</option><option value='2013'>2013</option><option value='2012'>2012</option><option value='2011'>2011</option><option value='2010'>2010</option><option value='2009'>2009</option><option value='2008'>2008</option><option value='2007'>2007</option><option value='2006'>2006</option><option value='2005'>2005</option><option value='2004'>2004</option><option value='2003'>2003</option><option value='2002'>2002</option><option value='2001'>2001</option><option value='2000'>2000</option><option value='1999'>1999</option><option value='1998'>1998</option><option value='1997'>1997</option><option value='1996'>1996</option><option value='1995'>1995</option><option value='1994'>1994</option><option value='1993'>1993</option><option value='1992'>1992</option><option value='1991'>1991</option><option value='1990'>1990</option><option value='1989'>1989</option><option value='1988'>1988</option><option value='1987'>1987</option><option value='1986'>1986</option><option value='1985'>1985</option><option value='1984'>1984</option><option value='1983'>1983</option><option value='1982'>1982</option><option value='1981'>1981</option><option value='1980'>1980</option><option value='1979'>1979</option><option value='1978'>1978</option><option value='1977'>1977</option><option value='1976'>1976</option><option value='1975'>1975</option><option value='1974'>1974</option><option value='1973'>1973</option><option value='1972'>1972</option><option value='1971'>1971</option><option value='1970'>1970</option><option value='1969'>1969</option><option value='1968'>1968</option>						</select>
-						<label class="currentTime"><input type="checkbox" name="currentTime" checked>По настоящее время</label>
-					</div>
-
-					<div class="col0">
-						<label>Обязанности</label><br />
-						<textarea name="experience_DUTIES" class="wide"></textarea>
-					</div>
-					<input type="hidden" name="experience_COMPANY" value="">
-					<input type="hidden" name="experience_POSITION" value="">
-					<input type="hidden" name="action" value="addExperience">
-					<span class="addExperience">Сохранить</span>
-					<span class="cancelExperience">Отмена</span>
-				</form>
-			</div>
-			<br /><br />
-			<div class="experEducBox">
-				<div class="col0">
-					<span class="blockTitle">Образование:</span>
-				</div>
-
-				
-				<br><span class="addNewEducation">+Добавить новое место учебы</span>
-				<form name="addEducation" id="addEducation">
-					<div class="col0">
-						<label>Учебное заведение<span class="form-required">*</span></label><br />
-						<input type="text" name="INSTITUTE_NAME" class="" autocomplete="off" required><br />
-					</div>
-					<div class="col1">
-						<label>Уровень образования</label><br />
-						<input type="text" name="LEVEL_NAME" class="" autocomplete="off" >
-					</div>
-					<div class="col2">
-						<label>Форма обучения</label><br />
-						<select name="education_FORM" class="" >
-							<option value="">выберите</option>
-															<option value="43">очная (дневная)</option>
-															<option value="44">очно-заочная (вечерняя)</option>
-															<option value="45">заочная</option>
-															<option value="46">дистанционная</option>
-													<select>
-					</div>
-					<div class="col1">
-						<label>Факультет</label><br />
-						<input type="text" name="FACULTY_NAME" class="" autocomplete="off" >
-					</div>
-					<div class="col2">
-						<label></label><br />
-						<label>с:</label>
-						<select name="education_FROM_DATE" class="" >
-							<option value=''>год</option><option value='2017'>2017</option><option value='2016'>2016</option><option value='2015'>2015</option><option value='2014'>2014</option><option value='2013'>2013</option><option value='2012'>2012</option><option value='2011'>2011</option><option value='2010'>2010</option><option value='2009'>2009</option><option value='2008'>2008</option><option value='2007'>2007</option><option value='2006'>2006</option><option value='2005'>2005</option><option value='2004'>2004</option><option value='2003'>2003</option><option value='2002'>2002</option><option value='2001'>2001</option><option value='2000'>2000</option><option value='1999'>1999</option><option value='1998'>1998</option><option value='1997'>1997</option><option value='1996'>1996</option><option value='1995'>1995</option><option value='1994'>1994</option><option value='1993'>1993</option><option value='1992'>1992</option><option value='1991'>1991</option><option value='1990'>1990</option><option value='1989'>1989</option><option value='1988'>1988</option><option value='1987'>1987</option><option value='1986'>1986</option><option value='1985'>1985</option><option value='1984'>1984</option><option value='1983'>1983</option><option value='1982'>1982</option><option value='1981'>1981</option><option value='1980'>1980</option><option value='1979'>1979</option><option value='1978'>1978</option><option value='1977'>1977</option><option value='1976'>1976</option><option value='1975'>1975</option><option value='1974'>1974</option><option value='1973'>1973</option><option value='1972'>1972</option><option value='1971'>1971</option><option value='1970'>1970</option><option value='1969'>1969</option><option value='1968'>1968</option>						<select>&nbsp;&nbsp;
-						<label>по:</label>
-						<select name="education_TO_DATE" class="" >
-							<option value=''>год</option><option value='2017'>2017</option><option value='2016'>2016</option><option value='2015'>2015</option><option value='2014'>2014</option><option value='2013'>2013</option><option value='2012'>2012</option><option value='2011'>2011</option><option value='2010'>2010</option><option value='2009'>2009</option><option value='2008'>2008</option><option value='2007'>2007</option><option value='2006'>2006</option><option value='2005'>2005</option><option value='2004'>2004</option><option value='2003'>2003</option><option value='2002'>2002</option><option value='2001'>2001</option><option value='2000'>2000</option><option value='1999'>1999</option><option value='1998'>1998</option><option value='1997'>1997</option><option value='1996'>1996</option><option value='1995'>1995</option><option value='1994'>1994</option><option value='1993'>1993</option><option value='1992'>1992</option><option value='1991'>1991</option><option value='1990'>1990</option><option value='1989'>1989</option><option value='1988'>1988</option><option value='1987'>1987</option><option value='1986'>1986</option><option value='1985'>1985</option><option value='1984'>1984</option><option value='1983'>1983</option><option value='1982'>1982</option><option value='1981'>1981</option><option value='1980'>1980</option><option value='1979'>1979</option><option value='1978'>1978</option><option value='1977'>1977</option><option value='1976'>1976</option><option value='1975'>1975</option><option value='1974'>1974</option><option value='1973'>1973</option><option value='1972'>1972</option><option value='1971'>1971</option><option value='1970'>1970</option><option value='1969'>1969</option><option value='1968'>1968</option>						<select><br />
-					</div>
-					<div class="col1">
-						<label>Специальность</label><br />
-						<input type="text" name="SPECIALTY_NAME" class="" autocomplete="off" >
-					</div>
-					<div class="col2">
-						<br />
-
-					</div>
-					<input type="hidden" name="education_SPECIALTY" value="">
-					<input type="hidden" name="education_FACULTY" value="">
-					<input type="hidden" name="education_LEVEL" value="">
-					<input type="hidden" name="education_INSTITUTE" value="">
-					<input type="hidden" name="action" value="addEducation">
-					<span class="addExperience">Сохранить</span>
-					<span class="cancelExperience">Отмена</span>
-				</form>
-			</div>
-			<br /><br />
-			<div class="experEducBox">
-				<div class="col0">
-					<span class="blockTitle">Навыки:</span>
-				</div>
-				<ul class="skilList">
-										<li class="addSkill">
-						<input type="text" name="SKILL_NAME" id="SKILL_NAME" autocomplete="off" required>
-						<span class="addExperience" id="addSkill">Добавить</span>
-					</li>
-				</ul>
-			</div>
-			<br /><br /><br />
-			</div>
-
-		</div>
-		<form id="profile_data_form" name="profile_data_form" action="/profile/edit-user/" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="sessid" id="sessid" value="8e656556ee33931aecce518ca6eb441a" />		<input type="hidden" name="action" value="save_profile_data" />
-		<input type="hidden" name="ID" value="71020" />
-		<input type="hidden" name="UF_RUBRIC" value="2,1,3" />
-		<input type="hidden" name="UF_TYPE_CONTENT" value="1,2,3" />
-		<input type="hidden" name="UF_SUBSC_REGION" value="" />
-		<input type="hidden" name="LANGUAGE_ID" value="ru" />
-		<input type="hidden" id="personalNotesSave" name="PERSONAL_NOTES" value="
-
-" />
-				<input type="hidden" name="UF_ISUNSUBSCRIBE" value="0" />
-		<input type="hidden" name="SAVE_SUBSCRIBE_FLOW" value="Y" />
-				<input type="hidden" name="GLUE_SIMPLY" value="N" />
-		<input type="hidden" name="EXTERNAL_AUTH_ID" value="" />
-
-		<div class="up_e_tc txt">
-			<div class="up_e_te">
-
-					<div class='name'>
-						<input name="NAME" class="req t_NAME" value="" placeholder="Имя" />
-						<input name="LAST_NAME" class="req t_LAST_NAME" value="" placeholder="ФАМИЛИЯ" />
-						<div class="clear"></div>
-					</div>
-					<div class='photo_box'>
-						Фотография профиля (маленькая)<br />
-
-						<div id="personal_photo" class="photo"  >
-							<i class="material-icons md-36" >add_a_photo</i>
-							<div class='photo_tt'>Выбрать&nbsp;файл</div>
-              <div class="wait box2"></div>
-						</div>
-					</div>
-					<div class='contacts_box'>
-						&nbsp;&nbsp;контакты						<div class='input_box'>
-						
-							<div class="mail">tesenchukao@gmail.com</div>
-							<input type="hidden" name="EMAIL" value="tesenchukao@gmail.com" />
-							<input type="hidden" name="EMAIL_EMPTY" value="0" />
-													<div id="subscribe_edit" class="subsc_c req t_UF_SUBSC_REGION">
-								<div class="subsc_c_tt">Управление подпиской</div>
-							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="input_box">
-							<input type="text" class="req t_PERSONAL_MOBILE t_PERSONAL_MOBILE1 t_PERSONAL_MOBILE2" name="PERSONAL_MOBILE" value="" placeholder="телефон" maxlength="20" />
-						</div>
-  						<div class="input_box">
-							<div class="dropdown req t_PERSONAL_COUNTRY">
-								<select name="PERSONAL_COUNTRY">
-									<option value="0">страна</option>
-
-																		<option value="300" >Украина</option>
-																		<option value="301" >Россия</option>
-																		<option value="297" >Беларусь</option>
-																		<option value="302" >Казахстан</option>
-																		<option value="303" >США</option>
-																		<option value="299" >Польша</option>
-																		<option value="317" >Австралия</option>
-																		<option value="319" >Австрия</option>
-																		<option value="320" >Азербайджан</option>
-																		<option value="321" >Албания</option>
-																		<option value="322" >Алжир</option>
-																		<option value="323" >Ангола</option>
-																		<option value="324" >Андорра</option>
-																		<option value="325" >Антигуа и Барбуда</option>
-																		<option value="326" >Аргентина</option>
-																		<option value="327" >Армения</option>
-																		<option value="328" >Афганистан</option>
-																		<option value="329" >Багамские острова</option>
-																		<option value="330" >Бангладеш</option>
-																		<option value="331" >Барбадос</option>
-																		<option value="346" >Бахрейн</option>
-																		<option value="347" >Белиз</option>
-																		<option value="348" >Бельгия</option>
-																		<option value="349" >Бенин</option>
-																		<option value="350" >Болгария</option>
-																		<option value="351" >Боливия</option>
-																		<option value="352" >Босния и Герцеговина</option>
-																		<option value="353" >Ботсвана</option>
-																		<option value="354" >Бразилия</option>
-																		<option value="355" >Бруней</option>
-																		<option value="356" >Буркина-Фасо</option>
-																		<option value="357" >Бурунди</option>
-																		<option value="358" >Бутан</option>
-																		<option value="359" >Вануату</option>
-																		<option value="360" >Великобритания</option>
-																		<option value="361" >Венгрия</option>
-																		<option value="362" >Венесуэла</option>
-																		<option value="363" >Восточный Тимор</option>
-																		<option value="364" >Вьетнам</option>
-																		<option value="365" >Габон</option>
-																		<option value="366" >Гаити</option>
-																		<option value="367" >Гайана</option>
-																		<option value="368" >Гамбия</option>
-																		<option value="369" >Гана</option>
-																		<option value="370" >Гватемала</option>
-																		<option value="371" >Гвинея</option>
-																		<option value="372" >Гвинея-Бисау</option>
-																		<option value="373" >Германия</option>
-																		<option value="374" >Гондурас</option>
-																		<option value="375" >Гренада</option>
-																		<option value="376" >Греция</option>
-																		<option value="377" >Грузия</option>
-																		<option value="378" >Дания</option>
-																		<option value="379" >Джибути</option>
-																		<option value="380" >Доминика</option>
-																		<option value="381" >Доминиканская Республика</option>
-																		<option value="382" >Египет</option>
-																		<option value="383" >Замбия</option>
-																		<option value="384" >Зимбабве</option>
-																		<option value="385" >Израиль</option>
-																		<option value="386" >Индия</option>
-																		<option value="387" >Индонезия</option>
-																		<option value="388" >Иордания</option>
-																		<option value="389" >Ирак</option>
-																		<option value="390" >Иран</option>
-																		<option value="391" >Ирландия</option>
-																		<option value="392" >Исландия</option>
-																		<option value="393" >Испания</option>
-																		<option value="394" >Италия</option>
-																		<option value="395" >Йемен</option>
-																		<option value="396" >Кабо-Верде</option>
-																		<option value="298" >Канада</option>
-																		<option value="398" >Камбоджа</option>
-																		<option value="399" >Камерун</option>
-																		<option value="400" >Катар</option>
-																		<option value="401" >Кения</option>
-																		<option value="402" >Кипр</option>
-																		<option value="403" >Киргизия</option>
-																		<option value="404" >Кирибати</option>
-																		<option value="405" >КНР</option>
-																		<option value="406" >Колумбия</option>
-																		<option value="407" >Коморы</option>
-																		<option value="408" >Республика Конго</option>
-																		<option value="409" >Демократическая республика Конго</option>
-																		<option value="410" >КНДР</option>
-																		<option value="411" >Республика Корея</option>
-																		<option value="412" >Коста-Рика</option>
-																		<option value="413" >Кот-д’Ивуар</option>
-																		<option value="414" >Куба</option>
-																		<option value="415" >Кувейт</option>
-																		<option value="416" >Лаос</option>
-																		<option value="417" >Латвия</option>
-																		<option value="418" >Лесото</option>
-																		<option value="419" >Либерия</option>
-																		<option value="420" >Ливан</option>
-																		<option value="421" >Ливия</option>
-																		<option value="422" >Литва</option>
-																		<option value="423" >Лихтенштейн</option>
-																		<option value="424" >Люксембург</option>
-																		<option value="425" >Маврикий</option>
-																		<option value="426" >Мавритания</option>
-																		<option value="427" >Мадагаскар</option>
-																		<option value="428" >Македония</option>
-																		<option value="429" >Малави</option>
-																		<option value="430" >Малайзия</option>
-																		<option value="431" >Мали</option>
-																		<option value="432" >Мальдивы</option>
-																		<option value="433" >Мальта</option>
-																		<option value="434" >Марокко</option>
-																		<option value="435" >Маршалловы острова</option>
-																		<option value="436" >Мексика</option>
-																		<option value="437" >Мозамбик</option>
-																		<option value="438" >Молдавия</option>
-																		<option value="439" >Монако</option>
-																		<option value="440" >Монголия</option>
-																		<option value="441" >Мьянма</option>
-																		<option value="442" >Намибия</option>
-																		<option value="443" >Науру</option>
-																		<option value="444" >Непал</option>
-																		<option value="445" >Нигер</option>
-																		<option value="446" >Нигерия</option>
-																		<option value="447" >Нидерланды</option>
-																		<option value="448" >Никарагуа</option>
-																		<option value="449" >Новая Зеландия</option>
-																		<option value="450" >Норвегия</option>
-																		<option value="451" >ОАЭ</option>
-																		<option value="452" >Оман</option>
-																		<option value="453" >Пакистан</option>
-																		<option value="454" >Палау</option>
-																		<option value="455" >Панама</option>
-																		<option value="456" >Папуа-Новая Гвинея</option>
-																		<option value="457" >Парагвай</option>
-																		<option value="458" >Перу</option>
-																		<option value="459" >Португалия</option>
-																		<option value="460" >Руанда</option>
-																		<option value="461" >Румыния</option>
-																		<option value="462" >Сальвадор</option>
-																		<option value="463" >Самоа</option>
-																		<option value="464" >Сан-Марино</option>
-																		<option value="465" >Сан-Томе</option>
-																		<option value="466" >Саудовская Аравия</option>
-																		<option value="467" >Свазиленд</option>
-																		<option value="468" >Сейшельские острова</option>
-																		<option value="469" >Сенегал</option>
-																		<option value="470" >Сент-Винсент</option>
-																		<option value="471" >Сент-Китс</option>
-																		<option value="472" >Сент-Люсия</option>
-																		<option value="473" >Сербия</option>
-																		<option value="474" >Сингапур</option>
-																		<option value="475" >Сирия</option>
-																		<option value="476" >Словакия</option>
-																		<option value="477" >Словения</option>
-																		<option value="478" >Соломоновы острова</option>
-																		<option value="479" >Сомали</option>
-																		<option value="480" >Судан</option>
-																		<option value="481" >Суринам</option>
-																		<option value="482" >Сьерра-Леоне</option>
-																		<option value="483" >Таджикистан</option>
-																		<option value="484" >Таиланд</option>
-																		<option value="485" >Танзания</option>
-																		<option value="486" >Того</option>
-																		<option value="487" >Тонга</option>
-																		<option value="488" >Тринидад и Тобаго</option>
-																		<option value="489" >Тувалу</option>
-																		<option value="490" >Тунис</option>
-																		<option value="491" >Туркменистан</option>
-																		<option value="492" >Турция</option>
-																		<option value="493" >Уганда</option>
-																		<option value="494" >Узбекистан</option>
-																		<option value="495" >Уругвай</option>
-																		<option value="496" >Федеративные Штаты Микронезии</option>
-																		<option value="497" >Фиджи</option>
-																		<option value="498" >Филиппины</option>
-																		<option value="499" >Финляндия</option>
-																		<option value="316" >Франция</option>
-																		<option value="501" >Хорватия</option>
-																		<option value="502" >Центральноафриканская Республика</option>
-																		<option value="503" >Чад</option>
-																		<option value="504" >Черногория</option>
-																		<option value="505" >Чехия</option>
-																		<option value="506" >Чили</option>
-																		<option value="310" >Швейцария</option>
-																		<option value="311" >Швеция</option>
-																		<option value="312" >Шри-Ланка</option>
-																		<option value="313" >Эквадор</option>
-																		<option value="314" >Экваториальная Гвинея</option>
-																		<option value="315" >Эритрея</option>
-																		<option value="304" >Эстония</option>
-																		<option value="305" >Эфиопия</option>
-																		<option value="306" >ЮАР</option>
-																		<option value="307" >Южный Судан</option>
-																		<option value="308" >Ямайка</option>
-																		<option value="309" >Япония</option>
-																	</select>
-							</div>
-						</div>
-						<div class="input_box">
-							<div class="dropdown req t_PERSONAL_STATE">
-								<select name="PERSONAL_STATE">
-																	<option value="0">регион</option>
-															</select>
-							</div>
-						</div>
+	<h1>Edit Profile</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          
+          <input class="form-control" type="file">
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
+        <h3>Personal info</h3>
+        
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Jane" type="text">
+            </div>
           </div>
-          <div class="contacts_box langbox">
-						Язык интерфейса						<div class="input_box">
-							<div class="dropdown req t_UF_LANGUAGE_ID">
-								<select name="UF_LANGUAGE_ID" onchange="changeLangInterface(event);">
-																<option value="ru" selected>Русский</option>
-																<option value="en" >English</option>
-																<option value="pl" >Polski</option>
-																<option value="ua" >Українська</option>
-																</select>
-							</div>
-						</div>
-					</div>
-          <div class="contacts_box langbox">
-            Язык, который вы понимаете						<div class="input_box">
-                            <label>
-                <input type="checkbox" name="UF_LANG_READ[]" value="36" checked data-xml-id="ru"><span>Русский</span>
-              </label><br />
-                            <label>
-                <input type="checkbox" name="UF_LANG_READ[]" value="37" checked data-xml-id="en"><span>English</span>
-              </label><br />
-                            <label>
-                <input type="checkbox" name="UF_LANG_READ[]" value="38" checked data-xml-id="pl"><span>Polski</span>
-              </label><br />
-                            <label>
-                <input type="checkbox" name="UF_LANG_READ[]" value="39" checked data-xml-id="ua"><span>Українська</span>
-              </label><br />
-              						</div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Bishop" type="text">
+            </div>
           </div>
-
-				
-			</div>
-		</div>
-	</div>
-	<div class="up_e_c_t">
-					<div class="up_e_tc">
-				<br>
-				<input type="checkbox" id="RULES_Y" name="RULES_Y" value="40"><label for="RULES_Y" class="t_RULES_Y req">Принять <a href="https://startup.network/rules-of-use/?lang=ru" id="rulesLink">Правила сайта</a></label>
-			</div>
-
-			<div id="popupRules">
-				<div class="popupRulesBody">
-				</div>
-				<center><a class="submit submit_marketing green" id="agreeRules">Принять</a></center>
-			</div>
-			<div class="popup-window-overlay popupRules" ></div>
-			<br><br>
-						</div>
-	<div class="up_e_c_t save">
-		<div class="up_e_tc">
-			<div class="colont"></div>
-		</div>
-		<div class="up_e_tc btn_place">
-			<div id="save_profile" class='button_save '>Сохранить				<div class="need_fil"></div>
-			</div>
-		</div>
-		<div class="up_e_tc">
-			<div class="colont"></div>
-		</div>
-	</div>
-  <div class="delete-profice-box">
-    <a href="#" onclick="showConfirmPopup(); return false;">Удалить профиль</a>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Company:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="janesemail@gmail.com" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Time Zone:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_time_zone" class="form-control">
+                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                  <option value="Alaska">(GMT-09:00) Alaska</option>
+                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                  <option value="Arizona">(GMT-07:00) Arizona</option>
+                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="janeuser" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="11111122333" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="11111122333" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-primary" value="Save Changes" type="button">
+              <span></span>
+              <input class="btn btn-default" value="Cancel" type="reset">
+            </div>
+          </div>
+        </form>
+      </div>
   </div>
-</div>
-</form>
-	<div style="clear:both"></div>
-</div>
-  
-	
-  
-						<div style="clear:both"></div>
-								
-				</div> 			</div> 		</div>     
-		<div id="footer"></div>
-		
-	</div> 		
         <!-- /.row -->
 
         <hr>

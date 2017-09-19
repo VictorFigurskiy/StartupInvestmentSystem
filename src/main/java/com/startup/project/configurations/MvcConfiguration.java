@@ -21,7 +21,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         // Overriding this method, we will be able to specify where the resources of our project will lie, such as css, image, js and others.
-        registry.addResourceHandler("/jpeg/**").addResourceLocations("/WEB-INF/jpeg/");
         registry.addResourceHandler("/static/**").addResourceLocations("/static/");
     }
 

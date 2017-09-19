@@ -120,7 +120,7 @@
 					 <input id="email" class="form-control" type="text" placeholder="Email" name="email">
 					 <input id="password" class="form-control" type="password" placeholder="Password" name="password">
 					 <input class="btn btn-default btn-register" type="button" value="Enter" name="commit">
-					 <li style="float: right; font-size: 18px;">Or <a style="color: white;" href="../../static/register.html"> create account</a></li>
+					 <li style="float: right; font-size: 18px;">Or <a style="color: white;" href="WEB-INF/pages/register.jsp"> create account</a></li>
 				 </form>
 			 </div>
             <!-- /.navbar-collapse -->
