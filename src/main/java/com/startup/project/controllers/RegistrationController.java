@@ -1,6 +1,7 @@
 package com.startup.project.controllers;
 
 import com.startup.project.entities.User;
+import com.startup.project.entities.UserRole;
 import com.startup.project.services.UserService;
 import com.startup.project.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
