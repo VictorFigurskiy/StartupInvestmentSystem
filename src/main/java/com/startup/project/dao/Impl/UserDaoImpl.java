@@ -2,7 +2,9 @@ package com.startup.project.dao.Impl;
 
 import com.startup.project.dao.UserDao;
 import com.startup.project.entities.User;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +26,7 @@ public class UserDaoImpl extends AbstractGenericDaoImpl<Integer, User> implement
     public User getByEmail(String email) {
         User userById = sessionFactory.getCurrentSession()
                 .createQuery("select user from User user where user.email = :email", User.class)
-                .setParameter("email", email).getSingleResult();
+                .setParameter("email", email).uniqueResult();
         if (userById != null) {
             getLogger().info("User with email: " + email + " found!");
         } else {

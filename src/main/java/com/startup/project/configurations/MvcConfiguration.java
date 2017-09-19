@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(value = "com.startup.project.controllers")
+@ComponentScan(value = {"com.startup.project.controllers", "com.startup.project.validator"})
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
@@ -26,7 +26,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addRedirectViewController("/", "/index");
+        registry.addRedirectViewController("/","/registration");
     }
 
     @Bean

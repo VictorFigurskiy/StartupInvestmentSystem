@@ -28,7 +28,7 @@ public class TestAppClass {
 //            System.out.println(userService.getAll());
 //
 //            User user = userService.getById(1);
-//
+            System.getenv().entrySet().forEach(System.out::println);
 //            System.out.println(user);
 //
 //            System.out.println(user.getStartupList().isEmpty());
@@ -107,10 +107,10 @@ public class TestAppClass {
 
 //            startupDetailService.delete(startupDetail);
 
-            List<User> all = userService.getAll();
-            all.forEach(System.out::println);
+//            List<User> all = userService.getAll();
+//            all.forEach(System.out::println);
 
-            ctx.close();
+//            ctx.close();
         }
     }
 }

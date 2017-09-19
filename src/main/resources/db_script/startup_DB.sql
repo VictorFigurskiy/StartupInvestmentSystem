@@ -175,6 +175,7 @@ CREATE TABLE `users` (
   `FIRST_NAME` varchar(30) DEFAULT NULL,
   `LAST_NAME` varchar(30) DEFAULT NULL,
   `PASSWORD` varchar(50) NOT NULL,
+  `PHONE` varchar(14) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_ku29j688xlci1ksopvjfgpswp` (`EMAIL`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
