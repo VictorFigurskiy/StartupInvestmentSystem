@@ -25,6 +25,8 @@ public class TestAppClass {
             StartupDetailService startupDetailService = ctx.getBean(StartupDetailService.class);
             InvestorService investorService = ctx.getBean(InvestorService.class);
 
+            System.out.println(userService.getByEmail("vzx"));
+
 //            System.out.println(userService.getAll());
 //
 //            User user = userService.getById(1);
@@ -107,8 +109,8 @@ public class TestAppClass {
 
 //            startupDetailService.delete(startupDetail);
 
-            List<User> all = userService.getAll();
-            all.forEach(System.out::println);
+//            List<User> all = userService.getAll();
+//            all.forEach(System.out::println);
 
             ctx.close();
         }

@@ -47,7 +47,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
+                    <li>
                         <a href="../../static/about.html">About</a>
                     </li>
                     <li>
@@ -90,7 +90,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
@@ -102,7 +102,7 @@
                             <li>
                                 <a href="../../static/faq.html">FAQ</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="404.jsp">404</a>
                             </li>
                             <li>
@@ -121,103 +121,96 @@
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h2>Регистрация</h2>
-<form class="form-horizontal">
-  <div class="form-group">
-    <label class="control-label col-xs-3" for="lastName">Фамилия:</label>
-    <div class="col-xs-9">
-      <input type="text" class="form-control" id="lastName" placeholder="Введите фамилию">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3" for="firstName">Имя:</label>
-    <div class="col-xs-9">
-      <input type="text" class="form-control" id="firstName" placeholder="Введите имя">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3" for="fatherName">Отчество:</label>
-    <div class="col-xs-9">
-      <input type="text" class="form-control" id="fatherName" placeholder="Введите отчество">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3">Дата рождения:</label>
-    <div class="col-xs-3">
-      <select class="form-control">
-        <option>Дата</option>
-      </select>
-    </div>
-    <div class="col-xs-3">
-      <select class="form-control">
-        <option>Месяц</option>
-      </select>
-    </div>
-    <div class="col-xs-3">
-      <select class="form-control">
-        <option>Год</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3" for="inputEmail">Email:</label>
-    <div class="col-xs-9">
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3" for="inputPassword">Пароль:</label>
-    <div class="col-xs-9">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Введите пароль">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3" for="confirmPassword">Подтвердите пароль:</label>
-    <div class="col-xs-9">
-      <input type="password" class="form-control" id="confirmPassword" placeholder="Введите пароль ещё раз">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3" for="phoneNumber">Телефон:</label>
-    <div class="col-xs-9">
-      <input type="tel" class="form-control" id="phoneNumber" placeholder="Введите номер телефона">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3" for="postalAddress">Адрес:</label>
-    <div class="col-xs-9">
-      <textarea rows="3" class="form-control" id="postalAddress" placeholder="Введите адрес"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-xs-3">Пол:</label>
-    <div class="col-xs-2">
-      <label class="radio-inline">
-        <input type="radio" name="genderRadios" value="male"> Мужской
-      </label>
-    </div>
-    <div class="col-xs-2">
-      <label class="radio-inline">
-        <input type="radio" name="genderRadios" value="female"> Женский
-      </label>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-xs-offset-3 col-xs-9">
-      <label class="checkbox-inline">
-        <input type="checkbox" value="agree">  Я согласен с <a href="#">условиями</a>.
-      </label>
-    </div>
-  </div>
-  <br />
-  <div class="form-group">
-    <div class="col-xs-offset-3 col-xs-9">
-      <input type="submit" class="btn btn-primary" value="Регистрация">
-      <input type="reset" class="btn btn-default" value="Очистить форму">
-    </div>
-  </div>
-</form>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">404
+                    <small>Page Not Found</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.jsp">Home</a>
+                    </li>
+                    <li class="active">404</li>
+                </ol>
+            </div>
+        </div>
         <!-- /.row -->
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h1><span class="error-404">404</span>
+                    </h1>
+                    <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+                    <ul>
+                        <li>
+                            <a href="index.jsp">Home</a>
+                        </li>
+                        <li>
+                            <a href="../../static/about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="../../static/services.html">Services</a>
+                        </li>
+                        <li>
+                            <a href="../../static/contact.html">Contact</a>
+                        </li>
+                        <li>
+                            Portfolio
+                            <ul>
+                                <li>
+                                    <a href="../../static/portfolio-1-col.html">1 Column Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/portfolio-2-col.html">2 Column Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/portfolio-3-col.html">3 Column Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/portfolio-4-col.html">4 Column Portfolio</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Blog
+                            <ul>
+                                <li>
+                                    <a href="../../static/blog-home-1.html">Blog Home 1</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/blog-home-2.html">Blog Home 2</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/blog-post.html">Blog Post</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Other Pages
+                            <ul>
+                                <li>
+                                    <a href="full-width-page.html">Full Width Page</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/sidebar.html">Sidebar Page</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/faq.html">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="404.jsp">404 Page</a>
+                                </li>
+                                <li>
+                                    <a href="pricing-table.html">Pricing Table</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
 
         <hr>
 

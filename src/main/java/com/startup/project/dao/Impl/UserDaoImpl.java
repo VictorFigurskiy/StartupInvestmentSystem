@@ -24,7 +24,7 @@ public class UserDaoImpl extends AbstractGenericDaoImpl<Integer, User> implement
     public User getByEmail(String email) {
         User userById = sessionFactory.getCurrentSession()
                 .createQuery("select user from User user where user.email = :email", User.class)
-                .setParameter("email", email).getSingleResult();
+                .setParameter("email", email).uniqueResult();
         if (userById != null) {
             getLogger().info("User with email: " + email + " found!");
         } else {

@@ -22,7 +22,6 @@ public abstract class AbstractGenericDaoImpl<K extends Serializable, V> implemen
 
     public AbstractGenericDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
-
     }
 
     public Logger getLogger() {
@@ -44,7 +43,6 @@ public abstract class AbstractGenericDaoImpl<K extends Serializable, V> implemen
         return entity;
 
     }
-
 
     @SuppressWarnings("unchecked")
     @Override

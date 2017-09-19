@@ -1,6 +1,7 @@
 package com.startup.project.services;
 
 import com.startup.project.entities.UserRole;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetailedServiceImpl implements UserDetailsService {
 
+    private static final Logger logger = Logger.getLogger(UserDetailedServiceImpl.class);
+
     private final UserService userService;
 
     @Autowired
@@ -25,6 +28,7 @@ public class UserDetailedServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         com.startup.project.entities.User user = userService.getByEmail(email);
         if (user == null){
+            logger.info("User with" + email + "not exist!!!");
             throw new UsernameNotFoundException("User not exist!!!");
         }
 

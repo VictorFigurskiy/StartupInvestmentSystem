@@ -16,16 +16,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class WelcomeController {
 
     @GetMapping
-    public String welcome(){
+    public String welcome() {
         return "index";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public String loginPage(Model model){
-        return "login";
+    @RequestMapping(value = "/index", method = RequestMethod.POST)
+    public String mainPage() {
+        return "index";
     }
 
-    @RequestMapping(value = "/logout",method = RequestMethod.POST)
+    @RequestMapping(value = "/404", method = RequestMethod.GET)
+    public String errorPage(Model model) {
+        return "404";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public String logout() {
         // http://localhost:8080/login?logout
         return "redirect:/login?logout";
