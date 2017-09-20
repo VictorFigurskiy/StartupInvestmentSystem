@@ -121,7 +121,7 @@ CREATE TABLE `startups` (
   KEY `FKrm3fyaftmf1ca8hexokhm7xtj` (`ownerUser_id`),
   KEY `FKfl96cy1vv6u0diml6ayvno0um` (`STARTUP_DETAILS_ID`),
   CONSTRAINT `FKfl96cy1vv6u0diml6ayvno0um` FOREIGN KEY (`STARTUP_DETAILS_ID`) REFERENCES `startup_details` (`id`),
-  CONSTRAINT `FKrm3fyaftmf1ca8hexokhm7xtj` FOREIGN KEY (`ownerUser_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `FKrm3fyaftmf1ca8hexokhm7xtj` FOREIGN KEY (`ownerUser_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -187,7 +187,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'abram@email.com','Roman','Abramovich','0000');
+INSERT INTO `users` VALUES (1,'abram@email.com','Roman','Abramovich','0000','+380910000000');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +204,7 @@ CREATE TABLE `users_roles` (
   PRIMARY KEY (`USER_ID`,`ROLE_ID`),
   KEY `FKhrise9pcg12cgpvq5j7vc6wil` (`ROLE_ID`),
   CONSTRAINT `FKhrise9pcg12cgpvq5j7vc6wil` FOREIGN KEY (`ROLE_ID`) REFERENCES `roles` (`id`),
-  CONSTRAINT `FKnbxbjebs333gdgocva79x568p` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`id`)
+  CONSTRAINT `FKnbxbjebs333gdgocva79x568p` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
