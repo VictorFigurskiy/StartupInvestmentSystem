@@ -44,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Start Bootstrap</a>
+            <a class="navbar-brand" href="/"> Main page</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -141,6 +141,7 @@
                 </spring:bind>
             </div>
         </div>
+        <span style="margin-left:22%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="email"></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="inputEmail">Email:</label>
             <div class="col-xs-9">
@@ -149,6 +150,7 @@
                 </spring:bind>
             </div>
         </div>
+        <span style="margin-left:22%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="password" ></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="inputPassword">Пароль:</label>
             <div class="col-xs-9">
@@ -165,6 +167,7 @@
                 </spring:bind>
             </div>
         </div>
+        <span style="margin-left:22%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="phone" ></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="phoneNumber">Телефон:</label>
             <div class="col-xs-9">
@@ -173,14 +176,10 @@
                 </spring:bind>
             </div>
         </div>
-    <div class="form-group">
-        <div class="col-xs-9">
-        <br/><span style="font: 13px Arial; color: red"><form:errors path="password">${Match.userForm.password}</form:errors></span></td></tr>
-        <br/><span style="font: 13px Arial; color: red"><form:errors path="email">${Exist.userForm.user}</form:errors></span>
-        <br/><span style="font: 13px Arial; color: red"><form:errors path="email">${Size.userForm.username}</form:errors></span>
-        <br/><span style="font: 13px Arial; color: red"><form:errors path="password">${Size.userForm.password}</form:errors></span>
-        </div>
-    </div>
+
+
+
+
         <br/>
         <div class="form-group">
             <div class="col-xs-offset-3 col-xs-9">
