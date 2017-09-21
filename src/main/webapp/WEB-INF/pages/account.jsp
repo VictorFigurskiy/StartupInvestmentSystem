@@ -156,7 +156,7 @@
                     <!-- link for startup INFO-->
                     <c:if test="${currentUser.startupList.size()>0}">
                         <c:forEach items="${currentUser.startupList}" var="startup">
-                            <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><li><a href="${startup.id}" style="color: #5e5e5e">${startup.startupName}</a></li></div>
+                            <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><li><a href="${startup.id}" style="color: #333">${startup.startupName}</a></li></div>
                         </c:forEach>
                     </c:if>
                    <!-- link for Adding startup-->
@@ -164,6 +164,26 @@
                 </div>
             </div>
         </div>
+
+        <%--<div class="col-md-4">--%>
+            <%--<div class="panel panel-default">--%>
+                <%--<div class="panel-heading">--%>
+                    <%--<h4>Startups</h4>--%>
+                <%--</div>--%>
+                <%--<div class="panel-body" style="padding: 3px 15px;">--%>
+                    <%--<!-- link for startup INFO-->--%>
+                    <%--<jsp:useBean id="investment" scope="request" type="java.util.List<com.startup.project.entities.Startup>"/>--%>
+                    <%--<c:if test="${not empty investment}">--%>
+                        <%--<c:forEach items="${investment}" var="startup">--%>
+                            <%--<div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><li><a href="${startup.id}" style="color: #333">${startup.startupName}  ${}</a></li></div>--%>
+                        <%--</c:forEach>--%>
+                    <%--</c:if>--%>
+                    <%--<c:if test="${investment.empty}">У вас нет инвестиций!</c:if>--%>
+                    <%--<!-- link for Adding startup-->--%>
+                    <%--<div style="padding: 6px 1px;" align="right"><a href="" style="color: black;">+ Add startup</a></div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
 
     </div>
 

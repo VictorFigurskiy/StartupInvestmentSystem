@@ -78,7 +78,7 @@ footer nav ul li a:hover {
     font-size: 18px;
 }
 
-.header_menu ul li a:focus {
+.header_menu ul li a:hover {
     background-color: rgba(238, 238, 238, 0.37) !important;
 }
 

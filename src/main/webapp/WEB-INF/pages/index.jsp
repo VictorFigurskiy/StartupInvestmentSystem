@@ -103,7 +103,7 @@
             </button>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse header_menu" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse header_menu" id="bs-example-navbar-collapse-1" style="width: auto; float: left;">
             <ul class="nav navbar-nav">
                 <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
                     <li>
@@ -176,7 +176,7 @@
             </ul>
         </div>
         <sec:authorize access="anonymous">
-            <div class="content registerBox" style="display:block;">
+            <div class="content registerBox" style="display:block; margin-top: 20px">
                 <div class="form">
 
                     <c:url value="/j_spring_security_check" var="loginUrl"/>
@@ -194,11 +194,11 @@
         </sec:authorize>
 
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-            <div class="content registerBox login_successfull" style="display:block;">
+            <div class="content registerBox login_successfull" style="display:block; float: left; width: auto;padding-left: 16px; height: auto; margin-top: -4px">
                 <div class="form">
                     <h4>Вы вошли под логином: <sec:authentication property="principal.username"/></h4>
                     <form:form action="/logout" method="post">
-                        <input class="btn btn-default btn-register" type="submit" value="Выйти">
+                        <input class="btn btn-default btn-register" style="float: right; margin-right: 19px;" type="submit" value="Выйти">
                     </form:form>
                 </div>
             </div>
