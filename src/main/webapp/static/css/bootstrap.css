@@ -4187,7 +4187,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .container-top{
-		
+
 }
 
 
@@ -6788,7 +6788,7 @@ button.close {
 }
 .form-control{
 	margin-bottom: 20px;
-	
+
 }
 .registerBox{
 	float: right;
@@ -6799,6 +6799,19 @@ button.close {
   .registerBox{
 		width: 100%;
 	}
+}
+
+#pagingControls {
+  padding-top:15px;
+  font-weight:bold;
+}
+#pagingControls ul {
+  display:inline;
+  padding-left:0.5em;
+}
+#pagingControls li {
+  display:inline;
+  padding:0 0.5em
 }
 
 

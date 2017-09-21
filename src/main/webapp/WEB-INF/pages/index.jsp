@@ -24,14 +24,67 @@
 
     <!-- Custom Fonts -->
     <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="../../static/css/footerStyle.css" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+    <script>
+        var Imtech = {};
+        Imtech.Pager = function () {
+            this.paragraphsPerPage = 3;
+            this.currentPage = 1;
+            this.pagingControlsContainer = '#pagingControls';
+            this.pagingContainerPath = '#content';
+            // число страниц
+            this.numPages = function () {
+                var numPages = 0;
+                //          ('div.z')                               5
+                if (this.paragraphs != null && this.paragraphsPerPage != null) {
+                    // метод ceil - возвращает наименьшее целое
+                    numPages = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
+                }
 
+                return numPages;
+            };
+
+// page - текущая (открытая - номер) страница, то есть в ф-ю передаем номер текущий страницы, контент котор впоследствии выводим
+            this.showPage = function (page) {
+                this.currentPage = page;
+                var html = '';
+// slice - Данный метод не изменяет исходный массив, а просто возвращает его часть.
+// то есть выводит тот контент, котор соответствует текущей странице
+                this.paragraphs.slice((page - 1) * this.paragraphsPerPage,
+                    ((page - 1) * this.paragraphsPerPage) + this.paragraphsPerPage).each(function () {
+                    html += '<div>' + $(this).html() + '</div>';
+                });
+// вставляем контент
+                $(this.pagingContainerPath).html(html);
+//                          #pagingControls,  текущая страница(по умолч. 1), общее число страниц
+                renderControls(this.pagingControlsContainer, this.currentPage, this.numPages());
+            }
+
+// блок с навигацией
+            var renderControls = function (container, currentPage, numPages) {
+// разметка с навигацией
+                var pagingControls = 'Page: <ul>';
+                for (var i = 1; i <= numPages; i++) {
+                    if (i != currentPage) {
+                        pagingControls += '<li><a href="#" onclick="pager.showPage(' + i + '); return false;">' + i + '</a></li>';
+                    } else {
+                        pagingControls += '<li>' + i + '</li>';
+                    }
+                }
+
+                pagingControls += '</ul>';
+
+                $(container).html(pagingControls);
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -50,7 +103,7 @@
             </button>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse header_menu" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
                     <li>
@@ -58,7 +111,7 @@
                     </li>
                 </sec:authorize>
                 <li>
-                    <a href="../../static/about.html">About</a>
+                    <a class="no_padding_left" href="../../static/about.html">About</a>
                 </li>
                 <li>
                     <a href="../../static/services.html">Services</a>
@@ -133,9 +186,7 @@
                         <input id="password" class="form-control" type="password" placeholder="Password"
                                name="j_password">
                         <input class="btn btn-default btn-register" type="submit" value="Войти">
-                        <li style="float: right; font-size: 18px;">Or <a style="color: white;"
-                                                                         href="${contextPath}/registration"> create
-                            account</a></li>
+                        <a class="header_form_create" href="${contextPath}/registration">Create account</a>
                     </form>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -143,7 +194,7 @@
         </sec:authorize>
 
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-            <div class="content registerBox" style="display:block;">
+            <div class="content registerBox login_successfull" style="display:block;">
                 <div class="form">
                     <h4>Вы вошли под логином: <sec:authentication property="principal.username"/></h4>
                     <form:form action="/logout" method="post">
@@ -161,132 +212,148 @@
 <div class="container container-top">
 
     <!-- Marketing Icons Section -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                Welcome to Modern Business
-            </h1>
-        </div>
-
-        <jsp:useBean id="startupList" scope="request" type="java.util.List<com.startup.project.entities.Startup>"/>
-
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> <c:out value="${startupList.get(0).startupName}"/></h4>
-                </div>
-                <div class="panel-body">
-                    <p><c:out value="${startupList.get(0).idea}"/></p>
-                    <p><c:out value="${startupList.get(0).description}"/></p>
-                    <a href="" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
+    <div>
+        <h1 class="page-header">
+            //startup's
+        </h1>
     </div>
+    <jsp:useBean id="startupList" scope="request" type="java.util.List<com.startup.project.entities.Startup>"/>
+
+    <div class="example">
+        <div id="content">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> <c:out value="${startupList.get(0).startupName}"/></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p><c:out value="${startupList.get(0).idea}"/></p>
+                        <a href="" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                            aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                            eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                            aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                            eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                            aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                            eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                            aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                            eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                            aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                            eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                            aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                            eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>НАЗАРРРРРРРРРРРРР, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur
+                            in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet
+                            incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                            aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                            eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!--  и далее  параграфы... -->
+
+        </div>
+        <div id="pagingControls"></div>
+    </div>
+    <script type="text/javascript">
+        var pager = new Imtech.Pager();
+        $(document).ready(function () {
+            // кол-во выводимых параграфов () или div )
+            // на одной странице
+            pager.paragraphsPerPage = 3;
+            // основной контейнер
+            pager.pagingContainer = $('#content');
+            // обозначаем требуемый блок ('div.z')
+            pager.paragraphs = $('div.col-md-4', pager.pagingContainer);
+            pager.showPage(1);
+        });
+    </script>
     <!-- /.row -->
 
     <!-- Portfolio Section -->
@@ -295,10 +362,10 @@
     <!-- Features Section -->
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">Modern Business Features</h2>
+            <h2 class="page-header">About Project</h2>
         </div>
         <div class="col-md-6">
-            <p>The Modern Business template by Start Bootstrap includes:</p>
+            <p>Write some info and create photo:</p>
             <ul>
                 <li><strong>Bootstrap v3.2.0</strong>
                 </li>
@@ -335,17 +402,33 @@
 
     <hr>
 
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
-        </div>
-    </footer>
+
 
 </div>
 <!-- /.container -->
+
+<!-- Footer -->
+<footer class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <nav>
+                <ul>
+                    <li><a href="index.jsp">HOME</a></li>
+                    <li><a href="index.jsp">GALLERY</a></li>
+                    <li><a href="index.jsp">FORUM</a></li>
+                    <li><a href="index.jsp">TUTORIALS</a></li>
+                    <li><a href="/static/about.html">ABOUT US</a></li>
+                    <li><a href="index.jsp">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 footerClass" >
+                <p> TeamOne Website 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <!-- jQuery -->
 <script src="../../static/js/jquery.js"></script>
