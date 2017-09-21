@@ -52,9 +52,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="../../static/account.html">Account</a>
-                </li>
+                <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
+                    <li>
+                        <a href="../../static/account.html">Account</a>
+                    </li>
+                </sec:authorize>
                 <li>
                     <a href="../../static/about.html">About</a>
                 </li>
@@ -131,14 +133,24 @@
                         <input id="password" class="form-control" type="password" placeholder="Password"
                                name="j_password">
                         <input class="btn btn-default btn-register" type="submit" value="Войти">
-                        <li style="float: right; font-size: 18px;">Or <a style="color: white;" href="${contextPath}/registration"> create account</a></li>
+                        <li style="float: right; font-size: 18px;">Or <a style="color: white;"
+                                                                         href="${contextPath}/registration"> create
+                            account</a></li>
                     </form>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
         </sec:authorize>
+
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-        <h2>Вы вошли как: <sec:authentication property="principal.username"/></h2>
+            <div class="content registerBox" style="display:block;">
+                <div class="form">
+                    <h4>Вы вошли под логином: <sec:authentication property="principal.username"/></h4>
+                    <form:form action="/logout" method="post">
+                        <input class="btn btn-default btn-register" type="submit" value="Выйти">
+                    </form:form>
+                </div>
+            </div>
         </sec:authorize>
     </div>
     <!-- /.container -->
@@ -155,15 +167,17 @@
                 Welcome to Modern Business
             </h1>
         </div>
+
+        <jsp:useBean id="startupList" scope="request" type="java.util.List<com.startup.project.entities.Startup>"/>
+
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                    <h4><i class="fa fa-fw fa-check"></i> <c:out value="${startupList.get(0).startupName}"/></h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
+                    <p><c:out value="${startupList.get(0).idea}"/></p>
+                    <p><c:out value="${startupList.get(0).description}"/></p>
                     <a href="" class="btn btn-default">Learn More</a>
                 </div>
             </div>
