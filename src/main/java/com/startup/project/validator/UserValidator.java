@@ -36,7 +36,7 @@ public class UserValidator implements Validator {
         if (user.getEmail().length() < 8 || user.getEmail().length() > 32) {
             errors.rejectValue("email", "Size.userForm.username", "Your email must have length between 8-32 characters!");
         }
-        if (user.getPassword().length() < 4 || user.getPassword().length() > 10) {
+        if (user.getPassword().length() < 4 || user.getPassword().length() > 30) {
             errors.rejectValue("password", "Size.userForm.password", "Your password must have length between 4-10 characters!");
         }
         if (user.getPhone().length()<13) {

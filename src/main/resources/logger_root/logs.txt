@@ -231,3 +231,60 @@
 2017-09-21 15:19:42 INFO  User:31 - User with email: abram@email.com found!
 2017-09-21 15:19:42 INFO  Investor:62 - Investor saved successfully!
 2017-09-21 15:19:42 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:37:10 WARN  AnnotationConfigApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'startupDaoImpl' defined in file [D:\JAVA\GoIT Study\JavaCoreGoIT_Homeworks_AndPRojects\StartupInvestmentSystem\target\classes\com\startup\project\dao\Impl\StartupDaoImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.startup.project.dao.Impl.StartupDaoImpl]: Constructor threw exception; nested exception is org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread
+2017-09-21 19:42:51 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:42:51 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:42:51 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:42:52 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 19:43:03 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:43:03 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:43:03 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:43:03 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 19:43:11 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:43:11 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:43:11 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:43:11 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 19:43:21 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:43:21 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:43:21 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:43:21 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 19:43:30 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:43:30 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:43:30 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:43:30 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 19:48:11 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:48:11 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:48:11 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:48:11 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-09-21 19:48:44 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:48:44 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:48:44 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:48:44 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-09-21 19:49:17 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:49:17 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:49:17 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:49:17 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-09-21 19:51:46 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 19:51:46 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:51:46 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 19:51:46 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-09-21 20:41:56 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 20:41:57 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:41:57 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 20:41:57 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:43:44 INFO  Startup:39 - Startup with id: 8 found!
+2017-09-21 20:43:44 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:43:44 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 20:43:44 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:53:04 INFO  Startup:39 - Startup with id: 8 found!
+2017-09-21 20:53:05 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:53:05 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:53:05 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-09-21 20:58:08 INFO  Startup:39 - Startup with id: 8 found!
+2017-09-21 20:58:08 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:58:08 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:58:08 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-09-21 20:58:42 INFO  Startup:39 - Startup with id: 8 found!
+2017-09-21 20:58:42 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:58:42 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 20:58:42 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead

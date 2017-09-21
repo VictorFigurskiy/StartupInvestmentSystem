@@ -16,7 +16,7 @@ public class Investor {
     private Integer Id;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "USER_ID")
     private User investorUser;
 
     @Column(name = "INVESTMENTS")

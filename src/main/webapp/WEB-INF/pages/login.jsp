@@ -52,7 +52,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.jsp">Start Bootstrap</a>
+            <a class="navbar-brand" href="/">На главную</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -137,13 +137,13 @@
         <div class="form-group">
             <label class="control-label col-xs-3" for="email">Введите ваш Email:</label>
             <div class="col-xs-9">
-                <input type="email" name="j_username" class="form-control" id="email" placeholder="Email address" required autofocus>
+                <input type="email" name="j_username" class="form-control" maxlength="32" id="email" placeholder="Email address" required autofocus>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-xs-3" for="password">Введите ваш пароль:</label>
             <div class="col-xs-9">
-                <input type="password" name="j_password" class="form-control" id="password" placeholder="Password" required autofocus>
+                <input type="password" name="j_password" class="form-control" maxlength="50" id="password" placeholder="Password" required autofocus>
             </div>
         </div>
 

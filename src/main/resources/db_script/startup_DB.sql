@@ -27,9 +27,11 @@ DROP TABLE IF EXISTS `investors`;
 CREATE TABLE `investors` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `INVESTMENTS` decimal(19,2) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id`),
-  CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+  KEY `FKdyed3bu0juuv1p50u4eebk550` (`USER_ID`),
+  CONSTRAINT `FKdyed3bu0juuv1p50u4eebk550` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +40,7 @@ CREATE TABLE `investors` (
 
 LOCK TABLES `investors` WRITE;
 /*!40000 ALTER TABLE `investors` DISABLE KEYS */;
-INSERT INTO `investors` VALUES (10,10000.00);
+INSERT INTO `investors` VALUES (1,10000.00,10),(2,10000.00,10);
 /*!40000 ALTER TABLE `investors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +87,7 @@ CREATE TABLE `startup_details` (
   `PROPERTY` varchar(500) DEFAULT NULL,
   `TYPE_OF_PROPERTY` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +96,7 @@ CREATE TABLE `startup_details` (
 
 LOCK TABLES `startup_details` WRITE;
 /*!40000 ALTER TABLE `startup_details` DISABLE KEYS */;
-INSERT INTO `startup_details` VALUES (7,'Sales','Internet sellers','idea for startup','120 000 $','45 000 $','Many competitors on market','office + car','private business');
+INSERT INTO `startup_details` VALUES (7,'Sales','Internet sellers','idea for startup','120 000 $','45 000 $','Many competitors on market','office + car','private business'),(8,'Sales','Internet sellers','idea for startup','120 000 $','45 000 $','Many competitors on market','office + car','private business'),(9,'Sales','Internet sellers','idea for startup','120 000 $','45 000 $','Many competitors on market','office + car','private business'),(10,'Sales','Internet sellers','idea for startup','120 000 $','45 000 $','Many competitors on market','office + car','private business'),(11,'Sales','Internet sellers','idea for startup','120 000 $','45 000 $','Many competitors on market','office + car','private business'),(12,'Sales','Internet sellers','idea for startup','120 000 $','45 000 $','Many competitors on market','office + car','private business');
 /*!40000 ALTER TABLE `startup_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +124,7 @@ CREATE TABLE `startups` (
   KEY `FKrm3fyaftmf1ca8hexokhm7xtj` (`ownerUser_id`),
   CONSTRAINT `FKfl96cy1vv6u0diml6ayvno0um` FOREIGN KEY (`STARTUP_DETAILS_ID`) REFERENCES `startup_details` (`id`),
   CONSTRAINT `FKrm3fyaftmf1ca8hexokhm7xtj` FOREIGN KEY (`ownerUser_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +133,7 @@ CREATE TABLE `startups` (
 
 LOCK TABLES `startups` WRITE;
 /*!40000 ALTER TABLE `startups` DISABLE KEYS */;
-INSERT INTO `startups` VALUES (7,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'Something New','2017-09-21 12:17:23',10,7);
+INSERT INTO `startups` VALUES (7,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'Something New','2017-09-21 12:17:23',10,7),(8,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project2','2017-09-21 16:42:52',10,8),(9,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project3','2017-09-21 16:43:03',10,9),(10,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project4','2017-09-21 16:43:11',10,10),(11,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project5','2017-09-21 16:43:21',10,11),(12,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project6','2017-09-21 16:43:30',10,12);
 /*!40000 ALTER TABLE `startups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,7 +160,7 @@ CREATE TABLE `startups_investors` (
 
 LOCK TABLES `startups_investors` WRITE;
 /*!40000 ALTER TABLE `startups_investors` DISABLE KEYS */;
-INSERT INTO `startups_investors` VALUES (7,10);
+INSERT INTO `startups_investors` VALUES (7,1),(8,2);
 /*!40000 ALTER TABLE `startups_investors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +180,7 @@ CREATE TABLE `users` (
   `PHONE` varchar(14) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_ku29j688xlci1ksopvjfgpswp` (`EMAIL`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,7 +189,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (10,'abram@email.com','Roman','Abramovich','0000','+800000000000');
+INSERT INTO `users` VALUES (10,'abram@email.com','Roman','Abramovich','0000','+800000000000'),(11,'victor@gmail.com','Фигурский','Виктор','1234','+380250252135');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,7 +216,7 @@ CREATE TABLE `users_roles` (
 
 LOCK TABLES `users_roles` WRITE;
 /*!40000 ALTER TABLE `users_roles` DISABLE KEYS */;
-INSERT INTO `users_roles` VALUES (10,1);
+INSERT INTO `users_roles` VALUES (10,1),(11,1);
 /*!40000 ALTER TABLE `users_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -227,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-21 15:20:29
+-- Dump completed on 2017-09-21 20:50:45
