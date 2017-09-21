@@ -23,16 +23,16 @@ public class User {
     private String password;
     @Transient
     private String confirmPassword;
-    @Column(name = "PHONE",length = 14)
+    @Column(name = "PHONE", length = 14)
     private String phone;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinTable(name = "users_roles",
-        joinColumns = @JoinColumn(name = "USER_ID"),
-        inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
+            joinColumns = @JoinColumn(name = "USER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "ROLE_ID"))
     private Set<UserRole> userRoles;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ownerUser", cascade = CascadeType.REFRESH)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ownerUser", cascade = {CascadeType.REMOVE, CascadeType.REFRESH})
     private List<Startup> startupList;
 
 

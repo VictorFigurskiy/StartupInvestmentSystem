@@ -2,6 +2,7 @@ package com.startup.project.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * Created by Sonik on 13.09.2017.
@@ -9,29 +10,24 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "investors")
 public class Investor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column(name = "INVESTOR_USER_ID", length = 20)
-    private Integer investorUserId;
+    private Integer Id;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "id")
+    private User investorUser;
+
     @Column(name = "INVESTMENTS")
     private BigDecimal investments;
 
-    public Integer getId() {
-        return id;
-    }
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @JoinTable(name = "startups_investors",
+            joinColumns = @JoinColumn(name = "INVESTOR_ID"),
+            inverseJoinColumns = @JoinColumn(name = "STARTUP_ID"))
+    private List<Startup> startupList;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getInvestorUserId() {
-        return investorUserId;
-    }
-
-    public void setInvestorUserId(Integer investorUserId) {
-        this.investorUserId = investorUserId;
-    }
 
     public BigDecimal getInvestments() {
         return investments;
@@ -41,11 +37,34 @@ public class Investor {
         this.investments = investments;
     }
 
+    public List<Startup> getStartupList() {
+        return startupList;
+    }
+
+    public void setStartupList(List<Startup> startupList) {
+        this.startupList = startupList;
+    }
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
+    public User getInvestorUser() {
+        return investorUser;
+    }
+
+    public void setInvestorUser(User investorUser) {
+        this.investorUser = investorUser;
+    }
+
     @Override
     public String toString() {
         return "Investor{" +
-                "id=" + id +
-                ", investorUserId=" + investorUserId +
+                "Id=" + Id +
                 ", investments=" + investments +
                 '}';
     }

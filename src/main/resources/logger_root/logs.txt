@@ -80,3 +80,154 @@
 2017-09-19 17:38:32 WARN  User:41 - User with id: 0 not found!
 2017-09-19 17:39:20 WARN  User:31 - User with email: vzxnot found!
 2017-09-19 17:42:05 WARN  User:31 - User with email: vzxnot found!
+2017-09-21 13:08:50 INFO  UserRole:62 - UserRole saved successfully!
+2017-09-21 13:08:50 INFO  UserRole:39 - UserRole with id: 1 found!
+2017-09-21 13:08:50 INFO  User:62 - User saved successfully!
+2017-09-21 13:12:48 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
+2017-09-21 13:12:48 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
+2017-09-21 13:14:08 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
+2017-09-21 13:14:08 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
+2017-09-21 13:14:46 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
+2017-09-21 13:14:46 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
+2017-09-21 13:28:02 INFO  UserRole:62 - UserRole saved successfully!
+2017-09-21 13:28:02 INFO  UserRole:39 - UserRole with id: 1 found!
+2017-09-21 13:28:02 INFO  User:62 - User saved successfully!
+2017-09-21 13:28:02 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 13:57:39 WARN  UserRole:41 - UserRole with id: 1 not found!
+2017-09-21 13:57:39 INFO  User:62 - User saved successfully!
+2017-09-21 13:57:39 WARN  SqlExceptionHelper:129 - SQL Error: 1048, SQLState: 23000
+2017-09-21 13:57:39 ERROR SqlExceptionHelper:131 - Column 'ROLE_ID' cannot be null
+2017-09-21 13:57:39 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2017-09-21 14:04:42 WARN  UserRole:41 - UserRole with id: 1 not found!
+2017-09-21 14:04:42 INFO  User:62 - User saved successfully!
+2017-09-21 14:04:42 WARN  SqlExceptionHelper:129 - SQL Error: 1048, SQLState: 23000
+2017-09-21 14:04:42 ERROR SqlExceptionHelper:131 - Column 'ROLE_ID' cannot be null
+2017-09-21 14:04:42 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2017-09-21 14:08:03 INFO  UserRole:62 - UserRole saved successfully!
+2017-09-21 14:08:03 WARN  UserRole:41 - UserRole with id: 1 not found!
+2017-09-21 14:08:03 INFO  User:62 - User saved successfully!
+2017-09-21 14:08:03 WARN  SqlExceptionHelper:129 - SQL Error: 1048, SQLState: 23000
+2017-09-21 14:08:03 ERROR SqlExceptionHelper:131 - Column 'ROLE_ID' cannot be null
+2017-09-21 14:08:03 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2017-09-21 14:08:49 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
+2017-09-21 14:08:49 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
+2017-09-21 14:13:18 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
+2017-09-21 14:13:18 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
+2017-09-21 14:14:09 INFO  UserRole:62 - UserRole saved successfully!
+2017-09-21 14:14:09 INFO  UserRole:62 - UserRole saved successfully!
+2017-09-21 14:14:09 INFO  UserRole:62 - UserRole saved successfully!
+2017-09-21 14:14:10 WARN  User:33 - User with email: abram@email.comnot found!
+2017-09-21 14:15:44 INFO  UserRole:39 - UserRole with id: 1 found!
+2017-09-21 14:15:44 INFO  User:62 - User saved successfully!
+2017-09-21 14:15:45 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:15:45 WARN  SqlExceptionHelper:129 - SQL Error: 1452, SQLState: 23000
+2017-09-21 14:15:45 ERROR SqlExceptionHelper:131 - Cannot add or update a child row: a foreign key constraint fails (`startups_db`.`investors`, CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`))
+2017-09-21 14:17:30 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:17:30 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 14:26:21 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:26:21 WARN  SqlExceptionHelper:129 - SQL Error: 1452, SQLState: 23000
+2017-09-21 14:26:21 ERROR SqlExceptionHelper:131 - Cannot add or update a child row: a foreign key constraint fails (`startups_db`.`investors`, CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`))
+2017-09-21 14:31:01 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:31:01 INFO  User:39 - User with id: 5 found!
+2017-09-21 14:31:01 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 14:31:01 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:40:31 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:40:31 INFO  User:39 - User with id: 5 found!
+2017-09-21 14:40:31 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:40:31 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:40:35 WARN  LoadContexts:98 - HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@5ab7ac02<rs=org.apache.commons.dbcp.DelegatingResultSet@b94703b>
+2017-09-21 14:40:35 WARN  CollectionLoadContext:377 - HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [1] entries
+2017-09-21 14:41:48 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:41:48 INFO  User:39 - User with id: 5 found!
+2017-09-21 14:41:48 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:41:48 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:45:09 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:45:09 INFO  User:39 - User with id: 5 found!
+2017-09-21 14:45:09 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:45:09 INFO  Investor:39 - Investor with id: 5 found!
+2017-09-21 14:45:09 INFO  Investor:74 - Investor deleted successfully!
+2017-09-21 14:45:51 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:45:51 INFO  User:39 - User with id: 5 found!
+2017-09-21 14:45:51 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 14:45:52 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:47:46 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:47:46 INFO  User:39 - User with id: 5 found!
+2017-09-21 14:47:46 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:47:46 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:47:46 INFO  User:74 - User deleted successfully!
+2017-09-21 14:47:46 WARN  SqlExceptionHelper:129 - SQL Error: 1451, SQLState: 23000
+2017-09-21 14:47:46 ERROR SqlExceptionHelper:131 - Cannot delete or update a parent row: a foreign key constraint fails (`startups_db`.`investors`, CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`))
+2017-09-21 14:47:46 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2017-09-21 14:52:40 INFO  Startup:39 - Startup with id: 2 found!
+2017-09-21 14:52:40 INFO  User:39 - User with id: 5 found!
+2017-09-21 14:52:40 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:52:40 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:52:40 INFO  User:74 - User deleted successfully!
+2017-09-21 14:58:49 INFO  UserRole:39 - UserRole with id: 1 found!
+2017-09-21 14:58:49 INFO  User:62 - User saved successfully!
+2017-09-21 14:58:49 WARN  Startup:41 - Startup with id: 2 not found!
+2017-09-21 14:58:49 WARN  User:41 - User with id: 5 not found!
+2017-09-21 14:58:49 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:58:49 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 14:58:49 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:58:49 INFO  User:74 - User deleted successfully!
+2017-09-21 14:59:33 INFO  UserRole:39 - UserRole with id: 1 found!
+2017-09-21 14:59:33 INFO  User:62 - User saved successfully!
+2017-09-21 14:59:33 WARN  Startup:41 - Startup with id: 2 not found!
+2017-09-21 14:59:33 WARN  User:41 - User with id: 5 not found!
+2017-09-21 14:59:34 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 14:59:34 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 14:59:53 WARN  Startup:41 - Startup with id: 2 not found!
+2017-09-21 14:59:53 WARN  User:41 - User with id: 5 not found!
+2017-09-21 14:59:53 WARN  SqlExceptionHelper:129 - SQL Error: 1452, SQLState: 23000
+2017-09-21 14:59:53 ERROR SqlExceptionHelper:131 - Cannot add or update a child row: a foreign key constraint fails (`startups_db`.`investors`, CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`) ON DELETE CASCADE)
+2017-09-21 15:01:01 WARN  Startup:41 - Startup with id: 2 not found!
+2017-09-21 15:01:01 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:01:01 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 15:01:01 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:03:05 WARN  Startup:41 - Startup with id: 2 not found!
+2017-09-21 15:03:05 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:03:05 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:03:05 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:03:05 INFO  User:74 - User deleted successfully!
+2017-09-21 15:06:35 INFO  UserRole:39 - UserRole with id: 1 found!
+2017-09-21 15:06:35 INFO  User:62 - User saved successfully!
+2017-09-21 15:06:35 WARN  Startup:41 - Startup with id: 2 not found!
+2017-09-21 15:06:35 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:06:35 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:06:35 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 15:07:24 INFO  Startup:39 - Startup with id: 5 found!
+2017-09-21 15:07:25 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:07:25 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 15:07:25 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:08:03 INFO  Startup:39 - Startup with id: 5 found!
+2017-09-21 15:08:03 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:08:03 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:08:03 INFO  Startup:39 - Startup with id: 5 found!
+2017-09-21 15:08:03 INFO  Startup:74 - Startup deleted successfully!
+2017-09-21 15:11:05 INFO  UserRole:39 - UserRole with id: 1 found!
+2017-09-21 15:11:05 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
+2017-09-21 15:11:05 ERROR SqlExceptionHelper:131 - Duplicate entry 'abram@email.com' for key 'UK_ku29j688xlci1ksopvjfgpswp'
+2017-09-21 15:11:24 WARN  Startup:41 - Startup with id: 5 not found!
+2017-09-21 15:11:24 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:11:24 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:11:24 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 15:11:51 INFO  Startup:39 - Startup with id: 6 found!
+2017-09-21 15:11:51 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:11:52 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 15:11:52 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:13:00 INFO  Startup:39 - Startup with id: 6 found!
+2017-09-21 15:13:01 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:13:01 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:13:01 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:13:01 INFO  User:74 - User deleted successfully!
+2017-09-21 15:17:23 INFO  UserRole:39 - UserRole with id: 1 found!
+2017-09-21 15:17:23 INFO  User:62 - User saved successfully!
+2017-09-21 15:17:23 WARN  Startup:41 - Startup with id: 6 not found!
+2017-09-21 15:17:23 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:17:23 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:17:23 INFO  Startup:62 - Startup saved successfully!
+2017-09-21 15:19:42 INFO  Startup:39 - Startup with id: 7 found!
+2017-09-21 15:19:42 INFO  User:31 - User with email: abram@email.com found!
+2017-09-21 15:19:42 INFO  Investor:62 - Investor saved successfully!
+2017-09-21 15:19:42 INFO  User:31 - User with email: abram@email.com found!
