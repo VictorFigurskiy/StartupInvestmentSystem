@@ -54,7 +54,7 @@
             <ul class="nav navbar-nav">
                 <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
                     <li>
-                        <a href="../../static/account.html">Account</a>
+                        <a href="${contextPath}/account">Account</a>
                     </li>
                 </sec:authorize>
                 <li>

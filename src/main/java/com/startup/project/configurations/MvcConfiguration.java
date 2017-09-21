@@ -24,11 +24,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/static/**").addResourceLocations("/static/");
     }
 
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addRedirectViewController("/","/registration");
-    }
-
     @Bean
     public InternalResourceViewResolver viewResolver(){
     InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();

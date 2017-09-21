@@ -46,8 +46,7 @@ public class WelcomeController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public String logout() {
-        // http://localhost:8080/login?logout
-        return "redirect:/login?logout";
+        return "redirect:/";
     }
 
 }

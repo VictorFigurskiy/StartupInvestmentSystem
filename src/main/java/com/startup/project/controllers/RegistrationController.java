@@ -39,6 +39,6 @@ public class RegistrationController {
         userValidator.validate(user,bindingResult);
         if (bindingResult.hasErrors()) return "register";
         userService.save(user);
-        return "index";
+        return "redirect:/";
     }
 }

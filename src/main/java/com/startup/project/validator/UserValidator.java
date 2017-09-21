@@ -28,7 +28,7 @@ public class UserValidator implements Validator {
         User dbUser = userService.getByEmail(user.getEmail());
 
         if (!user.getPassword().equals(user.getConfirmPassword())) {
-            errors.rejectValue("password", "Match.userForm.password", "Passwords don't match, try again!");
+            errors.rejectValue("confirmPassword", "Match.userForm.password", "Passwords don't match, try again!");
         }
         if (dbUser != null) {
             errors.rejectValue("email", "Exist.userForm.user", "User with email: "+user.getEmail() +" already exist!");

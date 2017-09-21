@@ -16,7 +16,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/", "/static/**", "/login", "/registration").permitAll()
-                .antMatchers("/index").hasRole("USER")
+                .antMatchers("/account/**").hasAnyRole("USER", "OWNER")
                 .antMatchers("/jpeg/**").authenticated()
                 .anyRequest().denyAll()
              .and()
@@ -32,8 +32,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
              .and()
                 .logout()
                 .permitAll()
-//                .logoutUrl()
-//                .logoutSuccessUrl()
+//               // указываем URL логаута
+                .logoutUrl("/logout")
+                // указываем URL при удачном логауте
+                .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
              .and()
                 .csrf().disable();
