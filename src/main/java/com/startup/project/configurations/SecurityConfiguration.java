@@ -32,9 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
              .and()
                 .logout()
                 .permitAll()
-//               // указываем URL логаута
                 .logoutUrl("/logout")
-                // указываем URL при удачном логауте
                 .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
              .and()

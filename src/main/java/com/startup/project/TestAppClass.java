@@ -68,7 +68,7 @@ public class TestAppClass {
 //            userService.save(user);
 ////
 ////
-            Startup startup1 = startupService.getById(7);
+            Startup startup1 = startupService.getById(8);
             ArrayList<Startup> startups = new ArrayList<>();
             startups.add(startup1);
 ////
@@ -77,7 +77,7 @@ public class TestAppClass {
             investor.setStartupList(startups);
             investor.setInvestorUser(userService.getByEmail("abram@email.com"));
 
-            investorService.save(investor);
+//            investorService.save(investor);
 //
             List<Investor> investorList = new ArrayList<>();
             investorList.add(investor);
@@ -112,6 +112,11 @@ public class TestAppClass {
             startup.setOwnerUser(userService.getByEmail("abram@email.com"));
 //
 //            startupService.save(startup);
+
+            List<Startup> startupOnPage = startupService.getStartupOnPage(1, 2);
+            for (Startup startup2 : startupOnPage) {
+                System.out.println(startup2);
+            }
 
 //            userService.delete(userService.getByEmail("abram@email.com"));
 

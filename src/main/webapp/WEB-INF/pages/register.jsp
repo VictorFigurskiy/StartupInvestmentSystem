@@ -126,18 +126,18 @@
     <h2>Регистрация</h2>
     <form:form action="/registration" method="POST" modelAttribute="userFormRegist" class="form-horizontal">
         <div class="form-group">
-            <label class="control-label col-xs-3" for="lastName">Фамилия:</label>
+            <label class="control-label col-xs-3" for="firstName">Имя:</label>
             <div class="col-xs-9">
-                <spring:bind path="lastName">
-                    <form:input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" path="lastName"/>
+                <spring:bind path="firstName">
+                    <form:input type="text" class="form-control" id="firstName" placeholder="Введите имя" path="firstName"/>
                 </spring:bind>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-xs-3" for="firstName">Имя:</label>
+            <label class="control-label col-xs-3" for="lastName">Фамилия:</label>
             <div class="col-xs-9">
-                <spring:bind path="firstName">
-                <form:input type="text" class="form-control" id="firstName" placeholder="Введите имя" path="firstName"/>
+                <spring:bind path="lastName">
+                    <form:input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" path="lastName"/>
                 </spring:bind>
             </div>
         </div>

@@ -22,6 +22,11 @@ public class StartupService {
     }
 
     @Transactional(readOnly = true)
+    public List<Startup> getStartupOnPage(int page, int size){
+        return dao.getStartupOnPage(page,size);
+    }
+
+    @Transactional(readOnly = true)
     public Startup getById(Integer id) {
         return dao.getById(Startup.class, id);
     }
