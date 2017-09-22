@@ -1420,7 +1420,7 @@ img {
 }
 
 hr {
-    margin-top: 20px;
+    margin-top: 250px;
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid #eee
@@ -1464,7 +1464,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 10px
 }
 

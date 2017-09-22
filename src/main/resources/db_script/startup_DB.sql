@@ -56,7 +56,7 @@ CREATE TABLE `roles` (
   `ROLE_TYPE` varchar(15) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_t4udapikfkh2xv77a3qe8hdrm` (`ROLE_TYPE`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,12 +110,13 @@ DROP TABLE IF EXISTS `startups`;
 CREATE TABLE `startups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `COUNTRY` varchar(30) DEFAULT NULL,
+  `STARTUP_NAME` varchar(150) DEFAULT NULL,
   `DESCRIPTION` varchar(1000) DEFAULT NULL,
+  `IMAGE_LINK` varchar(500) DEFAULT NULL,
   `IDEA` varchar(1000) DEFAULT NULL,
   `INDUSTRY` varchar(30) DEFAULT NULL,
   `PROJECT_STAGE` varchar(50) DEFAULT NULL,
   `STARTUP_COST` decimal(19,2) DEFAULT NULL,
-  `STARTUP_NAME` varchar(150) DEFAULT NULL,
   `TIME` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `ownerUser_id` int(11) DEFAULT NULL,
   `STARTUP_DETAILS_ID` int(11) DEFAULT NULL,
@@ -133,7 +134,7 @@ CREATE TABLE `startups` (
 
 LOCK TABLES `startups` WRITE;
 /*!40000 ALTER TABLE `startups` DISABLE KEYS */;
-INSERT INTO `startups` VALUES (7,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'Something New','2017-09-21 12:17:23',10,7),(8,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project2','2017-09-21 16:42:52',10,8),(9,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project3','2017-09-21 16:43:03',10,9),(10,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project4','2017-09-21 16:43:11',10,10),(11,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project5','2017-09-21 16:43:21',10,11),(12,'us','new Startup','todoSomething','IT','Only on paper',100000.00,'project6','2017-09-21 16:43:30',10,12);
+INSERT INTO `startups` VALUES (7,'us','Брелок Hideez Key 2','Hideez Key 2 представляет собой оригинальный цифровой гаджет, исполненный в виде ключа. Созданием гаджета занималась молодая украинская команда разработчиков. Им удалось создать по-настоящему универсальное устройство, которое заслуживает внимания любителей утилитарных технических инноваций: брелок Hideez Key 2 имеет множество полезных функций, во многом упрощающие самые простые бытовые процессы, с которыми предстоит сталкиваться владельцу.','https://marketer.ua/wp-content/uploads/2017/03/Hideez-Key-2.jpg','todoSomething','IT','Only on paper',100000.00,'2017-09-21 12:17:23',10,7),(8,'us','Беспроводная зарядная станция Technovator','Беспроводная зарядная станция Technovator станет хорошим выбором для почитателей техники Apple: с ее помощью можно одновременно зарядить до четырех смартфонов. Во время подзарядки гаджеты помещаются в специальные чехлы, которые поставляются в комплекте. Интересной особенностью устройства является возможность зарядки смартфонов даже на расстоянии. Достаточно включить Technovator и расположить ее в радиусе пяти метров от своего телефона. Уже были предприняты попытки создать подобную технику, но лишь создателям этого гаджета удалось достичь такой внушительной дальности работы гаджета.','https://marketer.ua/wp-content/uploads/2017/03/Technovator.jpg','todoSomething','IT','Only on paper',100000.00,'2017-09-21 16:42:52',10,8),(9,'us','Приспособление для контроля сновидений Luciding','Выставка СES 2017 представила любителям оригинальных девайсов множество остроумных технических новинок, среди которых особенное внимание привлекла новая, усовершенствованная модель устройства Luciding. Этот гаджет выглядит как повязка на голову, которая оснащена множеством датчиков и электродов. Компания, которая занимается разработкой такого устройства позиционируют его как специальный девайс, помогающий контролировать сновидения своего владельца. Этот стартап в Украине уже привлек внимание многих потенциальных покупателей.','https://marketer.ua/wp-content/uploads/2017/03/Luciding.jpg','todoSomething','IT','Only on paper',100000.00,'2017-09-21 16:43:03',10,9),(10,'us','Солнечные жалюзи SolarGaps','Достаточно интересным гаджетом, выпущенным в 2017 году, стали интересные жалюзи, которые способны превратить солнечные лучи в электроэнергию. Это стало возможным благодаря специальным фотоэлектрическим конструкциям, которые являются одними из базовых элементов устройства. Если разместить жалюзи внутри помещения, за один месяц работы они смогут выработать как минимум 100 кВт электроэнергии. При расположении в наружной части дома они смогут произвести примерно в 1,5 раза больше электричества. Оригинальная, полезная и экологичная идея обеспечила SolarGaps несомненное попадание в топ стартапов Украины.','https://marketer.ua/wp-content/uploads/2017/03/SolarGaps.jpg','todoSomething','IT','Only on paper',100000.00,'2017-09-21 16:43:11',10,10),(11,'us','VR-аттракцион от MMOne Project и VR-перчатка Raccoon.world','Вы заинтересованы гаджетами, которые помогают перенестись в виртуальную реальность? Вполне возможно, что скоро вы не ограничитесь VR-очками. Чтобы вы могли в полной мере ощутить себя в ином измерении, компания-разработчик MMOne Project создала специальное движущееся кресло, которое помогает усилить физические ощущения пользователя VR-очками или специальными шлемами. VR-аттракцион способен разворачивать человека под углом до 360 градусов, кресло способно двигаться в абсолютно любом направлении.','https://marketer.ua/wp-content/uploads/2017/03/VR-attraktsion.jpg','todoSomething','IT','Only on paper',100000.00,'2017-09-21 16:43:21',10,11),(12,'us','Мультивизор Wider','Мультимедийный комплекс Wider является многофункциональным устройством, которое успешно совмещает функции персонального компьютера, проектора и панорамного монитора. Этот девайс позволяет перевести на большой экран разнообразные файлы со смартфона или планшета. Для оптимизации пользования этим аппаратом его оснастили мощными динамиками и ИБП. Пользование аппаратом элементарное, в нем сможет разобраться даже неопытный пользователь.','https://marketer.ua/wp-content/uploads/2017/03/Multivisor.jpg','todoSomething','IT','Only on paper',100000.00,'2017-09-21 16:43:30',10,12);
 /*!40000 ALTER TABLE `startups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,4 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-21 20:50:45
+-- Dump completed on 2017-09-22 18:36:18

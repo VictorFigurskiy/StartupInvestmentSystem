@@ -127,6 +127,7 @@
     <!-- /.container -->
 </nav>
 
+<jsp:useBean id="errorLogin" scope="request" type="java.lang.String"/>
 <!-- Page Content -->
 <div class="container">
 
@@ -140,6 +141,9 @@
                 <input type="email" name="j_username" class="form-control" maxlength="32" id="email" placeholder="Email address" required autofocus>
             </div>
         </div>
+        <c:if test="${!empty errorLogin}">
+            <span style="margin-left:14%; font: 15px Arial; color: red; position: absolute; margin-top: 43px"><c:out value="${errorLogin.toString()}"/></span>
+        </c:if>
         <div class="form-group">
             <label class="control-label col-xs-3" for="password">Введите ваш пароль:</label>
             <div class="col-xs-9">

@@ -186,13 +186,12 @@
                         <input id="password" class="form-control" type="password" placeholder="Password"
                                name="j_password">
                         <input class="btn btn-default btn-register" type="submit" value="Войти">
-                        <a class="header_form_create" href="${contextPath}/registration">Create account</a>
+                        <a class="header_form_create" href="${contextPath}/registration">Зарегистрироватся</a>
                     </form>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
         </sec:authorize>
-
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
             <div class="content registerBox login_successfull" style="display:block; float: left; width: auto;padding-left: 16px; height: auto; margin-top: -4px">
                 <div class="form">
@@ -214,24 +213,31 @@
     <!-- Marketing Icons Section -->
     <div>
         <h1 class="page-header">
-            //startup's
+            Наши стартапы:
         </h1>
     </div>
+
     <jsp:useBean id="startupList" scope="request" type="java.util.List<com.startup.project.entities.Startup>"/>
 
     <div class="example">
         <div id="content">
+            <c:forEach items="${startupList}" var="startup">
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> <c:out value="${startupList.get(0).startupName}"/></h4>
+                        <h4><i class="fa fa-fw fa-check"></i> <c:out value="${startup.startupName}"/></h4>
                     </div>
                     <div class="panel-body">
-                        <p><c:out value="${startupList.get(0).idea}"/></p>
-                        <a href="" class="btn btn-default">Learn More</a>
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="${startup.imageLink}" alt="">
+                        </div>
+                        <p><c:out value="${startup.description}"/></p>
+                        <input hidden name="id" value="${startup.id}">
+                        <a href="" class="btn btn-default">Узнать больше</a>
                     </div>
                 </div>
             </div>
+            </c:forEach>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -362,43 +368,130 @@
     <!-- Features Section -->
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">About Project</h2>
+            <h2 class="page-header">Немного о нас!</h2>
         </div>
         <div class="col-md-6">
-            <p>Write some info and create photo:</p>
+            <p>Мы универсальная бизнес-платформа по поиску инвестиций в стартап проекты. Наше предназначение - помочь Стартаперу найти инвестиции в свой проект,
+                а банкам и инвесторам - принять активное участие в развитии инновационных разработок, получать дивиденды от вложенных денежных средств.
+            </p>
+            <br>
             <ul>
-                <li><strong>Bootstrap v3.2.0</strong>
-                </li>
-                <li>jQuery v1.11.0</li>
-                <li>Font Awesome v4.1.0</li>
-                <li>Working PHP contact form with validation</li>
-                <li>Unstyled page elements for easy customization</li>
-                <li>17 HTML pages</li>
+                <strong>Нас благодарят за:</strong>
+                <br>
+                <br>
+                <li>экономию времени (временные затраты на поиск инвестора (партнера) сокращаются на десятки часов еженедельно)</li>
+                <li>эмпатию (вы не платите агентам, посредникам за поиск нужного вам человека) мы знаем, насколько сложен деловой мир</li>
+                <li>существование (Вот оно – главное счастье человека: быть нужным.)</li>
+                <li>self-Pr (каждый человек имеет право быть услышанным)</li>
             </ul>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id
-                reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia
-                dolorum ducimus unde.</p>
+            <p>
+                Здесь мы не просто ищем инвестиции и рентабельные стартап-идеи, мы строим фундамент своего будущего.
+            </p>
         </div>
         <div class="col-md-6">
-            <img class="img-responsive" src="http://placehold.it/700x450" alt="">
+            <img class="img-responsive" src="${contextPath}/static/image/lamp-700x450.jpg" alt="">
         </div>
     </div>
     <!-- /.row -->
 
     <hr>
 
-    <!-- Call to Action Section -->
-    <div class="well">
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
         <div class="row">
-            <div class="col-md-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum
-                    deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-            </div>
-            <div class="col-md-4">
-                <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
+            <div class="col-lg-12">
+                <h1 class="page-header">Больше о стартапах</h1>
+                <%--<ol class="breadcrumb">--%>
+                    <%--<li><a href="../WEB-INF/pages/index.jsp">Home</a>--%>
+                    <%--</li>--%>
+                    <%--<li class="active">FAQ</li>--%>
+                <%--</ol>--%>
             </div>
         </div>
-    </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">О стартапах в целом.</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Стартапы становятся все более популярным вариантом начала (старта) бизнеса. Это нишу быстро заполнили представители новой волны бизнеса – молодые люди примерно 25-30 лет, которые имеют свое видение построения бизнеса, а также множество интересных и перспективных идей. Среди самых успешных новаторов современности много миллионеров и даже миллиардеров. А ведь, как правило, все начиналось с небольшого проекта, который его создатели бережно, год за годом оберегали от конкурентов и развивали. Как награда за эти ежедневные труды – всемирная известность и сказочные доходы – вспомним хотя бы создателя глобальной социальной сети Facebook – Марка Цукерберга. Однако, за видимостью легкого успеха кроется тяжелый кропотливый труд и целый перечень важных задач, для разрешения которых нужно принимать всегда правильные решения. К таким решениям относится: поиск стартап команды, инвестора, который будет осуществлять финансирование стартапов, разработка качественного бизнес-плана и т.д.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Сферы для запуска стартапов.</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Вопреки распространенному мнению о том, что стартапы запускаются только в IT-сфере, стартап компанию можно открыть практически в любом сегменте. Главное, разработать действительно перспективную идею, способную заинтересовать потенциальных инвесторов. Однако, тенденции таковы, что именно IT-сфера сейчас развивается наиболее бурными темпами, и в ней еще осталось немало ниш, которые новаторам еще предстоит заполнить. Только за последние несколько лет в глобальной сети появилось множество стартап проектов, которые смогли добиться реального успеха, вспомним хотя бы Skype или Twitter. Именно поэтому постараемся рассказать о том, как организовываются стартап проекты именно в IT-сфере, тем более, здесь есть свои отличительные особенности.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Интернет-стартапы.</a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Эти стартапы являются особенными, и специфику эту придает, прежде всего, работа в глобальной сети Интернет. Чтобы startup стал успешным, нужно быть хорошо знакомым с этой сферой деятельности и четко представлять, как можно монетизировать проект. Особенность IT-бизнеса заключается в том, что здесь часто не нужны большие денежные затраты, здесь гораздо важнее проявить профессионализм и творческие способности при разработке бизнес-плана и привлечении инвесторов. Однако, несмотря на специфичность этой сферы, общие законы бизнеса здесь действуют также, как и в других отраслях. Чтобы стартап проект мог рассчитывать на успех, ему нужно быть новым, оригинальным и, главное, нужным людям. При этом не обязательно придумывать что-то принципиально новое, когда можно интересно и оригинально реализовать уже существующие идеи. Любой стартап проект должен иметь свою «изюминку», какое-либо конкурентное преимущество.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Составляющие успеха.</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Чтобы получить поддержку и финансирование стартапов, ваш проект должен иметь следующие составляющие:
+                                <br>1. Хорошая перспективная идея. Идея должны быть максимально четкой и конкретной, чтобы потенциальные инвесторы без проблем могли понять ее смысл и механизмы реализации.
+                                <br>2. Ресурсы для достижения цели. Обычно инвестиции в стартапы становятся возможны только для проектов тех новаторов, которые четко представляют себе, каким образом, они будут реализовывать на практике свою идею, и какие инструменты им для этого понадобятся.
+                                <br>3. Финансовая привлекательность проекта. Бывают случаи, когда идея для startup является очень интересной и оригинальной, однако, реальную финансовую выгоду в результате ее реализации получить будет очень сложно или вовсе невозможно. Поэтому вполне логично, что инвесторы предпочитают выделять деньги только на те стартап проекты, которые способны окупиться в короткие сроки, пусть даже идея бизнеса не самая оригинальная и новая.
+                                <br>Возможные риски. Работая в IT-сфере, всегда нужно учитывать возможные риски. Далеко не каждый стартап проект в итоге становится успешным, большинство проектов, к сожалению, так и не доходят до своего целевого потребителя, и это может происходить по разным причинам. Различные интернет-проекты жестко конкурируют друг с другом, кроме того, никто не защищен в полной мере от полного или частичного копирования информации, интересных идей. Поэтому в IT-сфере желательно всегда быть на шаг впереди конкурентов и быть готовым явить интернет-сообществу новую идею, в то время, как конкуренты только-только скопировали старую. Наша биржа стартапов является одной из самых популярных в России, благодаря нам многие стартап-компании приобрели надежных инвесторов. Среди наших новаторов очень много успешных людей, а их оригинальные проекты приносят хорошую прибыль. Успешность вашего бизнеса очень важна для нас!
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.panel-group -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+
+    <%--<!-- Call to Action Section -->--%>
+    <%--<div class="well">--%>
+        <%--<div class="row">--%>
+            <%--<div class="col-md-8">--%>
+                <%--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum--%>
+                    <%--deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-4">--%>
+                <%--<a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
 
     <hr>
 
@@ -424,7 +517,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12 footerClass" >
-                <p> TeamOne Website 2017</p>
+                <p> Final Project TeamOne Website 2017</p>
             </div>
         </div>
     </div>

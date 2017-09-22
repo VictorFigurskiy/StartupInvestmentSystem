@@ -18,6 +18,8 @@ public class Startup {
     private String startupName;
     @Column(name = "DESCRIPTION", length = 1000)
     private String description;
+    @Column(name = "IMAGE_LINK", length = 500)
+    private String imageLink;
     @Column(name = "IDEA", length = 1000)
     private String idea;
     @Column(name = "INDUSTRY", length = 30)
@@ -138,6 +140,14 @@ public class Startup {
 
     public void setStartupDetail(StartupDetail startupDetail) {
         this.startupDetail = startupDetail;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 
     @Override

@@ -4181,8 +4181,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-top: -50px;
   border: 1px solid transparent;
-  background: center url(../../static/image/startup.jpg) no-repeat;
-  height: 450px;
+  background: center url(../../static/image/ford.jpg) no-repeat;
+  height: 500px;
+  width: auto;
   color: white;
 }
 
