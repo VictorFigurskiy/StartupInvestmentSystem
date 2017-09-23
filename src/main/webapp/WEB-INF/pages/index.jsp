@@ -414,7 +414,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12 footerClass" >
-                <p> Final Project TeamOne Website 2017</p>
+                <p>Final Project TeamOne Website 2017</p>
             </div>
         </div>
     </div>

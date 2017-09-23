@@ -206,6 +206,7 @@
                 </spring:bind>
             </div>
         </div>
+<<<<<<< Updated upstream
 
 
         <br/>
@@ -213,6 +214,11 @@
             <div class="col-xs-offset-3 col-xs-9">
                 <input type="submit" Class="btn btn-primary" value="Зарегистрировать проект"/>
                 <input type="reset" Class="btn btn-danger" value="Очистить введенные данные"/>
+=======
+        <div class="row">
+            <div class="col-lg-12 footerClass" >
+                <p>Final Project TeamOne Website 2017</p>
+>>>>>>> Stashed changes
             </div>
         </div>
         </form:form>

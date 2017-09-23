@@ -20,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Редактироване стартапа</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.css" rel="stylesheet">
@@ -53,7 +53,7 @@
             <ul class="nav navbar-nav">
                 <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
                     <li>
-                        <a href="${contextPath}/account">Account</a>
+                        <a href="${contextPath}/account">Кабинет</a>
                     </li>
                 </sec:authorize>
                 <li>
@@ -121,23 +121,6 @@
                 </li>
             </ul>
         </div>
-        <sec:authorize access="anonymous">
-            <div class="content registerBox" style="display:block;">
-                <div class="form">
-
-                    <c:url value="/j_spring_security_check" var="loginUrl"/>
-                    <form method="post" action="${loginUrl}">
-                        <input id="email" class="form-control" type="email" placeholder="Email address"
-                               name="j_username">
-                        <input id="password" class="form-control" type="password" placeholder="Password"
-                               name="j_password">
-                        <input class="btn btn-default btn-register" type="submit" value="Войти">
-                        <a class="header_form_create" href="${contextPath}/registration">Create account</a>
-                    </form>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-        </sec:authorize>
 
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
             <div class="content registerBox login_successfull" style="display:block;">
@@ -152,11 +135,11 @@
     </div>
     <!-- /.container -->
 </nav>
-<h1 align="center">EDIT STARTUP</h1>
+<h1 align="center">Редктирование стартапа:</h1>
 <div class="edit_startup container">
     <form name="test" method="post" >
         <p>Startup Name:</p>
-        <textarea rows="4" type="text" size="40" name="startupName"></textarea>
+        <textarea rows="4" type="text" size="40" name="startupName" value="colibri" maxlength="13"></textarea>
         <p>Description:</p>
         <textarea rows="4" type="text" size="40" name="description"></textarea>
         <p>Image Link:</p>
@@ -463,7 +446,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12 footerClass" >
-                <p> TeamOne Website 2017</p>
+                <p>Final Project TeamOne Website 2017</p>
             </div>
         </div>
     </div>

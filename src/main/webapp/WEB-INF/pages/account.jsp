@@ -156,12 +156,12 @@
                     <!-- link for startup INFO-->
                     <c:if test="${currentUser.startupList.size()>0}">
                         <c:forEach items="${currentUser.startupList}" var="startup">
-                            <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><li><a href="${startup.id}" style="color: #333">${startup.startupName}</a></li></div>
+                            <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><li><a href="${contextPath}/account/edit_startup${startup.id}" style="color: #333">${startup.startupName}</a></li></div>
                         </c:forEach>
                     </c:if>
                    <!-- link for Adding startup-->
                     <div style="padding: 6px 1px;" align="right"><a href="${contextPath}/add_startup" style="color: black;">+ Add startup</a></div>
-                    <div style="padding: 6px 1px;" align="right"><a href="${contextPath}/edit_startup" style="color: black;">+ Edit startup details</a></div>
+                    <%--<div style="padding: 6px 1px;" align="right"><a href="${contextPath}/edit_startup" style="color: black;">+ Edit startup details</a></div>--%>
                 </div>
             </div>
         </div>
@@ -193,7 +193,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
+                <p>Final Project TeamOne Website 2017</p>
             </div>
         </div>
     </footer>

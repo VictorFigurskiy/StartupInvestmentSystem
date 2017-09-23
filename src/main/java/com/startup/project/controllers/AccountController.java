@@ -1,6 +1,8 @@
 package com.startup.project.controllers;
 
 import com.startup.project.entities.Startup;
+import com.startup.project.entities.Startup;
+import com.startup.project.entities.StartupDetail;
 import com.startup.project.entities.User;
 import com.startup.project.services.StartupService;
 import com.startup.project.services.UserService;
@@ -21,10 +23,11 @@ public class AccountController {
 
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private StartupService startupService;
 
     @GetMapping
-    public String acoountPage(Model model) {
+    public String accountPage(Model model) {
         UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User byEmail = userService.getByEmail(principal.getUsername());
         model.addAttribute("currentUser", byEmail);
@@ -36,6 +39,17 @@ public class AccountController {
         User byId = userService.getById(id);
         model.addAttribute("userForEdit", byId);
         return "edit_account";
+    }
+
+    @RequestMapping(value = "/edit_startup{id}", method = RequestMethod.GET)
+    public ModelAndView editStartupPage(@PathVariable("id") String id){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("edit_startup");
+        Startup startup = startupService.getById(Integer.parseInt(id));
+        StartupDetail startupDetail = startup.getStartupDetail();
+        modelAndView.addObject("startup",startup);
+        modelAndView.addObject("startupDetail", startupDetail);
+        return modelAndView;
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
