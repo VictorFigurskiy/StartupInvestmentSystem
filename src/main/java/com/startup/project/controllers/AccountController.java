@@ -1,6 +1,8 @@
 package com.startup.project.controllers;
 
+import com.startup.project.entities.Startup;
 import com.startup.project.entities.User;
+import com.startup.project.services.StartupService;
 import com.startup.project.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -8,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by serhii on 20.09.2017.
@@ -18,6 +21,9 @@ public class AccountController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private StartupService startupService;
 
     @GetMapping
     public String acoountPage(Model model) {
@@ -41,4 +47,13 @@ public class AccountController {
         SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
         return "redirect:/";
     }
+
+    @RequestMapping (value = "/addStartup/{id}", method = RequestMethod.GET)
+    public ModelAndView setStartupModel() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("addStartup");
+        modelAndView.addObject("startupReg", new Startup());
+        return modelAndView;
+    }
+
 }
