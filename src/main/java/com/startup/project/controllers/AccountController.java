@@ -22,8 +22,6 @@ public class AccountController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private StartupService startupService;
 
     @GetMapping
     public String acoountPage(Model model) {
@@ -48,10 +46,10 @@ public class AccountController {
         return "redirect:/";
     }
 
-    @RequestMapping (value = "/addStartup/{id}", method = RequestMethod.GET)
+    @RequestMapping (value = "/add_startup/{id}", method = RequestMethod.GET)
     public ModelAndView setStartupModel() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("addStartup");
+        modelAndView.setViewName("add_startup");
         modelAndView.addObject("startupReg", new Startup());
         return modelAndView;
     }
