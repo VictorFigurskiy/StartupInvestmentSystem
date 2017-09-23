@@ -160,7 +160,8 @@
                         </c:forEach>
                     </c:if>
                    <!-- link for Adding startup-->
-                    <div style="padding: 6px 1px;" align="right"><a href="" style="color: black;">+ Add startup</a></div>
+                    <div style="padding: 6px 1px;" align="right"><a href="${contextPath}/add_startup" style="color: black;">+ Add startup</a></div>
+                    <div style="padding: 6px 1px;" align="right"><a href="${contextPath}/edit_startup" style="color: black;">+ Edit startup details</a></div>
                 </div>
             </div>
         </div>

@@ -40,10 +40,10 @@ footer nav ul li a:hover {
 .header_form_create {
     float: right;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 6px 12px ;
     margin-bottom: 0;
     font-size: 14px;
-    font-weight: normal;
+    font-weight:normal ;
     line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;
@@ -96,3 +96,131 @@ footer nav ul li a:hover {
     margin: 0;
     padding-right: 20px;
 }
+
+/*add startup and edit startup*/
+
+.edit_startup p {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 0 0 0;
+    margin-bottom: 0;
+}
+
+.edit_startup textarea{
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid rgba(0,0,0,0.4);
+    outline: none;
+    resize: none;
+    padding-left: 5px;
+}
+
+.edit_startup textarea:focus {
+    box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.4);
+    outline: none;
+}
+
+.selecting_c {
+    position: relative;
+
+}
+
+.project_multiselect_c {
+    display: inline-block;
+}
+
+.checkbox_btn {
+    padding: 0 10px;
+    font-size: 15px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #6A8238;
+    border: 1px solid #6A8238;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 230px;
+}
+
+.checkbox_list {
+    padding: 10px 5px 10px 10px;
+    width: 230px;
+    max-height: 280px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    border: 1px solid #D8D8D8;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    margin: 0 5px 0 0;
+}
+
+.checkbox_list input {
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 2px;
+    padding: 0 10px;
+    font-size: 15px;
+    line-height: 38px;
+    background-color: white;
+    text-align: left;
+    font-weight: 300;
+    float: left;
+}
+
+.checkbox_list span {
+    color: #333;
+    font-size: 0.8em;
+    line-height: 1em;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.form_country {
+    border-radius: 3px;
+    border: 2px solid rgba(0,0,0,0.4);
+    outline: none;
+    resize: none;
+    padding: 9px 70px 9px 10px;
+}
+
+.form_country:focus {
+    box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.4);
+    outline: none;
+}
+
+.form_text_left {
+    display: inline-block;
+    padding: 0 20px 0 0 !important;
+    line-height: 38px;
+}
+
+.one_line {
+    margin: 10px 0;
+}
+
+.one_line .form_country {
+    display: inline-block;
+}
+
+.edit_startup input[type="submit"] {
+    padding: 0 10px;
+    font-size: 15px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #437982;
+    border: 1px solid #437982;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 230px;
+    margin-top: 20px;
+}
+

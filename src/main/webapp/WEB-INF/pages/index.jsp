@@ -404,7 +404,7 @@
             <nav>
                 <ul>
                     <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="index.jsp">GALLERY</a></li>
+                    <li><a href="">EditStartupDetails</a></li>
                     <li><a href="index.jsp">FORUM</a></li>
                     <li><a href="index.jsp">TUTORIALS</a></li>
                     <li><a href="/static/about.html">ABOUT US</a></li>
