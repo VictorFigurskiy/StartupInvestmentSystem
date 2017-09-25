@@ -131,8 +131,8 @@
     <div class="row">
         <!-- left column -->
         <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="panel panel-default" style="border-color: darkgray">
+                <div class="panel-heading" style="border-bottom-color: darkgray">
                     <h4>Информация</h4>
                 </div>
                 <div class="panel-body" style="padding: 3px 15px; font-size: 15px">
@@ -166,16 +166,21 @@
                     <!-- link for startup INFO-->
                     <c:if test="${currentUser.startupList.size()>0}">
                           <c:forEach items="${currentUser.startupList}" var="startup">
-                              <form method="post" action="${contextPath}/edit_startup/update_page">
-                                  <input hidden name="id" value="${startup.id}">
-                                  <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">
-                                      <li style="width: auto; float: left;">${startup.startupName}</li><input type="submit" value="Редактировать" title="Просмотр, редактирование и удаление стартапа">
+                              <div style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
+                                  <li style="width: auto; float: left; margin-right: 20px;">${startup.startupName}</li>
+                                  <div style="float: right;"> <form method="post" action="/edit_startup/update_page">
+                                      <input hidden="" name="id" value="${startup.id}">
+
+                                      <input class="account_buttons
+" type="submit" value="Редактировать" title="Просмотр, редактирование и удаление стартапа">
+
+                                  </form>
                                   </div>
-                              </form>
+                              </div>
                         </c:forEach>
                     </c:if>
                    <!-- link for Adding startup-->
-                    <div style="padding: 6px 1px;" align="right"><a href="${contextPath}/add_startup" style="color: black;">Добавить стартап</a></div>
+                    <div style="padding: 6px 1px; width: auto"><a href="${contextPath}/add_startup" style="color: black; float: right;">Добавить стартап</a></div>
                 </div>
             </div>
         </div>
@@ -193,13 +198,13 @@
                     <table width="100%">
                     <c:if test="${not empty investments}">
 
-                            <tr style="border-bottom: 1px solid darkgray; height: 45px">
-                            <th style="text-align: center; border-right: 1px solid darkgray;">Название</th>
-                            <th style="padding: 0 10px">Сумма вложений</th>
+                            <tr style="border-bottom: 1px solid #ddd; height: 45px">
+                            <th style="text-align: center; border-right: 1px solid #ddd;">Название</th>
+                            <th style="padding: 0 10px; text-align: center">Сумма вложений</th>
                         </tr>
                         <c:forEach items="${investments}" var="investment">
 
-                            <tr style="border-bottom: 1px solid darkgray"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid darkgray"><a href="${investment.startupId}" style="color: #333;"><li>${investment.stastupName}
+                            <tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd"><a href="${investment.startupId}" style="color: #333;"><li>${investment.stastupName}
                                 <c:forEach items="${currentUser.startupList}" var="startup">
                                     <c:if test="${investment.startupId==startup.id}"> (your own)</c:if>
                                 </c:forEach>
