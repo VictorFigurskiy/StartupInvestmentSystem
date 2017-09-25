@@ -19,6 +19,13 @@ public class User {
     private String lastName;
     @Column(name = "EMAIL", unique = true, nullable = false, length = 60)
     private String email;
+    @Transient
+    private String previousEmail;
+
+    public void setPreviousEmail(String previousEmail) {
+        this.previousEmail = previousEmail;
+    }
+
     @Column(name = "PASSWORD", nullable = false, length = 50)
     private String password;
     @Transient
@@ -106,6 +113,10 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getPreviousEmail() {
+        return previousEmail;
     }
 
     @Override

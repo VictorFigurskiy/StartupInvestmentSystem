@@ -28,19 +28,22 @@ public class UserValidator implements Validator {
         User dbUser = userService.getByEmail(user.getEmail());
 
         if (!user.getPassword().equals(user.getConfirmPassword())) {
-            errors.rejectValue("confirmPassword", "Match.userForm.password", "Passwords don't match, try again!");
+            errors.rejectValue("confirmPassword", "Match.userForm.password", "Пароли не совпадают, попробуйте еще раз!");
         }
-        if (dbUser != null) {
-            errors.rejectValue("email", "Exist.userForm.user", "User with email: "+user.getEmail() +" already exist!");
+        if (dbUser != null && user.getPreviousEmail() == null) {
+            errors.rejectValue("email", "Exist.userForm.user", "Пользователь с email: " + user.getEmail() + " уже существует!");
+        }
+        if (user.getPreviousEmail() != null && (dbUser != null && !user.getPreviousEmail().equals(dbUser.getEmail()))) {
+            errors.rejectValue("email", "Exist.Edit.user", "Пользователь с email: " + user.getEmail() + " уже существует!");
         }
         if (user.getEmail().length() < 8 || user.getEmail().length() > 32) {
-            errors.rejectValue("email", "Size.userForm.username", "Your email must have length between 8-32 characters!");
+            errors.rejectValue("email", "Size.userForm.username", "Ваш email должен иметь 8-32 символов!");
         }
         if (user.getPassword().length() < 4 || user.getPassword().length() > 30) {
-            errors.rejectValue("password", "Size.userForm.password", "Your password must have length between 4-30 characters!");
+            errors.rejectValue("password", "Size.userForm.password", "Пароль должен иметь длинну 4-30 символов!");
         }
-        if (user.getPhone().length()<13) {
-            errors.rejectValue("phone", "Size.userForm.phone", "Phone must have length not less 13 characters!");
+        if (user.getPhone().length() < 13) {
+            errors.rejectValue("phone", "Size.userForm.phone", "Телефон должне быть не менее 13 символов!");
         }
 
     }

@@ -1,3 +1,7 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +20,7 @@
 
     <!-- Custom CSS -->
     <link href="../../static/css/modern-business.css" rel="stylesheet">
+    <link href="../../static/css/footerStyle.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -33,16 +38,17 @@
 
     <!-- Navigation -->
     <nav class="navbar" role="navigation">
-        <div class="container">
+        <div class="container header_menu" style="font-size: 18px; ">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.jsp">Start Bootstrap</a>
+                <div class="main-page-button"><a class="navbar-brand" href="/">На главную</a></div>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -120,102 +126,84 @@
     <!-- Page Content -->
     <div class="container">
 
-	<h1>Edit Profile</h1>
-  	<hr>
+	<h1>Редактирование профиля</h1>
+        <hr style="margin-top: 10px; margin-bottom: 30px">
 	<div class="row">
-      <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-          <h6>Upload a different photo...</h6>
-          
-          <input class="form-control" type="file">
-        </div>
-      </div>
-      
+
+        <jsp:useBean id="userForEdit" scope="request" type="com.startup.project.entities.User"/>
+        <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
       <!-- edit form column -->
-      <div class="col-md-9 personal-info">
-        <div class="alert alert-info alert-dismissable">
+      <div class="col-md-9 personal-info" style="margin-left: 20%">
+        <div class="alert alert-info alert-dismissable" style="width: 80%">
           <a class="panel-close close" data-dismiss="alert">×</a> 
           <i class="fa fa-coffee"></i>
           This is an <strong>.alert</strong>. Use this to show important messages to the user.
         </div>
-        <h3>Personal info</h3>
+        <h3 style="margin-top: 0">Ваши даные</h3>
         
-        <form class="form-horizontal" role="form">
-          <div class="form-group">
-            <label class="col-lg-3 control-label">First name:</label>
+        <form:form class="form-horizontal" modelAttribute="userForEdit" action="${contextPath}/account/edit" method="post">
+            <%--Id--%>
+            <div hidden><form:input value="${userForEdit.id}" type="number" path="id"/></div>
+            <%--Id--%>
+            <div class="form-group">
+            <label class="col-lg-3 control-label">Имя:</label>
             <div class="col-lg-8">
-              <input class="form-control" value="Jane" type="text">
+                <form:input class="form-control" value="${userForEdit.firstName}" type="text" path="firstName"/>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Last name:</label>
+            <label class="col-lg-3 control-label">Фамилия:</label>
             <div class="col-lg-8">
-              <input class="form-control" value="Bishop" type="text">
+              <form:input class="form-control" value="${userForEdit.lastName}" type="text" path="lastName"/>
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Company:</label>
-            <div class="col-lg-8">
-              <input class="form-control" value="" type="text">
-            </div>
-          </div>
+            <%--Prev email--%>
+            <div hidden><form:input value="${userForEdit.email}" type="text" path="previousEmail"/></div>
+            <%--Prev email--%>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" value="janesemail@gmail.com" type="text">
+                <span style="font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="email"></form:errors></span>
+              <form:input class="form-control" value="${userForEdit.email}" type="email" path="email"/>
             </div>
           </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Телефон:</label>
+                <div class="col-lg-8">
+                    <span style="font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="phone"></form:errors></span>
+                    <form:input class="form-control" value="${userForEdit.phone}" maxlength="13" type="text" path="phone" />
+                </div>
+            </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Time Zone:</label>
+            <label class="col-lg-3 control-label">Пароль:</label>
             <div class="col-lg-8">
-              <div class="ui-select">
-                <select id="user_time_zone" class="form-control">
-                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                  <option value="Alaska">(GMT-09:00) Alaska</option>
-                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                  <option value="Arizona">(GMT-07:00) Arizona</option>
-                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                </select>
-              </div>
+                <span style="font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="password"></form:errors></span>
+              <form:input class="form-control" value="${userForEdit.password}" type="password" path="password"/>
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Username:</label>
-            <div class="col-md-8">
-              <input class="form-control" value="janeuser" type="text">
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Подтверждение пароля:</label>
+                <div class="col-lg-8">
+                    <span style="font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="confirmPassword"></form:errors></span>
+                    <form:input class="form-control" value="${userForEdit.password}" type="password" path="confirmPassword"/>
+                </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Password:</label>
-            <div class="col-md-8">
-              <input class="form-control" value="11111122333" type="password">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Confirm password:</label>
-            <div class="col-md-8">
-              <input class="form-control" value="11111122333" type="password">
-            </div>
-          </div>
+
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input class="btn btn-primary" value="Save Changes" type="button">
+              <input class="btn btn-primary" value="Сохранить изменения" type="submit"/>
               <span></span>
-              <input class="btn btn-default" value="Cancel" type="reset">
+              <input class="btn btn-default" value="Очистить форму" type="reset"/>
             </div>
           </div>
-        </form>
+        </form:form>
       </div>
   </div>
         <!-- /.row -->
 
-        <hr>
+        <hr style="margin-top: 10px; margin-bottom: 30px">
 
         <!-- Footer -->
         <footer>

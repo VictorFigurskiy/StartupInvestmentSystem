@@ -22,26 +22,30 @@ public class StartupService {
     }
 
     @Transactional(readOnly = true)
-    public List<Startup> getStartupOnPage(int page, int size){
-        return dao.getStartupOnPage(page,size);
+    public List<Startup> getStartupOnPage(int page, int size) {
+        return dao.getStartupOnPage(page, size);
     }
 
     @Transactional(readOnly = true)
     public Startup getById(Integer id) {
         return dao.getById(Startup.class, id);
     }
+
     @Transactional(readOnly = true)
     public List<Startup> getAll() {
         return dao.getAll(Startup.class);
     }
+
     @Transactional
     public void save(Startup entity) {
         dao.save(entity);
     }
+
     @Transactional
     public void update(Startup entity) {
         dao.update(entity);
     }
+
     @Transactional
     public void delete(Startup entity) {
         dao.delete(entity);

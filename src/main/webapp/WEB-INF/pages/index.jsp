@@ -193,7 +193,7 @@
             </div>
         </sec:authorize>
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-            <div class="content registerBox login_successfull" style="display:block; float: left; width: auto;padding-left: 16px; height: auto; margin-top: -4px">
+            <div class="content registerBox login_successfull" style="display:block; float: left; width: auto;padding-left: 16px; height: auto; margin-top: -5px">
                 <div class="form">
                     <h4>Вы вошли под логином: <sec:authentication property="principal.username"/></h4>
                     <form:form action="/logout" method="post">

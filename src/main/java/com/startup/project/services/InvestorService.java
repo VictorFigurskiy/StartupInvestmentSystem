@@ -1,12 +1,15 @@
 package com.startup.project.services;
 
 import com.startup.project.dao.InvestorDao;
+import com.startup.project.entities.Investment;
 import com.startup.project.entities.Investor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Sonik on 15.09.2017.
@@ -25,20 +28,29 @@ public class InvestorService {
     public Investor getById(Integer id) {
         return dao.getById(Investor.class, id);
     }
+
     @Transactional(readOnly = true)
     public List<Investor> getAll() {
         return dao.getAll(Investor.class);
     }
+
     @Transactional
     public void save(Investor entity) {
         dao.save(entity);
     }
+
     @Transactional
     public void update(Investor entity) {
         dao.update(entity);
     }
+
     @Transactional
     public void delete(Investor entity) {
         dao.delete(entity);
+    }
+
+    @Transactional
+    public List<Investment> getInvestment(int userId) {
+        return dao.getStartUpSumInvest(userId);
     }
 }

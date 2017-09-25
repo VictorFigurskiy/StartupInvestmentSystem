@@ -19,6 +19,7 @@
 
     <!-- Custom CSS -->
     <link href="../../static/css/modern-business.css" rel="stylesheet">
+    <link href="../../static/css/footerStyle.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -36,7 +37,7 @@
 
 <!-- Navigation -->
 <nav class="navbar" role="navigation">
-    <div class="container">
+    <div class="container header_menu" style="font-size: 18px; ">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -46,7 +47,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">На главную</a>
+           <div class="main-page-button"><a class="navbar-brand" href="/">На главную</a></div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -124,75 +125,100 @@
 <!-- Page Content -->
 <div class="container">
 
-    <h1>Profile</h1>
-    <hr>
+    <h1>Профиль</h1>
+    <hr style="margin-top: 10px; margin-bottom: 30px">
 
     <div class="row">
         <!-- left column -->
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Personal info</h4>
+                    <h4>Информация</h4>
                 </div>
-                <div class="panel-body" style="padding: 3px 15px;">
+                <div class="panel-body" style="padding: 3px 15px; font-size: 15px">
                     <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.firstName}</div>
                     <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.lastName}</div>
                     <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.email}</div>
                     <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.phone}</div>
-                    <div style="padding: 6px 1px; float: left; width: 50%" align="left"><a href="${contextPath}/account/edit/${currentUser.id}"
-                        style="color: black;">Edit</a></div>
-                    <div style="padding: 6px 1px; float: left; width: 50%" align="right"><a href="${contextPath}/account/delete/${currentUser.id}"
-                                                                                style="color: red">Delete</a></div>
+                    <div style="padding: 6px 1px; float: left; width: 50%" align="left">
+                        <form action="${contextPath}/account/edit" method="get">
+                            <input hidden name="userId" value="${currentUser.id}"/>
+                            <input class="account_buttons" type="submit" style="color: black;" value="Редактировать"/>
+                        </form>
+                    </div>
+                    <div style="padding: 6px 1px; float: left; width: 50%" align="right">
+                        <form action="${contextPath}/account/delete" method="get">
+                            <input hidden name="userId" value="${currentUser.id}"/>
+                            <input class="account_buttons" type="submit" style="color: #f30000;" value="Удалить" />
+                        </form>
+                        </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div align="left" style="width: auto; max-width: 66%; display: inline-grid">
+        <div class="col-md-4" style="width: auto; min-width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Startups</h4>
+                    <h4>Стартапы</h4>
                 </div>
                 <div class="panel-body" style="padding: 3px 15px;">
                     <!-- link for startup INFO-->
                     <c:if test="${currentUser.startupList.size()>0}">
-                        <c:forEach items="${currentUser.startupList}" var="startup">
-                            <form method="post" action="${contextPath}/edit_startup/update_page">
-                                <input hidden name="id" value="${startup.id}">
-                                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">
-                                        <li><p>${startup.startupName}</p><input type="submit" value="Редактировать" title="Просмотр, редактирование и удаление стартапа"></li>
-                                    </div>
-                            </form>
+                          <c:forEach items="${currentUser.startupList}" var="startup">
+                              <form method="post" action="${contextPath}/edit_startup/update_page">
+                                  <input hidden name="id" value="${startup.id}">
+                                  <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">
+                                      <li style="width: auto; float: left;">${startup.startupName}</li><input type="submit" value="Редактировать" title="Просмотр, редактирование и удаление стартапа">
+                                  </div>
+                              </form>
                         </c:forEach>
                     </c:if>
                    <!-- link for Adding startup-->
-                    <div style="padding: 6px 1px;" align="right"><a href="${contextPath}/add_startup" style="color: black;">+ Add startup</a></div>
+                    <div style="padding: 6px 1px;" align="right"><a href="${contextPath}/add_startup" style="color: black;">Добавить стартап</a></div>
                 </div>
             </div>
         </div>
 
-        <%--<div class="col-md-4">--%>
-            <%--<div class="panel panel-default">--%>
-                <%--<div class="panel-heading">--%>
-                    <%--<h4>Startups</h4>--%>
-                <%--</div>--%>
-                <%--<div class="panel-body" style="padding: 3px 15px;">--%>
-                    <%--<!-- link for startup INFO-->--%>
-                    <%--<jsp:useBean id="investment" scope="request" type="java.util.List<com.startup.project.entities.Startup>"/>--%>
-                    <%--<c:if test="${not empty investment}">--%>
-                        <%--<c:forEach items="${investment}" var="startup">--%>
-                            <%--<div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><li><a href="${startup.id}" style="color: #333">${startup.startupName}  ${}</a></li></div>--%>
-                        <%--</c:forEach>--%>
-                    <%--</c:if>--%>
-                    <%--<c:if test="${investment.empty}">У вас нет инвестиций!</c:if>--%>
-                    <%--<!-- link for Adding startup-->--%>
-                    <%--<div style="padding: 6px 1px;" align="right"><a href="" style="color: black;">+ Add startup</a></div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
+        <div class="col-md-4" style="width: auto;">
+            <div class="panel panel-default" style="border-bottom: none">
+                <div class="panel-heading">
+                    <h4>Инвестиции</h4>
+                </div>
+                <div class="panel-body" style="padding: 0px 0px 0px;">
+                    <!-- link for startup INFO-->
+
+                    <jsp:useBean id="investments" scope="request" type="java.util.List<com.startup.project.entities.Investment>"/>
+
+                    <table width="100%">
+                    <c:if test="${not empty investments}">
+
+                            <tr style="border-bottom: 1px solid darkgray; height: 45px">
+                            <th style="text-align: center; border-right: 1px solid darkgray;">Название</th>
+                            <th style="padding: 0 10px">Сумма вложений</th>
+                        </tr>
+                        <c:forEach items="${investments}" var="investment">
+
+                            <tr style="border-bottom: 1px solid darkgray"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid darkgray"><a href="${investment.startupId}" style="color: #333;"><li>${investment.stastupName}
+                                <c:forEach items="${currentUser.startupList}" var="startup">
+                                    <c:if test="${investment.startupId==startup.id}"> (your own)</c:if>
+                                </c:forEach>
+                            </li></a></td>
+                                <td style="text-align: center">${investment.sumInvestment}$</td></tr>
+
+                        </c:forEach>
+
+                    </c:if>
+                    <c:if test="${empty investments}"><tr><td style="border-bottom: 1px solid #ddd; padding: 11px">У вас нет инвестиций!</td></tr></c:if>
+                        </table>
+                </div>
+            </div>
+        </div>
+        </div>
 
     </div>
 
-
+    <hr style="margin-top: 10px; margin-bottom: 30px">
     <!-- Footer -->
     <footer>
         <div class="row">

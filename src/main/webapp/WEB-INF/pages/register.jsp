@@ -17,6 +17,7 @@
 
     <!-- Custom CSS -->
     <link href="../../static/css/modern-business.css" rel="stylesheet">
+    <link href="../../static/css/footerStyle.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -34,7 +35,7 @@
 
 <!-- Navigation -->
 <nav class="navbar" role="navigation">
-    <div class="container">
+    <div class="container header_menu" style="font-size: 18px; ">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -44,7 +45,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">На главную</a>
+            <div class="main-page-button"><a class="navbar-brand" href="/">На главную</a></div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -105,7 +106,7 @@
                             <a href="../../static/faq.html">FAQ</a>
                         </li>
                         <li>
-                            <a href="../../static/404.html">404</a>
+                            <a href="404.jsp">404</a>
                         </li>
                         <li>
                             <a href="../../static/pricing.html">Pricing Table</a>
@@ -120,7 +121,7 @@
 </nav>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container" style="padding-left: 15%">
 
     <!-- Page Heading/Breadcrumbs -->
     <h2>Регистрация</h2>
@@ -141,7 +142,7 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:22%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="email"></form:errors></span>
+        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="email"></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="inputEmail">Email:</label>
             <div class="col-xs-9">
@@ -150,7 +151,7 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:22%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="password" ></form:errors></span>
+        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="password" ></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="inputPassword">Пароль:</label>
             <div class="col-xs-9">
@@ -159,7 +160,7 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:22%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="confirmPassword"></form:errors></span>
+        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="confirmPassword"></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="confirmPassword">Подтвердите пароль:</label>
             <div class="col-xs-9">
@@ -168,7 +169,7 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:22%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="phone" ></form:errors></span>
+        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="phone" ></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="phoneNumber">Телефон:</label>
             <div class="col-xs-9">
@@ -184,8 +185,8 @@
         <br/>
         <div class="form-group">
             <div class="col-xs-offset-3 col-xs-9">
-                <input  type="submit"  Class="btn btn-default" value="Регистрация"/>
-                <input type="reset" Class="btn btn-primary" value="Очистить форму"/>
+                <input type="submit" Class="btn btn-primary" value="Регистрация"/>
+                <input  type="reset"  Class="btn btn-default" value="Очистить форму"/>
             </div>
         </div>
     </form:form>

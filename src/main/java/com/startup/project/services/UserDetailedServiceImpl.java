@@ -27,7 +27,7 @@ public class UserDetailedServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         com.startup.project.entities.User user = userService.getByEmail(email);
-        if (user == null){
+        if (user == null) {
             logger.info("User with" + email + "not exist!!!");
             throw new UsernameNotFoundException("User not exist!!!");
         }

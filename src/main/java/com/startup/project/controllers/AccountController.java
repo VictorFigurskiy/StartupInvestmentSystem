@@ -1,18 +1,19 @@
 package com.startup.project.controllers;
 
-import com.startup.project.entities.Startup;
-import com.startup.project.entities.Startup;
-import com.startup.project.entities.StartupDetail;
+import com.startup.project.entities.Investment;
 import com.startup.project.entities.User;
-import com.startup.project.services.StartupService;
+import com.startup.project.services.InvestorService;
 import com.startup.project.services.UserService;
+import com.startup.project.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * Created by serhii on 20.09.2017.
@@ -24,36 +25,45 @@ public class AccountController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private InvestorService investorService;
+
+    @Autowired
+    private UserValidator validator;
+
     @GetMapping
-    public String accountPage(Model model) {
+    public String acoountPage(Model model) {
         UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User byEmail = userService.getByEmail(principal.getUsername());
+        List<Investment> investments = investorService.getInvestment(byEmail.getId());
         model.addAttribute("currentUser", byEmail);
+        model.addAttribute("investments", investments);
         return "account";
     }
 
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public String editUser(@PathVariable("id") int id, Model model) {
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public String editUserForm(@RequestParam("userId") int id, Model model) {
         User byId = userService.getById(id);
         model.addAttribute("userForEdit", byId);
         return "edit_account";
     }
 
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public String updateUser(@ModelAttribute("userForEdit") User user, BindingResult bindingResult) {
+        validator.validate(user,bindingResult);
+        if (bindingResult.hasErrors()) return "edit_account";
+        User dbUser = userService.getById(user.getId());
+        user.setStartupList(dbUser.getStartupList());
+        user.setUserRoles(dbUser.getUserRoles());
+        userService.update(user);
+        return "redirect:/account";
+    }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String deleteUser(@PathVariable("id") int id) {
-        User byId = userService.getById(id);
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String deleteUser(@RequestParam("userId") int userId) {
+        User byId = userService.getById(userId);
         userService.delete(byId);
         SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
         return "redirect:/";
     }
-
-    @RequestMapping (value = "/add_startup/{id}", method = RequestMethod.GET)
-    public ModelAndView setStartupModel() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("add_startup");
-        modelAndView.addObject("startupReg", new Startup());
-        return modelAndView;
-    }
-
 }
