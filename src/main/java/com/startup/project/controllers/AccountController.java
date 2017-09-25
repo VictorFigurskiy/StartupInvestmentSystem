@@ -23,8 +23,6 @@ public class AccountController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private StartupService startupService;
 
     @GetMapping
     public String accountPage(Model model) {
@@ -41,16 +39,6 @@ public class AccountController {
         return "edit_account";
     }
 
-    @RequestMapping(value = "/edit_startup{id}", method = RequestMethod.GET)
-    public ModelAndView editStartupPage(@PathVariable("id") String id){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("edit_startup");
-        Startup startup = startupService.getById(Integer.parseInt(id));
-        StartupDetail startupDetail = startup.getStartupDetail();
-        modelAndView.addObject("startup",startup);
-        modelAndView.addObject("startupDetail", startupDetail);
-        return modelAndView;
-    }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteUser(@PathVariable("id") int id) {

@@ -156,12 +156,16 @@
                     <!-- link for startup INFO-->
                     <c:if test="${currentUser.startupList.size()>0}">
                         <c:forEach items="${currentUser.startupList}" var="startup">
-                            <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><li><a href="${contextPath}/account/edit_startup${startup.id}" style="color: #333">${startup.startupName}</a></li></div>
+                            <form method="post" action="${contextPath}/edit_startup/update_page">
+                                <input hidden name="id" value="${startup.id}">
+                                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">
+                                        <li><p>${startup.startupName}</p><input type="submit" value="Редактировать" title="Просмотр, редактирование и удаление стартапа"></li>
+                                    </div>
+                            </form>
                         </c:forEach>
                     </c:if>
                    <!-- link for Adding startup-->
                     <div style="padding: 6px 1px;" align="right"><a href="${contextPath}/add_startup" style="color: black;">+ Add startup</a></div>
-                    <%--<div style="padding: 6px 1px;" align="right"><a href="${contextPath}/edit_startup" style="color: black;">+ Edit startup details</a></div>--%>
                 </div>
             </div>
         </div>

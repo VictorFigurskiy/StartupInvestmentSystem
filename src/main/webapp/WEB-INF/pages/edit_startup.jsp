@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: MakeMeSm1Le-
-  Date: 22.09.2017
-  Time: 18:50
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -137,295 +131,374 @@
 </nav>
 <h1 align="center">Редктирование стартапа:</h1>
 <div class="edit_startup container">
-    <form name="test" method="post" >
-        <p>Startup Name:</p>
-        <textarea rows="4" type="text" size="40" name="startupName" value="colibri" maxlength="13"></textarea>
-        <p>Description:</p>
-        <textarea rows="4" type="text" size="40" name="description"></textarea>
-        <p>Image Link:</p>
-        <textarea rows="4" type="text" size="40" name="imageLink"></textarea>
-        <p>Idea:</p>
-        <textarea rows="4" type="text" size="40" name="idea"></textarea>
-        <p>Project Stage:</p>
-        <textarea rows="4" type="projectStage" size="40" name="startupName"></textarea>
-        <p>Startup Cost:</p>
-        <textarea rows="4" type="text" size="40" name="startupCost"></textarea>
 
-        <p>Current State:</p>
-        <textarea rows="4" type="text" size="40" name="currentState"></textarea>
-        <p>Gross Profit:</p>
-        <textarea rows="4" type="text" size="40" name="grossProfit"></textarea>
-        <p>Net Incom:</p>
-        <textarea rows="4" type="text" size="40" name="netIncom"></textarea>
-        <p>Property:</p>
-        <textarea rows="4" type="text" size="40" name="property"></textarea>
-        <p>Problem Or Opportunity:</p>
-        <textarea rows="4" type="text" size="40" name="problemOrOpportunityt"></textarea>
-        <p>Competitors:</p>
-        <textarea rows="4" type="text" size="40" name="competitors"></textarea>
-        <p>Business Model:</p>
-        <textarea rows="4" type="text" size="40" name="businessModel"></textarea>
-        <div class="one_line">
-            <p class="form_text_left">Тема стартапа:</p>
-            <div class="project_multiselect_c">
-                <div id="sector_c" class="selecting_c" style="/* display: none; */">
-                    <div id="sector_list" class="checkbox_list">
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="229"><span>Автотехобслуживание</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="950"><span>Блокчейн</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="263"><span>Бумажная</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="230"><span>Бытовая техника</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="957"><span>Виртуальная и дополненная реальность</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="946"><span>Гаджеты</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="231"><span>Деревообработка</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="945"><span>Дроны</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="232"><span>Интернет и ИТ</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="233"><span>Информация и СМИ</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="956"><span>Искусственный интеллект</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="234"><span>Компьютеры, оргтехника</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="235"><span>Консалтинг</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="951"><span>Криптовалюты</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="236"><span>Культура, искусство</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="237"><span>Легкая промышленность</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="238"><span>Лесозаготовка</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="239"><span>Логистика и склады</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="240"><span>Машиностроение</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="241"><span>Медицина</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="242"><span>Металлургия</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="958"><span>Мобильные приложения</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="243"><span>Недвижимость</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="244"><span>Нефтепереработка</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="245"><span>Образование, обучение</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="246"><span>Общественное питание</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="247"><span>Пищевая промышленность</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="248"><span>Полиграфия</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="249"><span>Производство</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="250"><span>Развлечение</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="944"><span>Робототехника</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="251"><span>Сельское хозяйство</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="252"><span>Страхование</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="253"><span>Строительство</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="254"><span>Телекоммуникации</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="255"><span>Торговля</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="256"><span>Транспорт</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="257"><span>Туризм, спорт</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="258"><span>Услуги, сервис</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="259"><span>Фармакология</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="260"><span>Финансовые услуги</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="261"><span>Франчайзинг</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="262"><span>Химия</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="264"><span>Электроника</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="265"><span>Энергетика</span></label><br>
-                        <label><input type="checkbox" name="SECTOR_IB[]" value="266"><span>Другое</span></label><br>
-                    </div>
-                    <div id="sector_btn" class="checkbox_btn"><span id="text_form_list">Открить</span> список</div>
-                </div>
+    <jsp:useBean id="startup" scope="request" type="com.startup.project.entities.Startup"/>
+    <jsp:useBean id="startupDetail" scope="request" type="com.startup.project.entities.StartupDetail"/>
+
+    <form:form modelAttribute="startup" method="post" action="${contextPath}/edit_startup/update">
+        <form:form modelAttribute="startupDetail" method="post" action="${contextPath}/edit_startup/update">
+
+            <input hidden name="startup_id" value="${startup.id}">
+
+            <input hidden name="startup_id" value="${startup.id}">
+
+            <p>Название стартапа:</p>
+            <textarea rows="2" type="text" size="40" name="startupName" maxlength="150">${startup.startupName}</textarea>
+            <p>Описание:</p>
+            <textarea rows="4" type="text" size="40" name="description" maxlength="1000" placeholder="">${startup.description}</textarea>
+            <p>Ссылка на картинку:</p>
+            <textarea rows="4" type="text" size="40" name="imageLink" maxlength="500">${startup.imageLink}</textarea>
+            <p>Идея:</p>
+            <textarea rows="4" type="text" size="40" name="idea" maxlength="1000">${startup.idea}</textarea>
+            <p>Текущее состояние:</p>
+            <textarea rows="4" type="text" size="40" name="currentState" maxlength="500">${startupDetail.currentState}</textarea>
+            <p>Годовой объем продаж, $</p>
+            <textarea rows="4" type="text" size="40" name="grossProfit" maxlength="500">${startupDetail.grossProfit}</textarea>
+            <p>Годовой объем чистой прибыли, $</p>
+            <textarea rows="4" type="text" size="40" name="netIncome" maxlength="500">${startupDetail.netIncome}</textarea>
+            <p>Тип имущества:</p>
+            <textarea rows="4" type="text" size="40" name="typeOfProperty" maxlength="500">${startupDetail.typeOfProperty}</textarea>
+            <p>Имущество и активы:</p>
+            <textarea rows="4" type="text" size="40" name="property" maxlength="500">${startupDetail.property}</textarea>
+            <p>Проблема или Возможность:</p>
+            <textarea rows="4" type="text" size="40" name="problemOrOpportunity" maxlength="500">${startupDetail.problemOrOpportunity}</textarea>
+            <p>Конкуренты:</p>
+            <textarea rows="4" type="text" size="40" name="competitors" maxlength="500">${startupDetail.competitors}</textarea>
+            <p>Бизнес-модель:</p>
+            <textarea rows="4" type="text" size="40" name="businessModel" maxlength="500">${startupDetail.businessModel}</textarea>
+
+            <p>Необходимая сумма, $:</p>
+            <input type="number" size="40" name="startupCost" min="1" max="9999999999" value="${startup.startupCost}">
+
+
+            <%--<div class="one_line">--%>
+                <%--<p class="form_text_left">Отрасль промышленности:</p>--%>
+                <%--<div class="project_multiselect_c">--%>
+                    <%--<div id="sector_c" class="selecting_c" style="/* display: none; */">--%>
+                        <%--<div id="sector_list" class="checkbox_list" >--%>
+                            <%--<label><input type="checkbox" name="industry" value="Автотехобслуживание"><span>Автотехобслуживание</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Блокчейн"><span>Блокчейн</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Бумажная"><span>Бумажная</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Бытовая техника"><span>Бытовая техника</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Виртуальная и дополненная реальность"><span>Виртуальная и дополненная реальность</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Гаджеты"><span>Гаджеты</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Деревообработка"><span>Деревообработка</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Дроны"><span>Дроны</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Интернет и ИТ"><span>Интернет и ИТ</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Информация и СМИ"><span>Информация и СМИ</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Искусственный интеллектbr"><span>Искусственный интеллект</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Компьютеры, оргтехника"><span>Компьютеры, оргтехника</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Консалтинг"><span>Консалтинг</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Криптовалюты"><span>Криптовалюты</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Культура, искусство"><span>Культура, искусство</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Легкая промышленность"><span>Легкая промышленность</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Лесозаготовка"><span>Лесозаготовка</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Логистика и склады"><span>Логистика и склады</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Машиностроение"><span>Машиностроение</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Медицина"><span>Медицина</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Металлургия"><span>Металлургия</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Мобильные приложения"><span>Мобильные приложения</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Недвижимость"><span>Недвижимость</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Нефтепереработка"><span>Нефтепереработка</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Образование, обучение"><span>Образование, обучение</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Общественное питание"><span>Общественное питание</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Пищевая промышленность"><span>Пищевая промышленность</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Полиграфия"><span>Полиграфия</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Производство"><span>Производство</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Развлечение"><span>Развлечение</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Робототехника"><span>Робототехника</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Сельское хозяйство"><span>Сельское хозяйство</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Страхование"><span>Страхование</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Строительство"><span>Строительство</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Телекоммуникации"><span>Телекоммуникации</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Торговля"><span>Торговля</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Транспорт"><span>Транспорт</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Туризм, спорт"><span>Туризм, спорт</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Услуги, сервис"><span>Услуги, сервис</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Фармакология"><span>Фармакология</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Финансовые услуги"><span>Финансовые услуги</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Франчайзинг"><span>Франчайзинг</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Химия"><span>Химия</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Электроника"><span>Электроника</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Энергетика"><span>Энергетика</span></label><br>--%>
+                            <%--<label><input type="checkbox" name="industry" value="Другое"><span>Другое</span></label><br>--%>
+                        <%--</div>--%>
+                        <%--<div id="sector_btn" class="checkbox_btn"><span id="text_form_list">Открить</span> список</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <div style="width: 54%; height: auto">
+            <div class="one_line">
+                <p class="form_text_left">Отрасль промышленности:</p>
+                <select name="industry" class="form_country" style="float: right">
+                    <option value="Автотехобслуживание">Автотехобслуживание</option>
+                    <option value="Блокчейн">Блокчейн</option>
+                    <option value="Бумажная">Бумажная</option>
+                    <option value="Бытовая техника">Бытовая техника</option>
+                    <option value="Виртуальная и дополненная реальность">Виртуальная и дополненная реальность</option>
+                    <option value="Гаджеты">Гаджеты</option>
+                    <option value="Деревообработка">Деревообработка</option>
+                    <option value="Дроны">Дроны</option>
+                    <option value="Интернет и ИТ">Интернет и ИТ</option>
+                    <option value="Информация и СМИ">Информация и СМИ</option>
+                    <option value="Искусственный интеллектbr">Искусственный интеллектbr</option>
+                    <option value="Компьютеры, оргтехника">Компьютеры, оргтехника</option>
+                    <option value="Консалтинг">Консалтинг</option>
+                    <option value="Криптовалюты">Криптовалюты</option>
+                    <option value="Культура, искусство">Культура, искусство</option>
+                    <option value="Легкая промышленность">Легкая промышленность</option>
+                    <option value="Лесозаготовка">Лесозаготовка</option>
+                    <option value="Логистика и склады">Логистика и склады</option>
+                    <option value="Машиностроение">Машиностроение</option>
+                    <option value="Медицина">Медицина</option>
+                    <option value="Металлургия">Металлургия</option>
+                    <option value="Мобильные приложения">Мобильные приложения</option>
+                    <option value="Недвижимость">Недвижимость</option>
+                    <option value="Нефтепереработка">Нефтепереработка</option>
+                    <option value="Образование, обучение">Образование, обучение</option>
+                    <option value="Общественное питание">Общественное питание</option>
+                    <option value="Пищевая промышленность">Пищевая промышленность</option>
+                    <option value="Полиграфия">Полиграфия</option>
+                    <option value="Производство">Производство</option>
+                    <option value="Развлечение">Развлечение</option>
+                    <option value="Робототехника">Робототехника</option>
+                    <option value="Сельское хозяйство">Сельское хозяйство</option>
+                    <option value="Страхование">Страхование</option>
+                    <option value="Строительство">Строительство</option>
+                    <option value="Телекоммуникации">Телекоммуникации</option>
+                    <option value="Торговля">Торговля</option>
+                    <option value="Транспорт">Транспорт</option>
+                    <option value="Туризм, спорт">Туризм, спорт</option>
+                    <option value="Услуги, сервис">Услуги, сервис</option>
+                    <option value="Фармакология">Фармакология</option>
+                    <option value="Финансовые услуги">Финансовые услуги</option>
+                    <option value="Франчайзинг">Франчайзинг</option>
+                    <option value="Химия">Химия</option>
+                    <option value="Электроника">Электроника</option>
+                    <option value="Энергетика">Энергетика</option>
+                    <option value="Другое">Другое</option>
+                </select>
+            </div>
+
+            <div class="one_line">
+                <p class="form_text_left">Стадия проекта:</p>
+                <select name="projectStage" class="form_country" style="float: right">
+                    <option value="Есть идея или наработки">Есть идея или наработки</option>
+                    <option value="Готов прототип или продукт">Готов прототип или продукт</option>
+                    <option value="Действующий бизнес">Действующий бизнес</option>
+                </select>
+            </div>
+
+            <div class="one_line">
+                <p class="form_text_left">Страна:</p>
+                <select  name="country" class="form_country" style="float: right">
+                    <option value="Украина">Украина</option>
+                    <option value="Россия">Россия</option>
+                    <option value="Беларусь">Беларусь</option>
+                    <option value="Казахстан">Казахстан</option>
+                    <option value="США">США</option>
+                    <option value="Польша">Польша</option>
+                    <option value="Австралия">Австралия</option>
+                    <option value="Австрия">Австрия</option>
+                    <option value="Азербайджан">Азербайджан</option>
+                    <option value="Албания">Албания</option>
+                    <option value="Алжир">Алжир</option>
+                    <option value="Ангола">Ангола</option>
+                    <option value="Андорра">Андорра</option>
+                    <option value="Антигуа и Барбуда">Антигуа и Барбуда</option>
+                    <option value="Аргентина">Аргентина</option>
+                    <option value="Армения">Армения</option>
+                    <option value="Афганистан">Афганистан</option>
+                    <option value="Багамские острова">Багамские острова</option>
+                    <option value="Бангладеш">Бангладеш</option>
+                    <option value="Барбадос">Барбадос</option>
+                    <option value="Бахрейн">Бахрейн</option>
+                    <option value="Белиз">Белиз</option>
+                    <option value="Бельгия">Бельгия</option>
+                    <option value="Бенин">Бенин</option>
+                    <option value="Болгария">Болгария</option>
+                    <option value="Боливия">Боливия</option>
+                    <option value="Босния и Герцеговина">Босния и Герцеговина</option>
+                    <option value="Ботсвана">Ботсвана</option>
+                    <option value="Бразилия">Бразилия</option>
+                    <option value="Бруней">Бруней</option>
+                    <option value="Буркина-Фасо">Буркина-Фасо</option>
+                    <option value="Бурунди">Бурунди</option>
+                    <option value="Бутан">Бутан</option>
+                    <option value="Вануату">Вануату</option>
+                    <option value="Великобритания">Великобритания</option>
+                    <option value="Венгрия">Венгрия</option>
+                    <option value="Венесуэла">Венесуэла</option>
+                    <option value="Восточный Тимор">Восточный Тимор</option>
+                    <option value="Вьетнам">Вьетнам</option>
+                    <option value="Габон">Габон</option>
+                    <option value="Гаити">Гаити</option>
+                    <option value="Гайана">Гайана</option>
+                    <option value="Гамбия">Гамбия</option>
+                    <option value="Гана">Гана</option>
+                    <option value="Гватемала">Гватемала</option>
+                    <option value="Гвинея">Гвинея</option>
+                    <option value="Гвинея-Бисау">Гвинея-Бисау</option>
+                    <option value="Германия">Германия</option>
+                    <option value="Гондурас">Гондурас</option>
+                    <option value="Гренада">Гренада</option>
+                    <option value="Греция">Греция</option>
+                    <option value="Грузия">Грузия</option>
+                    <option value="Дания">Дания</option>
+                    <option value="Джибути">Джибути</option>
+                    <option value="Доминика">Доминика</option>
+                    <option value="Доминиканская Республика">Доминиканская Республика</option>
+                    <option value="Египет">Египет</option>
+                    <option value="Замбия">Замбия</option>
+                    <option value="Зимбабве">Зимбабве</option>
+                    <option value="Израиль">Израиль</option>
+                    <option value="Индия">Индия</option>
+                    <option value="Индонезия">Индонезия</option>
+                    <option value="Иордания">Иордания</option>
+                    <option value="Ирак">Ирак</option>
+                    <option value="Иран">Иран</option>
+                    <option value="Ирландия">Ирландия</option>
+                    <option value="Исландия">Исландия</option>
+                    <option value="Испания">Испания</option>
+                    <option value="Италия">Италия</option>
+                    <option value="Йемен">Йемен</option>
+                    <option value="Кабо-Верде">Кабо-Верде</option>
+                    <option value="Канада">Канада</option>
+                    <option value="Камбоджа">Камбоджа</option>
+                    <option value="Камерун">Камерун</option>
+                    <option value="Катар">Катар</option>
+                    <option value="Кения">Кения</option>
+                    <option value="Кипр">Кипр</option>
+                    <option value="Киргизия">Киргизия</option>
+                    <option value="Кирибати">Кирибати</option>
+                    <option value="КНР">КНР</option>
+                    <option value="Колумбия">Колумбия</option>
+                    <option value="Коморы">Коморы</option>
+                    <option value="Республика Конго">Республика Конго</option>
+                    <option value="Демократическая республика Конго">Демократическая республика Конго</option>
+                    <option value="КНДР">КНДР</option>
+                    <option value="Республика Корея">Республика Корея</option>
+                    <option value="Коста-Рика">Коста-Рика</option>
+                    <option value="Кот-д’Ивуар">Кот-д’Ивуар</option>
+                    <option value="Куба">Куба</option>
+                    <option value="Кувейт">Кувейт</option>
+                    <option value="Лаос">Лаос</option>
+                    <option value="Латвия">Латвия</option>
+                    <option value="Лесото">Лесото</option>
+                    <option value="Либерия">Либерия</option>
+                    <option value="Ливан">Ливан</option>
+                    <option value="Ливия">Ливия</option>
+                    <option value="Литва">Литва</option>
+                    <option value="Лихтенштейн">Лихтенштейн</option>
+                    <option value="Люксембург">Люксембург</option>
+                    <option value="Маврикий">Маврикий</option>
+                    <option value="Мавритания">Мавритания</option>
+                    <option value="Мадагаскар">Мадагаскар</option>
+                    <option value="Македония">Македония</option>
+                    <option value="Малави">Малави</option>
+                    <option value="Малайзия">Малайзия</option>
+                    <option value="Мали">Мали</option>
+                    <option value="Мальдивы">Мальдивы</option>
+                    <option value="Мальта">Мальта</option>
+                    <option value="Марокко">Марокко</option>
+                    <option value="Маршалловы острова">Маршалловы острова</option>
+                    <option value="Мексика">Мексика</option>
+                    <option value="Мозамбик">Мозамбик</option>
+                    <option value="Молдавия">Молдавия</option>
+                    <option value="Монако">Монако</option>
+                    <option value="Монголия">Монголия</option>
+                    <option value="Мьянма">Мьянма</option>
+                    <option value="Намибия">Намибия</option>
+                    <option value="Науру">Науру</option>
+                    <option value="Непал">Непал</option>
+                    <option value="Нигер">Нигер</option>
+                    <option value="Нигерия">Нигерия</option>
+                    <option value="Нидерланды">Нидерланды</option>
+                    <option value="Никарагуа">Никарагуа</option>
+                    <option value="Новая Зеландия">Новая Зеландия</option>
+                    <option value="Норвегия">Норвегия</option>
+                    <option value="ОАЭ">ОАЭ</option>
+                    <option value="Оман">Оман</option>
+                    <option value="Пакистан">Пакистан</option>
+                    <option value="Палау">Палау</option>
+                    <option value="Панама">Панама</option>
+                    <option value="Папуа-Новая Гвинея">Папуа-Новая Гвинея</option>
+                    <option value="Парагвай">Парагвай</option>
+                    <option value="Перу">Перу</option>
+                    <option value="Португалия">Португалия</option>
+                    <option value="Руанда">Руанда</option>
+                    <option value="Румыния">Румыния</option>
+                    <option value="Сальвадор">Сальвадор</option>
+                    <option value="Самоа">Самоа</option>
+                    <option value="Сан-Марино">Сан-Марино</option>
+                    <option value="Сан-Томе">Сан-Томе</option>
+                    <option value="Саудовская Аравия">Саудовская Аравия</option>
+                    <option value="Свазиленд">Свазиленд</option>
+                    <option value="Сейшельские острова">Сейшельские острова</option>
+                    <option value="Сенегал">Сенегал</option>
+                    <option value="Сент-Винсент">Сент-Винсент</option>
+                    <option value="Сент-Китс">Сент-Китс</option>
+                    <option value="Сент-Люсия">Сент-Люсия</option>
+                    <option value="Сербия">Сербия</option>
+                    <option value="Сингапур">Сингапур</option>
+                    <option value="Сирия">Сирия</option>
+                    <option value="Словакия">Словакия</option>
+                    <option value="Словения">Словения</option>
+                    <option value="Соломоновы острова">Соломоновы острова</option>
+                    <option value="Сомали">Сомали</option>
+                    <option value="Судан">Судан</option>
+                    <option value="Суринам">Суринам</option>
+                    <option value="Сьерра-Леоне">Сьерра-Леоне</option>
+                    <option value="Таджикистан">Таджикистан</option>
+                    <option value="Таиланд">Таиланд</option>
+                    <option value="Танзания">Танзания</option>
+                    <option value="Того">Того</option>
+                    <option value="Тонга">Тонга</option>
+                    <option value="Тринидад и Тобаго">Тринидад и Тобаго</option>
+                    <option value="Тувалу">Тувалу</option>
+                    <option value="Тунис">Тунис</option>
+                    <option value="Туркменистан">Туркменистан</option>
+                    <option value="Турция">Турция</option>
+                    <option value="Уганда">Уганда</option>
+                    <option value="Узбекистан">Узбекистан</option>
+                    <option value="Уругвай">Уругвай</option>
+                    <option value="Федеративные Штаты Микронезии">Федеративные Штаты Микронезии</option>
+                    <option value="Фиджи">Фиджи</option>
+                    <option value="Филиппины">Филиппины</option>
+                    <option value="Финляндия">Финляндия</option>
+                    <option value="Франция">Франция</option>
+                    <option value="Хорватия">Хорватия</option>
+                    <option value="Центральноафриканская Республика">Центральноафриканская Республика</option>
+                    <option value="Чад">Чад</option>
+                    <option value="Черногория">Черногория</option>
+                    <option value="Чехия">Чехия</option>
+                    <option value="Чили">Чили</option>
+                    <option value="Швейцария">Швейцария</option>
+                    <option value="Швеция">Швеция</option>
+                    <option value="Шри-Ланка">Шри-Ланка</option>
+                    <option value="Эквадор">Эквадор</option>
+                    <option value="Экваториальная Гвинея">Экваториальная Гвинея</option>
+                    <option value="Эритрея">Эритрея</option>
+                    <option value="Эстония">Эстония</option>
+                    <option value="Эфиопия">Эфиопия</option>
+                    <option value="ЮАР">ЮАР</option>
+                    <option value="Южный Судан">Южный Судан</option>
+                    <option value="Ямайка">Ямайка</option>
+                    <option value="Япония">Япония</option>
+                </select>
             </div>
         </div>
-        <div class="one_line">
-            <p class="form_text_left">Country:</p>
-            <select name="country" class="form_country">
-                <option value="0">страна</option>
-                <option value="300">Украина</option>
-                <option value="301">Россия</option>
-                <option value="297">Беларусь</option>
-                <option value="302">Казахстан</option>
-                <option value="303">США</option>
-                <option value="299">Польша</option>
-                <option value="317">Австралия</option>
-                <option value="319">Австрия</option>
-                <option value="320">Азербайджан</option>
-                <option value="321">Албания</option>
-                <option value="322">Алжир</option>
-                <option value="323">Ангола</option>
-                <option value="324">Андорра</option>
-                <option value="325">Антигуа и Барбуда</option>
-                <option value="326">Аргентина</option>
-                <option value="327">Армения</option>
-                <option value="328">Афганистан</option>
-                <option value="329">Багамские острова</option>
-                <option value="330">Бангладеш</option>
-                <option value="331">Барбадос</option>
-                <option value="346">Бахрейн</option>
-                <option value="347">Белиз</option>
-                <option value="348">Бельгия</option>
-                <option value="349">Бенин</option>
-                <option value="350">Болгария</option>
-                <option value="351">Боливия</option>
-                <option value="352">Босния и Герцеговина</option>
-                <option value="353">Ботсвана</option>
-                <option value="354">Бразилия</option>
-                <option value="355">Бруней</option>
-                <option value="356">Буркина-Фасо</option>
-                <option value="357">Бурунди</option>
-                <option value="358">Бутан</option>
-                <option value="359">Вануату</option>
-                <option value="360">Великобритания</option>
-                <option value="361">Венгрия</option>
-                <option value="362">Венесуэла</option>
-                <option value="363">Восточный Тимор</option>
-                <option value="364">Вьетнам</option>
-                <option value="365">Габон</option>
-                <option value="366">Гаити</option>
-                <option value="367">Гайана</option>
-                <option value="368">Гамбия</option>
-                <option value="369">Гана</option>
-                <option value="370">Гватемала</option>
-                <option value="371">Гвинея</option>
-                <option value="372">Гвинея-Бисау</option>
-                <option value="373">Германия</option>
-                <option value="374">Гондурас</option>
-                <option value="375">Гренада</option>
-                <option value="376">Греция</option>
-                <option value="377">Грузия</option>
-                <option value="378">Дания</option>
-                <option value="379">Джибути</option>
-                <option value="380">Доминика</option>
-                <option value="381">Доминиканская Республика</option>
-                <option value="382">Египет</option>
-                <option value="383">Замбия</option>
-                <option value="384">Зимбабве</option>
-                <option value="385">Израиль</option>
-                <option value="386">Индия</option>
-                <option value="387">Индонезия</option>
-                <option value="388">Иордания</option>
-                <option value="389">Ирак</option>
-                <option value="390">Иран</option>
-                <option value="391">Ирландия</option>
-                <option value="392">Исландия</option>
-                <option value="393">Испания</option>
-                <option value="394">Италия</option>
-                <option value="395">Йемен</option>
-                <option value="396">Кабо-Верде</option>
-                <option value="298">Канада</option>
-                <option value="398">Камбоджа</option>
-                <option value="399">Камерун</option>
-                <option value="400">Катар</option>
-                <option value="401">Кения</option>
-                <option value="402">Кипр</option>
-                <option value="403">Киргизия</option>
-                <option value="404">Кирибати</option>
-                <option value="405">КНР</option>
-                <option value="406">Колумбия</option>
-                <option value="407">Коморы</option>
-                <option value="408">Республика Конго</option>
-                <option value="409">Демократическая республика Конго</option>
-                <option value="410">КНДР</option>
-                <option value="411">Республика Корея</option>
-                <option value="412">Коста-Рика</option>
-                <option value="413">Кот-д’Ивуар</option>
-                <option value="414">Куба</option>
-                <option value="415">Кувейт</option>
-                <option value="416">Лаос</option>
-                <option value="417">Латвия</option>
-                <option value="418">Лесото</option>
-                <option value="419">Либерия</option>
-                <option value="420">Ливан</option>
-                <option value="421">Ливия</option>
-                <option value="422">Литва</option>
-                <option value="423">Лихтенштейн</option>
-                <option value="424">Люксембург</option>
-                <option value="425">Маврикий</option>
-                <option value="426">Мавритания</option>
-                <option value="427">Мадагаскар</option>
-                <option value="428">Македония</option>
-                <option value="429">Малави</option>
-                <option value="430">Малайзия</option>
-                <option value="431">Мали</option>
-                <option value="432">Мальдивы</option>
-                <option value="433">Мальта</option>
-                <option value="434">Марокко</option>
-                <option value="435">Маршалловы острова</option>
-                <option value="436">Мексика</option>
-                <option value="437">Мозамбик</option>
-                <option value="438">Молдавия</option>
-                <option value="439">Монако</option>
-                <option value="440">Монголия</option>
-                <option value="441">Мьянма</option>
-                <option value="442">Намибия</option>
-                <option value="443">Науру</option>
-                <option value="444">Непал</option>
-                <option value="445">Нигер</option>
-                <option value="446">Нигерия</option>
-                <option value="447">Нидерланды</option>
-                <option value="448">Никарагуа</option>
-                <option value="449">Новая Зеландия</option>
-                <option value="450">Норвегия</option>
-                <option value="451">ОАЭ</option>
-                <option value="452">Оман</option>
-                <option value="453">Пакистан</option>
-                <option value="454">Палау</option>
-                <option value="455">Панама</option>
-                <option value="456">Папуа-Новая Гвинея</option>
-                <option value="457">Парагвай</option>
-                <option value="458">Перу</option>
-                <option value="459">Португалия</option>
-                <option value="460">Руанда</option>
-                <option value="461">Румыния</option>
-                <option value="462">Сальвадор</option>
-                <option value="463">Самоа</option>
-                <option value="464">Сан-Марино</option>
-                <option value="465">Сан-Томе</option>
-                <option value="466">Саудовская Аравия</option>
-                <option value="467">Свазиленд</option>
-                <option value="468">Сейшельские острова</option>
-                <option value="469">Сенегал</option>
-                <option value="470">Сент-Винсент</option>
-                <option value="471">Сент-Китс</option>
-                <option value="472">Сент-Люсия</option>
-                <option value="473">Сербия</option>
-                <option value="474">Сингапур</option>
-                <option value="475">Сирия</option>
-                <option value="476">Словакия</option>
-                <option value="477">Словения</option>
-                <option value="478">Соломоновы острова</option>
-                <option value="479">Сомали</option>
-                <option value="480">Судан</option>
-                <option value="481">Суринам</option>
-                <option value="482">Сьерра-Леоне</option>
-                <option value="483">Таджикистан</option>
-                <option value="484">Таиланд</option>
-                <option value="485">Танзания</option>
-                <option value="486">Того</option>
-                <option value="487">Тонга</option>
-                <option value="488">Тринидад и Тобаго</option>
-                <option value="489">Тувалу</option>
-                <option value="490">Тунис</option>
-                <option value="491">Туркменистан</option>
-                <option value="492">Турция</option>
-                <option value="493">Уганда</option>
-                <option value="494">Узбекистан</option>
-                <option value="495">Уругвай</option>
-                <option value="496">Федеративные Штаты Микронезии</option>
-                <option value="497">Фиджи</option>
-                <option value="498">Филиппины</option>
-                <option value="499">Финляндия</option>
-                <option value="316">Франция</option>
-                <option value="501">Хорватия</option>
-                <option value="502">Центральноафриканская Республика</option>
-                <option value="503">Чад</option>
-                <option value="504">Черногория</option>
-                <option value="505">Чехия</option>
-                <option value="506">Чили</option>
-                <option value="310">Швейцария</option>
-                <option value="311">Швеция</option>
-                <option value="312">Шри-Ланка</option>
-                <option value="313">Эквадор</option>
-                <option value="314">Экваториальная Гвинея</option>
-                <option value="315">Эритрея</option>
-                <option value="304">Эстония</option>
-                <option value="305">Эфиопия</option>
-                <option value="306">ЮАР</option>
-                <option value="307">Южный Судан</option>
-                <option value="308">Ямайка</option>
-                <option value="309">Япония</option>
-            </select>
-        </div>
-        <input type="submit" value="Сохранить">
-    </form>
-</div>
-
-
-
+            <div>
+                <input type="submit" value="Сохранить">
+            </div>
+        </form:form>
+    </form:form>
+    <div>
+        <form method="post" action="${contextPath}/edit_startup/delete">
+            <input hidden name="startup_id" value="${startup.id}">
+            <input type="submit" value="Удалить" style="color: #b41b20">
+        </form>
+    </div>
 </div>
 <!-- /.container -->
 <hr/>
@@ -445,7 +518,7 @@
             </nav>
         </div>
         <div class="row">
-            <div class="col-lg-12 footerClass" >
+            <div class="col-lg-12 footerClass">
                 <p>Final Project TeamOne Website 2017</p>
             </div>
         </div>

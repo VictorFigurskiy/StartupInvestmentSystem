@@ -22,9 +22,9 @@ public class Startup {
     private String imageLink;
     @Column(name = "IDEA", length = 1000)
     private String idea;
-    @Column(name = "INDUSTRY", length = 30)
+    @Column(name = "INDUSTRY", length = 500)
     private String industry;
-    @Column(name = "COUNTRY", length = 30)
+    @Column(name = "COUNTRY", length = 200)
     private String country;
     @Column(name = "PROJECT_STAGE", length = 50)
     private String projectStage;

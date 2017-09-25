@@ -115,6 +115,16 @@ footer nav ul li a:hover {
     padding-left: 5px;
 }
 
+.edit_startup input{
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid rgba(0,0,0,0.4);
+    outline: none;
+    resize: none;
+    padding-left: 5px;
+    height: 35px
+}
+
 .edit_startup textarea:focus {
     box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.4);
     outline: none;
@@ -186,7 +196,8 @@ footer nav ul li a:hover {
     border: 2px solid rgba(0,0,0,0.4);
     outline: none;
     resize: none;
-    padding: 9px 70px 9px 10px;
+    padding: 9px 30px 9px 10px;
+    width: 350px;
 }
 
 .form_country:focus {
