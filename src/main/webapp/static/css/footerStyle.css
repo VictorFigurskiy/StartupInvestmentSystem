@@ -235,6 +235,21 @@ footer nav ul li a:hover {
     margin-top: 20px;
     color: #000000;
 }
+.edit_startup input[type="reset"] {
+    padding: 0 10px;
+    font-size: 15px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #437982;
+    border: 1px solid #437982;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 230px;
+    margin-top: 20px;
+}
 
 .main-page-button a:hover {
     background-color: rgba(238, 238, 238, 0.37) !important;
