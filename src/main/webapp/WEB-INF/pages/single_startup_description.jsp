@@ -131,6 +131,7 @@
 
 <jsp:useBean id="startup" scope="request" type="com.startup.project.entities.Startup"/>
 <jsp:useBean id="startupDetail" scope="request" type="com.startup.project.entities.StartupDetail"/>
+<jsp:useBean id="investmentsSum" scope="request" type="java.math.BigDecimal"/>
 
 <!-- Page Content -->
 <div class="container">
@@ -142,9 +143,12 @@
                 <%--<small>Subheading</small>--%>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="${contextPath}/">Назад</a>
+                <li><a href="${contextPath}/" style="color: #353535;">Назад</a>
                 </li>
                 <li class="active"><c:out value="${startup.startupName}"/></li>
+                <li class="active"> Сумма вложенная в стартап: ${investmentsSum}</li>
+                <li class="active"> Минимальная необходимая сумма: ${startup.startupCost}</li>
+                <li class="active"></li>
             </ol>
         </div>
     </div>
@@ -157,6 +161,16 @@
         </div>
 
         <div class="col-md-4">
+
+
+            <div class="single_startup">
+                <form method="post" action="${contextPath}/investment">
+                    <input type="hidden" name="startup_id" value="${startup.id}">
+                    <input type="submit" value="Инвестировать в стартап">
+                </form>
+            </div>
+
+
             <h3>Описание стартапа</h3>
             <p>${startup.description}</p>
             <h3>Идея</h3>
@@ -176,19 +190,19 @@
         <div class="col-lg-12">
 
             <ul id="myTab" class="nav nav-tabs nav-justified">
-                <li class="active"><a href="#service-one" data-toggle="tab" style="color: #020202cc;"><i
+                <li class="active"><a href="#service-one" data-toggle="tab" style="color: #353535;"><i
                         class="fa fa-tree"></i> Текущее состояние:</a>
                 </li>
-                <li class=""><a href="#service-two" data-toggle="tab" style="color: #020202cc;"><i
+                <li class=""><a href="#service-two" data-toggle="tab" style="color: #353535;"><i
                         class="fa fa-car"></i> Имущество и активы:</a>
                 </li>
-                <li class=""><a href="#service-three" data-toggle="tab" style="color: #020202cc;"><i
+                <li class=""><a href="#service-three" data-toggle="tab" style="color: #353535;"><i
                         class="fa fa-support"></i> Проблема или Возможность:</a>
                 </li>
-                <li class=""><a href="#service-four" data-toggle="tab" style="color: #020202cc;"><i
+                <li class=""><a href="#service-four" data-toggle="tab" style="color: #353535;"><i
                         class="fa fa-database"></i> Конкуренты:</a>
                 </li>
-                <li class=""><a href="#service-five" data-toggle="tab" style="color: #020202cc;"><i
+                <li class=""><a href="#service-five" data-toggle="tab" style="color: #353535;"><i
                         class="fa fa-android"></i> Бизнес-модель:</a>
                 </li>
             </ul>

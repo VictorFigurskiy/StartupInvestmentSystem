@@ -129,9 +129,13 @@
     </div>
     <!-- /.container -->
 </nav>
-<h1 align="center">Редктирование стартапа:</h1>
-<div class="edit_startup container">
 
+<div class="edit_startup container">
+    <div>
+        <h1 class="page-header">
+            Редктирование стартапа:
+        </h1>
+    </div>
     <jsp:useBean id="startup" scope="request" type="com.startup.project.entities.Startup"/>
     <jsp:useBean id="startupDetail" scope="request" type="com.startup.project.entities.StartupDetail"/>
 
@@ -141,13 +145,13 @@
     <input hidden name="startup_id" value="${startup.id}">
 
     <p>Название стартапа:</p>
-    <textarea rows="2" type="text" size="40" name="startupName" maxlength="150">${startup.startupName}</textarea>
+    <textarea rows="2" type="text" size="40" name="startupName" maxlength="150" required>${startup.startupName}</textarea>
     <p>Описание:</p>
-    <textarea rows="4" type="text" size="40" name="description" maxlength="1000" placeholder="">${startup.description}</textarea>
+    <textarea rows="4" type="text" size="40" name="description" maxlength="1000" placeholder="" required>${startup.description}</textarea>
     <p>Ссылка на картинку:</p>
-    <textarea rows="4" type="text" size="40" name="imageLink" maxlength="500">${startup.imageLink}</textarea>
+    <textarea rows="4" type="text" size="40" name="imageLink" maxlength="500" required>${startup.imageLink}</textarea>
     <p>Идея:</p>
-    <textarea rows="4" type="text" size="40" name="idea" maxlength="1000">${startup.idea}</textarea>
+    <textarea rows="4" type="text" size="40" name="idea" maxlength="1000" required>${startup.idea}</textarea>
     <p>Текущее состояние:</p>
     <textarea rows="4" type="text" size="40" name="currentState" maxlength="500">${startupDetail.currentState}</textarea>
     <p>Годовой объем продаж, $</p>
@@ -166,7 +170,7 @@
     <textarea rows="4" type="text" size="40" name="businessModel" maxlength="500">${startupDetail.businessModel}</textarea>
 
     <p>Необходимая сумма, $:</p>
-    <input type="number" size="40" name="startupCost" min="1" max="9999999999" value="${startup.startupCost}">
+    <input type="number" size="40" name="startupCost" min="1" max="9999999999" value="${startup.startupCost}" required>
 
 
         <%--<div class="one_line">--%>
@@ -495,7 +499,7 @@
         <div style="width: auto; float: right;">
             <form method="post" action="${contextPath}/edit_startup/delete">
                 <input hidden name="startup_id" value="${startup.id}">
-                <input type="submit" value="Удалить" style="color: #ffffff; background-color: #e30000cc;">
+                <input type="submit" value="Удалить" style="color: #ffffff; background-color: #E93333;">
             </form>
         </div>
     </div>

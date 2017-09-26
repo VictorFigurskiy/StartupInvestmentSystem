@@ -136,8 +136,13 @@
     </div>
     <!-- /.container -->
 </nav>
-<h1 align="center">Добавление стартапа:</h1>
+
 <div class="edit_startup container">
+    <div>
+        <h1 class="page-header">
+            Добавление стартапа:
+        </h1>
+    </div>
 
     <jsp:useBean id="startupReg" scope="request" type="com.startup.project.entities.Startup"/>
     <jsp:useBean id="startupDetailReg" scope="request" type="com.startup.project.entities.StartupDetail"/>
@@ -438,7 +443,7 @@
             </div>
             <div>
                 <input type="submit" value="Сохранить">
-                <input type="reset"  value="Очистить введенные данные">
+                <input type="reset"  value="Очистить введенные данные" style="color: #ffffff; background-color: #E93333;">
             </div>
         </form:form>
     </form:form>

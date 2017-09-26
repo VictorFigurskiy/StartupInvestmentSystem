@@ -286,7 +286,7 @@
             </p>
         </div>
         <div class="col-md-6">
-            <img class="img-responsive" src="${contextPath}/static/image/lamp-700x450.jpg" alt="">
+            <img class="img-responsive" src="${contextPath}/static/image/Screen_Shot_2015-10-22_at_12.20.48_AM.png.png" alt="">
         </div>
     </div>
     <!-- /.row -->
