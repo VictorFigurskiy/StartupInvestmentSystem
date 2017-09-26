@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -111,16 +112,16 @@
                     </li>
                 </sec:authorize>
                 <li>
-                    <a class="no_padding_left" href="../../static/about.html">About</a>
+                    <a class="no_padding_left" href="../../static/about.html">О нас</a>
                 </li>
                 <li>
-                    <a href="../../static/services.html">Services</a>
+                    <a href="../../static/services.html">Сервисы</a>
                 </li>
                 <li>
-                    <a href="../../static/contact.html">Contact</a>
+                    <a href="../../static/contact.html">Контакты</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Портфолио<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../../static/portfolio-1-col.html">1 Column Portfolio</a>
@@ -135,12 +136,12 @@
                             <a href="../../static/portfolio-4-col.html">4 Column Portfolio</a>
                         </li>
                         <li>
-                            <a href="../../static/portfolio-item.html">Single Portfolio Item</a>
+                            <a href="single_startup_description.jsp">Single Portfolio Item</a>
                         </li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Блог<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../../static/blog-home-1.html">Blog Home 1</a>
@@ -154,7 +155,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Другие страницы<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="../../static/full-width.html">Full Width Page</a>
@@ -195,7 +196,7 @@
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
             <div class="content registerBox login_successfull" style="display:block; float: left; width: auto;padding-left: 16px; height: auto; margin-top: -5px">
                 <div class="form">
-                    <h4>Вы вошли под логином: <sec:authentication property="principal.username"/></h4>
+                    <h4>Ваш логин: <sec:authentication property="principal.username"/></h4>
                     <form:form action="/logout" method="post">
                         <input class="btn btn-default btn-register" style="float: right; margin-right: 19px;" type="submit" value="Выйти">
                     </form:form>
@@ -232,8 +233,7 @@
                             <img class="img-responsive" src="${startup.imageLink}" alt="">
                         </div>
                         <p><c:out value="${startup.description}"/></p>
-                        <input hidden name="id" value="${startup.id}">
-                        <a href="" class="btn btn-default">Узнать больше</a>
+                        <a href="${contextPath}/startup_description/${startup.id}" class="btn btn-default">Узнать больше</a>
                     </div>
                 </div>
             </div>
@@ -361,10 +361,10 @@
                         <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">
                                 Чтобы получить поддержку и финансирование стартапов, ваш проект должен иметь следующие составляющие:
-                                <br>1. Хорошая перспективная идея. Идея должны быть максимально четкой и конкретной, чтобы потенциальные инвесторы без проблем могли понять ее смысл и механизмы реализации.
-                                <br>2. Ресурсы для достижения цели. Обычно инвестиции в стартапы становятся возможны только для проектов тех новаторов, которые четко представляют себе, каким образом, они будут реализовывать на практике свою идею, и какие инструменты им для этого понадобятся.
-                                <br>3. Финансовая привлекательность проекта. Бывают случаи, когда идея для startup является очень интересной и оригинальной, однако, реальную финансовую выгоду в результате ее реализации получить будет очень сложно или вовсе невозможно. Поэтому вполне логично, что инвесторы предпочитают выделять деньги только на те стартап проекты, которые способны окупиться в короткие сроки, пусть даже идея бизнеса не самая оригинальная и новая.
-                                <br>Возможные риски. Работая в IT-сфере, всегда нужно учитывать возможные риски. Далеко не каждый стартап проект в итоге становится успешным, большинство проектов, к сожалению, так и не доходят до своего целевого потребителя, и это может происходить по разным причинам. Различные интернет-проекты жестко конкурируют друг с другом, кроме того, никто не защищен в полной мере от полного или частичного копирования информации, интересных идей. Поэтому в IT-сфере желательно всегда быть на шаг впереди конкурентов и быть готовым явить интернет-сообществу новую идею, в то время, как конкуренты только-только скопировали старую. Наша биржа стартапов является одной из самых популярных в России, благодаря нам многие стартап-компании приобрели надежных инвесторов. Среди наших новаторов очень много успешных людей, а их оригинальные проекты приносят хорошую прибыль. Успешность вашего бизнеса очень важна для нас!
+                                <li>Хорошая перспективная идея. Идея должны быть максимально четкой и конкретной, чтобы потенциальные инвесторы без проблем могли понять ее смысл и механизмы реализации.
+                                <li>Ресурсы для достижения цели. Обычно инвестиции в стартапы становятся возможны только для проектов тех новаторов, которые четко представляют себе, каким образом, они будут реализовывать на практике свою идею, и какие инструменты им для этого понадобятся.
+                                <li>Финансовая привлекательность проекта. Бывают случаи, когда идея для startup является очень интересной и оригинальной, однако, реальную финансовую выгоду в результате ее реализации получить будет очень сложно или вовсе невозможно. Поэтому вполне логично, что инвесторы предпочитают выделять деньги только на те стартап проекты, которые способны окупиться в короткие сроки, пусть даже идея бизнеса не самая оригинальная и новая.
+                                <li>Возможные риски. Работая в IT-сфере, всегда нужно учитывать возможные риски. Далеко не каждый стартап проект в итоге становится успешным, большинство проектов, к сожалению, так и не доходят до своего целевого потребителя, и это может происходить по разным причинам. Различные интернет-проекты жестко конкурируют друг с другом, кроме того, никто не защищен в полной мере от полного или частичного копирования информации, интересных идей. Поэтому в IT-сфере желательно всегда быть на шаг впереди конкурентов и быть готовым явить интернет-сообществу новую идею, в то время, как конкуренты только-только скопировали старую. Наша биржа стартапов является одной из самых популярных в России, благодаря нам многие стартап-компании приобрели надежных инвесторов. Среди наших новаторов очень много успешных людей, а их оригинальные проекты приносят хорошую прибыль. Успешность вашего бизнеса очень важна для нас!
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/static/**", "/login", "/registration").permitAll()
+                .antMatchers("/", "/static/**", "/login", "/registration", "/startup_description/*").permitAll()
                 .antMatchers("/account/**","/add_startup","/edit_startup/**").hasAnyRole("USER", "OWNER")
                 .antMatchers("/jpeg/**").authenticated()
                 .anyRequest().denyAll()
@@ -25,7 +25,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .successForwardUrl("/")
                 .loginProcessingUrl("/j_spring_security_check")
-                .failureUrl("/loginerror")
+                .failureUrl("/login_error")
                 .usernameParameter("j_username")
                 .passwordParameter("j_password")
                 .permitAll()

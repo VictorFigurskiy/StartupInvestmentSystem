@@ -77,7 +77,7 @@
                             <a href="portfolio-4-col.html">4 Column Portfolio</a>
                         </li>
                         <li>
-                            <a href="portfolio-item.html">Single Portfolio Item</a>
+                            <a href="single_startup_description.jsp">Single Portfolio Item</a>
                         </li>
                     </ul>
                 </li>

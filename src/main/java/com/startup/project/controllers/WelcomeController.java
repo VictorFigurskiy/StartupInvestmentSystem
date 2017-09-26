@@ -38,9 +38,8 @@ public class WelcomeController {
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/loginerror", method = RequestMethod.GET)
+    @RequestMapping(value = "/login_error", method = RequestMethod.GET)
     public ModelAndView errorPage(ModelAndView modelAndView) {
-//        ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("login");
         modelAndView.addObject("errorLogin", "Неправильно введены данные логина или пароля, попробуйте еще раз!");
         return modelAndView;

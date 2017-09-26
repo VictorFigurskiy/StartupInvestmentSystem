@@ -220,19 +220,20 @@ footer nav ul li a:hover {
 }
 
 .edit_startup input[type="submit"] {
-    padding: 0 10px;
-    font-size: 15px;
-    line-height: 36px;
+    padding: 0px 0px 0px 0px;
+    font-size: 16px;
+    line-height: 0px;
     text-align: center;
-    background-color: #437982;
-    border: 1px solid #437982;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    background-color: #9999994d;
+    border: 1px solid #000;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     color: white;
     cursor: pointer;
     font-weight: 300;
-    width: 230px;
+    width: 239px;
     margin-top: 20px;
+    color: #000000;
 }
 
 .main-page-button a:hover {
@@ -252,4 +253,5 @@ footer nav ul li a:hover {
 .account_buttons:hover{
     background-color: #f5f5f5 !important;
 }
+
 
