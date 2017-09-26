@@ -33,7 +33,7 @@
 
     <!-- Navigation -->
     <nav class="navbar" role="navigation">
-        <div class="container">
+        <div class="container header_menu">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">

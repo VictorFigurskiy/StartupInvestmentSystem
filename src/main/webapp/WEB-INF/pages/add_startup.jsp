@@ -38,7 +38,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!-- Navigation -->
 <nav class="navbar navbar-background" role="navigation">
-    <div class="container">
+    <div class="container header_menu">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"

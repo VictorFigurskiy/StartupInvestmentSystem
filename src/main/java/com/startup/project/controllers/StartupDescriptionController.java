@@ -24,10 +24,6 @@ public class StartupDescriptionController {
 
     @Autowired
     private StartupService startupService;
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private InvestorService investorService;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView startupDescription(@PathVariable("id") String id) {
@@ -35,8 +31,7 @@ public class StartupDescriptionController {
         modelAndView.setViewName("single_startup_description");
         Startup startup = startupService.getById(Integer.parseInt(id));
         StartupDetail startupDetail = startup.getStartupDetail();
-        double doubleSum = startup.getInvestorList().stream().map(Investor::getInvestments).mapToDouble(BigDecimal::doubleValue).sum();
-        BigDecimal investmentsSum = new BigDecimal(doubleSum);
+        Integer investmentsSum = startup.getInvestorList().stream().map(Investor::getInvestments).mapToInt(BigDecimal::intValue).sum();
         modelAndView.addObject("investmentsSum",investmentsSum);
         modelAndView.addObject("startup", startup);
         modelAndView.addObject("startupDetail", startupDetail);

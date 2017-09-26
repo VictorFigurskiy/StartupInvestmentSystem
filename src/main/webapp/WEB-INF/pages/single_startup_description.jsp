@@ -22,6 +22,7 @@
 
     <!-- Custom CSS -->
     <link href="../../static/css/modern-business.css" rel="stylesheet">
+    <link href="../../static/css/footerStyle.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -33,15 +34,16 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
 </head>
 
 <body>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!-- Navigation -->
 <nav class="navbar" role="navigation">
-    <div class="container">
+    <div class="container header_menu">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+        <div class="navbar-header main-page-button">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -131,7 +133,7 @@
 
 <jsp:useBean id="startup" scope="request" type="com.startup.project.entities.Startup"/>
 <jsp:useBean id="startupDetail" scope="request" type="com.startup.project.entities.StartupDetail"/>
-<jsp:useBean id="investmentsSum" scope="request" type="java.math.BigDecimal"/>
+<jsp:useBean id="investmentsSum" scope="request" type="java.lang.Integer"/>
 
 <!-- Page Content -->
 <div class="container">
@@ -146,8 +148,8 @@
                 <li><a href="${contextPath}/" style="color: #353535;">Назад</a>
                 </li>
                 <li class="active"><c:out value="${startup.startupName}"/></li>
-                <li class="active"> Сумма вложенная в стартап: ${investmentsSum}</li>
-                <li class="active"> Минимальная необходимая сумма: ${startup.startupCost}</li>
+                <%--<li class="active"> Сумма вложенная в стартап: ${investmentsSum}</li>--%>
+                <%--<li class="active"> Минимальная необходимая сумма: ${startup.startupCost}</li>--%>
                 <li class="active"></li>
             </ol>
         </div>
@@ -163,18 +165,25 @@
         <div class="col-md-4">
 
 
-            <div class="single_startup">
+            <div>
                 <form method="post" action="${contextPath}/investment">
                     <input type="hidden" name="startup_id" value="${startup.id}">
-                    <input type="submit" value="Инвестировать в стартап">
+                    <div style="margin-bottom: -14px;">
+                        <input class="btn btn-primary" type="submit" value="Инвестировать в стартап" style="width: 359px; height: 52px; font-size: x-large; background: #4F9EE1;">
+                    </div>
+                    <div class="panel-heading" style="height: 32px; margin-bottom: 9px;">
+                        <h3>Необходимо: ${startup.startupCost.intValue()}$</h3>
+                    </div>
+                    <div class="panel-heading" style="height: 60px;">
+                        <h3>Уже собрано: ${investmentsSum}$</h3>
+                    </div>
                 </form>
             </div>
 
+            <hr>
 
             <h3>Описание стартапа</h3>
             <p>${startup.description}</p>
-            <h3>Идея</h3>
-            <p>${startup.idea}</p>
         </div>
 
     </div>
@@ -191,10 +200,10 @@
 
             <ul id="myTab" class="nav nav-tabs nav-justified">
                 <li class="active"><a href="#service-one" data-toggle="tab" style="color: #353535;"><i
-                        class="fa fa-tree"></i> Текущее состояние:</a>
+                        class="fa fa-tree"></i> Идея стартапа:</a>
                 </li>
                 <li class=""><a href="#service-two" data-toggle="tab" style="color: #353535;"><i
-                        class="fa fa-car"></i> Имущество и активы:</a>
+                        class="fa fa-car"></i> Текущее состояние:</a>
                 </li>
                 <li class=""><a href="#service-three" data-toggle="tab" style="color: #353535;"><i
                         class="fa fa-support"></i> Проблема или Возможность:</a>
@@ -203,18 +212,18 @@
                         class="fa fa-database"></i> Конкуренты:</a>
                 </li>
                 <li class=""><a href="#service-five" data-toggle="tab" style="color: #353535;"><i
-                        class="fa fa-android"></i> Бизнес-модель:</a>
+                        class="fa fa-android"></i> Имущество и активы:</a>
                 </li>
             </ul>
 
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade active in" id="service-one">
-                    <h4>Текущее состояние:</h4>
-                    <p>${startupDetail.currentState}</p>
+                    <h4>Идея стартапа:</h4>
+                    <p>${startup.idea}</p>
                 </div>
                 <div class="tab-pane fade" id="service-two">
-                    <h4>Имущество и активы:</h4>
-                    <p>${startupDetail.property}</p>
+                    <h4>Текущее состояние:</h4>
+                    <p>${startupDetail.currentState}</p>
                 </div>
                 <div class="tab-pane fade" id="service-three">
                     <h4>Проблема или Возможность:</h4>
@@ -225,8 +234,8 @@
                     <p>${startupDetail.competitors}</p>
                 </div>
                 <div class="tab-pane fade" id="service-five">
-                    <h4>Бизнес-модель:</h4>
-                    <p>${startupDetail.businessModel}</p>
+                    <h4>Имущество и активы:</h4>
+                    <p>${startupDetail.property}</p>
                 </div>
             </div>
 
@@ -314,10 +323,23 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                               href="#collapseSix">Страна:</a>
+                               href="#collapseSix">Бизнес-модель:</a>
                         </h4>
                     </div>
                     <div id="collapseSix" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            ${startupDetail.businessModel}
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Страна:</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse">
                         <div class="panel-body">
                             ${startup.country}
                         </div>

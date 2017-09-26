@@ -4507,8 +4507,9 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
     min-height: 50px;
     margin-top: -50px;
     border: 1px solid transparent;
-    background: url(../image/background.jpg) no-repeat;
-    height: 400px;
+    background: center url(../image/ford.jpg) no-repeat;
+    height: 500px;
+    width: auto;
     color: white
 }
 
