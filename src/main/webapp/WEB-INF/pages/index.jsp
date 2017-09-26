@@ -389,7 +389,7 @@
     <div class="container">
         <div class="row">
             <nav>
-                <ul>
+                <ul style="padding-left: 0px">
                     <li><a href="index.jsp">HOME</a></li>
                     <li><a href="">EditStartupDetails</a></li>
                     <li><a href="index.jsp">FORUM</a></li>

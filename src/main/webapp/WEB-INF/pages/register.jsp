@@ -126,7 +126,11 @@
     <!-- Page Heading/Breadcrumbs -->
     <h2>Регистрация</h2>
     <form:form action="/registration" method="POST" modelAttribute="userFormRegist" class="form-horizontal">
-        <div class="form-group">
+
+        <div style="display: block; width: auto; height: auto;" align="center">
+            <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="firstName"></form:errors></span>
+        </div>
+        <div class="form-group" style="margin-bottom: 0px">
             <label class="control-label col-xs-3" for="firstName">Имя:</label>
             <div class="col-xs-9">
                 <spring:bind path="firstName">
@@ -134,7 +138,11 @@
                 </spring:bind>
             </div>
         </div>
-        <div class="form-group">
+
+        <div style="display: block; width: auto; height: auto;" align="center">
+            <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="lastName"></form:errors></span>
+        </div>
+        <div class="form-group" style="margin-bottom: 0px">
             <label class="control-label col-xs-3" for="lastName">Фамилия:</label>
             <div class="col-xs-9">
                 <spring:bind path="lastName">
@@ -142,8 +150,11 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="email"></form:errors></span>
-        <div class="form-group">
+
+    <div style="display: block; width: auto; height: auto;" align="center">
+        <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="email"></form:errors></span>
+    </div>
+        <div class="form-group" style="margin-bottom: 0px">
             <label class="control-label col-xs-3" for="inputEmail">Email:</label>
             <div class="col-xs-9">
                 <spring:bind path="email">
@@ -151,8 +162,23 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="password" ></form:errors></span>
-        <div class="form-group">
+
+        <div style="display: block; width: auto; height: auto;" align="center">
+            <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="phone" ></form:errors></span>
+        </div>
+        <div class="form-group" style="margin-bottom: 0px">
+            <label class="control-label col-xs-3" for="phoneNumber">Телефон:</label>
+            <div class="col-xs-9">
+                <spring:bind path="phone">
+                    <form:input type="text" cssClass="form-control" id="phoneNumber" maxlength="13"  placeholder="+38(ХХХ) ХХХ-ХХ-ХХ" path="phone" required="required"/>
+                </spring:bind>
+            </div>
+        </div>
+
+    <div style="display: block; width: auto; height: auto;" align="center">
+        <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="password" ></form:errors></span>
+    </div>
+        <div class="form-group" style="margin-bottom: 0px">
             <label class="control-label col-xs-3" for="inputPassword">Пароль:</label>
             <div class="col-xs-9">
                 <spring:bind path="password">
@@ -160,8 +186,11 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="confirmPassword"></form:errors></span>
-        <div class="form-group">
+
+    <div style="display: block; width: auto; height: auto;" align="center">
+        <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="confirmPassword"></form:errors></span>
+    </div>
+        <div class="form-group" style="margin-bottom: 0px">
             <label class="control-label col-xs-3" for="confirmPassword">Подтвердите пароль:</label>
             <div class="col-xs-9">
                 <spring:bind path="confirmPassword">
@@ -169,20 +198,9 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="phone" ></form:errors></span>
-        <div class="form-group">
-            <label class="control-label col-xs-3" for="phoneNumber">Телефон:</label>
-            <div class="col-xs-9">
-                <spring:bind path="phone">
-                <form:input type="text" cssClass="form-control" id="phoneNumber" maxlength="13"  placeholder="+38(ХХХ) ХХХ-ХХ-ХХ" path="phone" required="required"/>
-                </spring:bind>
-            </div>
-        </div>
-
-
-
 
         <br/>
+
         <div class="form-group">
             <div class="col-xs-offset-3 col-xs-9">
                 <input type="submit" Class="btn btn-primary" value="Регистрация"/>
@@ -194,17 +212,31 @@
 
     <hr>
 
-    <!-- Footer -->
-    <footer>
+</div>
+<!-- /.container -->
+<!-- Footer -->
+<footer class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <nav>
+                <ul style="padding-left: 0px">
+                    <li><a href="index.jsp">HOME</a></li>
+                    <li><a href="">EditStartupDetails</a></li>
+                    <li><a href="index.jsp">FORUM</a></li>
+                    <li><a href="index.jsp">TUTORIALS</a></li>
+                    <li><a href="/static/about.html">ABOUT US</a></li>
+                    <li><a href="index.jsp">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 footerClass" >
                 <p>Final Project TeamOne Website 2017</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-</div>
-<!-- /.container -->
 
 <!-- jQuery -->
 <script src="../../static/js/jquery.js"></script>

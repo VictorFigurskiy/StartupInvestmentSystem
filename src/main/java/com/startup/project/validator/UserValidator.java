@@ -2,9 +2,11 @@ package com.startup.project.validator;
 
 import com.startup.project.entities.User;
 import com.startup.project.services.UserService;
+import jdk.nashorn.internal.codegen.types.NumericType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 /**
@@ -26,6 +28,9 @@ public class UserValidator implements Validator {
 
         User user = ((User) target);
         User dbUser = userService.getByEmail(user.getEmail());
+
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors,"firstName", "WhiteSpace.orEmpty.firstName","Поле обязательное для заполнения!");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors,"lastName", "WhiteSpace.orEmpty.lastName","Поле обязательное для заполнения!");
 
         if (!user.getPassword().equals(user.getConfirmPassword())) {
             errors.rejectValue("confirmPassword", "Match.userForm.password", "Пароли не совпадают, попробуйте еще раз!");

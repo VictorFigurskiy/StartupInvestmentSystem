@@ -1,11 +1,19 @@
+<%@ page import="com.startup.project.entities.Investor" %><%--
+  Created by IntelliJ IDEA.
+  User: serhii
+  Date: 26.09.2017
+  Time: 16:00
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <jsp:useBean id="currentUser" scope="request" type="com.startup.project.entities.User"/>
     <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <jsp:useBean id="startup" scope="request" type="com.startup.project.entities.Startup"/>
+    <jsp:useBean id="intSum" scope="request" type="java.lang.Integer"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +55,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-           <div class="main-page-button"><a class="navbar-brand" href="/">На главную</a></div>
+            <div class="main-page-button"><a class="navbar-brand" href="/">На главную</a></div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -129,94 +137,92 @@
     <hr style="margin-top: 10px; margin-bottom: 30px">
 
     <div class="row">
+        <%--Alert message--%>
+            <div class="col-md-9 personal-info" style="margin-left: 20%">
+                <div class="alert alert-info alert-dismissable" style="width: 80%">
+                    <a class="panel-close close" data-dismiss="alert">×</a>
+                    <i class="fa fa-coffee"></i>
+                    This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                </div>
+            </div>
+
         <!-- left column -->
         <div class="col-md-4">
             <div class="panel panel-default" style="border-color: darkgray">
                 <div class="panel-heading" style="border-bottom-color: darkgray">
-                    <h4>Информация</h4>
+                    <h4>Контактные данные владельца</h4>
                 </div>
                 <div class="panel-body" style="padding: 3px 15px; font-size: 15px">
-                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.firstName}</div>
-                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.lastName}</div>
-                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.email}</div>
-                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.phone}</div>
-                    <div style="padding: 6px 1px; float: left; width: 50%" align="left">
-                        <form action="${contextPath}/account/edit-page" method="POST">
-                            <input hidden name="userId" value="${currentUser.id}"/>
-                            <input class="account_buttons" type="submit" style="color: black;" value="Редактировать"/>
-                        </form>
-                    </div>
-                    <div style="padding: 6px 1px; float: left; width: 50%" align="right">
-                        <form action="${contextPath}/account/delete" method="POST">
-                            <input hidden name="userId" value="${currentUser.id}"/>
-                            <input class="account_buttons" type="submit" style="color: #f30000;" value="Удалить" />
-                        </form>
-                        </div>
+                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${startup.ownerUser.firstName}</div>
+                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${startup.ownerUser.lastName}</div>
+                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${startup.ownerUser.email}</div>
+                    <div style="padding: 6px 1px;">${startup.ownerUser.phone}</div>
                 </div>
             </div>
         </div>
 
         <div align="left" style="width: auto; max-width: 66%; display: inline-grid">
-        <div class="col-md-4" style="width: auto; min-width: 400px">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>Стартапы</h4>
-                </div>
-                <div class="panel-body" style="padding: 3px 15px;">
-                    <!-- link for startup INFO-->
-                    <c:if test="${currentUser.startupList.size()>0}">
-                          <c:forEach items="${currentUser.startupList}" var="startup">
-                              <div style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
-                                  <li style="width: auto; float: left; margin-right: 20px;">${startup.startupName}</li>
-                                  <div style="float: right;">
-                                  <form method="post" action="/edit_startup/update_page">
-                                      <input hidden="" name="id" value="${startup.id}">
-                                      <input class="account_buttons" type="submit" value="Редактировать" title="Просмотр, редактирование и удаление стартапа">
-                                  </form>
-                                  </div>
-                              </div>
-                        </c:forEach>
-                    </c:if>
-                   <!-- link for Adding startup-->
-                    <div style="padding: 6px 1px; width: auto"><a href="${contextPath}/add_startup" style="color: black; float: right;">Добавить стартап</a></div>
-                </div>
-            </div>
-        </div>
+            <div class="col-md-4" style="width: auto; min-width: 400px">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Стартапы</h4>
+                    </div>
+                    <div class="panel-body" style="padding: 3px 15px;">
+                        <!-- link for startup INFO-->
+                        <%--<c:if test="${currentUser.startupList.size()>0}">--%>
 
-        <div class="col-md-4" style="width: auto;">
-            <div class="panel panel-default" style="border-bottom: none">
-                <div class="panel-heading">
-                    <h4>Инвестиции</h4>
-                </div>
-                <div class="panel-body" style="padding: 0px 0px 0px;">
-                    <!-- link for startup INFO-->
+                                <div style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
+                                    <li style="width: auto; float: left; margin-right: 20px;">${startup.startupName}</li>
+                                    <span style="width: auto; float: left; margin-right: 20px;">${startup.startupCost}</span>
+                                    <div style="float: right;">
+                                        <form method="post" action="${contextPath}/investment/confirm">
+                                            <input hidden name="startupId" value="${startup.id}">
+                                            <%--<input type="number" name="${intSum}" required>--%>
+                                            <input class="account_buttons" type="submit" value="Инвестировать" title="Просмотр, редактирование и удаление стартапа">
+                                        </form>
+                                    </div>
+                                </div>
 
-                    <jsp:useBean id="investments" scope="request" type="java.util.List<com.startup.project.entities.Investment>"/>
-
-                    <table width="100%">
-                    <c:if test="${not empty investments}">
-
-                            <tr style="border-bottom: 1px solid #ddd; height: 45px">
-                            <th style="text-align: center; border-right: 1px solid #ddd;">Название</th>
-                            <th style="padding: 0 10px; text-align: center">Сумма вложений</th>
-                        </tr>
-                        <c:forEach items="${investments}" var="investment">
-
-                            <tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd"><a href="${investment.startupId}" style="color: #333;"><li>${investment.stastupName}
-                                <c:forEach items="${currentUser.startupList}" var="startup">
-                                    <c:if test="${investment.startupId==startup.id}"> (your own)</c:if>
-                                </c:forEach>
-                            </li></a></td>
-                                <td style="text-align: center">${investment.sumInvestment}$</td></tr>
-
-                        </c:forEach>
-
-                    </c:if>
-                    <c:if test="${empty investments}"><tr><td style="border-bottom: 1px solid #ddd; padding: 11px">У вас нет инвестиций!</td></tr></c:if>
-                        </table>
+                        <%--</c:if>--%>
+                        <!-- link for Adding startup-->
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <%--<div class="col-md-4" style="width: auto;">--%>
+                <%--<div class="panel panel-default" style="border-bottom: none">--%>
+                    <%--<div class="panel-heading">--%>
+                        <%--<h4>Инвестиции</h4>--%>
+                    <%--</div>--%>
+                    <%--<div class="panel-body" style="padding: 0px 0px 0px;">--%>
+                        <%--<!-- link for startup INFO-->--%>
+
+                        <%--<jsp:useBean id="investments" scope="request" type="java.util.List<com.startup.project.entities.Investment>"/>--%>
+
+                        <%--<table width="100%">--%>
+                            <%--<c:if test="${not empty investments}">--%>
+
+                                <%--<tr style="border-bottom: 1px solid #ddd; height: 45px">--%>
+                                    <%--<th style="text-align: center; border-right: 1px solid #ddd;">Название</th>--%>
+                                    <%--<th style="padding: 0 10px; text-align: center">Сумма вложений</th>--%>
+                                <%--</tr>--%>
+                                <%--<c:forEach items="${investments}" var="investment">--%>
+
+                                    <%--<tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd"><a href="${investment.startupId}" style="color: #333;"><li>${investment.stastupName}--%>
+                                        <%--<c:forEach items="${currentUser.startupList}" var="startup">--%>
+                                            <%--<c:if test="${investment.startupId==startup.id}"> (your own)</c:if>--%>
+                                        <%--</c:forEach>--%>
+                                    <%--</li></a></td>--%>
+                                        <%--<td style="text-align: center">${investment.sumInvestment}$</td></tr>--%>
+
+                                <%--</c:forEach>--%>
+
+                            <%--</c:if>--%>
+                            <%--<c:if test="${empty investments}"><tr><td style="border-bottom: 1px solid #ddd; padding: 11px">У вас нет инвестиций!</td></tr></c:if>--%>
+                        <%--</table>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         </div>
 
     </div>
@@ -257,4 +263,5 @@
 </body>
 
 </html>
+
 

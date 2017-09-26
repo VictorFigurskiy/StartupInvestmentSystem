@@ -32,7 +32,7 @@ public class AccountController {
     private UserValidator validator;
 
     @GetMapping
-    public String acoountPage(Model model) {
+    public String accountPage(Model model) {
         UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User byEmail = userService.getByEmail(principal.getUsername());
         List<Investment> investments = investorService.getInvestment(byEmail.getId());
@@ -41,7 +41,7 @@ public class AccountController {
         return "account";
     }
 
-    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    @RequestMapping(value = "/edit-page", method = RequestMethod.POST)
     public String editUserForm(@RequestParam("userId") int id, Model model) {
         User byId = userService.getById(id);
         model.addAttribute("userForEdit", byId);
@@ -59,7 +59,7 @@ public class AccountController {
         return "redirect:/account";
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String deleteUser(@RequestParam("userId") int userId) {
         User byId = userService.getById(userId);
         userService.delete(byId);

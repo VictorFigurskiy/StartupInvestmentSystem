@@ -146,47 +146,67 @@
             <%--Id--%>
             <div hidden><form:input value="${userForEdit.id}" type="number" path="id"/></div>
             <%--Id--%>
-            <div class="form-group">
+
+            <div style="display: block; width: auto; height: auto;" align="center">
+                <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="firstName"></form:errors></span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0px">
             <label class="col-lg-3 control-label">Имя:</label>
             <div class="col-lg-8">
-                <form:input class="form-control" value="${userForEdit.firstName}" type="text" path="firstName"/>
+                <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.firstName}" type="text" path="firstName"/>
             </div>
           </div>
-          <div class="form-group">
+
+          <div style="display: block; width: auto; height: auto;" align="center">
+              <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="lastName"></form:errors></span>
+          </div>
+          <div class="form-group" style="margin-bottom: 0px">
             <label class="col-lg-3 control-label">Фамилия:</label>
             <div class="col-lg-8">
-              <form:input class="form-control" value="${userForEdit.lastName}" type="text" path="lastName"/>
+              <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.lastName}" type="text" path="lastName"/>
             </div>
           </div>
             <%--Prev email--%>
             <div hidden><form:input value="${userForEdit.email}" type="text" path="previousEmail"/></div>
             <%--Prev email--%>
-          <div class="form-group">
+
+          <div style="display: block; width: auto; height: auto;" align="center">
+              <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="email"></form:errors></span>
+          </div>
+          <div class="form-group" style="margin-bottom: 0px">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-                <span style="font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="email"></form:errors></span>
-              <form:input class="form-control" value="${userForEdit.email}" type="email" path="email"/>
+              <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.email}" type="email" path="email"/>
             </div>
           </div>
-            <div class="form-group">
+
+            <div style="display: block; width: auto; height: auto;" align="center">
+                <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="phone"></form:errors></span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0px">
                 <label class="col-lg-3 control-label">Телефон:</label>
                 <div class="col-lg-8">
-                    <span style="font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="phone"></form:errors></span>
-                    <form:input class="form-control" value="${userForEdit.phone}" maxlength="13" type="text" path="phone" />
+                    <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.phone}" maxlength="13" type="text" path="phone" />
                 </div>
             </div>
-          <div class="form-group">
+
+          <div style="display: block; width: auto; height: auto;" align="center">
+              <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="password"></form:errors></span>
+          </div>
+          <div class="form-group" style="margin-bottom: 0px">
             <label class="col-lg-3 control-label">Пароль:</label>
             <div class="col-lg-8">
-                <span style="font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="password"></form:errors></span>
-              <form:input class="form-control" value="${userForEdit.password}" type="password" path="password"/>
+              <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.password}" type="password" path="password"/>
             </div>
           </div>
-            <div class="form-group">
+
+            <div style="display: block; width: auto; height: auto;" align="center">
+                <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="confirmPassword"></form:errors></span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0px">
                 <label class="col-lg-3 control-label">Подтверждение пароля:</label>
                 <div class="col-lg-8">
-                    <span style="font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="confirmPassword"></form:errors></span>
-                    <form:input class="form-control" value="${userForEdit.password}" type="password" path="confirmPassword"/>
+                    <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.password}" type="password" path="confirmPassword"/>
                 </div>
             </div>
 
@@ -204,18 +224,30 @@
         <!-- /.row -->
 
         <hr style="margin-top: 10px; margin-bottom: 30px">
-
-        <!-- Footer -->
-        <footer>
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <nav>
+                    <ul style="padding-left: 0px">
+                        <li><a href="index.jsp">HOME</a></li>
+                        <li><a href="">EditStartupDetails</a></li>
+                        <li><a href="index.jsp">FORUM</a></li>
+                        <li><a href="index.jsp">TUTORIALS</a></li>
+                        <li><a href="/static/about.html">ABOUT US</a></li>
+                        <li><a href="index.jsp">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 footerClass" >
                     <p>Final Project TeamOne Website 2017</p>
                 </div>
             </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
+        </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="../../static/js/jquery.js"></script>
