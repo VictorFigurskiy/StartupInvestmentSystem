@@ -21,11 +21,6 @@ public class User {
     private String email;
     @Transient
     private String previousEmail;
-
-    public void setPreviousEmail(String previousEmail) {
-        this.previousEmail = previousEmail;
-    }
-
     @Column(name = "PASSWORD", nullable = false, length = 50)
     private String password;
     @Transient
@@ -117,6 +112,10 @@ public class User {
 
     public String getPreviousEmail() {
         return previousEmail;
+    }
+
+    public void setPreviousEmail(String previousEmail) {
+        this.previousEmail = previousEmail;
     }
 
     @Override

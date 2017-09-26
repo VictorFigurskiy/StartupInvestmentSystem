@@ -51,7 +51,14 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
                     }).collect(Collectors.toList());
         }
 
-
         return investmentList;
+    }
+
+    @Override
+    public void deleteInvestorByUserId(Integer id) {
+        Session session = sessionFactory.getCurrentSession();
+
+        session.createQuery("delete from Investor investor where investor.investorUser.id=:id")
+                .setParameter("id",id);
     }
 }

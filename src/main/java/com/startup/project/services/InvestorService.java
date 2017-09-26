@@ -53,4 +53,9 @@ public class InvestorService {
     public List<Investment> getInvestment(int userId) {
         return dao.getStartUpSumInvest(userId);
     }
+
+    @Transactional
+    public void deleteInvestorByUserId(Integer id) {
+        dao.deleteInvestorByUserId(id);
+    }
 }

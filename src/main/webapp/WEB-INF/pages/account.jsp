@@ -196,7 +196,7 @@
                     <table width="100%">
                     <c:if test="${not empty investments}">
 
-                            <tr style="border-bottom: 1px solid #ddd; height: 45px">
+                            <tr style="border-bottom: 1px solid #ddd; height: 43px; display: table-row">
                             <th style="text-align: center; border-right: 1px solid #ddd;">Название</th>
                             <th style="padding: 0 10px; text-align: center">Сумма вложений</th>
                         </tr>

@@ -40,26 +40,25 @@ public class InvestmentController {
         Startup startUpById = startupService.getById(id);
         UserDetails currentPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User currentUserbyEmail = userService.getByEmail(currentPrincipal.getUsername());
-
         model.addAttribute("startup", startUpById);
         model.addAttribute("user", currentUserbyEmail);
         return "invest";
     }
 
     @RequestMapping(value = "/confirm", method = RequestMethod.POST)
-    public String confirmInvest(
-                                @RequestAttribute("startupId") Integer startupId) {
+    public String confirmInvest(@RequestParam("startupId") Integer startupId,
+                                @RequestParam("sum") BigDecimal sum) {
         UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User userByEmail = userService.getByEmail(principal.getUsername());
         Startup startupById = startupService.getById(startupId);
         Investor investor = new Investor();
 
-//        investor.setInvestments(new BigDecimal(sum));
+        investor.setInvestments(sum);
         investor.setInvestorUser(userByEmail);
 
         startupById.getInvestorList().add(investor);
 
-        startupService.save(startupById);
+        startupService.update(startupById);
 
         return "redirect:/";
     }

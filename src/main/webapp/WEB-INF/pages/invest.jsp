@@ -13,7 +13,6 @@
 <head>
     <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
     <jsp:useBean id="startup" scope="request" type="com.startup.project.entities.Startup"/>
-    <jsp:useBean id="intSum" scope="request" type="java.lang.Integer"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -177,7 +176,7 @@
                                     <div style="float: right;">
                                         <form method="post" action="${contextPath}/investment/confirm">
                                             <input hidden name="startupId" value="${startup.id}">
-                                            <%--<input type="number" name="${intSum}" required>--%>
+                                            <input type="number" name="sum" required>
                                             <input class="account_buttons" type="submit" value="Инвестировать" title="Просмотр, редактирование и удаление стартапа">
                                         </form>
                                     </div>

@@ -62,6 +62,7 @@ public class AccountController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String deleteUser(@RequestParam("userId") int userId) {
         User byId = userService.getById(userId);
+        investorService.deleteInvestorByUserId(userId);
         userService.delete(byId);
         SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
         return "redirect:/";

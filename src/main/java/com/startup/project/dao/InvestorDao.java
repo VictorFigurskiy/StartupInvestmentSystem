@@ -13,4 +13,6 @@ import java.util.Map;
 public interface InvestorDao extends GeneralDao<Integer, Investor> {
 
     List<Investment> getStartUpSumInvest(int userId);
+
+    void deleteInvestorByUserId(Integer id);
 }
