@@ -6,6 +6,9 @@ import com.startup.project.services.InvestorService;
 import com.startup.project.services.UserService;
 import com.startup.project.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -14,6 +17,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by serhii on 20.09.2017.
@@ -56,6 +61,15 @@ public class AccountController {
         user.setStartupList(dbUser.getStartupList());
         user.setUserRoles(dbUser.getUserRoles());
         userService.update(user);
+
+        Set<GrantedAuthority> grantedAuthority = user.getUserRoles().stream()
+                .map(userRole -> new SimpleGrantedAuthority("ROLE_"+userRole.getRoleType()))
+                .collect(Collectors.toSet());
+        UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),grantedAuthority);
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails,user.getPassword(),userDetails.getAuthorities());
+        SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
+        SecurityContextHolder.getContext().setAuthentication(token);
+
         return "redirect:/account";
     }
 
