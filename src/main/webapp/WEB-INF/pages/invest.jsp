@@ -132,7 +132,7 @@
 <!-- Page Content -->
 <div class="container">
 
-    <h1>Профиль</h1>
+    <h1>Инвестирование</h1>
     <hr style="margin-top: 10px; margin-bottom: 30px">
 
     <div class="row">
@@ -170,14 +170,14 @@
                         <!-- link for startup INFO-->
                         <%--<c:if test="${currentUser.startupList.size()>0}">--%>
 
-                                <div style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
+                                <div style="padding: 6px 1px; display: table; width: 100%">
                                     <li style="width: auto; float: left; margin-right: 20px;">${startup.startupName}</li>
-                                    <span style="width: auto; float: left; margin-right: 20px;">${startup.startupCost}</span>
-                                    <div style="float: right;">
+                                    <span style="width: auto; float: right; margin-right: 20px;">${startup.startupCost}$</span>
+                                    <div style="float: left; width: 100%">
                                         <form method="post" action="${contextPath}/investment/confirm">
                                             <input hidden name="startupId" value="${startup.id}">
-                                            <input type="number" name="sum" required>
-                                            <input class="account_buttons" type="submit" value="Инвестировать" title="Просмотр, редактирование и удаление стартапа">
+                                            <input style="width: 60%; border-radius: 4px; border: 1px solid darkgray; height: 30px;" type="number" name="sum" required>
+                                            <input style="float: right; height: 30px" class="account_buttons" type="submit" value="Инвестировать" title="Просмотр, редактирование и удаление стартапа">
                                         </form>
                                     </div>
                                 </div>

@@ -196,17 +196,20 @@
                     <table width="100%">
                     <c:if test="${not empty investments}">
 
-                            <tr style="border-bottom: 1px solid #ddd; height: 43px; display: table-row">
+                            <tr style="border-bottom: 1px solid #ddd; height: 43px">
                             <th style="text-align: center; border-right: 1px solid #ddd;">Название</th>
                             <th style="padding: 0 10px; text-align: center">Сумма вложений</th>
                         </tr>
                         <c:forEach items="${investments}" var="investment">
 
-                            <tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd"><a href="${investment.startupId}" style="color: #333;"><li>${investment.stastupName}
+                            <tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd">
+                                <a href="${contextPath}/startup_description/${investment.startupId}" style="color: #333;">
+                                    <li>${investment.stastupName}
                                 <c:forEach items="${currentUser.startupList}" var="startup">
                                     <c:if test="${investment.startupId==startup.id}"> (your own)</c:if>
                                 </c:forEach>
-                            </li></a></td>
+                            </li>
+                                </a></td>
                                 <td style="text-align: center">${investment.sumInvestment}$</td></tr>
 
                         </c:forEach>
