@@ -290,3 +290,98 @@ footer nav ul li a:hover {
     color: #000000;
 }
 
+.navbar-background-team {
+    background: url(/static/image/hands-1920.jpg) no-repeat center top;
+    -webkit-background-size: 110%;
+    background-size: 110%;
+}
+
+.team {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.team .item img {
+    width: 70%;
+    height: auto;
+    position: relative;
+    top: -100px;
+}
+
+.team .item {
+    text-align: center;
+}
+
+.team .item .item_img {
+    display: inline-block;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: url(/static/image/yanovets.jpg) no-repeat center center;
+    background-size: 100%;
+    border: 2px solid #e6ffe1;
+}
+
+.team .item button,
+.team .item button:hover,
+.team .item button:focus,
+.team .item button:active {
+    outline: none;
+    border: none;
+}
+
+.team .item button {
+    width: 200px;
+    background-color: #4b4b4b;
+    border-radius: 4px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+}
+
+.team .item button:hover {
+    box-shadow: inset 0 0 3px 0 rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 3px 0 rgba(0,0,0,0.3);
+    background-color: #343434;
+}
+
+.team .item p {
+    line-height: 30px;
+    color: white;
+}
+
+.team .team_name {
+    color: #000000 !important;
+    font-size:20px;
+    line-height: 30px;
+}
+
+
+.team_info {
+    margin-top: 20px;
+
+}
+
+.team_info .team_info_item {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.3);
+    border-radius: 10px;
+    display: none;
+}
+
+/*
+  about_project static page
+ */
+.navbar-background-about-project{
+    background: url(/static/image/11.jpg) no-repeat center top;
+    -webkit-background-size: 110%;
+    background-size: 110%;
+}
+
+.mainpage_seo{
+    margin-left: auto;
+}
+

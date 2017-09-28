@@ -391,7 +391,7 @@
             <nav>
                 <ul style="padding-left: 0px">
                     <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="">EditStartupDetails</a></li>
+                    <li><a href="/static/team.html">OUR TEAM</a></li>
                     <li><a href="index.jsp">FORUM</a></li>
                     <li><a href="index.jsp">TUTORIALS</a></li>
                     <li><a href="/static/about.html">ABOUT US</a></li>
