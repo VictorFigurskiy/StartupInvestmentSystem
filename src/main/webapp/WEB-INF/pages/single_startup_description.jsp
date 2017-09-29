@@ -62,67 +62,13 @@
                     </li>
                 </sec:authorize>
                 <li>
-                    <a href="../../static/about.html">About</a>
+                    <a class="no_padding_left" href="../../static/team.html">Наша команда</a>
                 </li>
                 <li>
-                    <a href="../../static/services.html">Services</a>
+                    <a href="../../static/about.html">Больше о проекте</a>
                 </li>
                 <li>
-                    <a href="../../static/contact.html">Contact</a>
-                </li>
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/portfolio-1-col.html">1 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-2-col.html">2 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-3-col.html">3 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-4-col.html">4 Column Portfolio</a>
-                        </li>
-                        <li class="active">
-                            <a href="single_startup_description.jsp">Single Portfolio Item</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/blog-home-1.html">Blog Home 1</a>
-                        </li>
-                        <li>
-                            <a href="../../static/blog-home-2.html">Blog Home 2</a>
-                        </li>
-                        <li>
-                            <a href="../../static/blog-post.html">Blog Post</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/full-width.html">Full Width Page</a>
-                        </li>
-                        <li>
-                            <a href="../../static/sidebar.html">Sidebar Page</a>
-                        </li>
-                        <li>
-                            <a href="../../static/faq.html">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="404.jsp">404</a>
-                        </li>
-                        <li>
-                            <a href="../../static/pricing.html">Pricing Table</a>
-                        </li>
-                    </ul>
+                    <a href="../../static/contact.html">Контакты</a>
                 </li>
             </ul>
         </div>
@@ -354,14 +300,25 @@
 
         <hr>
 
-        <!-- Footer -->
-        <footer>
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <nav>
+                    <ul style="padding-left: 0px">
+                        <li><a href="../../static/team.html">Наша команда</a></li>
+                        <li><a href="../../static/about.html">Больше о проекте</a></li>
+                        <li><a href="../../static/contact.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 footerClass" >
                     <p>Final Project TeamOne Website 2017</p>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     </div>
     <!-- /.container -->

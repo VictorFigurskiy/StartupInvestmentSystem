@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Личный кабинет</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
@@ -53,67 +53,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
-                    <a href="about.html">About</a>
+                    <a class="no_padding_left" href="../../static/team.html">Наша команда</a>
                 </li>
                 <li>
-                    <a href="services.html">Services</a>
+                    <a href="../../static/about.html">Больше о проекте</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="portfolio-1-col.html">1 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="portfolio-2-col.html">2 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="single_startup_description.jsp">Single Portfolio Item</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="blog-home-1.html">Blog Home 1</a>
-                        </li>
-                        <li>
-                            <a href="blog-home-2.html">Blog Home 2</a>
-                        </li>
-                        <li>
-                            <a href="blog-post.html">Blog Post</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="full-width.html">Full Width Page</a>
-                        </li>
-                        <li>
-                            <a href="sidebar.html">Sidebar Page</a>
-                        </li>
-                        <li>
-                            <a href="faq.html">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="../WEB-INF/pages/404.jsp">404</a>
-                        </li>
-                        <li>
-                            <a href="pricing.html">Pricing Table</a>
-                        </li>
-                    </ul>
+                    <a href="../../static/contact.html">Контакты</a>
                 </li>
             </ul>
         </div>
@@ -166,8 +112,10 @@
                     <!-- link for startup INFO-->
                     <c:if test="${currentUser.startupList.size()>0}">
                           <c:forEach items="${currentUser.startupList}" var="startup">
-                              <div style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
-                                  <li style="width: auto; float: left; margin-right: 20px;">${startup.startupName}</li>
+                              <div  style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
+                                  <a class="account_a" href="${contextPath}/startup_description/${startup.id}" style="color: #000000;">
+                                      <li style="width: auto; float: left; margin-right: 20px; margin-top: 3px;">${startup.startupName}</li>
+                                  </a>
                                   <div style="float: right;">
                                   <form method="post" action="/edit_startup/update_page">
                                       <input hidden="" name="id" value="${startup.id}">
@@ -204,7 +152,7 @@
 
                             <tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd">
                                 <a href="${contextPath}/startup_description/${investment.startupId}" style="color: #333;">
-                                    <li>${investment.stastupName}
+                                    <li>${investment.startupName}
                                 <c:forEach items="${currentUser.startupList}" var="startup">
                                     <c:if test="${investment.startupId==startup.id}"> (your own)</c:if>
                                 </c:forEach>
@@ -234,17 +182,14 @@
         <div class="row">
             <nav>
                 <ul style="padding-left: 0px">
-                    <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="">EditStartupDetails</a></li>
-                    <li><a href="index.jsp">FORUM</a></li>
-                    <li><a href="index.jsp">TUTORIALS</a></li>
-                    <li><a href="/static/about.html">ABOUT US</a></li>
-                    <li><a href="index.jsp">CONTACT</a></li>
+                    <li><a href="../../static/team.html">Наша команда</a></li>
+                    <li><a href="../../static/about.html">Больше о проекте</a></li>
+                    <li><a href="../../static/contact.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>
         <div class="row">
-            <div class="col-lg-12 footerClass">
+            <div class="col-lg-12 footerClass" >
                 <p>Final Project TeamOne Website 2017</p>
             </div>
         </div>

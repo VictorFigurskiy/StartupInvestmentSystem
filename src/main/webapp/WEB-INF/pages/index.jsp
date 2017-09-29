@@ -113,72 +113,19 @@
                     </li>
                 </sec:authorize>
                 <li>
-                    <a class="no_padding_left" href="../../static/about.html">О нас</a>
+                    <a class="no_padding_left" href="../../static/team.html">Наша команда</a>
                 </li>
                 <li>
-                    <a href="../../static/services.html">Сервисы</a>
+                    <a href="../../static/about.html">Больше о проекте</a>
                 </li>
                 <li>
                     <a href="../../static/contact.html">Контакты</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Портфолио<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/portfolio-1-col.html">1 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-2-col.html">2 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-3-col.html">3 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-4-col.html">4 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="single_startup_description.jsp">Single Portfolio Item</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Блог<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/blog-home-1.html">Blog Home 1</a>
-                        </li>
-                        <li>
-                            <a href="../../static/blog-home-2.html">Blog Home 2</a>
-                        </li>
-                        <li>
-                            <a href="../../static/blog-post.html">Blog Post</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Другие страницы<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/full-width.html">Full Width Page</a>
-                        </li>
-                        <li>
-                            <a href="../../static/sidebar.html">Sidebar Page</a>
-                        </li>
-                        <li>
-                            <a href="../../static/faq.html">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="404.jsp">404</a>
-                        </li>
-                        <li>
-                            <a href="../../static/pricing.html">Pricing Table</a>
-                        </li>
-                    </ul>
-                </li>
+
             </ul>
         </div>
         <sec:authorize access="anonymous">
-            <div class="content registerBox" style="display:block; margin-top: 20px">
+            <div class="content registerBox" style="display:block; margin-top: 60px">
                 <div class="form">
 
                     <c:url value="/j_spring_security_check" var="loginUrl"/>
@@ -195,7 +142,7 @@
             </div>
         </sec:authorize>
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-            <div class="content registerBox login_successfull" style="display:block; float: left; width: auto;padding-left: 16px; height: auto; margin-top: -5px">
+            <div class="content registerBox login_successfull" style="display: block; float: left; width: auto; padding-left: 858px; height: auto; margin-top: -41px;">
                 <div class="form">
                     <h4>Ваш логин: <sec:authentication property="principal.username"/></h4>
                     <form:form action="/logout" method="post">
@@ -390,12 +337,9 @@
         <div class="row">
             <nav>
                 <ul style="padding-left: 0px">
-                    <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="/static/team.html">OUR TEAM</a></li>
-                    <li><a href="index.jsp">FORUM</a></li>
-                    <li><a href="index.jsp">TUTORIALS</a></li>
-                    <li><a href="/static/about.html">ABOUT US</a></li>
-                    <li><a href="index.jsp">CONTACT</a></li>
+                    <li><a href="../../static/team.html">Наша команда</a></li>
+                    <li><a href="../../static/about.html">Больше о проекте</a></li>
+                    <li><a href="../../static/contact.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>

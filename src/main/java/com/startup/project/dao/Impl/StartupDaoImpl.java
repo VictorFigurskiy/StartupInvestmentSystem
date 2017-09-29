@@ -29,7 +29,7 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
     @Override
     public List<Startup> getStartupOnPage(int page, int size) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Startup.class);
-        criteria.setFirstResult(page); // TODO need to * 10 for example
+        criteria.setFirstResult((page - 1) * size);
         criteria.setMaxResults(size);
         return (List<Startup>) criteria.list();
     }

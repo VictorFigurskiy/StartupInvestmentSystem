@@ -48,92 +48,27 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <div class="main-page-button"><a class="navbar-brand" href="/" style="color: white;">На главную</a></div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse header_menu" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
                 <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-                    <li>
-                        <a href="${contextPath}/account">Кабинет</a>
+                    <li class="active">
+                        <a href="${contextPath}/account">Личный кабинет</a>
                     </li>
                 </sec:authorize>
-                <li>
-                    <a class="no_padding_left" href="../../static/about.html">About</a>
+                <li class="active">
+                    <a class="no_padding_left" href="../../static/team.html">Наша команда</a>
                 </li>
                 <li>
-                    <a href="../../static/services.html">Services</a>
+                    <a href="../../static/about.html">Больше о проекте</a>
                 </li>
                 <li>
-                    <a href="../../static/contact.html">Contact</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/portfolio-1-col.html">1 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-2-col.html">2 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-3-col.html">3 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="../../static/portfolio-4-col.html">4 Column Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="single_startup_description.jsp">Single Portfolio Item</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/blog-home-1.html">Blog Home 1</a>
-                        </li>
-                        <li>
-                            <a href="../../static/blog-home-2.html">Blog Home 2</a>
-                        </li>
-                        <li>
-                            <a href="../../static/blog-post.html">Blog Post</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="../../static/full-width.html">Full Width Page</a>
-                        </li>
-                        <li>
-                            <a href="../../static/sidebar.html">Sidebar Page</a>
-                        </li>
-                        <li>
-                            <a href="../../static/faq.html">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="404.jsp">404</a>
-                        </li>
-                        <li>
-                            <a href="../../static/pricing.html">Pricing Table</a>
-                        </li>
-                    </ul>
+                    <a href="../../static/contact.html">Контакты</a>
                 </li>
             </ul>
         </div>
-
-        <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-            <div class="content registerBox login_successfull" style="display:block;">
-                <div class="form">
-                    <h4>Вы вошли под логином: <sec:authentication property="principal.username"/></h4>
-                    <form:form action="/logout" method="post">
-                        <input class="btn btn-default btn-register" type="submit" value="Выйти">
-                    </form:form>
-                </div>
-            </div>
-        </sec:authorize>
-    </div>
     <!-- /.container -->
 </nav>
 
@@ -152,32 +87,32 @@
 
 
             <p>Название стартапа:</p>
-            <textarea rows="2" type="text" size="40" name="startupName" required maxlength="150">${startup.startupName}</textarea>
+            <textarea rows="2" type="text" size="40" name="startupName" required maxlength="150"></textarea>
             <p>Описание:</p>
-            <textarea rows="4" type="text" size="40" name="description" required maxlength="1000" placeholder="">${startup.description}</textarea>
+            <textarea rows="4" type="text" size="40" name="description" required maxlength="1000" placeholder=""></textarea>
             <p>Ссылка на картинку:</p>
-            <textarea rows="4" type="text" size="40" name="imageLink" required maxlength="500">${startup.imageLink}</textarea>
+            <textarea rows="4" type="text" size="40" name="imageLink" required maxlength="500"></textarea>
             <p>Идея:</p>
-            <textarea rows="4" type="text" size="40" name="idea" required maxlength="1000">${startup.idea}</textarea>
+            <textarea rows="4" type="text" size="40" name="idea" required maxlength="1000"></textarea>
             <p>Текущее состояние:</p>
-            <textarea rows="4" type="text" size="40" name="currentState" maxlength="500">${startupDetail.currentState}</textarea>
+            <textarea rows="4" type="text" size="40" name="currentState" maxlength="500"></textarea>
             <p>Годовой объем продаж, $</p>
-            <textarea rows="4" type="text" size="40" name="grossProfit" maxlength="500">${startupDetail.grossProfit}</textarea>
+            <textarea rows="4" type="text" size="40" name="grossProfit" maxlength="500"></textarea>
             <p>Годовой объем чистой прибыли, $</p>
-            <textarea rows="4" type="text" size="40" name="netIncome" maxlength="500">${startupDetail.netIncome}</textarea>
+            <textarea rows="4" type="text" size="40" name="netIncome" maxlength="500"></textarea>
             <p>Тип имущества:</p>
-            <textarea rows="4" type="text" size="40" name="typeOfProperty" maxlength="500">${startupDetail.typeOfProperty}</textarea>
+            <textarea rows="4" type="text" size="40" name="typeOfProperty" maxlength="500"></textarea>
             <p>Имущество и активы:</p>
-            <textarea rows="4" type="text" size="40" name="property" maxlength="500">${startupDetail.property}</textarea>
+            <textarea rows="4" type="text" size="40" name="property" maxlength="500"></textarea>
             <p>Проблема или Возможность:</p>
-            <textarea rows="4" type="text" size="40" name="problemOrOpportunity" maxlength="500">${startupDetail.problemOrOpportunity}</textarea>
+            <textarea rows="4" type="text" size="40" name="problemOrOpportunity" maxlength="500"></textarea>
             <p>Конкуренты:</p>
-            <textarea rows="4" type="text" size="40" name="competitors" maxlength="500">${startupDetail.competitors}</textarea>
+            <textarea rows="4" type="text" size="40" name="competitors" maxlength="500"></textarea>
             <p>Бизнес-модель:</p>
-            <textarea rows="4" type="text" size="40" name="businessModel" maxlength="500">${startupDetail.businessModel}</textarea>
+            <textarea rows="4" type="text" size="40" name="businessModel" maxlength="500"></textarea>
 
             <p>Необходимая сумма, $:</p>
-            <input type="number" size="40" name="startupCost" required min="1" max="9999999999" value="${startup.startupCost}">
+            <input type="number" size="40" name="startupCost" required min="1" max="9999999999">
 
 
             <div style="width: 54%; height: auto">
@@ -452,22 +387,20 @@
 <!-- /.container -->
 <hr/>
 <!-- Footer -->
+<!-- Footer -->
 <footer class="container-fluid">
     <div class="container">
         <div class="row">
             <nav>
-                <ul>
-                    <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="index.jsp">GALLERY</a></li>
-                    <li><a href="index.jsp">FORUM</a></li>
-                    <li><a href="index.jsp">TUTORIALS</a></li>
-                    <li><a href="/static/about.html">ABOUT US</a></li>
-                    <li><a href="index.jsp">CONTACT</a></li>
+                <ul style="padding-left: 0px">
+                    <li><a href="../../static/team.html">Наша команда</a></li>
+                    <li><a href="../../static/about.html">Больше о проекте</a></li>
+                    <li><a href="../../static/contact.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>
         <div class="row">
-            <div class="col-lg-12 footerClass">
+            <div class="col-lg-12 footerClass" >
                 <p>Final Project TeamOne Website 2017</p>
             </div>
         </div>

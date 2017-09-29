@@ -8,12 +8,12 @@ import java.math.BigDecimal;
 public class Investment {
 
     private Integer startupId;
-    private String stastupName;
+    private String startupName;
     private BigDecimal sumInvestment;
 
-    public Investment(Integer startupId, String stastupName, BigDecimal sumInvestment) {
+    public Investment(Integer startupId, String startupName, BigDecimal sumInvestment) {
         this.startupId = startupId;
-        this.stastupName = stastupName;
+        this.startupName = startupName;
         this.sumInvestment = sumInvestment;
     }
 
@@ -21,8 +21,8 @@ public class Investment {
         return startupId;
     }
 
-    public String getStastupName() {
-        return stastupName;
+    public String getStartupName() {
+        return startupName;
     }
 
     public BigDecimal getSumInvestment() {

@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,68 +54,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
+                        <li class="active">
+                            <a href="${contextPath}/account">Личный кабинет</a>
+                        </li>
+                    </sec:authorize>
                     <li class="active">
-                        <a href="../../static/about.html">About</a>
+                        <a class="no_padding_left" href="../../static/team.html">Наша команда</a>
                     </li>
                     <li>
-                        <a href="../../static/services.html">Services</a>
+                        <a href="../../static/about.html">Больше о проекте</a>
                     </li>
                     <li>
-                        <a href="../../static/contact.html">Contact</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="../../static/portfolio-1-col.html">1 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="../../static/portfolio-2-col.html">2 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="../../static/portfolio-3-col.html">3 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="../../static/portfolio-4-col.html">4 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="single_startup_description.jsp">Single Portfolio Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="../../static/blog-home-1.html">Blog Home 1</a>
-                            </li>
-                            <li>
-                                <a href="../../static/blog-home-2.html">Blog Home 2</a>
-                            </li>
-                            <li>
-                                <a href="../../static/blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="../../static/full-width.html">Full Width Page</a>
-                            </li>
-                            <li>
-                                <a href="../../static/sidebar.html">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href="../../static/faq.html">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="404.jsp">404</a>
-                            </li>
-                            <li>
-                                <a href="../../static/pricing.html">Pricing Table</a>
-                            </li>
-                        </ul>
+                        <a href="../../static/contact.html">Контакты</a>
                     </li>
                 </ul>
             </div>
@@ -232,12 +184,9 @@
             <div class="row">
                 <nav>
                     <ul style="padding-left: 0px">
-                        <li><a href="index.jsp">HOME</a></li>
-                        <li><a href="">EditStartupDetails</a></li>
-                        <li><a href="index.jsp">FORUM</a></li>
-                        <li><a href="index.jsp">TUTORIALS</a></li>
-                        <li><a href="/static/about.html">ABOUT US</a></li>
-                        <li><a href="index.jsp">CONTACT</a></li>
+                        <li><a href="../../static/team.html">Наша команда</a></li>
+                        <li><a href="../../static/about.html">Больше о проекте</a></li>
+                        <li><a href="../../static/contact.html">Контакты</a></li>
                     </ul>
                 </nav>
             </div>

@@ -1,3 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +36,7 @@
 </head>
 
 <body>
-
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
     <!-- Navigation -->
     <nav class="navbar" role="navigation">
         <div class="container header_menu">
@@ -142,6 +148,46 @@
                     <h1><span class="error-404">404</span>
                     </h1>
                     <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+
+
+
+
+                    <form action="${contextPath}/test_image/copy" method="post" >
+                        File to upload:
+                        <input type="file" name="file">
+                        <input type="text" name="name">
+                        <input type="submit" value="Отправить">
+                    </form>
+
+                    <%--<div class="form-container">--%>
+                        <%--<h1>Spring 4 MVC File Upload Example </h1>--%>
+                        <%--<form:form method="POST" modelAttribute="fileBucket" enctype="multipart/form-data" class="form-horizontal">--%>
+
+                            <%--<div class="row">--%>
+                                <%--<div class="form-group col-md-12">--%>
+                                    <%--<label class="col-md-3 control-lable" for="file">Upload a file</label>--%>
+                                    <%--<div class="col-md-7">--%>
+                                        <%--<form:input type="file" path="file" id="file" class="form-control input-sm"/>--%>
+                                        <%--<div class="has-error">--%>
+                                            <%--<form:errors path="file" class="help-inline"/>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+
+                            <%--<div class="row">--%>
+                                <%--<div class="form-actions floatRight">--%>
+                                    <%--<input type="submit" value="Upload" class="btn btn-primary btn-sm">--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</form:form>--%>
+                        <%--<a href="<c:url value='/welcome' />">Home</a>--%>
+                    <%--</div>--%>
+
+
+
+
+
                     <ul>
                         <li>
                             <a href="index.jsp">Home</a>
@@ -211,6 +257,8 @@
             </div>
 
         </div>
+
+
 
         <hr>
 
