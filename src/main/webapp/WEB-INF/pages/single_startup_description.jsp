@@ -298,7 +298,7 @@
         </div>
     </div>
 
-    <div style="color:black; border-top:2px solid #4b4b4b; padding: 10px; margin-top: 10px; display: inline-block">
+    <div style= "width: 100%; color:black; border-top:2px solid #4b4b4b; padding: 10px; margin-top: 10px; display: inline-block">
         <span style="display: block"><h2 style="margin: 20px">Похожие проекты:</h2></span>
         <c:forEach items="${similarStartup}" var="s_startup">
             <div  class="additional_startups" style="display: block; background: #e8ecec; width: 20%; float: left; height: 250px; border-radius: 5px; margin: 0 2%; font-size: 13px; border: 1px solid #e0e0e0;">
