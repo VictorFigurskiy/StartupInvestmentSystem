@@ -427,3 +427,24 @@ footer nav ul li a {
     margin-left: auto;
 }
 
+.confirm_invest_button{
+    padding: 3px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.confirm_invest_button:hover{
+    background: #4F9EE1;
+    color: white;
+}
+
+.additional_startups:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -moz-box-shadow: rgba(0,0,0,0.5);
+}
+.additional_startups a:focus,
+.additional_startups a:hover{
+    text-decoration: none;
+}
+
