@@ -27,6 +27,7 @@
 
     <!-- Custom CSS -->
     <link href="../../static/css/modern-business.css" rel="stylesheet">
+    <link href="../../static/css/footerStyle.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -106,17 +107,29 @@
     </form>
     <hr>
 
-    <!-- Footer -->
-    <footer>
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <nav>
+                <ul style="padding-left: 0px">
+                    <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
+                    <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
+                    <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 footerClass" >
                 <p>Final Project TeamOne Website 2017</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-</div>
-<!-- /.container -->
 
 <!-- jQuery -->
 <script src="../../static/js/jquery.js"></script>

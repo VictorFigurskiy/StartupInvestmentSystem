@@ -125,7 +125,7 @@
             </ul>
         </div>
         <sec:authorize access="anonymous">
-            <div class="content registerBox" style="display:block; margin-top: 60px">
+            <div class="content registerBox" style="display:block; margin-top: 25px">
                 <div class="form">
 
                     <c:url value="/j_spring_security_check" var="loginUrl"/>
@@ -142,7 +142,7 @@
             </div>
         </sec:authorize>
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-            <div class="content registerBox login_successfull" style="display: block; float: left; width: auto; padding-left: 858px; height: auto; margin-top: -41px;">
+            <div class="content registerBox login_successfull" style="display: block; float: right; width: auto; height: auto; margin-top: 12px;">
                 <div class="form">
                     <h4>Ваш логин: <sec:authentication property="principal.username"/></h4>
                     <form:form action="/logout" method="post">
@@ -337,9 +337,9 @@
         <div class="row">
             <nav>
                 <ul style="padding-left: 0px">
-                    <li><a href="../../static/team.html">Наша команда</a></li>
-                    <li><a href="../../static/about.html">Больше о проекте</a></li>
-                    <li><a href="../../static/contact.html">Контакты</a></li>
+                    <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
+                    <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
+                    <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
                 </ul>
             </nav>
         </div>

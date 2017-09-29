@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Редактирование стартапа</title>
+    <title>Startup Ukraine</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
@@ -184,9 +184,9 @@
             <div class="row">
                 <nav>
                     <ul style="padding-left: 0px">
-                        <li><a href="../../static/team.html">Наша команда</a></li>
-                        <li><a href="../../static/about.html">Больше о проекте</a></li>
-                        <li><a href="../../static/contact.html">Контакты</a></li>
+                        <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
+                        <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
+                        <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
                     </ul>
                 </nav>
             </div>

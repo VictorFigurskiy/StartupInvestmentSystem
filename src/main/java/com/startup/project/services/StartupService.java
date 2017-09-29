@@ -50,4 +50,9 @@ public class StartupService {
     public void delete(Startup entity) {
         dao.delete(entity);
     }
+
+    @Transactional
+    public List<Startup> getByIndustry(String industry, int limit, int excludeId){
+        return dao.getByIndustry(industry, limit, excludeId);
+    }
 }

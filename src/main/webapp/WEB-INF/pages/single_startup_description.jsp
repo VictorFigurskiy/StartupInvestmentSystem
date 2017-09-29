@@ -80,6 +80,7 @@
 <jsp:useBean id="startup" scope="request" type="com.startup.project.entities.Startup"/>
 <jsp:useBean id="startupDetail" scope="request" type="com.startup.project.entities.StartupDetail"/>
 <jsp:useBean id="investmentsSum" scope="request" type="java.lang.Integer"/>
+<jsp:useBean id="similarStartup" scope="request" type="java.util.List<com.startup.project.entities.Startup>"/>
 
 <!-- Page Content -->
 <div class="container">
@@ -296,6 +297,21 @@
             <!-- /.col-lg-12 -->
         </div>
     </div>
+
+    <div style="color:black; border-top:2px solid #4b4b4b; padding: 10px; margin-top: 10px; display: inline-block">
+        <span style="display: block"><h2 style="margin: 20px">Похожие проекты:</h2></span>
+        <c:forEach items="${similarStartup}" var="s_startup">
+            <div  class="additional_startups" style="display: block; background: #e8ecec; width: 20%; float: left; height: 250px; border-radius: 5px; margin: 0 2%; font-size: 13px; border: 1px solid #e0e0e0;">
+                <a style="color: #1b6d85" href="${contextPath}/startup_description/${s_startup.id}">
+                    <div style="width: 100%; height: 100%">
+                        <img style="border-top-left-radius: 5px; border-top-right-radius: 5px;" src="${s_startup.imageLink}" height="60%" width="100%">
+                        <p style="text-align: center; margin: 5px">${s_startup.startupName}</p>
+                    </div>
+                    <p style="text-align: center; font-size: 18px; bottom: 25px; position: relative">${s_startup.startupCost.intValue()}$</p>
+                </a>
+            </div>
+        </c:forEach>
+    </div>
         <!-- /.row -->
 
         <hr>
@@ -306,9 +322,9 @@
             <div class="row">
                 <nav>
                     <ul style="padding-left: 0px">
-                        <li><a href="../../static/team.html">Наша команда</a></li>
-                        <li><a href="../../static/about.html">Больше о проекте</a></li>
-                        <li><a href="../../static/contact.html">Контакты</a></li>
+                        <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
+                        <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
+                        <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
                     </ul>
                 </nav>
             </div>

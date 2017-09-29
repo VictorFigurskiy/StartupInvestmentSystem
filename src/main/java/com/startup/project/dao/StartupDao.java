@@ -10,4 +10,6 @@ import java.util.List;
 public interface StartupDao extends GeneralDao<Integer, Startup> {
 
     List<Startup> getStartupOnPage(int page, int size);
+
+    List getByIndustry(String industry, int limit, int excludeId);
 }

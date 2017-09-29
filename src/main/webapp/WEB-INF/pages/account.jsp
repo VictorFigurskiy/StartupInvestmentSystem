@@ -154,7 +154,7 @@
                                 <a href="${contextPath}/startup_description/${investment.startupId}" style="color: #333;">
                                     <li>${investment.startupName}
                                 <c:forEach items="${currentUser.startupList}" var="startup">
-                                    <c:if test="${investment.startupId==startup.id}"> (your own)</c:if>
+                                    <c:if test="${investment.startupId==startup.id}"> (you owner)</c:if>
                                 </c:forEach>
                             </li>
                                 </a></td>
@@ -182,9 +182,9 @@
         <div class="row">
             <nav>
                 <ul style="padding-left: 0px">
-                    <li><a href="../../static/team.html">Наша команда</a></li>
-                    <li><a href="../../static/about.html">Больше о проекте</a></li>
-                    <li><a href="../../static/contact.html">Контакты</a></li>
+                    <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
+                    <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
+                    <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
                 </ul>
             </nav>
         </div>

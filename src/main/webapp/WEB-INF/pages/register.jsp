@@ -141,10 +141,21 @@
     <hr>
 
     <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Final Project TeamOne Website 2017</p>
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <nav>
+                    <ul style="padding-left: 0px">
+                        <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
+                        <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
+                        <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 footerClass" >
+                    <p>Final Project TeamOne Website 2017</p>
+                </div>
             </div>
         </div>
     </footer>

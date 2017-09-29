@@ -33,4 +33,15 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
         criteria.setMaxResults(size);
         return (List<Startup>) criteria.list();
     }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Startup> getByIndustry(String industry, int limit, int excludeId) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        return currentSession.createQuery("FROM Startup startup WHERE startup.industry=? and startup.id!=? order by id asc ", Startup.class)
+                .setParameter(0 , industry)
+                .setParameter(1 , excludeId)
+                .setMaxResults(limit)
+                .list();
+    }
 }

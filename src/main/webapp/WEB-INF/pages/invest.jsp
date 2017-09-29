@@ -89,13 +89,12 @@
 
     <div class="row">
         <%--Alert message--%>
-            <div class="col-md-9 personal-info" style="margin-left: 20%">
-                <div class="alert alert-info alert-dismissable" style="width: 80%">
-                    <a class="panel-close close" data-dismiss="alert">×</a>
-                    <i class="fa fa-coffee"></i>
-                    This is an <strong>.alert</strong>. Use this to show important messages to the user.
+
+                <div class="alert alert-info alert-dismissable" style="width: 70%; margin-left: 15%">
+                    <a class="panel-close close" data-dismiss="alert" style="margin-top: 11px">×</a>
+                    <i class="fa fa-info" style="margin-right: 5px;"></i><strong>Внимание!</strong>
+                    <i>Инвестируя даный проект Вы соглашаетесь с правилами работы нашего сервиса и обязуетесь выплатить заявленую Вами сумму владельцу данного проекта!</i>
                 </div>
-            </div>
 
         <!-- left column -->
         <div class="col-md-4">
@@ -104,77 +103,40 @@
                     <h4>Контактные данные владельца</h4>
                 </div>
                 <div class="panel-body" style="padding: 3px 15px; font-size: 15px">
-                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${startup.ownerUser.firstName}</div>
-                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${startup.ownerUser.lastName}</div>
-                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${startup.ownerUser.email}</div>
-                    <div style="padding: 6px 1px;">${startup.ownerUser.phone}</div>
+                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><strong style="margin-right: 5px">Имя:</strong>${startup.ownerUser.firstName}</div>
+                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><strong style="margin-right: 5px">Фамилия:</strong>${startup.ownerUser.lastName}</div>
+                    <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;"><strong style="margin-right: 5px">Email:</strong>${startup.ownerUser.email}</div>
+                    <div style="padding: 6px 1px;"><strong style="margin-right: 5px">Телефон:</strong>${startup.ownerUser.phone}</div>
                 </div>
             </div>
         </div>
 
-        <div align="left" style="width: auto; max-width: 66%; display: inline-grid">
-            <div class="col-md-4" style="width: auto; min-width: 400px">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>Стартапы</h4>
-                    </div>
-                    <div class="panel-body" style="padding: 3px 15px;">
-                        <!-- link for startup INFO-->
-                        <%--<c:if test="${currentUser.startupList.size()>0}">--%>
+        <div style="width: 65%; display: block; border: 1px solid darkgray; border-radius: 5px; padding: 15px; float: left">
 
+        <div style="width: 100%">
+            <div style="width:auto">
+                <h4 style="width: 80%; float: left;">${startup.startupName}</h4>
+            </div>
+            <div style="float: right;">
+                <h4 style="float: left"><b style="width: auto; float: right;">${startup.startupCost.intValue()}$</b></h4></div>
+            </div>
+
+            <div class="panel-body" style="padding: 0px 0px;">
                                 <div style="padding: 6px 1px; display: table; width: 100%">
-                                    <li style="width: auto; float: left; margin-right: 20px;">${startup.startupName}</li>
-                                    <span style="width: auto; float: right; margin-right: 20px;">${startup.startupCost}$</span>
                                     <div style="float: left; width: 100%">
                                         <form method="post" action="${contextPath}/investment/confirm">
                                             <input hidden name="startupId" value="${startup.id}">
-                                            <input style="width: 60%; border-radius: 4px; border: 1px solid darkgray; height: 30px;" type="number" name="sum" required min="1" max="9999999999">
-                                            <input style="float: right; height: 30px" class="account_buttons" type="submit" value="Инвестировать">
+                                            <input style="width: 60%; height: 30px; border-radius: 4px; border: 1px solid darkgray; padding-left: 5px; margin-bottom: 15px" type="number" name="sum" min="100" max="9999999999" step="100" value="100"  required>
+                                            <input style="float: right; height: 30px" class="confirm_invest_button" type="submit" value="Инвестировать" title="Инвестировать">
+                                            <span style="display: block; display: block; padding: 3px; border: 1px solid #bce8f1; border-radius: 5px; background: #d9edf7;">
+                                                <input type="checkbox" required="" style="margin: 4px 10px; float: left; ">
+                                            Я принимаю условия работы сервиса.
+                                            </span>
                                         </form>
                                     </div>
                                 </div>
-
-                        <%--</c:if>--%>
-                        <!-- link for Adding startup-->
                     </div>
-                </div>
             </div>
-
-            <%--<div class="col-md-4" style="width: auto;">--%>
-                <%--<div class="panel panel-default" style="border-bottom: none">--%>
-                    <%--<div class="panel-heading">--%>
-                        <%--<h4>Инвестиции</h4>--%>
-                    <%--</div>--%>
-                    <%--<div class="panel-body" style="padding: 0px 0px 0px;">--%>
-                        <%--<!-- link for startup INFO-->--%>
-
-                        <%--<jsp:useBean id="investments" scope="request" type="java.util.List<com.startup.project.entities.Investment>"/>--%>
-
-                        <%--<table width="100%">--%>
-                            <%--<c:if test="${not empty investments}">--%>
-
-                                <%--<tr style="border-bottom: 1px solid #ddd; height: 45px">--%>
-                                    <%--<th style="text-align: center; border-right: 1px solid #ddd;">Название</th>--%>
-                                    <%--<th style="padding: 0 10px; text-align: center">Сумма вложений</th>--%>
-                                <%--</tr>--%>
-                                <%--<c:forEach items="${investments}" var="investment">--%>
-
-                                    <%--<tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd"><a href="${investment.startupId}" style="color: #333;"><li>${investment.stastupName}--%>
-                                        <%--<c:forEach items="${currentUser.startupList}" var="startup">--%>
-                                            <%--<c:if test="${investment.startupId==startup.id}"> (your own)</c:if>--%>
-                                        <%--</c:forEach>--%>
-                                    <%--</li></a></td>--%>
-                                        <%--<td style="text-align: center">${investment.sumInvestment}$</td></tr>--%>
-
-                                <%--</c:forEach>--%>
-
-                            <%--</c:if>--%>
-                            <%--<c:if test="${empty investments}"><tr><td style="border-bottom: 1px solid #ddd; padding: 11px">У вас нет инвестиций!</td></tr></c:if>--%>
-                        <%--</table>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        </div>
 
     </div>
 
@@ -188,9 +150,9 @@
         <div class="row">
             <nav>
                 <ul style="padding-left: 0px">
-                    <li><a href="../../static/team.html">Наша команда</a></li>
-                    <li><a href="../../static/about.html">Больше о проекте</a></li>
-                    <li><a href="../../static/contact.html">Контакты</a></li>
+                    <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
+                    <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
+                    <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
                 </ul>
             </nav>
         </div>
@@ -203,7 +165,7 @@
 </footer>
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="../../static/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

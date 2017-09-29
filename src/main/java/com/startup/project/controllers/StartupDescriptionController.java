@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * Created by Sonik on 26.09.2017.
@@ -30,7 +31,13 @@ public class StartupDescriptionController {
         Startup startup = startupService.getById(Integer.parseInt(id));
         StartupDetail startupDetail = startup.getStartupDetail();
         Integer investmentsSum = startup.getInvestorList().stream().map(Investor::getInvestments).mapToInt(BigDecimal::intValue).sum();
-        modelAndView.addObject("investmentsSum",investmentsSum);
+
+        //TODO: в excludeId надо будет передать startupId чтобы выводить похожие стартапы кроме текущего, пока что там 0 так как в базе мало записей
+        //TODO: limit ставим 4 потому что я на странице сделал вывод под 4 елемента
+        List<Startup> similarStartups = startupService.getByIndustry(startup.getIndustry(), 4, 0);
+
+        modelAndView.addObject("similarStartup", similarStartups);
+        modelAndView.addObject("investmentsSum", investmentsSum);
         modelAndView.addObject("startup", startup);
         modelAndView.addObject("startupDetail", startupDetail);
         return modelAndView;
