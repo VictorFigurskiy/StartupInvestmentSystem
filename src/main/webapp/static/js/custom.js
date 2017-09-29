@@ -23,7 +23,6 @@ $('.team_btn').click(function () {
         for ( var i = 1; i <= $(team_info).length; i++ ) {
             if ( $(team_info[i]).css('display') != 'none' ) {
                 team_info_state = true;
-
             }
         }
 

@@ -13,6 +13,8 @@ footer nav ul li a{
     font-family: Lato;
     font-weight: 400;
     font-size: 14px;
+    color: #000 !important;
+    text-decoration: none;
 }
 
 footer nav ul li {
@@ -24,8 +26,15 @@ footer nav ul li a,
 footer nav ul li a:active,
 footer nav ul li a:focus,
 footer nav ul li a:hover {
-    color: #000000;
     text-decoration: none;
+}
+
+.navbar-header a {
+    color: #fff !important;
+}
+
+.navbar-background-team {
+    height: 500px;
 }
 
 .footerClass{
@@ -35,6 +44,32 @@ footer nav ul li a:hover {
 
 .nav > li > a:hover, .nav > li > a:focus {
     background-color: transparent;
+}
+
+.form_pdf input[type="submit"]:hover,
+.form_pdf input[type="submit"]:active,
+.form_pdf input[type="submit"]:focus{
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+footer nav ul li a {
+    text-transform: uppercase;
+}
+
+
+.form_pdf input[type="submit"]{
+    padding: 0 20px;
+    line-height: 32px;
+    font-size: 16px;
+    background-color: #fff;
+    outline: none;
+    margin: 10px auto;
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.3);
+    border-radius: 3px;
 }
 
 .header_form_create {
@@ -78,7 +113,7 @@ footer nav ul li a:hover {
     font-size: 18px;
 }
 
-.header_menu ul li a:hover {
+.header_menu a:hover {
     background-color: rgba(238, 238, 238, 0.37) !important;
 }
 
@@ -300,6 +335,7 @@ footer nav ul li a:hover {
     background: url(/static/image/hands-1920.jpg) no-repeat center top;
     -webkit-background-size: 110%;
     background-size: 110%;
+    margin-top: -50px;
 }
 
 .team {
@@ -389,26 +425,5 @@ footer nav ul li a:hover {
 
 .mainpage_seo{
     margin-left: auto;
-}
-
-.confirm_invest_button{
-    padding: 3px;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.confirm_invest_button:hover{
-    background: #4F9EE1;
-    color: white;
-}
-
-.additional_startups:hover{
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    -moz-box-shadow: rgba(0,0,0,0.5);
-}
-.additional_startups a:focus,
-.additional_startups a:hover{
-    text-decoration: none;
 }
 
