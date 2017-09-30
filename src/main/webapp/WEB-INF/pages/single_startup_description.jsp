@@ -15,7 +15,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <link href="../../static/image/icon.png" rel="shortcut icon">
+    <title>Описание стартапа</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
@@ -95,8 +96,6 @@
                 <li><a href="${contextPath}/" style="color: #353535;">Назад</a>
                 </li>
                 <li class="active"><c:out value="${startup.startupName}"/></li>
-                <%--<li class="active"> Сумма вложенная в стартап: ${investmentsSum}</li>--%>
-                <%--<li class="active"> Минимальная необходимая сумма: ${startup.startupCost}</li>--%>
                 <li class="active"></li>
             </ol>
         </div>
@@ -110,7 +109,6 @@
         </div>
 
         <div class="col-md-4">
-
 
             <div>
                 <form method="post" action="${contextPath}/investment">

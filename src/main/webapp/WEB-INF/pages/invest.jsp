@@ -20,7 +20,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <link href="../../static/image/icon.png" rel="shortcut icon">
+    <title>Инвестирование</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">

@@ -20,7 +20,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login Form</title>
+    <link href="../../static/image/icon.png" rel="shortcut icon">
+    <title>Форма логирования</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">

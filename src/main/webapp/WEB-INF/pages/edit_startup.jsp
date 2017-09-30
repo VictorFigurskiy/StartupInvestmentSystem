@@ -14,6 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link href="../../static/image/icon.png" rel="shortcut icon">
     <title>Редактироване стартапа</title>
 
     <!-- Bootstrap Core CSS -->
@@ -62,7 +63,7 @@
                 </li>
             </ul>
         </div>
-
+    </div>
     <!-- /.container -->
 </nav>
 

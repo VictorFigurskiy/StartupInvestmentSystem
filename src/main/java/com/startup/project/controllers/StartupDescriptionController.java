@@ -34,7 +34,7 @@ public class StartupDescriptionController {
 
         //TODO: в excludeId надо будет передать startupId чтобы выводить похожие стартапы кроме текущего, пока что там 0 так как в базе мало записей
         //TODO: limit ставим 4 потому что я на странице сделал вывод под 4 елемента
-        List<Startup> similarStartups = startupService.getByIndustry(startup.getIndustry(), 4, 0);
+        List<Startup> similarStartups = startupService.getByIndustry(startup.getIndustry(), 4, Integer.valueOf(id));
 
         modelAndView.addObject("similarStartup", similarStartups);
         modelAndView.addObject("investmentsSum", investmentsSum);

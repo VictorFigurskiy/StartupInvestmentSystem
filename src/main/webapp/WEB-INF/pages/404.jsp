@@ -151,17 +151,9 @@
 
 
 
-
-                    <form action="${contextPath}/test_image/copy" method="post" >
-                        File to upload:
-                        <input type="file" name="file">
-                        <input type="text" name="name">
-                        <input type="submit" value="Отправить">
-                    </form>
-
                     <%--<div class="form-container">--%>
                         <%--<h1>Spring 4 MVC File Upload Example </h1>--%>
-                        <%--<form:form method="POST" modelAttribute="fileBucket" enctype="multipart/form-data" class="form-horizontal">--%>
+                        <%--<form:form action="${contextPath}/test/singleUpload" method="POST" modelAttribute="fileBucket" enctype="multipart/form-data" class="form-horizontal">--%>
 
                             <%--<div class="row">--%>
                                 <%--<div class="form-group col-md-12">--%>
@@ -181,10 +173,33 @@
                                 <%--</div>--%>
                             <%--</div>--%>
                         <%--</form:form>--%>
-                        <%--<a href="<c:url value='/welcome' />">Home</a>--%>
+                        <%--<a href="<c:url value='/' />">Home</a>--%>
                     <%--</div>--%>
 
 
+
+
+                    <div class="form-container">
+                        <h1>Spring 4 MVC Multi File Upload Example </h1>
+                        <form:form action="${contextPath}/test/multiUpload" method="POST" modelAttribute="multiFileBucket" enctype="multipart/form-data" class="form-horizontal">
+
+                            <c:forEach  items="${multiFileBucket.files}" var="v" varStatus="vs">
+                                <form:input type="file" path="files[${vs.index}].file" id="files[${vs.index}].file" class="form-control input-sm"/>
+                                <div class="has-error">
+                                    <form:errors path="files[${vs.index}].file" class="help-inline"/>
+                                </div>
+                            </c:forEach>
+                            <br/>
+                            <div class="row">
+                                <div class="form-actions floatRight">
+                                    <input type="submit" value="Upload" class="btn btn-primary btn-sm">
+                                </div>
+                            </div>
+                        </form:form>
+
+                        <br/>
+                        <a href="<c:url value='/' />">Home</a>
+                    </div>
 
 
 

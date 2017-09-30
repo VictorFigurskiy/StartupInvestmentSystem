@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="../../static/image/index.png" rel="shortcut icon">
+    <link href="../../static/image/icon.png" rel="shortcut icon">
     <title>Startup Ukraine</title>
 
     <!-- Bootstrap Core CSS -->

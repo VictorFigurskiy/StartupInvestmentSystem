@@ -12,6 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link href="../../static/image/icon.png" rel="shortcut icon">
     <title>Личный кабинет</title>
 
     <!-- Bootstrap Core CSS -->

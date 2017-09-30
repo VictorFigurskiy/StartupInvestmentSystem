@@ -10,7 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <link href="../../static/image/icon.png" rel="shortcut icon">
+    <title>Форма регистрации</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
