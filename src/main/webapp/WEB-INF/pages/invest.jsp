@@ -127,7 +127,7 @@
                                     <div style="float: left; width: 100%">
                                         <form method="post" action="${contextPath}/investment/confirm">
                                             <input hidden name="startupId" value="${startup.id}">
-                                            <input style="width: 60%; height: 30px; border-radius: 4px; border: 1px solid darkgray; padding-left: 5px; margin-bottom: 15px" type="number" name="sum" min="100" max="9999999999" step="100" value="100"  required>
+                                            <input style="width: 60%; height: 30px; border-radius: 4px; border: 1px solid darkgray; padding-left: 5px; margin-bottom: 15px" type="number" name="sum" min="10" max="9999999999" step="10" value="10"  required><strong>, $</strong>
                                             <input style="float: right; height: 30px" class="confirm_invest_button" type="submit" value="Инвестировать" title="Инвестировать">
                                             <span style="display: block; display: block; padding: 3px; border: 1px solid #bce8f1; border-radius: 5px; background: #d9edf7;">
                                                 <input type="checkbox" required="" style="margin: 4px 10px; float: left; ">

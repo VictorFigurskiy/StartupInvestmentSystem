@@ -41,6 +41,8 @@
     <![endif]-->
 
 </head>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <body style="background:whitesmoke">
 
 <!-- Navigation -->
@@ -100,13 +102,14 @@
         </div>
 
         <div class="form-group">
-            <div class="col-xs-offset-3 col-xs-9">
+            <div class="col-xs-offset-3 col-xs-9 ">
                 <input type="submit" class="btn btn-primary" value="Войти">
                 <input type="reset" class="btn btn-default" value="Очистить форму">
+                <a class="header_form_create" style="margin-right: 280px; background-color: #337ab7; color: white; border: 1px solid #2e6da4;font-family: MyWebFont;" href="${contextPath}/registration">Зарегистрироватся</a>
             </div>
         </div>
     </form>
-    <hr>
+    <hr style="margin-top: 150px;">
 
 </div>
 <!-- /.container -->

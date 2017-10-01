@@ -295,6 +295,17 @@ footer nav ul li a {
     color: white !important;
 }
 
+.account_buttons a{
+    padding: 3px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.account_buttons a:hover{
+    background-color: #f5f5f5 !important;
+}
+
 .account_buttons{
     padding: 3px;
     background-color: white;
@@ -448,3 +459,38 @@ footer nav ul li a {
     text-decoration: none;
 }
 
+.indexSearchMainBlock {
+    width: 1140px;
+    background: #f5f5f5;
+    padding: 5px 20px 5px 5px;
+    border: solid 1px #ddd;
+    float: left;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 9px;
+}
+
+.indexSearchBlock1 {
+    width: 450px;
+    background: #f5f5f5;
+    padding: 5px 20px 5px 5px;
+    float: left;
+}
+
+.indexSearchBlock2 {
+    width: 450px;
+    background: #f5f5f5;
+    padding: 5px 20px 5px 5px;
+    float: left;
+}
+
+.indexSearchBlockButton{
+    width: 212px;
+    background: #f5f5f5;
+    padding: 3px 8px 5px 5px;
+    float: left;
+}
+
+.indexSearchBlockButton a:hover{
+    background: #122b40; !important;
+}

@@ -127,7 +127,7 @@
                         </c:forEach>
                     </c:if>
                    <!-- link for Adding startup-->
-                    <div style="padding: 6px 1px; width: auto"><a href="${contextPath}/add_startup" style="color: black; float: right;">Добавить стартап</a></div>
+                    <div style="padding: 6px 1px; width: auto"><a class="account_buttons" href="${contextPath}/add_startup" style="color: black; float: right;">Добавить стартап</a></div>
                 </div>
             </div>
         </div>

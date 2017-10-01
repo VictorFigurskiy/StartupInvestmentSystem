@@ -1,309 +1,72 @@
-2017-09-16 11:23:08 INFO  UserRole:64 - UserRole saved successfully!
-2017-09-16 11:23:08 INFO  User:64 - User saved successfully!
-2017-09-16 11:24:13 INFO  Investor:64 - Investor saved successfully!
-2017-09-16 11:24:13 WARN  User:42 - User with id: 2 not found!
-2017-09-16 11:24:13 INFO  User:29 - User with email: abram@email.com found!
-2017-09-16 11:24:13 INFO  Startup:64 - Startup saved successfully!
-2017-09-16 11:25:28 INFO  Startup:40 - Startup with id: 1 found!
-2017-09-16 11:25:28 INFO  Startup:76 - Startup deleted successfully!
-2017-09-16 11:45:40 INFO  Investor:64 - Investor saved successfully!
-2017-09-16 11:45:40 WARN  Startup:42 - Startup with id: 1 not found!
-2017-09-16 11:47:41 INFO  Investor:64 - Investor saved successfully!
-2017-09-16 11:47:41 WARN  User:42 - User with id: 2 not found!
-2017-09-16 11:47:41 INFO  User:29 - User with email: abram@email.com found!
-2017-09-16 11:47:41 INFO  Startup:64 - Startup saved successfully!
-2017-09-16 11:47:59 INFO  Investor:64 - Investor saved successfully!
-2017-09-16 11:47:59 WARN  Startup:42 - Startup with id: 1 not found!
-2017-09-16 11:48:34 INFO  Investor:64 - Investor saved successfully!
-2017-09-16 11:48:34 INFO  Startup:40 - Startup with id: 2 found!
-2017-09-16 11:48:34 INFO  Startup:70 - Startup updated successfully!
-2017-09-16 11:54:06 INFO  Startup:40 - Startup with id: 2 found!
-2017-09-16 11:54:06 INFO  Startup:70 - Startup updated successfully!
-2017-09-16 11:54:06 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance beforeQuery flushing: com.startup.project.entities.Investor]
-2017-09-16 12:04:16 INFO  UserRole:64 - UserRole saved successfully!
-2017-09-16 12:04:16 INFO  User:64 - User saved successfully!
-2017-09-16 12:04:16 WARN  User:42 - User with id: 2 not found!
-2017-09-16 12:04:16 INFO  User:29 - User with email: abram@email.com found!
-2017-09-16 12:04:16 INFO  Startup:64 - Startup saved successfully!
-2017-09-16 12:08:44 WARN  Startup:42 - Startup with id: 2 not found!
-2017-09-16 12:09:14 INFO  Startup:40 - Startup with id: 1 found!
-2017-09-16 12:09:14 INFO  Startup:70 - Startup updated successfully!
-2017-09-16 12:09:37 INFO  Startup:40 - Startup with id: 1 found!
-2017-09-16 12:09:37 INFO  Startup:70 - Startup updated successfully!
-2017-09-16 12:09:43 INFO  Startup:40 - Startup with id: 1 found!
-2017-09-16 12:09:43 INFO  Startup:70 - Startup updated successfully!
-2017-09-16 12:13:40 INFO  Investor:40 - Investor with id: 4 found!
-2017-09-16 12:13:40 INFO  Investor:76 - Investor deleted successfully!
-2017-09-16 12:13:40 WARN  SqlExceptionHelper:129 - SQL Error: 1451, SQLState: 23000
-2017-09-16 12:13:40 ERROR SqlExceptionHelper:131 - Cannot delete or update a parent row: a foreign key constraint fails (`startups_db`.`startups_investors`, CONSTRAINT `FK76ej85r26lsia3qnsuwjmmprr` FOREIGN KEY (`INVESTOR_ID`) REFERENCES `investors` (`id`))
-2017-09-16 12:13:40 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2017-09-16 12:16:15 INFO  Investor:40 - Investor with id: 4 found!
-2017-09-16 12:16:15 INFO  Investor:76 - Investor deleted successfully!
-2017-09-16 12:23:02 INFO  Startup:40 - Startup with id: 1 found!
-2017-09-16 12:23:02 INFO  Startup:76 - Startup deleted successfully!
-2017-09-16 12:35:45 WARN  User:42 - User with id: 2 not found!
-2017-09-16 12:41:26 INFO  UserRole:64 - UserRole saved successfully!
-2017-09-16 12:41:26 WARN  User:42 - User with id: 2 not found!
-2017-09-16 12:43:02 INFO  UserRole:64 - UserRole saved successfully!
-2017-09-16 12:43:02 INFO  User:64 - User saved successfully!
-2017-09-16 12:43:02 INFO  User:40 - User with id: 1 found!
-2017-09-16 12:43:02 INFO  User:29 - User with email: abram@email.com found!
-2017-09-16 12:43:02 INFO  Startup:64 - Startup saved successfully!
-2017-09-16 12:45:03 INFO  User:40 - User with id: 1 found!
-2017-09-16 12:45:03 INFO  User:76 - User deleted successfully!
-2017-09-16 12:45:03 WARN  SqlExceptionHelper:129 - SQL Error: 1451, SQLState: 23000
-2017-09-16 12:45:03 ERROR SqlExceptionHelper:131 - Cannot delete or update a parent row: a foreign key constraint fails (`startups_db`.`startups`, CONSTRAINT `FKrm3fyaftmf1ca8hexokhm7xtj` FOREIGN KEY (`ownerUser_id`) REFERENCES `users` (`id`))
-2017-09-16 12:45:03 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2017-09-16 12:51:50 INFO  UserRole:64 - UserRole saved successfully!
-2017-09-16 12:51:50 INFO  User:64 - User saved successfully!
-2017-09-16 12:51:51 INFO  User:29 - User with email: abram@email.com found!
-2017-09-16 12:51:51 INFO  Startup:64 - Startup saved successfully!
-2017-09-16 13:09:23 INFO  UserRole:64 - UserRole saved successfully!
-2017-09-16 13:09:23 INFO  User:64 - User saved successfully!
-2017-09-16 13:09:23 INFO  User:29 - User with email: abram@email.com found!
-2017-09-16 13:09:23 INFO  Startup:64 - Startup saved successfully!
-2017-09-16 15:57:14 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-16 15:57:14 INFO  User:54 - Users list is not empty!
-2017-09-16 15:59:15 INFO  User:40 - User with id: 1 found!
-2017-09-16 16:04:21 INFO  User:40 - User with id: 1 found!
-2017-09-16 16:06:46 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-16 16:06:46 INFO  User:54 - Users list is not empty!
-2017-09-19 17:28:49 INFO  User:29 - User with email: abram@email.com found!
-2017-09-19 17:28:49 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-19 17:28:49 INFO  User:52 - Users list is not empty!
-2017-09-19 17:32:01 WARN  User:41 - User with id: 11 not found!
-2017-09-19 17:32:01 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-19 17:32:01 INFO  User:52 - Users list is not empty!
-2017-09-19 17:33:15 WARN  User:41 - User with id: 0 not found!
-2017-09-19 17:33:15 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-19 17:33:15 INFO  User:52 - Users list is not empty!
-2017-09-19 17:38:32 WARN  User:41 - User with id: 0 not found!
-2017-09-19 17:39:20 WARN  User:31 - User with email: vzxnot found!
-2017-09-19 17:42:05 WARN  User:31 - User with email: vzxnot found!
-2017-09-21 13:08:50 INFO  UserRole:62 - UserRole saved successfully!
-2017-09-21 13:08:50 INFO  UserRole:39 - UserRole with id: 1 found!
-2017-09-21 13:08:50 INFO  User:62 - User saved successfully!
-2017-09-21 13:12:48 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
-2017-09-21 13:12:48 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
-2017-09-21 13:14:08 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
-2017-09-21 13:14:08 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
-2017-09-21 13:14:46 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
-2017-09-21 13:14:46 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
-2017-09-21 13:28:02 INFO  UserRole:62 - UserRole saved successfully!
-2017-09-21 13:28:02 INFO  UserRole:39 - UserRole with id: 1 found!
-2017-09-21 13:28:02 INFO  User:62 - User saved successfully!
-2017-09-21 13:28:02 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 13:57:39 WARN  UserRole:41 - UserRole with id: 1 not found!
-2017-09-21 13:57:39 INFO  User:62 - User saved successfully!
-2017-09-21 13:57:39 WARN  SqlExceptionHelper:129 - SQL Error: 1048, SQLState: 23000
-2017-09-21 13:57:39 ERROR SqlExceptionHelper:131 - Column 'ROLE_ID' cannot be null
-2017-09-21 13:57:39 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2017-09-21 14:04:42 WARN  UserRole:41 - UserRole with id: 1 not found!
-2017-09-21 14:04:42 INFO  User:62 - User saved successfully!
-2017-09-21 14:04:42 WARN  SqlExceptionHelper:129 - SQL Error: 1048, SQLState: 23000
-2017-09-21 14:04:42 ERROR SqlExceptionHelper:131 - Column 'ROLE_ID' cannot be null
-2017-09-21 14:04:42 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2017-09-21 14:08:03 INFO  UserRole:62 - UserRole saved successfully!
-2017-09-21 14:08:03 WARN  UserRole:41 - UserRole with id: 1 not found!
-2017-09-21 14:08:03 INFO  User:62 - User saved successfully!
-2017-09-21 14:08:03 WARN  SqlExceptionHelper:129 - SQL Error: 1048, SQLState: 23000
-2017-09-21 14:08:03 ERROR SqlExceptionHelper:131 - Column 'ROLE_ID' cannot be null
-2017-09-21 14:08:03 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2017-09-21 14:08:49 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
-2017-09-21 14:08:49 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
-2017-09-21 14:13:18 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
-2017-09-21 14:13:18 ERROR SqlExceptionHelper:131 - Duplicate entry 'USER' for key 'UK_t4udapikfkh2xv77a3qe8hdrm'
-2017-09-21 14:14:09 INFO  UserRole:62 - UserRole saved successfully!
-2017-09-21 14:14:09 INFO  UserRole:62 - UserRole saved successfully!
-2017-09-21 14:14:09 INFO  UserRole:62 - UserRole saved successfully!
-2017-09-21 14:14:10 WARN  User:33 - User with email: abram@email.comnot found!
-2017-09-21 14:15:44 INFO  UserRole:39 - UserRole with id: 1 found!
-2017-09-21 14:15:44 INFO  User:62 - User saved successfully!
-2017-09-21 14:15:45 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:15:45 WARN  SqlExceptionHelper:129 - SQL Error: 1452, SQLState: 23000
-2017-09-21 14:15:45 ERROR SqlExceptionHelper:131 - Cannot add or update a child row: a foreign key constraint fails (`startups_db`.`investors`, CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`))
-2017-09-21 14:17:30 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:17:30 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 14:26:21 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:26:21 WARN  SqlExceptionHelper:129 - SQL Error: 1452, SQLState: 23000
-2017-09-21 14:26:21 ERROR SqlExceptionHelper:131 - Cannot add or update a child row: a foreign key constraint fails (`startups_db`.`investors`, CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`))
-2017-09-21 14:31:01 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:31:01 INFO  User:39 - User with id: 5 found!
-2017-09-21 14:31:01 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 14:31:01 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:40:31 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:40:31 INFO  User:39 - User with id: 5 found!
-2017-09-21 14:40:31 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:40:31 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:40:35 WARN  LoadContexts:98 - HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@5ab7ac02<rs=org.apache.commons.dbcp.DelegatingResultSet@b94703b>
-2017-09-21 14:40:35 WARN  CollectionLoadContext:377 - HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [1] entries
-2017-09-21 14:41:48 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:41:48 INFO  User:39 - User with id: 5 found!
-2017-09-21 14:41:48 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:41:48 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:45:09 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:45:09 INFO  User:39 - User with id: 5 found!
-2017-09-21 14:45:09 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:45:09 INFO  Investor:39 - Investor with id: 5 found!
-2017-09-21 14:45:09 INFO  Investor:74 - Investor deleted successfully!
-2017-09-21 14:45:51 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:45:51 INFO  User:39 - User with id: 5 found!
-2017-09-21 14:45:51 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 14:45:52 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:47:46 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:47:46 INFO  User:39 - User with id: 5 found!
-2017-09-21 14:47:46 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:47:46 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:47:46 INFO  User:74 - User deleted successfully!
-2017-09-21 14:47:46 WARN  SqlExceptionHelper:129 - SQL Error: 1451, SQLState: 23000
-2017-09-21 14:47:46 ERROR SqlExceptionHelper:131 - Cannot delete or update a parent row: a foreign key constraint fails (`startups_db`.`investors`, CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`))
-2017-09-21 14:47:46 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2017-09-21 14:52:40 INFO  Startup:39 - Startup with id: 2 found!
-2017-09-21 14:52:40 INFO  User:39 - User with id: 5 found!
-2017-09-21 14:52:40 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:52:40 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:52:40 INFO  User:74 - User deleted successfully!
-2017-09-21 14:58:49 INFO  UserRole:39 - UserRole with id: 1 found!
-2017-09-21 14:58:49 INFO  User:62 - User saved successfully!
-2017-09-21 14:58:49 WARN  Startup:41 - Startup with id: 2 not found!
-2017-09-21 14:58:49 WARN  User:41 - User with id: 5 not found!
-2017-09-21 14:58:49 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:58:49 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 14:58:49 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:58:49 INFO  User:74 - User deleted successfully!
-2017-09-21 14:59:33 INFO  UserRole:39 - UserRole with id: 1 found!
-2017-09-21 14:59:33 INFO  User:62 - User saved successfully!
-2017-09-21 14:59:33 WARN  Startup:41 - Startup with id: 2 not found!
-2017-09-21 14:59:33 WARN  User:41 - User with id: 5 not found!
-2017-09-21 14:59:34 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 14:59:34 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 14:59:53 WARN  Startup:41 - Startup with id: 2 not found!
-2017-09-21 14:59:53 WARN  User:41 - User with id: 5 not found!
-2017-09-21 14:59:53 WARN  SqlExceptionHelper:129 - SQL Error: 1452, SQLState: 23000
-2017-09-21 14:59:53 ERROR SqlExceptionHelper:131 - Cannot add or update a child row: a foreign key constraint fails (`startups_db`.`investors`, CONSTRAINT `FK9t284so3vpgitl5lhtqg9ssre` FOREIGN KEY (`Id`) REFERENCES `users` (`id`) ON DELETE CASCADE)
-2017-09-21 15:01:01 WARN  Startup:41 - Startup with id: 2 not found!
-2017-09-21 15:01:01 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:01:01 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 15:01:01 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:03:05 WARN  Startup:41 - Startup with id: 2 not found!
-2017-09-21 15:03:05 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:03:05 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:03:05 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:03:05 INFO  User:74 - User deleted successfully!
-2017-09-21 15:06:35 INFO  UserRole:39 - UserRole with id: 1 found!
-2017-09-21 15:06:35 INFO  User:62 - User saved successfully!
-2017-09-21 15:06:35 WARN  Startup:41 - Startup with id: 2 not found!
-2017-09-21 15:06:35 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:06:35 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:06:35 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 15:07:24 INFO  Startup:39 - Startup with id: 5 found!
-2017-09-21 15:07:25 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:07:25 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 15:07:25 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:08:03 INFO  Startup:39 - Startup with id: 5 found!
-2017-09-21 15:08:03 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:08:03 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:08:03 INFO  Startup:39 - Startup with id: 5 found!
-2017-09-21 15:08:03 INFO  Startup:74 - Startup deleted successfully!
-2017-09-21 15:11:05 INFO  UserRole:39 - UserRole with id: 1 found!
-2017-09-21 15:11:05 WARN  SqlExceptionHelper:129 - SQL Error: 1062, SQLState: 23000
-2017-09-21 15:11:05 ERROR SqlExceptionHelper:131 - Duplicate entry 'abram@email.com' for key 'UK_ku29j688xlci1ksopvjfgpswp'
-2017-09-21 15:11:24 WARN  Startup:41 - Startup with id: 5 not found!
-2017-09-21 15:11:24 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:11:24 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:11:24 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 15:11:51 INFO  Startup:39 - Startup with id: 6 found!
-2017-09-21 15:11:51 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:11:52 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 15:11:52 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:13:00 INFO  Startup:39 - Startup with id: 6 found!
-2017-09-21 15:13:01 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:13:01 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:13:01 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:13:01 INFO  User:74 - User deleted successfully!
-2017-09-21 15:17:23 INFO  UserRole:39 - UserRole with id: 1 found!
-2017-09-21 15:17:23 INFO  User:62 - User saved successfully!
-2017-09-21 15:17:23 WARN  Startup:41 - Startup with id: 6 not found!
-2017-09-21 15:17:23 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:17:23 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:17:23 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 15:19:42 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 15:19:42 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 15:19:42 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 15:19:42 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:37:10 WARN  AnnotationConfigApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'startupDaoImpl' defined in file [D:\JAVA\GoIT Study\JavaCoreGoIT_Homeworks_AndPRojects\StartupInvestmentSystem\target\classes\com\startup\project\dao\Impl\StartupDaoImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.startup.project.dao.Impl.StartupDaoImpl]: Constructor threw exception; nested exception is org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread
-2017-09-21 19:42:51 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:42:51 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:42:51 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:42:52 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 19:43:03 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:43:03 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:43:03 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:43:03 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 19:43:11 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:43:11 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:43:11 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:43:11 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 19:43:21 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:43:21 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:43:21 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:43:21 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 19:43:30 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:43:30 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:43:30 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:43:30 INFO  Startup:62 - Startup saved successfully!
-2017-09-21 19:48:11 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:48:11 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:48:11 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:48:11 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-21 19:48:44 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:48:44 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:48:44 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:48:44 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-21 19:49:17 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:49:17 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:49:17 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:49:17 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-21 19:51:46 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 19:51:46 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:51:46 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 19:51:46 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-21 20:41:56 INFO  Startup:39 - Startup with id: 7 found!
-2017-09-21 20:41:57 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:41:57 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 20:41:57 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:43:44 INFO  Startup:39 - Startup with id: 8 found!
-2017-09-21 20:43:44 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:43:44 INFO  Investor:62 - Investor saved successfully!
-2017-09-21 20:43:44 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:53:04 INFO  Startup:39 - Startup with id: 8 found!
-2017-09-21 20:53:05 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:53:05 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:53:05 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-21 20:58:08 INFO  Startup:39 - Startup with id: 8 found!
-2017-09-21 20:58:08 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:58:08 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:58:08 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-21 20:58:42 INFO  Startup:39 - Startup with id: 8 found!
-2017-09-21 20:58:42 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:58:42 INFO  User:31 - User with email: abram@email.com found!
-2017-09-21 20:58:42 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-22 16:26:55 INFO  Startup:39 - Startup with id: 8 found!
-2017-09-22 16:26:55 INFO  User:31 - User with email: abram@email.com found!
-2017-09-22 16:26:55 INFO  User:31 - User with email: abram@email.com found!
-2017-09-22 16:26:55 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-22 16:32:24 INFO  Startup:39 - Startup with id: 8 found!
-2017-09-22 16:32:24 INFO  User:31 - User with email: abram@email.com found!
-2017-09-22 16:32:24 INFO  User:31 - User with email: abram@email.com found!
-2017-09-22 16:32:24 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-27 14:43:48 INFO  Startup:39 - Startup with id: 8 found!
-2017-09-27 14:43:48 INFO  User:31 - User with email: abram@email.com found!
-2017-09-27 14:43:48 INFO  User:31 - User with email: abram@email.com found!
-2017-09-27 14:43:48 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-27 14:44:41 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-27 14:45:04 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-27 14:47:31 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-27 14:48:02 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-27 14:48:29 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-27 14:49:26 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
-2017-09-27 15:41:45 WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-09-30 18:55:37 ERROR ErrorCounter:60 - line 1:82: unexpected token: %
+2017-09-30 18:55:37 ERROR ErrorCounter:55 - line 1:82: unexpected token: %
+line 1:82: unexpected token: %
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.unaryExpression(HqlBaseParser.java:3405)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.multiplyExpression(HqlBaseParser.java:3270)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.additiveExpression(HqlBaseParser.java:2927)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.concatenation(HqlBaseParser.java:612)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.relationalExpression(HqlBaseParser.java:2861)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.equalityExpression(HqlBaseParser.java:2555)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.negatedExpression(HqlBaseParser.java:2519)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalAndExpression(HqlBaseParser.java:2435)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalOrExpression(HqlBaseParser.java:2400)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.expression(HqlBaseParser.java:2113)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalExpression(HqlBaseParser.java:1891)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.whereClause(HqlBaseParser.java:495)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:751)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:316)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:283)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:546)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:655)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:679)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:102)
+	at com.startup.project.dao.Impl.StartupDaoImpl.searchByName(StartupDaoImpl.java:51)
+	at com.startup.project.services.StartupService.searchByName(StartupService.java:61)
+	at com.startup.project.services.StartupService$$FastClassBySpringCGLIB$$61498a75.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.startup.project.services.StartupService$$EnhancerBySpringCGLIB$$3665a764.searchByName(<generated>)
+	at com.startup.project.TestAppClass.main(TestAppClass.java:137)
+2017-09-30 18:55:37 ERROR ErrorCounter:60 - line 1:84: unexpected token: name
+2017-09-30 18:55:37 ERROR ErrorCounter:55 - line 1:84: unexpected token: name
+line 1:84: unexpected token: name
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:784)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:316)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:283)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:546)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:655)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:679)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:102)
+	at com.startup.project.dao.Impl.StartupDaoImpl.searchByName(StartupDaoImpl.java:51)
+	at com.startup.project.services.StartupService.searchByName(StartupService.java:61)
+	at com.startup.project.services.StartupService$$FastClassBySpringCGLIB$$61498a75.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.startup.project.services.StartupService$$EnhancerBySpringCGLIB$$3665a764.searchByName(<generated>)
+	at com.startup.project.TestAppClass.main(TestAppClass.java:137)
+2017-09-30 19:07:59 WARN  HqlSqlWalker:1088 - [DEPRECATION] Encountered positional parameter near line 1, column 78 in HQL: [from com.startup.project.entities.Startup startup where startup.country like ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2017-09-30 19:08:48 WARN  HqlSqlWalker:1088 - [DEPRECATION] Encountered positional parameter near line 1, column 78 in HQL: [from com.startup.project.entities.Startup startup where startup.country like ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.

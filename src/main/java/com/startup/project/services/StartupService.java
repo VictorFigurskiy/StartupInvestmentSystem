@@ -51,8 +51,18 @@ public class StartupService {
         dao.delete(entity);
     }
 
-    @Transactional
-    public List<Startup> getByIndustry(String industry, int limit, int excludeId){
+    @Transactional(readOnly = true)
+    public List<Startup> getByIndustry(String industry, int limit, int excludeId) {
         return dao.getByIndustry(industry, limit, excludeId);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Startup> searchByName(String name) {
+        return dao.searchByName(name);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Startup> searchByCounty(String county) {
+        return dao.searchByCounty(county);
     }
 }

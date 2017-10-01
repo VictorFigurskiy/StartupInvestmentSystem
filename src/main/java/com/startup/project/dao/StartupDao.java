@@ -11,5 +11,9 @@ public interface StartupDao extends GeneralDao<Integer, Startup> {
 
     List<Startup> getStartupOnPage(int page, int size);
 
-    List getByIndustry(String industry, int limit, int excludeId);
+    List<Startup> getByIndustry(String industry, int limit, int excludeId);
+
+    List<Startup> searchByName(String name);
+
+    List<Startup> searchByCounty(String county);
 }

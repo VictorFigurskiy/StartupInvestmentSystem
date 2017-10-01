@@ -38,10 +38,26 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
     @SuppressWarnings("unchecked")
     public List<Startup> getByIndustry(String industry, int limit, int excludeId) {
         Session currentSession = sessionFactory.getCurrentSession();
-        return currentSession.createQuery("FROM Startup startup WHERE startup.industry=? and startup.id!=? order by id asc ", Startup.class)
+        return currentSession.createQuery("FROM Startup startup WHERE startup.industry=? and startup.id!=? order by id asc", Startup.class)
                 .setParameter(0 , industry)
                 .setParameter(1 , excludeId)
                 .setMaxResults(limit)
+                .list();
+    }
+
+    @Override
+    public List<Startup> searchByName(String name) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("from Startup startup where startup.startupName like :name",Startup.class)
+                .setParameter("name","%" + name + "%")
+                .list();
+    }
+
+    @Override
+    public List<Startup> searchByCounty(String county) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("from Startup startup where startup.country like ?", Startup.class)
+                .setParameter(0,"%" + county + "%")
                 .list();
     }
 }

@@ -91,9 +91,9 @@
     <textarea rows="4" type="text" size="40" name="idea" maxlength="1000" required>${startup.idea}</textarea>
     <p>Текущее состояние:</p>
     <textarea rows="4" type="text" size="40" name="currentState" maxlength="500">${startupDetail.currentState}</textarea>
-    <p>Годовой объем продаж, $</p>
+    <p>Годовой объем продаж</p>
     <textarea rows="4" type="text" size="40" name="grossProfit" maxlength="500">${startupDetail.grossProfit}</textarea>
-    <p>Годовой объем чистой прибыли, $</p>
+    <p>Годовой объем чистой прибыли</p>
     <textarea rows="4" type="text" size="40" name="netIncome" maxlength="500">${startupDetail.netIncome}</textarea>
     <p>Тип имущества:</p>
     <textarea rows="4" type="text" size="40" name="typeOfProperty" maxlength="500">${startupDetail.typeOfProperty}</textarea>

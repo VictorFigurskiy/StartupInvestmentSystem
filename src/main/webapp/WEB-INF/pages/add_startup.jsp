@@ -98,9 +98,9 @@
             <textarea rows="4" type="text" size="40" name="idea" required maxlength="1000"></textarea>
             <p>Текущее состояние:</p>
             <textarea rows="4" type="text" size="40" name="currentState" maxlength="500"></textarea>
-            <p>Годовой объем продаж, $</p>
+            <p>Годовой объем продаж</p>
             <textarea rows="4" type="text" size="40" name="grossProfit" maxlength="500"></textarea>
-            <p>Годовой объем чистой прибыли, $</p>
+            <p>Годовой объем чистой прибыли</p>
             <textarea rows="4" type="text" size="40" name="netIncome" maxlength="500"></textarea>
             <p>Тип имущества:</p>
             <textarea rows="4" type="text" size="40" name="typeOfProperty" maxlength="500"></textarea>
