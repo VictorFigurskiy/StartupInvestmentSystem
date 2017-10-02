@@ -53,6 +53,25 @@ public class AccountController {
         return "edit_account";
     }
 
+    @RequestMapping(value = "/edit-password", method = RequestMethod.POST)
+    public String editUserPass(@RequestParam("userId") int id, Model model) {
+        User byId = userService.getById(id);
+        model.addAttribute("userForEdit", byId);
+        return "edit_password";
+    }
+
+    @RequestMapping(value = "/editpass", method = RequestMethod.POST)
+    public String updatePassword(@ModelAttribute("userForEdit") User user, BindingResult bindingResult) {
+        validator.validate(user,bindingResult);
+        if (bindingResult.hasErrors()) return "edit_password";
+        User dbUser = userService.getById(user.getId());
+        user.setStartupList(dbUser.getStartupList());
+        user.setUserRoles(dbUser.getUserRoles());
+        userService.update(user);
+
+        return "redirect:/account";
+    }
+
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public String updateUser(@ModelAttribute("userForEdit") User user, BindingResult bindingResult) {
         validator.validate(user,bindingResult);
@@ -62,13 +81,15 @@ public class AccountController {
         user.setUserRoles(dbUser.getUserRoles());
         userService.update(user);
 
-        Set<GrantedAuthority> grantedAuthority = user.getUserRoles().stream()
-                .map(userRole -> new SimpleGrantedAuthority("ROLE_"+userRole.getRoleType()))
-                .collect(Collectors.toSet());
-        UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),grantedAuthority);
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails,user.getPassword(),userDetails.getAuthorities());
-        SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
-        SecurityContextHolder.getContext().setAuthentication(token);
+        if (!user.getPreviousEmail().equals(user.getEmail())) {
+            Set<GrantedAuthority> grantedAuthority = user.getUserRoles().stream()
+                    .map(userRole -> new SimpleGrantedAuthority("ROLE_" + userRole.getRoleType()))
+                    .collect(Collectors.toSet());
+            UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), grantedAuthority);
+            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails, user.getPassword(), userDetails.getAuthorities());
+            SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
+            SecurityContextHolder.getContext().setAuthentication(token);
+        }
 
         return "redirect:/account";
     }

@@ -21,7 +21,7 @@ public class User {
     private String email;
     @Transient
     private String previousEmail;
-    @Column(name = "PASSWORD", nullable = false, length = 50)
+    @Column(name = "PASSWORD", nullable = false, length = 100)
     private String password;
     @Transient
     private String confirmPassword;

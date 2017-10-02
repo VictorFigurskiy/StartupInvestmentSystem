@@ -5,6 +5,7 @@ import com.startup.project.dao.UserRoleDao;
 import com.startup.project.entities.User;
 import com.startup.project.entities.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,11 +21,14 @@ public class UserService {
 
     private UserDao userDao;
     private UserRoleDao userRoleDao;
+    private PasswordEncoder passwordEncoder;
+    private final int PASSWORD_LENGTH = 30;
 
     @Autowired
-    public UserService(UserDao userDao, UserRoleDao userRoleDao) {
+    public UserService(UserDao userDao, UserRoleDao userRoleDao, PasswordEncoder passwordEncoder) {
         this.userDao = userDao;
         this.userRoleDao = userRoleDao;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional(readOnly = true)
@@ -48,11 +52,13 @@ public class UserService {
         Set<UserRole> userRoleSet = new HashSet<>();
         userRoleSet.add(userRole);
         entity.setUserRoles(userRoleSet);
+        entity.setPassword(passwordEncoder.encode(entity.getPassword()));
         userDao.save(entity);
     }
 
     @Transactional
     public void update(User entity) {
+        entity.setPassword(passwordEncoder.encode(entity.getPassword()));
         userDao.update(entity);
     }
 

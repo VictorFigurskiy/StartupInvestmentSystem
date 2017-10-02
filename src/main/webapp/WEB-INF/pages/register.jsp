@@ -77,7 +77,7 @@
             <label class="control-label col-xs-3" for="firstName">Имя:</label>
             <div class="col-xs-9">
                 <spring:bind path="firstName">
-                    <form:input type="text" class="form-control" id="firstName" placeholder="Введите имя" path="firstName"/>
+                    <form:input type="text" class="form-control" id="firstName" placeholder="Введите имя" pattern="^[A-Za-zА-Яа-яЁё]+$" path="firstName"/>
                 </spring:bind>
             </div>
         </div>
@@ -85,7 +85,7 @@
             <label class="control-label col-xs-3" for="lastName">Фамилия:</label>
             <div class="col-xs-9">
                 <spring:bind path="lastName">
-                    <form:input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" path="lastName"/>
+                    <form:input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" pattern="^[A-Za-zА-Яа-яЁё]+$" path="lastName"/>
                 </spring:bind>
             </div>
         </div>
@@ -141,28 +141,28 @@
 
     <hr>
 
-    <!-- Footer -->
-    <footer class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <nav>
-                    <ul style="padding-left: 0px">
-                        <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
-                        <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
-                        <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 footerClass" >
-                    <p>Final Project TeamOne Website 2017</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
 </div>
 <!-- /.container -->
+
+<!-- Footer -->
+<footer class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <nav>
+                <ul style="padding-left: 0px">
+                    <li><a href="../../static/team.html">НАША КОМАНДА</a></li>
+                    <li><a href="../../static/about.html">БОЛЬШЕ О ПРОЕКТЕ</a></li>
+                    <li><a href="../../static/contact.html">КОНТАКТЫ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 footerClass" >
+                <p>Final Project TeamOne Website 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <!-- jQuery -->
 <script src="../../static/js/jquery.js"></script>

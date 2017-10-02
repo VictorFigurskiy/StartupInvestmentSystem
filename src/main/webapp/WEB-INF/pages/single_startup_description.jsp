@@ -295,7 +295,7 @@
             <!-- /.col-lg-12 -->
         </div>
     </div>
-
+    <c:if test="${not empty similarStartup}">
     <div style= "width: 100%; color:black; border-top:2px solid #4b4b4b; padding: 10px; margin-top: 10px; display: inline-block">
         <span style="display: block"><h2 style="margin: 20px">Похожие проекты:</h2></span>
         <c:forEach items="${similarStartup}" var="s_startup">
@@ -310,6 +310,7 @@
             </div>
         </c:forEach>
     </div>
+    </c:if>
         <!-- /.row -->
 
         <hr>

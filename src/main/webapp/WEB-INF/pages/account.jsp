@@ -87,18 +87,24 @@
                     <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.lastName}</div>
                     <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.email}</div>
                     <div style="border-bottom: #ddd solid 1px; padding: 6px 1px;">${currentUser.phone}</div>
-                    <div style="padding: 6px 1px; float: left; width: 50%" align="left">
+                    <div style="padding: 6px 1px; width: 50%" align="left">
                         <form action="${contextPath}/account/edit-page" method="POST">
                             <input hidden name="userId" value="${currentUser.id}"/>
-                            <input class="account_buttons" type="submit" style="color: black;" value="Редактировать"/>
+                            <input class="account_buttons" type="submit" style="color: black;" value="Редактировать профиль"/>
                         </form>
                     </div>
-                    <div style="padding: 6px 1px; float: left; width: 50%" align="right">
+                    <div style="padding: 6px 1px; float: right; width: 50%" align="right">
                         <form action="${contextPath}/account/delete" method="POST">
                             <input hidden name="userId" value="${currentUser.id}"/>
                             <input class="account_buttons" type="submit" style="color: #f30000;" value="Удалить" />
                         </form>
-                        </div>
+                    </div>
+                    <div style="padding: 6px 1px; float: left; width: 50%" align="left">
+                            <form action="${contextPath}/account/edit-password" method="POST">
+                                <input hidden name="userId" value="${currentUser.id}"/>
+                                <input class="account_buttons" type="submit" style="color: black;" value="Изменить пароль!"/>
+                            </form>
+                    </div>
                 </div>
             </div>
         </div>

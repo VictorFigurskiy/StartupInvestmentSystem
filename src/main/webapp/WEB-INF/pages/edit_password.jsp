@@ -7,7 +7,32 @@
 <html lang="en">
 
 <head>
+    <jsp:useBean id="userForEdit" scope="request" type="com.startup.project.entities.User"/>
+    <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $().ready(function(){
+    $('#changePassWrite').change(function(){
+        if($(this).val() == '1'){
+            $('#pass').prop("readOnly", false).val('');
+            $('#confirmpass').prop("readOnly", false).val('');
+
+        }
+    });
+});
+$().ready(function(){
+    $('#changePassReadOnly').change(function(){
+        if($(this).val() == '2'){
+//            document.forms["editform"].reset();
+//            document.getElementById('EditForm').reset();
+            document.forms.editform.reset();
+            $('#pass').attr('readOnly',true);
+            $('#confirmpass').attr('readOnly',true);
+        }
+    });
+});
+</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +40,7 @@
     <meta name="author" content="">
 
     <link href="../../static/image/icon.png" rel="shortcut icon">
-    <title>Редактирование данных пользователя</title>
+    <title>Изменение пароля</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
@@ -79,12 +104,9 @@
     <!-- Page Content -->
     <div class="container">
 
-	<h1>Редактирование профиля</h1>
+	<h1>Изменение пароля</h1>
         <hr style="margin-top: 10px; margin-bottom: 30px">
 	<div class="row">
-
-        <jsp:useBean id="userForEdit" scope="request" type="com.startup.project.entities.User"/>
-        <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
       <!-- edit form column -->
       <div class="col-md-9 personal-info" style="margin-left: 20%">
@@ -95,58 +117,54 @@
         </div>
         <h3 style="margin-top: 0">Ваши даные</h3>
         
-        <form:form class="form-horizontal" modelAttribute="userForEdit" action="${contextPath}/account/edit" method="post">
+        <form:form class="form-horizontal" modelAttribute="userForEdit" action="${contextPath}/account/editpass" method="post">
             <%--Id--%>
             <div hidden><form:input value="${userForEdit.id}" type="number" path="id"/></div>
-            <%--Id--%>
-
-            <div style="display: block; width: auto; height: auto;" align="center">
-                <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="firstName"></form:errors></span>
-            </div>
-            <div class="form-group" style="margin-bottom: 0px">
-            <label class="col-lg-3 control-label">Имя:</label>
-            <div class="col-lg-8">
-                <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.firstName}" type="text" path="firstName"/>
-            </div>
-          </div>
-
-          <div style="display: block; width: auto; height: auto;" align="center">
-              <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="lastName"></form:errors></span>
-          </div>
-          <div class="form-group" style="margin-bottom: 0px">
-            <label class="col-lg-3 control-label">Фамилия:</label>
-            <div class="col-lg-8">
-              <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.lastName}" type="text" path="lastName"/>
-            </div>
-          </div>
-            <%--Prev email--%>
+            <%--FirstName--%>
+            <div hidden><form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.firstName}" type="text" path="firstName"/></div>
+           <%--Last Name--%>
+            <div hidden><form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.lastName}" type="text" path="lastName"/></div>
+            <%--Email--%>
             <div hidden><form:input value="${userForEdit.email}" type="text" path="previousEmail"/></div>
             <%--Prev email--%>
+            <div hidden> <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.email}" type="email" path="email"/></div>
+           <%--Phone--%>
+            <div hidden><form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.phone}" maxlength="13" type="text" path="phone" /></div>
+
+
+
+            <%--<div class="form-group" style="margin-bottom: 0px">--%>
+                <%--<div style="width: 30%; margin-left: 25%" align="center" class="col-lg-8">--%>
+                    <%--<input style="float: left" type="radio" name="pass" id="changePassWrite" value="1"/>--%>
+                    <%--<p style="width: 60%; float: left;">Изменить пароль</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="form-group" style="margin-bottom: 0px">--%>
+                <%--<div style="width: 30%; margin-left: 25%" align="center" class="col-lg-8">--%>
+                    <%--<input style="float: left" type="radio" name="pass" id="changePassReadOnly" value="2"/>--%>
+                    <%--<p style="width:75%; float: left;">Оставить текущий</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
 
           <div style="display: block; width: auto; height: auto;" align="center">
-              <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="email"></form:errors></span>
+              <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="password"></form:errors></span>
           </div>
           <div class="form-group" style="margin-bottom: 0px">
-            <label class="col-lg-3 control-label">Email:</label>
+            <label class="col-lg-3 control-label">Пароль:</label>
             <div class="col-lg-8">
-              <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.email}" type="email" path="email"/>
+              <input id="pass" class="form-control" name="password" style="width: 50%" type="password"/>
             </div>
           </div>
 
             <div style="display: block; width: auto; height: auto;" align="center">
-                <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="phone"></form:errors></span>
+                <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="confirmPassword"></form:errors></span>
             </div>
             <div class="form-group" style="margin-bottom: 0px">
-                <label class="col-lg-3 control-label">Телефон:</label>
+                <label class="col-lg-3 control-label">Подтверждение пароля:</label>
                 <div class="col-lg-8">
-                    <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.phone}" maxlength="13" type="text" path="phone" />
+                    <input id="confirmpass" name="confirmPassword" class="form-control" style="width: 50%" type="password"/>
                 </div>
             </div>
-
-            <div hidden><input id="pass" class="form-control" name="password" style="width: 50%" type="password" value="${userForEdit.password}"/></div>
-
-            <div hidden><input id="confirmpass" name="confirmPassword" class="form-control" style="width: 50%" type="password" value="${userForEdit.password}"/></div>
-
 
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
@@ -189,7 +207,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../../static/js/bootstrap.min.js"></script>
-
+    <%--Custom js--%>
+    <script src="../../static/js/editAccount.js"></script>
 </body>
 
 </html>
