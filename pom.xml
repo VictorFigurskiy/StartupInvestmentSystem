@@ -26,6 +26,7 @@
         <mockito.core.version>2.9.0</mockito.core.version>
         <spring.test.version>4.3.9.RELEASE</spring.test.version>
         <slf4j.version>1.7.25</slf4j.version>
+        <validation.api.version>2.0.0.Final</validation.api.version>
     </properties>
 
     <dependencies>
@@ -169,6 +170,14 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
+                   <!--  For validation  -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation.api.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -189,6 +198,13 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>1.3.1</version>
+            </plugin>
+
         </plugins>
     </build>
 
