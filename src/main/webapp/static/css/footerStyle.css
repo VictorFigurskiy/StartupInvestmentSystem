@@ -494,3 +494,13 @@ footer nav ul li a {
 .indexSearchBlockButton a:hover{
     background: #122b40; !important;
 }
+
+.navbar-background-contacts{
+    background: url(/static/image/contacts.jpg) no-repeat center top;
+    -webkit-background-size: 110%;
+    background-size: 110%;
+    margin-top: -50px;
+}
+.navbar-background-contacts {
+    height: 500px;
+}
