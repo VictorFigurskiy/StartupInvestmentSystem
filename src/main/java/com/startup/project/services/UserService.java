@@ -58,7 +58,9 @@ public class UserService {
 
     @Transactional
     public void update(User entity) {
-        entity.setPassword(passwordEncoder.encode(entity.getPassword()));
+        if (entity.getPassword().length() <= PASSWORD_LENGTH) {
+            entity.setPassword(passwordEncoder.encode(entity.getPassword()));
+        }
         userDao.update(entity);
     }
 
