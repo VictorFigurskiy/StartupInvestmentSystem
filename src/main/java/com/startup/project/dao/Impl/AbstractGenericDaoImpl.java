@@ -5,7 +5,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 /**
@@ -13,10 +12,7 @@ import java.util.List;
  */
 public abstract class AbstractGenericDaoImpl<K extends Serializable, V> implements GeneralDao<K, V> {
 
-    @SuppressWarnings("unchecked")
-    private final Logger logger = Logger.getLogger((Class<V>) ((ParameterizedType) this.getClass()
-            .getGenericSuperclass())
-            .getActualTypeArguments()[1]);
+    private final Logger LOGGER = Logger.getLogger(this.getClass().getSimpleName());
 
     private SessionFactory sessionFactory;
 
@@ -24,8 +20,8 @@ public abstract class AbstractGenericDaoImpl<K extends Serializable, V> implemen
         this.sessionFactory = sessionFactory;
     }
 
-    public Logger getLogger() {
-        return logger;
+    public Logger getLOGGER() {
+        return LOGGER;
     }
 
     private Session getSession() {
@@ -36,9 +32,9 @@ public abstract class AbstractGenericDaoImpl<K extends Serializable, V> implemen
     public V getById(Class<? extends V> entityClass, K id) {
         V entity = getSession().get(entityClass, id);
         if (entity != null) {
-            logger.info(entityClass.getSimpleName() + " with id: " + id + " found!");
+            LOGGER.info(entityClass.getSimpleName() + " with id: " + id + " found!");
         } else {
-            logger.warn(entityClass.getSimpleName() + " with id: " + id + " not found!");
+            LOGGER.warn(entityClass.getSimpleName() + " with id: " + id + " not found!");
         }
         return entity;
 
@@ -47,30 +43,30 @@ public abstract class AbstractGenericDaoImpl<K extends Serializable, V> implemen
     @SuppressWarnings("unchecked")
     @Override
     public List<V> getAll(Class<? extends V> entityClass) {
-        List<V> usersList = getSession().createCriteria(entityClass).list();
-        if (usersList != null) {
-            logger.info("Users list is not empty!");
+        List<V> entityList = getSession().createCriteria(entityClass).list();
+        if (entityList != null) {
+            LOGGER.info(entityClass.getSimpleName() +" list 'getAll' contains "+entityList.size()+" elements!");
         } else {
-            logger.warn("Users list is empty!");
+            LOGGER.info(entityClass.getSimpleName() +" list is empty!");
         }
-        return usersList;
+        return entityList;
     }
 
     @Override
     public void save(V entity) {
         getSession().save(entity);
-        logger.info(entity.getClass().getSimpleName()+" saved successfully!");
+        LOGGER.info(entity.getClass().getSimpleName() +" saved successfully!");
     }
 
     @Override
     public void update(V entity) {
         getSession().update(entity);
-        logger.info(entity.getClass().getSimpleName()+" updated successfully!");
+        LOGGER.info(entity.getClass().getSimpleName() +" updated successfully!");
     }
 
     @Override
     public void delete(V entity) {
         getSession().delete(entity);
-        logger.info(entity.getClass().getSimpleName()+" deleted successfully!");
+        LOGGER.info(entity.getClass().getSimpleName() +" deleted successfully!");
     }
 }

@@ -5,6 +5,7 @@ import com.startup.project.entities.User;
 import com.startup.project.services.InvestorService;
 import com.startup.project.services.UserService;
 import com.startup.project.validator.UserValidator;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -37,6 +38,8 @@ public class AccountController {
     @Autowired
     private UserValidator validator;
 
+    private static final Logger LOGGER = Logger.getLogger(AccountController.class);
+
     @GetMapping
     public String accountPage(Model model) {
         UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -44,6 +47,7 @@ public class AccountController {
         List<Investment> investments = investorService.getInvestment(byEmail.getId());
         model.addAttribute("currentUser", byEmail);
         model.addAttribute("investments", investments);
+        LOGGER.info("Method 'accountPage' worked successfully");
         return "account";
     }
 
@@ -51,6 +55,7 @@ public class AccountController {
     public String editUserForm(@RequestParam("userId") int id, Model model) {
         User byId = userService.getById(id);
         model.addAttribute("userForEdit", byId);
+        LOGGER.info("Method 'editUserForm' worked successfully");
         return "edit_account";
     }
 
@@ -58,6 +63,7 @@ public class AccountController {
     public String editUserPass(@RequestParam("userId") int id, Model model) {
         User byId = userService.getById(id);
         model.addAttribute("userForEdit", byId);
+        LOGGER.info("Method 'editUserPass' worked successfully");
         return "edit_password";
     }
 
@@ -69,7 +75,7 @@ public class AccountController {
         user.setStartupList(dbUser.getStartupList());
         user.setUserRoles(dbUser.getUserRoles());
         userService.update(user);
-
+        LOGGER.info("Method 'updatePassword' worked successfully");
         return "redirect:/account";
     }
 
@@ -95,7 +101,7 @@ public class AccountController {
             SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
             SecurityContextHolder.getContext().setAuthentication(token);
         }
-
+        LOGGER.info("Method 'updateUser' worked successfully");
         return "redirect:/account";
     }
 
@@ -105,6 +111,7 @@ public class AccountController {
         investorService.deleteInvestorByUserId(userId);
         userService.delete(byId);
         SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
+        LOGGER.info("Method 'deleteUser' worked successfully");
         return "redirect:/";
     }
 }

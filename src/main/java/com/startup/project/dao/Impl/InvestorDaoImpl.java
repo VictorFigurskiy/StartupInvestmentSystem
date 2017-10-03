@@ -4,6 +4,7 @@ import com.startup.project.dao.InvestorDao;
 import com.startup.project.entities.Investment;
 import com.startup.project.entities.Investor;
 import com.startup.project.entities.Startup;
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.*;
 public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> implements InvestorDao {
 
     private SessionFactory sessionFactory;
+    private final Logger LOGGER = getLOGGER();
 
     @Autowired
     public InvestorDaoImpl(SessionFactory sessionFactory) {
@@ -38,7 +40,7 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
                 .setParameter("id", userId)
                 .list();
 
-        getLogger().info("HQL query is done successfully!");
+        LOGGER.info("Hibernate query 'getStartUpSumInvest' is done successfully!");
 
         if (startupList != null) {
             Investment[] investments = startupList.stream()
@@ -53,9 +55,9 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
 
             investmentList = new ArrayList<>(Arrays.asList(investments));
 
-            getLogger().info("Investments list is not empty!");
+            LOGGER.info("Investments list contains "+ investmentList.size() +" elements!");
         } else {
-            getLogger().warn("Investments list is empty!!!");
+            LOGGER.info("Investments list is empty!!!");
         }
 
         return investmentList;
@@ -68,6 +70,6 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
         session.createQuery("delete from Investor investor where investor.investorUser.id=:id")
                 .setParameter("id", id);
 
-        getLogger().info("Investor with id:"+id+" deleted successfully!");
+        LOGGER.info("Investor with id: "+ id +" deleted successfully!");
     }
 }
