@@ -145,7 +145,7 @@
             </div>
         </sec:authorize>
         <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-            <div class="content registerBox login_successfull" style="display: block; float: right; width: auto; height: auto; margin-top: 12px;">
+            <div class="content registerBox login_successfull" style="display: block; float: right; width: auto; height: auto; margin-top: 10px;">
                 <div class="form">
                     <h4>Ваш логин: <sec:authentication property="principal.username"/></h4>
                     <form:form action="${contextPath}/logout" method="post">

@@ -315,6 +315,7 @@ footer nav ul li a {
 
 .account_buttons:hover{
     background-color: #f5f5f5 !important;
+    text-decoration: none;
 }
 
 .account_a li:hover{

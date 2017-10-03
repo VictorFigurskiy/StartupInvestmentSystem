@@ -16,9 +16,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Created by serhii on 20.09.2017.
@@ -82,9 +83,13 @@ public class AccountController {
         userService.update(user);
 
         if (!user.getPreviousEmail().equals(user.getEmail())) {
-            Set<GrantedAuthority> grantedAuthority = user.getUserRoles().stream()
+
+            SimpleGrantedAuthority[] simpleGrantedAuthorities = user.getUserRoles().stream()
                     .map(userRole -> new SimpleGrantedAuthority("ROLE_" + userRole.getRoleType()))
-                    .collect(Collectors.toSet());
+                    .toArray(SimpleGrantedAuthority[]::new);
+
+            Set<GrantedAuthority> grantedAuthority = new HashSet<>(Arrays.asList(simpleGrantedAuthorities));
+
             UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), grantedAuthority);
             UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails, user.getPassword(), userDetails.getAuthorities());
             SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);

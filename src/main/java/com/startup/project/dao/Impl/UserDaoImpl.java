@@ -30,7 +30,7 @@ public class UserDaoImpl extends AbstractGenericDaoImpl<Integer, User> implement
         if (userById != null) {
             getLogger().info("User with email: " + email + " found!");
         } else {
-            getLogger().warn("User with email: " + email + "not found!");
+            getLogger().warn("User with email: " + email + " not found!");
         }
         return userById;
     }

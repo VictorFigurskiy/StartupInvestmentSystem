@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Created by Sonik on 14.09.2017.
@@ -35,12 +34,14 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
 
         List<Startup> startupList = currentSession.createQuery
                 ("select startup from Startup as startup left join startup.investorList as investor " +
-                "where investor.investorUser.id=:id group by startup.id", Startup.class)
+                        "where investor.investorUser.id=:id group by startup.id", Startup.class)
                 .setParameter("id", userId)
                 .list();
 
+        getLogger().info("HQL query is done successfully!");
+
         if (startupList != null) {
-            investmentList = startupList.stream()
+            Investment[] investments = startupList.stream()
                     .map(startup -> {
                         double sum = startup.getInvestorList().stream()
                                 .filter(investor -> investor.getInvestorUser().getId() == userId)
@@ -48,7 +49,13 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
                                 .mapToDouble(BigDecimal::doubleValue)
                                 .sum();
                         return new Investment(startup.getId(), startup.getStartupName(), new BigDecimal(sum));
-                    }).collect(Collectors.toList());
+                    }).toArray(Investment[]::new);
+
+            investmentList = new ArrayList<>(Arrays.asList(investments));
+
+            getLogger().info("Investments list is not empty!");
+        } else {
+            getLogger().warn("Investments list is empty!!!");
         }
 
         return investmentList;
@@ -59,6 +66,8 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
         Session session = sessionFactory.getCurrentSession();
 
         session.createQuery("delete from Investor investor where investor.investorUser.id=:id")
-                .setParameter("id",id);
+                .setParameter("id", id);
+
+        getLogger().info("Investor with id:"+id+" deleted successfully!");
     }
 }
