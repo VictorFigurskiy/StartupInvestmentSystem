@@ -4,7 +4,8 @@ import com.startup.project.entities.Investment;
 import com.startup.project.entities.User;
 import com.startup.project.services.InvestorService;
 import com.startup.project.services.UserService;
-import com.startup.project.validator.UserValidator;
+import com.startup.project.validator.MultiValidator;
+import com.startup.project.validator.ValidateType;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -36,7 +37,7 @@ public class AccountController {
     private InvestorService investorService;
 
     @Autowired
-    private UserValidator validator;
+    private MultiValidator validator;
 
     private static final Logger LOGGER = Logger.getLogger(AccountController.class);
 
@@ -69,26 +70,26 @@ public class AccountController {
 
     @RequestMapping(value = "/editpass", method = RequestMethod.POST)
     public String updatePassword(@ModelAttribute("userForEdit") User user, BindingResult bindingResult) {
-        validator.validate(user,bindingResult);
+        validator.validate(user,bindingResult, ValidateType.PASSWORD);
         if (bindingResult.hasErrors()) return "edit_password";
         User dbUser = userService.getById(user.getId());
-        user.setStartupList(dbUser.getStartupList());
-        user.setUserRoles(dbUser.getUserRoles());
-        userService.update(user);
+        dbUser.setPassword(user.getPassword());
+        userService.updatePassword(dbUser);
         LOGGER.info("Method 'updatePassword' worked successfully");
         return "redirect:/account";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public String updateUser(@ModelAttribute("userForEdit") User user, BindingResult bindingResult) {
-        validator.validate(user,bindingResult);
+        validator.validate(user, bindingResult, ValidateType.DATA);
         if (bindingResult.hasErrors()) return "edit_account";
         User dbUser = userService.getById(user.getId());
         user.setStartupList(dbUser.getStartupList());
         user.setUserRoles(dbUser.getUserRoles());
-        userService.update(user);
+        user.setPassword(dbUser.getPassword());
+        userService.updateUserData(user);
 
-        if (!user.getPreviousEmail().equals(user.getEmail())) {
+        if (!dbUser.getEmail().equals(user.getEmail())) {
 
             SimpleGrantedAuthority[] simpleGrantedAuthorities = user.getUserRoles().stream()
                     .map(userRole -> new SimpleGrantedAuthority("ROLE_" + userRole.getRoleType()))
@@ -101,7 +102,7 @@ public class AccountController {
             SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
             SecurityContextHolder.getContext().setAuthentication(token);
         }
-        LOGGER.info("Method 'updateUser' worked successfully");
+        LOGGER.info("Method 'updateUserData' worked successfully");
         return "redirect:/account";
     }
 

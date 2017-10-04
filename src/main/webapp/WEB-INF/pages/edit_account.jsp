@@ -106,7 +106,7 @@
             <div class="form-group" style="margin-bottom: 0px">
             <label class="col-lg-3 control-label">Имя:</label>
             <div class="col-lg-8">
-                <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.firstName}" type="text" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы!" path="firstName"/>
+                <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.firstName}" type="text" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы без пробелов!" path="firstName"/>
             </div>
           </div>
 
@@ -116,7 +116,7 @@
           <div class="form-group" style="margin-bottom: 0px">
             <label class="col-lg-3 control-label">Фамилия:</label>
             <div class="col-lg-8">
-              <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.lastName}" type="text" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы!" path="lastName"/>
+              <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.lastName}" type="text" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы без пробелов!" path="lastName"/>
             </div>
           </div>
             <%--Prev email--%>
@@ -142,10 +142,6 @@
                     <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.phone}" maxlength="13" type="text" path="phone" />
                 </div>
             </div>
-
-            <div hidden><input id="pass" class="form-control" name="password" style="width: 50%" type="password" value="${userForEdit.password}"/></div>
-
-            <div hidden><input id="confirmpass" name="confirmPassword" class="form-control" style="width: 50%" type="password" value="${userForEdit.password}"/></div>
 
 
           <div class="form-group">

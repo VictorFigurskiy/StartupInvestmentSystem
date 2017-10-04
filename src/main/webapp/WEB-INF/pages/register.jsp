@@ -77,7 +77,7 @@
             <label class="control-label col-xs-3" for="firstName">Имя:</label>
             <div class="col-xs-9">
                 <spring:bind path="firstName">
-                    <form:input type="text" class="form-control" id="firstName" placeholder="Введите имя" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы!" path="firstName"/>
+                    <form:input type="text" class="form-control" id="firstName" placeholder="Введите имя" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы без пробелов!" path="firstName"/>
                 </spring:bind>
             </div>
         </div>
@@ -85,7 +85,7 @@
             <label class="control-label col-xs-3" for="lastName">Фамилия:</label>
             <div class="col-xs-9">
                 <spring:bind path="lastName">
-                    <form:input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы!" path="lastName"/>
+                    <form:input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы без пробелов!" path="lastName"/>
                 </spring:bind>
             </div>
         </div>

@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetailedServiceImpl implements UserDetailsService {
 
-    private static final Logger logger = Logger.getLogger(UserDetailedServiceImpl.class);
+    private static final Logger LOGGER = Logger.getLogger(UserDetailedServiceImpl.class);
 
     private final UserService userService;
 
@@ -28,7 +28,7 @@ public class UserDetailedServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         com.startup.project.entities.User user = userService.getByEmail(email);
         if (user == null) {
-            logger.info("User with" + email + "not exist!!!");
+            LOGGER.info("User with" + email + "not exist!!!");
             throw new UsernameNotFoundException("User not exist!!!");
         }
 

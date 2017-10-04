@@ -22,7 +22,6 @@ public class UserService {
     private UserDao userDao;
     private UserRoleDao userRoleDao;
     private PasswordEncoder passwordEncoder;
-    private final int PASSWORD_LENGTH = 30;
 
     @Autowired
     public UserService(UserDao userDao, UserRoleDao userRoleDao, PasswordEncoder passwordEncoder) {
@@ -57,10 +56,13 @@ public class UserService {
     }
 
     @Transactional
-    public void update(User entity) {
-        if (entity.getPassword().length() <= PASSWORD_LENGTH) {
-            entity.setPassword(passwordEncoder.encode(entity.getPassword()));
-        }
+    public void updateUserData(User entity) {
+        userDao.update(entity);
+    }
+
+    @Transactional
+    public void updatePassword(User entity) {
+        entity.setPassword(passwordEncoder.encode(entity.getPassword()));
         userDao.update(entity);
     }
 

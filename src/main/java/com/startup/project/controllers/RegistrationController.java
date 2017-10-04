@@ -2,7 +2,8 @@ package com.startup.project.controllers;
 
 import com.startup.project.entities.User;
 import com.startup.project.services.UserService;
-import com.startup.project.validator.UserValidator;
+import com.startup.project.validator.MultiValidator;
+import com.startup.project.validator.ValidateType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -20,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class RegistrationController {
 
     @Autowired
-    private UserValidator userValidator;
+    private MultiValidator validator;
 
     @Autowired
     private UserService userService;
@@ -35,7 +36,7 @@ public class RegistrationController {
 
     @PostMapping
     public String addNewUser(@ModelAttribute("userFormRegist") User user, BindingResult bindingResult){
-        userValidator.validate(user,bindingResult);
+        validator.validate(user,bindingResult, ValidateType.FULL);
         if (bindingResult.hasErrors()) return "register";
         userService.save(user);
         return "redirect:/";

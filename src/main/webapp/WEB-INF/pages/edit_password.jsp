@@ -120,18 +120,6 @@ $().ready(function(){
         <form:form class="form-horizontal" modelAttribute="userForEdit" action="${contextPath}/account/editpass" method="post">
             <%--Id--%>
             <div hidden><form:input value="${userForEdit.id}" type="number" path="id"/></div>
-            <%--FirstName--%>
-            <div hidden><form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.firstName}" type="text" path="firstName"/></div>
-           <%--Last Name--%>
-            <div hidden><form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.lastName}" type="text" path="lastName"/></div>
-            <%--Email--%>
-            <div hidden><form:input value="${userForEdit.email}" type="text" path="previousEmail"/></div>
-            <%--Prev email--%>
-            <div hidden> <form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.email}" type="email" path="email"/></div>
-           <%--Phone--%>
-            <div hidden><form:input class="form-control" cssStyle="width: 50%" value="${userForEdit.phone}" maxlength="13" type="text" path="phone" /></div>
-
-
 
             <%--<div class="form-group" style="margin-bottom: 0px">--%>
                 <%--<div style="width: 30%; margin-left: 25%" align="center" class="col-lg-8">--%>
@@ -171,7 +159,7 @@ $().ready(function(){
             <div class="col-md-8">
               <input class="btn btn-primary" value="Сохранить изменения" type="submit"/>
               <span></span>
-              <input class="btn btn-default" value="Сбросить" type="reset"/>
+              <input class="btn btn-default" value="Очистить" type="reset"/>
             </div>
           </div>
         </form:form>
