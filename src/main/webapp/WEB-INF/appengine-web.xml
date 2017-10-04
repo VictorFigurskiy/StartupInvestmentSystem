@@ -4,8 +4,8 @@
     <!--<module>default</module>-->
     <version>alpha-001</version><!-- unused for Cloud SDK based tooling -->
     <threadsafe>true</threadsafe>
-    <!--<manual-scaling>-->
-        <!--<instances>5</instances>-->
-    <!--</manual-scaling>-->
+    <manual-scaling>
+        <instances>5</instances>
+    </manual-scaling>
     <runtime>java8</runtime>
 </appengine-web-app>
