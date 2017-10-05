@@ -14,7 +14,7 @@
         <INSTANCE_CONNECTION_NAME>startup-system:europe-west3:startups-db</INSTANCE_CONNECTION_NAME>
         <user>root</user>
         <password>star000</password>
-        <database>startups-db</database>
+        <database>startups_db</database>
         <jetty>9.3.7.v20160115</jetty>
 
         <sqlURL>jdbc:mysql://google/${database}?cloudSqlInstance=${INSTANCE_CONNECTION_NAME}&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory&amp;user=${user}&amp;password=${password}&amp;useSSL=false</sqlURL>
