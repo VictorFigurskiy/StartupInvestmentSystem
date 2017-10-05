@@ -11,8 +11,17 @@
     <packaging>war</packaging>
 
     <properties>
+        <INSTANCE_CONNECTION_NAME>startup-system:europe-west3:startups-db</INSTANCE_CONNECTION_NAME>
+        <user>root</user>
+        <password>star000</password>
+        <database>startups-db</database>
+        <jetty>9.3.7.v20160115</jetty>
+
+        <sqlURL>jdbc:mysql://google/${database}?cloudSqlInstance=${INSTANCE_CONNECTION_NAME}&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory&amp;user=${user}&amp;password=${password}&amp;useSSL=false</sqlURL>
+
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
         <mysql.connector.ver>5.1.42</mysql.connector.ver>
         <dbcp.version>1.4</dbcp.version>
         <hibernate.ver>5.2.10.Final</hibernate.ver>
@@ -44,6 +53,17 @@
             <artifactId>commons-dbcp</artifactId>
             <version>${dbcp.version}</version>
         </dependency>
+
+
+
+        <!--  for Google Cloud SQL JDBC Socket Factory  -->
+        <dependency>
+            <groupId>com.google.cloud.sql</groupId>
+            <artifactId>mysql-socket-factory-connector-j-6</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+
 
                     <!--  Hibernate  -->
         <dependency>
@@ -215,7 +235,7 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.7.v20160115</version>
+                <version>${jetty}</version>
             </plugin>
 
         </plugins>
