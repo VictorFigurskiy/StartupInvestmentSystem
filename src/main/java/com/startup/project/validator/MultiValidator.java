@@ -55,7 +55,5 @@ public class MultiValidator {
         if (!errors.hasErrors() && validateType.equals(ValidateType.FULL)) {
             LOGGER.info("User with email " + user.getEmail() + " registered successfully!");
         }
-
-
     }
 }

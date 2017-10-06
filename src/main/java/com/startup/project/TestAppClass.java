@@ -6,6 +6,7 @@ import com.startup.project.entities.*;
 import com.startup.project.services.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -120,13 +121,22 @@ public class TestAppClass {
 
 //            startupService.save(startup);
 
-            List<Startup> startupOnPage = startupService.getStartupOnPage(4, 2);
-            for (Startup startup2 : startupOnPage) {
-                System.out.println(startup2.getStartupName());
-            }
+//            List<Startup> startupOnPage = startupService.getStartupOnPage(4, 2);
+//            for (Startup startup2 : startupOnPage) {
+//                System.out.println(startup2.getStartupName());
+//            }
 
 
 //            userService.delete(userService.getByEmail("abram@email.com"));
+
+//            File file = new File("D:\\JAVA\\GoIT Study\\JavaCoreGoIT_Homeworks_AndPRojects\\StartupInvestmentSystem\\src\\main\\webapp\\WEB-INF\\jpeg\\sleek-sports-car.jpg");
+//            if(file.delete()){
+//                System.out.println("WEB-INF/jpeg/sleek-sports-car.jpg файл удален");
+//            }else System.out.println("Файла WEB-INF/jpeg/sleek-sports-car.jpg не обнаружено");
+
+            List<Startup> startupList = startupService.searchByCounty("us");
+            startupList.forEach(startup -> System.out.println(startup.getStartupName()));
+
 
             ctx.close();
         }
