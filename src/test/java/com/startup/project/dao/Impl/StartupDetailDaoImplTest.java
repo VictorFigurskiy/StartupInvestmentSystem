@@ -48,26 +48,22 @@ public class StartupDetailDaoImplTest {
     }
 
     @Test
-    public void getLOGGER() throws Exception {
-    }
-
-    @Test
     public void getById() throws Exception {
-        when(session.get(StartupDetail.class,1)).thenReturn(startupDetail);
+        when(session.get(StartupDetail.class, 1)).thenReturn(startupDetail);
 
-        assertEquals("Must get startupDetail", startupDetail, startupDetailDao.getById(StartupDetail.class,1));
+        assertEquals("Must get startupDetail", startupDetail, startupDetailDao.getById(StartupDetail.class, 1));
 
-        verify(session, times(1)).get(StartupDetail.class,1);
+        verify(session, times(1)).get(StartupDetail.class, 1);
     }
 
     @Test(expected = NullPointerException.class)
     public void getByIdException() throws Exception {
-        when(session.get(StartupDetail.class,0)).thenReturn(null);
+        when(session.get(StartupDetail.class, 0)).thenReturn(null);
         when(startupDetail.getBusinessModel()).thenThrow(new NullPointerException());
 
-        assertEquals("Must get NullPointerException", null, startupDetailDao.getById(StartupDetail.class,0));
+        assertNull("Must get NullPointerException", startupDetailDao.getById(StartupDetail.class, 0));
 
-        verify(session, atLeastOnce()).get(StartupDetail.class,0);
+        verify(session, atLeastOnce()).get(StartupDetail.class, 0);
         startupDetail.getBusinessModel();
     }
 
@@ -82,10 +78,10 @@ public class StartupDetailDaoImplTest {
         when(session.createCriteria(StartupDetail.class)).thenReturn(criteria);
         when(criteria.list()).thenReturn(mockList);
 
-        assertEquals("Must get list",mockList,startupDetailDao.getAll(StartupDetail.class));
+        assertEquals("Must get list", mockList, startupDetailDao.getAll(StartupDetail.class));
         assertFalse(mockList.isEmpty());
         assertNull("Here must be null", mockList.get(1));
-        assertNotNull("Here is a product",mockList.get(0));
+        assertNotNull("Here is a product", mockList.get(0));
         assertEquals(startupDetail, mockList.get(0));
 
         verify(criteria, times(1)).list();
