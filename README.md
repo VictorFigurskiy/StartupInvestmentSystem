@@ -1,7 +1,7 @@
 #Startup Investment System
 
-First group final project
-----------------------------
+##First group final project
+
 
 __`Travis-CI build status`__
 
