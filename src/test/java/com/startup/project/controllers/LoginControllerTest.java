@@ -50,7 +50,6 @@ public class LoginControllerTest {
                 .andExpect(MockMvcResultMatchers.model().attribute("errorLogin",""))
                 .andExpect(MockMvcResultMatchers.view().name("login"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
-
     }
 
 }
