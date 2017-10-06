@@ -344,7 +344,7 @@ footer nav ul li a {
 }
 
 .navbar-background-team {
-    background: url(/static/image/hands-1920.jpg) no-repeat center top;
+    background: url(/static/image/hands-1920.jpg) no-repeat center;
     -webkit-background-size: 110%;
     background-size: 110%;
     margin-top: -50px;
@@ -430,7 +430,7 @@ footer nav ul li a {
   about_project static page
  */
 .navbar-background-about-project{
-    background: url(/static/image/11.jpg) no-repeat center top;
+    background: url(/static/image/11.jpg) no-repeat center;
     -webkit-background-size: 110%;
     background-size: 110%;
 }
@@ -497,9 +497,9 @@ footer nav ul li a {
 }
 
 .navbar-background-contacts{
-    background: url(/static/image/contacts.jpg) no-repeat center top;
-    -webkit-background-size: 110%;
-    background-size: 110%;
+    background: url(/static/image/contacts.jpg) no-repeat center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
     margin-top: -50px;
 }
 .navbar-background-contacts {
