@@ -2,7 +2,6 @@ package com.startup.project.dao.Impl;
 
 import com.startup.project.dao.StartupDao;
 import com.startup.project.entities.Startup;
-import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,21 +10,42 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 /**
- * Created by Sonik on 13.09.2017.
+ * This class is extended from {@link AbstractGenericDaoImpl} and provide CRUD methods for working with database
+ * also he implements {@link StartupDao} with the same abstract method and gives us the opportunity to add custom
+ * methods. This class is defined with generic types of {@code AbstractGenericDaoImpl<K,V>}
+ * K - {@link Integer}
+ * V - {@link Startup}
+ *
+ *
+ * @author  Sonik
+ * @since   13.09.2017
  */
 @Repository
 public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> implements StartupDao {
 
     private SessionFactory sessionFactory;
-    private final Logger LOGGER = getLOGGER();
 
+
+    /**
+     * Initializes a new instance {@link StartupDaoImpl}
+     * @param sessionFactory  initial value
+     */
     @Autowired
     public StartupDaoImpl(SessionFactory sessionFactory) {
         super(sessionFactory);
         this.sessionFactory = sessionFactory;
     }
 
+
+    /**
+     * With helpful this method, we can implement paging of {@link Startup} records on website
+     *
+     * @param page  number of page
+     * @param size  count of records what we want to show
+     * @return {@code List<Startup>} result list
+     */
     @SuppressWarnings("unchecked")
     @Override
     public List<Startup> getStartupOnPage(int page, int size) {
@@ -42,6 +62,18 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
         return startupList;
     }
 
+
+    /**
+     * With helpful this method we can do a custom select of {@code Startup} by industry
+     *
+     * @param industry  industry name of {@link com.startup.project.entities.StartupDetail}
+     *                   that contain in {@code Startup}
+     *
+     * @param limit     count of records what we want to see
+     *
+     * @param excludeId {@code Startup} Id that will exclude him in result list
+     * @return {@code List<Startup>} result list
+     */
     @Override
     @SuppressWarnings("unchecked")
     public List<Startup> getByIndustry(String industry, int limit, int excludeId) {
@@ -60,6 +92,13 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
         return startupList;
     }
 
+
+    /**
+     *  Searching {@code Startup}'s by matching in name
+     *
+     * @param name  name that we type for searching
+     * @return {@code List<Startup>} result list
+     */
     @Override
     public List<Startup> searchByName(String name) {
         Session session = sessionFactory.getCurrentSession();
@@ -75,6 +114,13 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
         return startupList;
     }
 
+
+    /**
+     * Searching {@code Startup}'s by country
+     *
+     * @param county name of country that we choose for searching
+     * @return       {@code List<Startup>} result list
+     */
     @Override
     public List<Startup> searchByCounty(String county) {
         Session session = sessionFactory.getCurrentSession();

@@ -4,7 +4,6 @@ import com.startup.project.dao.InvestorDao;
 import com.startup.project.entities.Investment;
 import com.startup.project.entities.Investor;
 import com.startup.project.entities.Startup;
-import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,21 +12,40 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.util.*;
 
+
 /**
- * Created by Sonik on 14.09.2017.
+ * This class is extended from {@link AbstractGenericDaoImpl} and provide CRUD methods for working with database
+ * also he implements {@link InvestorDao} with the same abstract method and gives us the opportunity add custom
+ * methods. This class is defined with generic types of {@link AbstractGenericDaoImpl}
+ * K - {@link Integer}
+ * V - {@link Investor}
+ *
+ * @author  Sonik
+ * @since   14.09.2017
  */
-@Repository
+    @Repository
 public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> implements InvestorDao {
 
     private SessionFactory sessionFactory;
-    private final Logger LOGGER = getLOGGER();
 
+
+    /**
+     * Initializes a new instance {@link InvestorDaoImpl}
+     * @param sessionFactory  initial value
+     */
     @Autowired
     public InvestorDaoImpl(SessionFactory sessionFactory) {
         super(sessionFactory);
         this.sessionFactory = sessionFactory;
     }
 
+
+    /**
+     *  Calculating of total cost of all investments of a particular user
+     *
+     *  @param userId   user Id in database
+     * @return  {@link List} of {@link Investment} that contains amount of investment and name
+     */
     @Override
     public List<Investment> getStartUpSumInvest(int userId) {
         Session currentSession = sessionFactory.getCurrentSession();
@@ -63,6 +81,11 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
         return investmentList;
     }
 
+
+    /**
+     *  Delete all investment by user Id
+     * @param id  user Id
+     */
     @Override
     public void deleteInvestorByUserId(Integer id) {
         Session session = sessionFactory.getCurrentSession();

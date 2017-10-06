@@ -20,6 +20,10 @@
     <link href="../../static/css/modern-business.css" rel="stylesheet">
     <link href="../../static/css/footerStyle.css" rel="stylesheet">
 
+    <%-- Custom js --%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../../static/js/clear_regist_form.js"></script>
+
     <!-- Custom Fonts -->
     <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -77,7 +81,7 @@
             <label class="control-label col-xs-3" for="firstName">Имя:</label>
             <div class="col-xs-9">
                 <spring:bind path="firstName">
-                    <form:input type="text" class="form-control" id="firstName" placeholder="Введите имя" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы без пробелов!" path="firstName"/>
+                    <input type="text" class="form-control res_inp_js" id="firstName" placeholder="Введите имя" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы без пробелов!" name="firstName" path="firstName" value="${userFormRegist.firstName}"/>
                 </spring:bind>
             </div>
         </div>
@@ -85,7 +89,7 @@
             <label class="control-label col-xs-3" for="lastName">Фамилия:</label>
             <div class="col-xs-9">
                 <spring:bind path="lastName">
-                    <form:input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы без пробелов!" path="lastName"/>
+                    <input type="text" class="form-control res_inp_js" id="lastName" placeholder="Введите фамилию" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Только символы латиницы и кирилицы без пробелов!" name="lastName" path="lastName" value="${userFormRegist.lastName}"/>
                 </spring:bind>
             </div>
         </div>
@@ -94,7 +98,7 @@
             <label class="control-label col-xs-3" for="inputEmail">Email:</label>
             <div class="col-xs-9">
                 <spring:bind path="email">
-                <form:input type="email" class="form-control" id="inputEmail" placeholder="Email" path="email" required="required"/>
+                <input type="email" class="form-control res_inp_js" id="inputEmail" placeholder="Email" name="email" path="email" required="required" value="${userFormRegist.email}"/>
                 </spring:bind>
             </div>
         </div>
@@ -103,7 +107,7 @@
             <label class="control-label col-xs-3" for="inputPassword">Пароль:</label>
             <div class="col-xs-9">
                 <spring:bind path="password">
-                <form:input type="password"  cssClass="form-control" id="inputPassword" placeholder="Введите пароль" path="password" required="required"/>
+                <input type="password"  class="form-control res_inp_js" id="inputPassword" placeholder="Введите пароль" name="password" path="password" required="required" value="${userFormRegist.password}"/>
                 </spring:bind>
             </div>
         </div>
@@ -112,7 +116,7 @@
             <label class="control-label col-xs-3" for="confirmPassword">Подтвердите пароль:</label>
             <div class="col-xs-9">
                 <spring:bind path="confirmPassword">
-                <form:input type="password" cssClass="form-control" id="confirmPassword" placeholder="Введите пароль ещё раз" path="confirmPassword" required="required"/>
+                <input type="password" class="form-control res_inp_js" id="confirmPassword" placeholder="Введите пароль ещё раз" name="confirmPassword" path="confirmPassword" required="required" value="${userFormRegist.confirmPassword}"/>
                 </spring:bind>
             </div>
         </div>
@@ -121,7 +125,7 @@
             <label class="control-label col-xs-3" for="phoneNumber">Телефон:</label>
             <div class="col-xs-9">
                 <spring:bind path="phone">
-                <form:input type="text" cssClass="form-control" id="phoneNumber" maxlength="13"  placeholder="+38(ХХХ) ХХХ-ХХ-ХХ" path="phone" required="required"/>
+                <input type="text" class="form-control res_inp_js" id="phoneNumber" maxlength="13" placeholder="+38(ХХХ) ХХХ-ХХ-ХХ" name="phone" path="phone" required="required" value="${userFormRegist.phone}"/>
                 </spring:bind>
             </div>
         </div>
@@ -130,10 +134,10 @@
 
 
         <br/>
-        <div class="form-group">
+        <div class="form-group" style="margin-top: -15px">
             <div class="col-xs-offset-3 col-xs-9">
-                <input type="submit" Class="btn btn-primary" value="Регистрация"/>
-                <input  type="reset"  Class="btn btn-default" value="Очистить форму"/>
+                <input type="submit" style="margin-right: 33px" Class="btn btn-primary" value="Регистрация"/>
+                <input id="reset" type="button" Class="btn btn-default" value="Очистить форму"/>
             </div>
         </div>
     </form:form>

@@ -89,9 +89,9 @@
       <!-- edit form column -->
       <div class="col-md-9 personal-info" style="margin-left: 20%">
         <div class="alert alert-info alert-dismissable" style="width: 80%">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+          <a class="panel-close close" data-dismiss="alert">×</a>
+            <i class="fa fa-info"></i>
+            <strong>Внимание!</strong> Изменения вступят в силу сразу после сохранения!
         </div>
         <h3 style="margin-top: 0">Ваши даные</h3>
         
@@ -144,12 +144,10 @@
             </div>
 
 
-          <div class="form-group">
+          <div class="form-group" style="margin-top: 15px">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
               <input class="btn btn-primary" value="Сохранить изменения" type="submit"/>
-              <span></span>
-              <input class="btn btn-default" value="Сбросить" type="reset"/>
             </div>
           </div>
         </form:form>

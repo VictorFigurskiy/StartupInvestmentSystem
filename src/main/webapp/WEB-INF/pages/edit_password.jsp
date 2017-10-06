@@ -112,11 +112,10 @@ $().ready(function(){
       <div class="col-md-9 personal-info" style="margin-left: 20%">
         <div class="alert alert-info alert-dismissable" style="width: 80%">
           <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+          <i class="fa fa-info"></i>
+          <strong>Внимание!</strong> Изменения вступят в силу сразу после сохранения!
         </div>
-        <h3 style="margin-top: 0">Ваши даные</h3>
-        
+
         <form:form class="form-horizontal" modelAttribute="userForEdit" action="${contextPath}/account/editpass" method="post">
             <%--Id--%>
             <div hidden><form:input value="${userForEdit.id}" type="number" path="id"/></div>
@@ -144,7 +143,7 @@ $().ready(function(){
             </div>
           </div>
 
-            <div style="display: block; width: auto; height: auto;" align="center">
+            <div style="display: block; width: auto; height: 20px;" align="center">
                 <span style="margin-right:19%; font: 13px Arial; color: red; position: relative; margin-top: -16px; width: 100%"><form:errors path="confirmPassword"></form:errors></span>
             </div>
             <div class="form-group" style="margin-bottom: 0px">
@@ -154,10 +153,10 @@ $().ready(function(){
                 </div>
             </div>
 
-          <div class="form-group">
+          <div class="form-group" style="margin-top: 15px">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input class="btn btn-primary" value="Сохранить изменения" type="submit"/>
+              <input style="margin-right: 13px" class="btn btn-primary" value="Сохранить изменения" type="submit"/>
               <span></span>
               <input class="btn btn-default" value="Очистить" type="reset"/>
             </div>
