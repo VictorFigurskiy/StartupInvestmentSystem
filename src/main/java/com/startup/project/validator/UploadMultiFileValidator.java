@@ -7,7 +7,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 /**
- * Created by Sonik on 29.09.2017.
+ * Created by Sonik on 07.10.2017.
  */
 @Component
 public class UploadMultiFileValidator implements Validator {

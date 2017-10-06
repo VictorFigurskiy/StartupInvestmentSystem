@@ -34,8 +34,4 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     return viewResolver;
     }
 
-    @Bean(name = "multipartResolver")
-    public StandardServletMultipartResolver multipartResolver(){
-        return new StandardServletMultipartResolver();
-    }
 }

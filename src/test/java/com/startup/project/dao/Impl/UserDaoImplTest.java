@@ -1,14 +1,11 @@
 package com.startup.project.dao.Impl;
 
-
-import com.startup.project.dao.Impl.UserDaoImpl;
 import com.startup.project.dao.Impl.config.TestConfiguration;
 import com.startup.project.dao.UserDao;
 import com.startup.project.entities.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,27 +42,26 @@ public class UserDaoImplTest {
     public void getByEmail() throws Exception {
         Query<User> query = mock(Query.class);
         when(session.createQuery("select user from User user where user.email = :email", User.class)).thenReturn(query);
-        Query<User> userQuery = mock(Query.class);
-        when(query.setParameter("email", "email")).thenReturn(userQuery);
-        when(userQuery.uniqueResult()).thenReturn(user);
+        when(query.setParameter("email", "email")).thenReturn(query);
+        when(query.uniqueResult()).thenReturn(user);
 
         assertEquals(user, userDao.getByEmail("email"));
         assertNotNull(user);
         verify(query, atLeastOnce()).setParameter("email", "email");
-        verify(userQuery,atLeastOnce()).uniqueResult();
+        verify(query, atLeastOnce()).uniqueResult();
 
     }
 
-   //@Test(expected = NullPointerException.class)
-   //public void getByIdException() throws Exception {
-   //    when(session.get(User.class, 0)).thenReturn(null);
-   //    when(user.getEmail()).thenThrow(new NullPointerException());
+    @Test(expected = NullPointerException.class)
+    public void getByIdException() throws Exception {
+        when(session.get(User.class, 0)).thenReturn(null);
+        when(user.getEmail()).thenThrow(new NullPointerException());
 
-   //    assertNull("Must get NullPointerException", userDao.getById(User.class, 0));
+        assertNull("Must get NullPointerException", userDao.getById(User.class, 0));
 
-   //    verify(session, atLeastOnce()).get(User.class, 0);
-   //    user.getEmail();
-   //}
+        verify(session, atLeastOnce()).get(User.class, 0);
+        user.getEmail();
+    }
 
 
 }
