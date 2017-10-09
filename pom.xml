@@ -11,13 +11,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <INSTANCE_CONNECTION_NAME>startup-system:europe-west3:startups-db</INSTANCE_CONNECTION_NAME>
-        <user>root</user>
-        <password>star000</password>
-        <database>startups_db</database>
         <jetty>9.3.7.v20160115</jetty>
-
-        <sqlURL>jdbc:mysql://google/${database}?cloudSqlInstance=${INSTANCE_CONNECTION_NAME}&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory&amp;user=${user}&amp;password=${password}&amp;useSSL=false</sqlURL>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -41,8 +35,25 @@
     </properties>
 
     <dependencies>
+        <!--heroku-->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-template-freemarker</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.heroku.sdk</groupId>
+            <artifactId>heroku-jdbc</artifactId>
+            <version>0.1.1</version>
+        </dependency>
 
-            <!--  JDBC driver + Connection pool  -->
+
+        <!--  JDBC driver + Connection pool  -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -54,25 +65,14 @@
             <version>${dbcp.version}</version>
         </dependency>
 
-
-
-        <!--  for Google Cloud SQL JDBC Socket Factory  -->
-        <dependency>
-            <groupId>com.google.cloud.sql</groupId>
-            <artifactId>mysql-socket-factory-connector-j-6</artifactId>
-            <version>1.0.4</version>
-        </dependency>
-
-
-
-                    <!--  Hibernate  -->
+        <!--  Hibernate  -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.ver}</version>
         </dependency>
 
-                     <!--  Spring  -->
+        <!--  Spring  -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -94,7 +94,7 @@
             <version>${spring.version}</version>
         </dependency>
 
-                       <!--  HSQLDB  -->
+        <!--  HSQLDB  -->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
@@ -106,7 +106,7 @@
             <version>${hsql.version}</version>
         </dependency>
 
-                    <!--  Spring Security  -->
+        <!--  Spring Security  -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
@@ -123,7 +123,7 @@
             <version>${spring.security.version}</version>
         </dependency>
 
-                    <!--  Plugins for view  -->
+        <!--  Plugins for view  -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -155,7 +155,7 @@
             <version>${jackson.version}</version>
         </dependency>
 
-                       <!--  For tests  -->
+        <!--  For tests  -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -181,7 +181,7 @@
             <scope>test</scope>
         </dependency>
 
-                      <!--  Logger  -->
+        <!--  Logger  -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -193,7 +193,7 @@
             <version>${slf4j.version}</version>
         </dependency>
 
-                   <!--  For validation  -->
+        <!--  For validation  -->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
@@ -221,21 +221,34 @@
                 </configuration>
             </plugin>
 
-            <!-- appengine-maven-plugin for Google-cloud platform -->
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>appengine-maven-plugin</artifactId>
-                <version>${appengine.maven.plugin}</version>
-            </plugin>
-            <!--<plugin>-->
-                <!--<groupId>com.google.appengine</groupId>-->
-                <!--<artifactId>appengine-maven-plugin</artifactId>-->
-                <!--<version>1.9.57</version>-->
-            <!--</plugin>-->
+            <!-- Jetty server -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jetty}</version>
+            </plugin>
+
+            <!-- Heroku plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>copy</goal></goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.github.jsimone</groupId>
+                                    <artifactId>webapp-runner</artifactId>
+                                    <version>8.5.11.3</version>
+                                    <destFileName>webapp-runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
