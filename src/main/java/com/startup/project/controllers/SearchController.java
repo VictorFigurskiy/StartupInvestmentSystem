@@ -21,20 +21,32 @@ public class SearchController {
     @Autowired
     private StartupService startupService;
 
+    /**
+     * This method shows form for search startup by name.
+     *
+     * @param name - criteria(name) for our search.
+     * @return visual display of form search by name.
+     */
     @RequestMapping(value = "/byName")
-    public ModelAndView findByName(@RequestParam("name") String name){
+    public ModelAndView findByName(@RequestParam("name") String name) {
         ModelAndView modelAndView = new ModelAndView();
         List<Startup> startupList = startupService.searchByName(name);
-        modelAndView.addObject("startupList",startupList);
+        modelAndView.addObject("startupList", startupList);
         modelAndView.setViewName("index");
         return modelAndView;
     }
 
+    /**
+     * * This method shows form for search startup by country.
+     *
+     * @param country - criteria(country) for our search.
+     * @return visual display of form search by country.
+     */
     @RequestMapping(value = "/byCountry")
-    public ModelAndView findByCountry(@RequestParam(value = "country") String country){
+    public ModelAndView findByCountry(@RequestParam(value = "country") String country) {
         ModelAndView modelAndView = new ModelAndView();
         List<Startup> startupList = startupService.searchByCounty(country);
-        modelAndView.addObject("startupList",startupList);
+        modelAndView.addObject("startupList", startupList);
         modelAndView.setViewName("index");
         return modelAndView;
     }

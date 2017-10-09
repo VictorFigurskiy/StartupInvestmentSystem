@@ -30,6 +30,11 @@ public class DataValidatorImpl implements Validator, OnlyDataValidatator, FullDa
         return User.class.equals(clazz);
     }
 
+    /**
+     * This method validates target object  with allowable form.
+     * @param target - object, which used for validate operations.
+     * @param errors - possible errors from validate operations.
+     */
     @Override
     public void validate(Object target, Errors errors) {
 

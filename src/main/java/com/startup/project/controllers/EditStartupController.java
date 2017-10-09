@@ -15,21 +15,37 @@ public class EditStartupController {
     @Autowired
     private StartupService startupService;
 
+    /**
+     * This method shows form for edit startup by current user.
+     *
+     * @param id - unique value of users for database.
+     * @return visual display of form for edit startup by current user.
+     */
     @RequestMapping(value = "/update_page", method = RequestMethod.POST)
-    public ModelAndView editStartupPage(@RequestParam("id") Integer id){
+    public ModelAndView editStartupPage(@RequestParam("id") Integer id) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("edit_startup");
         Startup startup = startupService.getById(id);
         StartupDetail startupDetail = startup.getStartupDetail();
-        modelAndView.addObject("startup",startup);
+        modelAndView.addObject("startup", startup);
         modelAndView.addObject("startupDetail", startupDetail);
         return modelAndView;
     }
 
+    /**
+     * This method shows form for edit startup by current user.
+     * Replaces old data with new ones.
+     *
+     * @param startup       - entity with main information about startup.
+     * @param startupDetail - entity with secondary information about startup.
+     * @param startup_id    - unique value of startup for database.
+     * @return page with the name "account".
+     */
+
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String updateStartup(@ModelAttribute("Startup") Startup startup,
                                 @ModelAttribute("StartupDetail") StartupDetail startupDetail,
-                                @RequestParam("startup_id") Integer startup_id){
+                                @RequestParam("startup_id") Integer startup_id) {
         Startup startupFromDB = startupService.getById(startup_id);
         StartupDetail startupDetailFromDB = startupFromDB.getStartupDetail();
 
@@ -56,8 +72,14 @@ public class EditStartupController {
         return "redirect:/account";
     }
 
+    /**
+     * This method delete current startup from database.
+     *
+     * @param startup_id - unique value of startup for database.
+     * @return page with the name "account".
+     */
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public String deleteStartup(@RequestParam("startup_id") Integer startup_id){
+    public String deleteStartup(@RequestParam("startup_id") Integer startup_id) {
         Startup startup = startupService.getById(startup_id);
         startupService.delete(startup);
         return "redirect:/account";

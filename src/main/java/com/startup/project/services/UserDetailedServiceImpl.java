@@ -24,6 +24,12 @@ public class UserDetailedServiceImpl implements UserDetailsService {
         this.userService = userService;
     }
 
+    /**
+     * This method load user by username.
+     * @param email - unique value of user's email.
+     * @return particular user with such lines as: password & role.
+     * @throws UsernameNotFoundException if user not found by username.
+     */
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         com.startup.project.entities.User user = userService.getByEmail(email);

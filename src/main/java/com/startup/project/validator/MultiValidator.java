@@ -30,7 +30,12 @@ public class MultiValidator {
     @Autowired
     private OnlyDataValidatator dataValidator;
 
-
+    /**
+     ** This method validates user's data with allowable form. Used different types of validation operation.
+     * @param user - current user , which used for validate operations.
+     * @param errors - possible errors from validate operations.
+     * @param validateType - type of validation operations.
+     */
     public void validate(User user, Errors errors, ValidateType validateType) {
         switch (validateType) {
             case FULL:

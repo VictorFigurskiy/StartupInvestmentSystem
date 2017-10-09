@@ -28,6 +28,8 @@ import java.util.Set;
  */
 @Controller
 @RequestMapping("/account")
+
+
 public class AccountController {
 
     @Autowired
@@ -41,6 +43,11 @@ public class AccountController {
 
     private static final Logger LOGGER = Logger.getLogger(AccountController.class);
 
+    /**
+     *This method identify user(through test user's email) and shows account page with current information about user.
+     * @param model - visual display of current user's information.
+     * @return page with the name "account"
+     */
     @GetMapping
     public String accountPage(Model model) {
         UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -52,6 +59,12 @@ public class AccountController {
         return "account";
     }
 
+    /**
+     * This method shows form for edit user's information.
+     * @param id- unique value of users for database.
+     * @param model- visual display of current user's information.
+     * @return page with the name "edit_account"
+     */
     @RequestMapping(value = "/edit-page", method = RequestMethod.POST)
     public String editUserForm(@RequestParam("userId") int id, Model model) {
         User byId = userService.getById(id);
@@ -60,6 +73,12 @@ public class AccountController {
         return "edit_account";
     }
 
+    /**
+     * This method shows form for edit user's password.
+     * @param id - unique value of users for database.
+     * @param model - visual display of current user's information.
+     * @return page with the name "edit_password"
+     */
     @RequestMapping(value = "/edit-password", method = RequestMethod.POST)
     public String editUserPass(@RequestParam("userId") int id, Model model) {
         User byId = userService.getById(id);
@@ -68,6 +87,13 @@ public class AccountController {
         return "edit_password";
     }
 
+    /**
+     * This method validates input data with allowable password form.
+     * @param user - current user.
+     * @param bindingResult - object with possible errors.
+     * @return page with the name "edit_password" if method has some errors or
+     * return page with the name "account" if method works successfully.
+     */
     @RequestMapping(value = "/editpass", method = RequestMethod.POST)
     public String updatePassword(@ModelAttribute("userForEdit") User user, BindingResult bindingResult) {
         validator.validate(user,bindingResult, ValidateType.PASSWORD);
@@ -79,6 +105,13 @@ public class AccountController {
         return "redirect:/account";
     }
 
+    /**
+     * This method validates input data with allowable user form.
+     * @param user - current user.
+     * @param bindingResult - object with possible errors.
+     * @return page with the name "edit_account" if method has some errors or
+     * return page with the name "account" if method works successfully.
+     */
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public String updateUser(@ModelAttribute("userForEdit") User user, BindingResult bindingResult) {
         validator.validate(user, bindingResult, ValidateType.DATA);
@@ -105,6 +138,12 @@ public class AccountController {
         LOGGER.info("Method 'updateUserData' worked successfully");
         return "redirect:/account";
     }
+
+    /**
+     * This method delete current user from database.
+     * @param userId - unique value of users for database.
+     * @return home page.
+     */
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String deleteUser(@RequestParam("userId") int userId) {

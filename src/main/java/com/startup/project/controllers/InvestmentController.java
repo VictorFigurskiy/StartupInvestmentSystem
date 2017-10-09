@@ -27,7 +27,13 @@ public class InvestmentController {
     @Autowired
     private StartupService startupService;
 
-
+    /**
+     * *This method identify user(through test user's email) and shows account page with current information about his investments.
+     *
+     * @param model - visual display of current user's information.
+     * @param id    - unique value of startup for database.
+     * @@return page with the name "account"
+     */
     @PostMapping
     public String investmentPage(@RequestParam("startup_id") int id, Model model) {
         Startup startUpById = startupService.getById(id);
@@ -37,6 +43,14 @@ public class InvestmentController {
         model.addAttribute("user", currentUserbyEmail);
         return "invest";
     }
+
+    /**
+     * This method calculate total of investments by current user.
+     *
+     * @param startupId - unique value of startup for database.
+     * @param sum       - total cost of investment by current user.
+     * @return page with the name "startup_description".
+     */
 
     @RequestMapping(value = "/confirm", method = RequestMethod.POST)
     public String confirmInvest(@RequestParam("startupId") int startupId, @RequestParam("sum") int sum) {
@@ -52,6 +66,6 @@ public class InvestmentController {
 
         startupService.update(startupById);
 
-        return "redirect:/startup_description/"+startupId;
+        return "redirect:/startup_description/" + startupId;
     }
 }

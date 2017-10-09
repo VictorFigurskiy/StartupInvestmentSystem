@@ -11,9 +11,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/login")
 public class LoginController {
-
+    /**
+     * This method shows login form for enter to our Startup service by user.
+     *
+     * @return visual display of login form.
+     */
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView loginPage(){
+    public ModelAndView loginPage() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("login");
         modelAndView.addObject("errorLogin", "");

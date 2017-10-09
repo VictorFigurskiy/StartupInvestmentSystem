@@ -26,17 +26,27 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
+    /**
+     * This method shows form for registration in system by current user.
+     *
+     * @return visual display of form for registration by current user.
+     */
     @GetMapping
-    public ModelAndView setUserModel(){
+    public ModelAndView setUserModel() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("register");
         modelAndView.addObject("userFormRegist", new User());
         return modelAndView;
     }
 
+    /**
+     * @param user          - current user.
+     * @param bindingResult - object with possible errors.
+     * @return main page.
+     */
     @PostMapping
-    public String addNewUser(@ModelAttribute("userFormRegist") User user, BindingResult bindingResult){
-        validator.validate(user,bindingResult, ValidateType.FULL);
+    public String addNewUser(@ModelAttribute("userFormRegist") User user, BindingResult bindingResult) {
+        validator.validate(user, bindingResult, ValidateType.FULL);
         if (bindingResult.hasErrors()) return "register";
         userService.save(user);
         return "redirect:/";

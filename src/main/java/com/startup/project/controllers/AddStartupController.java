@@ -21,6 +21,10 @@ public class AddStartupController {
     @Autowired
     private UserService userService;
 
+    /**
+     * This method shows form for add startup by current user.
+     * @return visual display of form for add startup by current user.
+     */
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView setStartupModel() {
@@ -30,6 +34,13 @@ public class AddStartupController {
         modelAndView.addObject("startupDetailReg", new StartupDetail());
         return modelAndView;
     }
+
+    /**
+     * This method adds new startup to database by current user.
+     * @param startup - entity with main information about startup.
+     * @param startupDetail - entity with secondary information about startup.
+     * @return page with the name "account".
+     */
 
     @PostMapping
     public String addStartup(@ModelAttribute("startupReg") Startup startup,

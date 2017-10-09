@@ -24,6 +24,13 @@ public class StartupDescriptionController {
     @Autowired
     private StartupService startupService;
 
+    /**
+     * This method shows full information about startup.
+     *
+     * @param id - unique value of startup for database.
+     * @return visual display of information about startup.
+     */
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView startupDescription(@PathVariable("id") String id) {
         ModelAndView modelAndView = new ModelAndView();

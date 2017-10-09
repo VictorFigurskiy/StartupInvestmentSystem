@@ -20,8 +20,14 @@ public class PasswordValidatorImpl implements Validator, com.startup.project.val
         return User.class.equals(clazz);
     }
 
-
+    /**
+     * This method validates target object  with allowable password form.
+     *
+     * @param target - object, which used for validate operations.
+     * @param errors - possible errors from validate operations.
+     */
     @Override
+
     public void validate(Object target, Errors errors) {
 
         User user = ((User) target);
@@ -30,7 +36,7 @@ public class PasswordValidatorImpl implements Validator, com.startup.project.val
             errors.rejectValue("confirmPassword", "Match.userForm.password", "Пароли не совпадают, попробуйте еще раз!");
         }
         if (user.getPassword().length() < PASSWORD_MIN_LENGTH || user.getPassword().length() > PASSWORD_MAX_LENGTH) {
-            errors.rejectValue("password", "Size.userForm.password", "Пароль должен иметь длинну "+ PASSWORD_MIN_LENGTH +"-"+ PASSWORD_MAX_LENGTH +" символов!");
+            errors.rejectValue("password", "Size.userForm.password", "Пароль должен иметь длинну " + PASSWORD_MIN_LENGTH + "-" + PASSWORD_MAX_LENGTH + " символов!");
         }
 
     }
