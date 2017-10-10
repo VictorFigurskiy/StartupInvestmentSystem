@@ -24,11 +24,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        CharacterEncodingFilter filter = new CharacterEncodingFilter(); // All this need to be added to encode in UTF-8
-        filter.setEncoding("UTF-8");
-        filter.setForceEncoding(true);
-        http.addFilterBefore(filter, CsrfFilter.class);
-
         http.authorizeRequests()
                 .antMatchers("/", "/static/**", "/login", "/registration", "/startup_description/*", "/search/**").permitAll()
                 .antMatchers("/account/**","/add_startup","/edit_startup/**", "/investment/**").hasAnyRole("USER", "OWNER")
