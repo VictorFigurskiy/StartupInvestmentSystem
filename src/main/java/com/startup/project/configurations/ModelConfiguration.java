@@ -67,7 +67,7 @@ public class ModelConfiguration {
         String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
 
         BasicDataSource basicDataSource = new BasicDataSource();
-        basicDataSource.setUrl(dbUrl);
+        basicDataSource.setUrl(dbUrl + "&useUnicode=true&characterEncoding=UTF-8");
         basicDataSource.setUsername(username);
         basicDataSource.setPassword(password);
 
