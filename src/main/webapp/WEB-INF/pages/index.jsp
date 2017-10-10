@@ -163,7 +163,7 @@
 
     <div class="indexSearchMainBlock">
         <div class="indexSearchBlock1" >
-            <form action="${contextPath}/search/byName" method="get">
+            <form action="${contextPath}/search/byName" method="get" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" lang="ru-UA">
                 <h4 style="margin-left: 40px;">Поиск стартапов по названию:</h4>
                 <input style="height: 38px;" class="form_country" type="text" name="name">
                 <input class="btn btn-default btn-register" style="height: 38px; margin-top: -4px; border-color: #999;" type="submit" value="Поиск">
@@ -171,7 +171,7 @@
         </div>
 
         <div class="indexSearchBlock2">
-            <form action="${contextPath}/search/byCountry" method="get">
+            <form action="${contextPath}/search/byCountry" method="get" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" lang="ru-UA">
                 <h4 style="margin-left: 54px;">Поиск стартапов по стране:</h4>
                 <select style="height: 38px; " name="country" class="form_country">
                     <option value="Украина">Украина</option>
