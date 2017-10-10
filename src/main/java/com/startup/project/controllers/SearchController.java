@@ -24,7 +24,7 @@ public class SearchController {
     @Autowired
     private StartupService startupService;
 
-    @RequestMapping(value = "/byName", method = RequestMethod.GET)
+    @RequestMapping(value = "/byName", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ModelAndView findByName(@RequestParam("name") String name){
         ModelAndView modelAndView = new ModelAndView();
         List<Startup> startupList = startupService.searchByName(name);
@@ -33,7 +33,7 @@ public class SearchController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/byCountry" , method = RequestMethod.GET)
+    @RequestMapping(value = "/byCountry" , method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ModelAndView findByCountry(@RequestParam(value = "country") String country){
         ModelAndView modelAndView = new ModelAndView();
         List<Startup> startupList = startupService.searchByCounty(country);
