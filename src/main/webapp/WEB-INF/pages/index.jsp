@@ -107,6 +107,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse header_menu" id="bs-example-navbar-collapse-1" style="width: auto; float: left;">
             <ul class="nav navbar-nav">
+                <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
+                    <li>
+                        <a href="${contextPath}/account">Личный кабинет</a>
+                    </li>
+                </sec:authorize>
                 <li>
                     <a class="no_padding_left" href="../../static/team.html">Наша команда</a>
                 </li>
@@ -116,12 +121,6 @@
                 <li>
                     <a href="../../static/contact.html">Контакты</a>
                 </li>
-                <sec:authorize access="hasAnyRole('USER','OWNER','ADMIN')">
-                    <li>
-                        <a href="${contextPath}/account">Личный кабинет</a>
-                    </li>
-                </sec:authorize>
-
             </ul>
         </div>
         <sec:authorize access="anonymous">

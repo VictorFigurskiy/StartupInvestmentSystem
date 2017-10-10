@@ -11,15 +11,15 @@ import javax.servlet.ServletContext;
  */
 public class WebSecurityInitializer extends AbstractSecurityWebApplicationInitializer {
 
-    /**
-     * // Set encoding to UTF-8 from jsp.
-     * @param servletContext
-     */
-    @Override
-    protected void beforeSpringSecurityFilterChain(ServletContext servletContext) {
-        FilterRegistration.Dynamic characterEncodingFilter = servletContext.addFilter("encodingFilter", new CharacterEncodingFilter());
-        characterEncodingFilter.setInitParameter("encoding","UTF-8");
-        characterEncodingFilter.setInitParameter("forceEncoding", "true");
-        characterEncodingFilter.addMappingForUrlPatterns(null,false,"/*" );
-    }
+//    /**
+//     * // Set encoding to UTF-8 from jsp.
+//     * @param servletContext
+//     */
+//    @Override
+//    protected void beforeSpringSecurityFilterChain(ServletContext servletContext) {
+//        FilterRegistration.Dynamic characterEncodingFilter = servletContext.addFilter("encodingFilter", new CharacterEncodingFilter());
+//        characterEncodingFilter.setInitParameter("encoding","UTF-8");
+//        characterEncodingFilter.setInitParameter("forceEncoding", "true");
+//        characterEncodingFilter.addMappingForUrlPatterns(null,false,"/*" );
+//    }
 }
