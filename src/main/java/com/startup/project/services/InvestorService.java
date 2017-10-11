@@ -1,15 +1,13 @@
 package com.startup.project.services;
 
 import com.startup.project.dao.InvestorDao;
-import com.startup.project.entities.Investment;
+import com.startup.project.entities.wrappers.Investment;
 import com.startup.project.entities.Investor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Sonik on 15.09.2017.

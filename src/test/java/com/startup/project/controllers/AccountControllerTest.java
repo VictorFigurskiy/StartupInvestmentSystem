@@ -3,7 +3,7 @@ package com.startup.project.controllers;
 import com.startup.project.configurations.MvcConfiguration;
 import com.startup.project.configurations.SecurityConfiguration;
 import com.startup.project.controllers.config.TestAppModelConfiguration;
-import com.startup.project.entities.Investment;
+import com.startup.project.entities.wrappers.Investment;
 import com.startup.project.entities.User;
 import com.startup.project.services.InvestorService;
 import com.startup.project.services.UserService;

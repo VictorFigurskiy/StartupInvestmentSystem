@@ -6,7 +6,6 @@ import com.startup.project.entities.User;
 import com.startup.project.entities.UserRole;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.ArrayList;
 import java.util.HashSet;

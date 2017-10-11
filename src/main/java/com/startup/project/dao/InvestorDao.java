@@ -1,11 +1,9 @@
 package com.startup.project.dao;
 
-import com.startup.project.entities.Investment;
+import com.startup.project.entities.wrappers.Investment;
 import com.startup.project.entities.Investor;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Sonik on 13.09.2017.

@@ -146,7 +146,7 @@
                 <div class="panel-body" style="padding: 0px 0px 0px;">
                     <!-- link for startup INFO-->
 
-                    <jsp:useBean id="investments" scope="request" type="java.util.List<com.startup.project.entities.Investment>"/>
+                    <jsp:useBean id="investments" scope="request" type="java.util.List<com.startup.project.entities.wrappers.Investment>"/>
 
                     <table width="100%">
                     <c:if test="${not empty investments}">

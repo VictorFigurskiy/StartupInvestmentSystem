@@ -2,7 +2,6 @@ package com.startup.project.services;
 
 import com.startup.project.dao.Impl.StartupDetailDaoImpl;
 import com.startup.project.dao.StartupDetailDao;
-import com.startup.project.entities.Startup;
 import com.startup.project.entities.StartupDetail;
 import org.junit.Before;
 import org.junit.Test;

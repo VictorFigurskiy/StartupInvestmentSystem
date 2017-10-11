@@ -1,4 +1,4 @@
-package com.startup.project.entities;
+package com.startup.project.entities.wrappers;
 
 import java.math.BigDecimal;
 

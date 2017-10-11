@@ -1,7 +1,7 @@
 package com.startup.project.services;
 
 import com.startup.project.dao.InvestorDao;
-import com.startup.project.entities.Investment;
+import com.startup.project.entities.wrappers.Investment;
 import com.startup.project.entities.Investor;
 import com.startup.project.entities.Startup;
 import org.junit.Before;

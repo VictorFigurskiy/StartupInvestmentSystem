@@ -2,7 +2,7 @@ package com.startup.project.dao.Impl;
 
 import com.startup.project.dao.Impl.config.TestConfiguration;
 import com.startup.project.dao.InvestorDao;
-import com.startup.project.entities.Investment;
+import com.startup.project.entities.wrappers.Investment;
 import com.startup.project.entities.Investor;
 import com.startup.project.entities.Startup;
 import org.hibernate.Session;
@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 /**
