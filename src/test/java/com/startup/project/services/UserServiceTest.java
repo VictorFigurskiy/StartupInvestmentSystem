@@ -1,64 +1,53 @@
 package com.startup.project.services;
 
-import com.startup.project.dao.Impl.UserDaoImpl;
-import com.startup.project.dao.Impl.configuration.TestConfiguration;
 import com.startup.project.dao.UserDao;
 import com.startup.project.dao.UserRoleDao;
 import com.startup.project.entities.User;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.junit.After;
+import com.startup.project.entities.UserRole;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-@RunWith(value = SpringRunner.class)
-@ContextConfiguration(classes = TestConfiguration.class)
+
+
 public class UserServiceTest {
 
     private UserDao userDao;
     private User user;
+    private UserRole userRole;
     private UserService userService;
     private UserRoleDao userRoleDao;
     private PasswordEncoder passwordEncoder;
 
     @Before
     public void setUp() throws Exception {
-        user = Mockito.mock(User.class);
+        user = mock(User.class);
+        userRole = mock(UserRole.class);
 
+        passwordEncoder = mock(PasswordEncoder.class);
+        userDao = mock(UserDao.class);
 
-        userDao = Mockito.mock(UserDao.class);
-
-
-        userRoleDao = Mockito.mock(UserRoleDao.class);
+        userRoleDao = mock(UserRoleDao.class);
         userService = new UserService(userDao, userRoleDao, passwordEncoder);
-
 
         when(user.getEmail()).thenReturn("email");
         when(user.getId()).thenReturn(55);
         when(user.getFirstName()).thenReturn("name");
-
-
     }
 
 
     @Test
     public void getByEmail() throws Exception {
         when(userDao.getByEmail("email")).thenReturn(user);
-        //user 4to poluchaem
         assertEquals("email", user.getEmail());
         assertEquals(user, userService.getByEmail("email"));
-        //1 -  минимум раз вызовов  метода getByEmail
         verify(userDao, atLeast(1)).getByEmail("email");
     }
 
@@ -81,20 +70,38 @@ public class UserServiceTest {
 
     @Test
     public void save() throws Exception {
+        when(userRoleDao.getById(UserRole.class,1)).thenReturn(userRole);
+        Set<UserRole> spySet = spy(new HashSet<>());
+        spySet.add(userRole);
+        when(user.getPassword()).thenReturn("123");
+        when(passwordEncoder.encode("123")).thenReturn("coded123");
+
+        doAnswer(invocation -> null).when(user).setUserRoles(spySet);
+        doAnswer(invocation -> null).when(user).setPassword("coded123");
+
         when(user.getFirstName()).thenReturn("name");
+
         doAnswer(invocationOnMock -> {
             User userSave = invocationOnMock.getArgument(0);
             assertEquals("name", userSave.getFirstName());
             return null;
         }).when(userDao).save(user);
-        userDao.save(user);
+
+        userService.save(user);
+
         verify(userDao, atLeastOnce()).save(user);
     }
 
     @Test
-    public void update() throws Exception {
+    public void updatePassword() throws Exception {
+        when(user.getPassword()).thenReturn("123");
+        when(passwordEncoder.encode("123")).thenReturn("coded123");
+
+        doAnswer(invocation -> null).when(user).setPassword("coded123");
+
         doAnswer(invocationOnMock -> null).when(userDao).update(user);
-        userService.updateUserData(user);
+
+        userService.updatePassword(user);
         verify(userDao, atLeastOnce()).update(user);
     }
 

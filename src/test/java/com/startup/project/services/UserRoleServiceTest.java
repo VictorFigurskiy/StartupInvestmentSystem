@@ -1,20 +1,10 @@
 package com.startup.project.services;
 
-import com.startup.project.dao.Impl.UserRoleDaoImpl;
-import com.startup.project.dao.Impl.configuration.TestConfiguration;
 import com.startup.project.dao.UserRoleDao;
-import com.startup.project.entities.User;
 import com.startup.project.entities.UserRole;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +14,6 @@ import static org.mockito.Mockito.*;
 
 
 public class UserRoleServiceTest {
-
 
     private UserRoleService userRoleService;
     private UserRoleDao userRoleDao;
@@ -47,15 +36,18 @@ public class UserRoleServiceTest {
         Integer id = 1;
         when(userRoleDao.getById(UserRole.class, id)).thenReturn(userRole);
         assertEquals(id, userRole.getId());
-        assertEquals(userRole, userRoleDao.getById(UserRole.class, id));
+        assertEquals(userRole, userRoleService.getById(id));
         verify(userRoleDao, atLeast(1)).getById(UserRole.class, id);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void getAll() throws Exception {
-        List<UserRole> users = new ArrayList();
+        List<UserRole> users = mock(List.class);
         when(userRoleDao.getAll(UserRole.class)).thenReturn(users);
-        assertEquals(users, userRoleDao.getAll(UserRole.class));
+
+        assertEquals(users, userRoleService.getAll());
+
         verify(userRoleDao, atLeast(1)).getAll(UserRole.class);
     }
 

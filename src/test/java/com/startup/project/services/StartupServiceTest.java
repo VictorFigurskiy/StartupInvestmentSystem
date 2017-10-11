@@ -1,20 +1,10 @@
 package com.startup.project.services;
 
-import com.startup.project.dao.Impl.StartupDaoImpl;
-import com.startup.project.dao.Impl.configuration.TestConfiguration;
 import com.startup.project.dao.StartupDao;
 import com.startup.project.entities.Startup;
-import com.startup.project.entities.User;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,30 +26,37 @@ public class StartupServiceTest {
         startup = Mockito.mock(Startup.class);
         startupDao = Mockito.mock(StartupDao.class);
 
-        startupService =new StartupService(startupDao);
+        startupService = new StartupService(startupDao);
 
         when(startup.getId()).thenReturn(1);
         when(startup.getStartupName()).thenReturn("name");
     }
 
 
+    @SuppressWarnings("unchecked")
     @Test
     public void getStartupOnPage() throws Exception {
-        //
+        List<Startup> startupList = mock(List.class);
+
+        when(startupDao.getStartupOnPage(1, 10)).thenReturn(startupList);
+
+        assertEquals(startupList, startupService.getStartupOnPage(1, 10));
+
+        verify(startupDao, atLeastOnce()).getStartupOnPage(1, 10);
     }
 
     @Test
     public void getById() throws Exception {
-        Integer id =1;
-        when(startupDao.getById(Startup.class,id)).thenReturn(startup);
-        assertEquals(id,startup.getId());
-        assertEquals(startup,startupService.getById(1));
-        verify(startupDao,atLeast(1)).getById(Startup.class,id);
+        Integer id = 1;
+        when(startupDao.getById(Startup.class, id)).thenReturn(startup);
+        assertEquals(id, startup.getId());
+        assertEquals(startup, startupService.getById(1));
+        verify(startupDao, atLeast(1)).getById(Startup.class, id);
     }
 
     @Test
     public void getAll() throws Exception {
-        List<Startup>  startups = new ArrayList();
+        List<Startup> startups = new ArrayList();
         when(startupDao.getAll(Startup.class)).thenReturn(startups);
         assertEquals(startups, startupService.getAll());
         verify(startupDao, atLeast(1)).getAll(Startup.class);
@@ -94,12 +91,34 @@ public class StartupServiceTest {
     @Test
     public void getByIndustry() throws Exception {
         String industry = "name";
-        int limit =100;
+        int limit = 100;
         int exe = 100;
         List<Startup> list = new ArrayList<>();
-        when(startupDao.getByIndustry(industry,limit,exe)).thenReturn(list);
-        assertEquals(list, startupService.getByIndustry(industry,limit,exe));
-        verify(startupDao,atLeast(1)).getByIndustry(industry,limit,exe);
+        when(startupDao.getByIndustry(industry, limit, exe)).thenReturn(list);
+        assertEquals(list, startupService.getByIndustry(industry, limit, exe));
+        verify(startupDao, atLeast(1)).getByIndustry(industry, limit, exe);
+    }
+
+    @Test
+    public void searchByName() throws Exception {
+        List<Startup> spyList = spy(new ArrayList<>());
+
+        when(startupDao.searchByName("SomeName")).thenReturn(spyList);
+
+        assertEquals(spyList, startupService.searchByName("SomeName"));
+
+        verify(startupDao, atLeast(1)).searchByName("SomeName");
+    }
+
+    @Test
+    public void searchByCounty() throws Exception {
+        List<Startup> spyList = spy(new ArrayList<>());
+
+        when(startupDao.searchByCounty("SomeCountry")).thenReturn(spyList);
+
+        assertEquals(spyList, startupService.searchByCounty("SomeCountry"));
+
+        verify(startupDao, atLeast(1)).searchByCounty("SomeCountry");
     }
 
 }

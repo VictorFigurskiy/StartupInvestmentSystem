@@ -48,8 +48,7 @@ public class ModelConfiguration {
     @Value("${connection.characterEncoding}")
     private String characterEncoding;
 
-//    Data source for local tomcat server
-
+    //Data source for local tomcat server
 //    @Bean(destroyMethod = "close")
 //    public BasicDataSource dataSource(){
 //        BasicDataSource dataSource = new BasicDataSource();
@@ -60,7 +59,7 @@ public class ModelConfiguration {
 //        return dataSource;
 //    }
 
-    // Data source for heroku database for local testing
+    // Data source for heroku database from localhost to test DB
     //    @Bean
 //    public BasicDataSource dataSource() throws URISyntaxException {
 //        URI dbUri = new URI("mysql://a7pfxplnyomk00xa:gg0pygsi1lc41ztw@cvktne7b4wbj4ks1.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ubzusu62u4vac81q");
