@@ -4,6 +4,7 @@ import com.startup.project.entities.Startup;
 import com.startup.project.entities.StartupDetail;
 import com.startup.project.services.StartupService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,7 +43,7 @@ public class EditStartupController {
      * @return page with the name "account".
      */
 
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String updateStartup(@ModelAttribute("Startup") Startup startup,
                                 @ModelAttribute("StartupDetail") StartupDetail startupDetail,
                                 @RequestParam("startup_id") Integer startup_id) {

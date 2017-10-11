@@ -5,6 +5,7 @@ import com.startup.project.services.StartupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,7 +28,7 @@ public class SearchController {
      * @param name - criteria(name) for our search.
      * @return visual display of form search by name.
      */
-    @RequestMapping(value = "/byName")
+    @RequestMapping(value = "/byName", method = RequestMethod.GET)
     public ModelAndView findByName(@RequestParam("name") String name) {
         ModelAndView modelAndView = new ModelAndView();
         List<Startup> startupList = startupService.searchByName(name);
@@ -42,7 +43,7 @@ public class SearchController {
      * @param country - criteria(country) for our search.
      * @return visual display of form search by country.
      */
-    @RequestMapping(value = "/byCountry")
+    @RequestMapping(value = "/byCountry", method = RequestMethod.GET)
     public ModelAndView findByCountry(@RequestParam(value = "country") String country) {
         ModelAndView modelAndView = new ModelAndView();
         List<Startup> startupList = startupService.searchByCounty(country);

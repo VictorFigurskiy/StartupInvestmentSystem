@@ -6,6 +6,7 @@ import com.startup.project.entities.User;
 import com.startup.project.services.StartupService;
 import com.startup.project.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -42,7 +43,7 @@ public class AddStartupController {
      * @return page with the name "account".
      */
 
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String addStartup(@ModelAttribute("startupReg") Startup startup,
                              @ModelAttribute("startupDetailReg") StartupDetail startupDetail) {
         startup.setStartupDetail(startupDetail);

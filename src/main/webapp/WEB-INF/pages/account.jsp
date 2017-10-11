@@ -121,7 +121,7 @@
                           <c:forEach items="${currentUser.startupList}" var="startup">
                               <div  style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
                                   <a class="account_a" href="${contextPath}/startup_description/${startup.id}" style="color: #000000;">
-                                      <li style="width: auto; float: left; margin-right: 20px; margin-top: 3px;">${startup.startupName}</li>
+                                      <li style="width: auto; float: left; margin-right: 20px; margin-top: 3px; margin-left: 14px;">${startup.startupName}</li>
                                   </a>
                                   <div style="float: right;">
                                   <form method="post" action="/edit_startup/update_page">

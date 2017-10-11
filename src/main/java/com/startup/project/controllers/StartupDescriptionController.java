@@ -39,8 +39,6 @@ public class StartupDescriptionController {
         StartupDetail startupDetail = startup.getStartupDetail();
         Integer investmentsSum = startup.getInvestorList().stream().map(Investor::getInvestments).mapToInt(BigDecimal::intValue).sum();
 
-        //TODO: в excludeId надо будет передать startupId чтобы выводить похожие стартапы кроме текущего, пока что там 0 так как в базе мало записей
-        //TODO: limit ставим 4 потому что я на странице сделал вывод под 4 елемента
         List<Startup> similarStartups = startupService.getByIndustry(startup.getIndustry(), 4, Integer.valueOf(id));
 
         modelAndView.addObject("similarStartup", similarStartups);

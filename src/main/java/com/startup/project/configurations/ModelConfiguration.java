@@ -50,21 +50,20 @@ public class ModelConfiguration {
 
 //    Data source for local tomcat server
 
-    @Bean(destroyMethod = "close")
-    public BasicDataSource dataSource(){
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setUrl(url);
-        dataSource.setUsername(userName);
-        dataSource.setPassword(password);
-        dataSource.setDriverClassName(driver);
-        return dataSource;
-    }
+//    @Bean(destroyMethod = "close")
+//    public BasicDataSource dataSource(){
+//        BasicDataSource dataSource = new BasicDataSource();
+//        dataSource.setUrl(url);
+//        dataSource.setUsername(userName);
+//        dataSource.setPassword(password);
+//        dataSource.setDriverClassName(driver);
+//        return dataSource;
+//    }
 
-
-//    // Data source for heroku database
-//    @Bean
+    // Data source for heroku database for local testing
+    //    @Bean
 //    public BasicDataSource dataSource() throws URISyntaxException {
-//        URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
+//        URI dbUri = new URI("mysql://a7pfxplnyomk00xa:gg0pygsi1lc41ztw@cvktne7b4wbj4ks1.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ubzusu62u4vac81q");
 //
 //        String username = dbUri.getUserInfo().split(":")[0];
 //        String password = dbUri.getUserInfo().split(":")[1];
@@ -74,9 +73,26 @@ public class ModelConfiguration {
 //        basicDataSource.setUrl(dbUrl);
 //        basicDataSource.setUsername(username);
 //        basicDataSource.setPassword(password);
-//
+//        basicDataSource.setDriverClassName(driver);
 //        return basicDataSource;
 //    }
+
+    // Data source for heroku database
+    @Bean
+    public BasicDataSource dataSource() throws URISyntaxException {
+        URI dbUri = new URI(System.getenv("JAWSDB_URL"));
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
+
+        BasicDataSource basicDataSource = new BasicDataSource();
+        basicDataSource.setUrl(dbUrl);
+        basicDataSource.setUsername(username);
+        basicDataSource.setPassword(password);
+
+        return basicDataSource;
+    }
 
     @Bean
     public Properties hibernateProperties(){
