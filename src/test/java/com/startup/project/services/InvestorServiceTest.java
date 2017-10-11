@@ -100,9 +100,9 @@ public class InvestorServiceTest {
 
     @Test
     public void deleteInvestorByUserId() throws Exception {
-        doAnswer(invocationOnMock -> null).when(investorDao).delete(investor);
-        Investor investor1 = new Investor();
-        investorService.deleteInvestorByUserId(investor1.getId());
-        verify(investorDao, times(1)).delete(investor);
+
+        doAnswer(invocationOnMock -> null).when(investorDao).deleteInvestorByUserId(1);
+        investorService.deleteInvestorByUserId(1);
+        verify(investorDao, times(1)).deleteInvestorByUserId(1);
     }
 }

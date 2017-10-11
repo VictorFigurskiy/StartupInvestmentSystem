@@ -128,7 +128,7 @@
             <hr>
 
             <h3>Описание стартапа</h3>
-            <p>${startup.description}</p>
+            <p style="line-height: 1.5">${startup.description}</p>
         </div>
 
     </div>

@@ -11,13 +11,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <INSTANCE_CONNECTION_NAME>startup-system:europe-west3:startups-db</INSTANCE_CONNECTION_NAME>
-        <user>root</user>
-        <password>star000</password>
-        <database>startups_db</database>
         <jetty>9.3.7.v20160115</jetty>
-
-        <sqlURL>jdbc:mysql://google/${database}?cloudSqlInstance=${INSTANCE_CONNECTION_NAME}&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory&amp;user=${user}&amp;password=${password}&amp;useSSL=false</sqlURL>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -37,7 +31,6 @@
         <spring.test.version>4.3.9.RELEASE</spring.test.version>
         <slf4j.version>1.7.25</slf4j.version>
         <validation.api.version>2.0.0.Final</validation.api.version>
-        <appengine.maven.plugin>1.3.1</appengine.maven.plugin>
     </properties>
 
     <dependencies>
@@ -53,16 +46,6 @@
             <artifactId>commons-dbcp</artifactId>
             <version>${dbcp.version}</version>
         </dependency>
-
-
-
-        <!--  for Google Cloud SQL JDBC Socket Factory  -->
-        <dependency>
-            <groupId>com.google.cloud.sql</groupId>
-            <artifactId>mysql-socket-factory-connector-j-6</artifactId>
-            <version>1.0.4</version>
-        </dependency>
-
 
 
                     <!--  Hibernate  -->
@@ -221,17 +204,6 @@
                 </configuration>
             </plugin>
 
-            <!-- appengine-maven-plugin for Google-cloud platform -->
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>appengine-maven-plugin</artifactId>
-                <version>${appengine.maven.plugin}</version>
-            </plugin>
-            <!--<plugin>-->
-                <!--<groupId>com.google.appengine</groupId>-->
-                <!--<artifactId>appengine-maven-plugin</artifactId>-->
-                <!--<version>1.9.57</version>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>

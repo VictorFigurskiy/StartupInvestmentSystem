@@ -397,7 +397,7 @@
                             <div class="col-md-6">
                                 <img class="img-responsive" src="${startup.imageLink}" alt="">
                             </div>
-                            <p><c:out value="${startup.description}"/></p>
+                            <p style="line-height: ;e-height: 1.5"><c:out value="${startup.description}"/></p>
                             <a href="${contextPath}/startup_description/${startup.id}" class="btn btn-default">Узнать больше</a>
                         </div>
                     </div>

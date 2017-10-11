@@ -10,6 +10,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 /**
@@ -46,6 +48,8 @@ public class ModelConfiguration {
     @Value("${connection.characterEncoding}")
     private String characterEncoding;
 
+//    Data source for local tomcat server
+
     @Bean(destroyMethod = "close")
     public BasicDataSource dataSource(){
         BasicDataSource dataSource = new BasicDataSource();
@@ -55,6 +59,24 @@ public class ModelConfiguration {
         dataSource.setDriverClassName(driver);
         return dataSource;
     }
+
+
+//    // Data source for heroku database
+//    @Bean
+//    public BasicDataSource dataSource() throws URISyntaxException {
+//        URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
+//
+//        String username = dbUri.getUserInfo().split(":")[0];
+//        String password = dbUri.getUserInfo().split(":")[1];
+//        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
+//
+//        BasicDataSource basicDataSource = new BasicDataSource();
+//        basicDataSource.setUrl(dbUrl);
+//        basicDataSource.setUsername(username);
+//        basicDataSource.setPassword(password);
+//
+//        return basicDataSource;
+//    }
 
     @Bean
     public Properties hibernateProperties(){
