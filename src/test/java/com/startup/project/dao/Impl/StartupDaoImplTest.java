@@ -97,7 +97,6 @@ public class StartupDaoImplTest {
         List<Startup> spyList = spy(list);
         spyList.add(startup);
 
-
         when(session.createQuery("from Startup startup where startup.startupName like :name", Startup.class)).thenReturn(query);
         when(query.setParameter("name", "%" + "someName" + "%")).thenReturn(query);
         when(query.list()).thenReturn(spyList);

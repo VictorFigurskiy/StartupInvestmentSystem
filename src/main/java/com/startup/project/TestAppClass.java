@@ -1,32 +1,21 @@
 package com.startup.project;
 
 import com.startup.project.configurations.ModelConfiguration;
-import com.startup.project.dao.StartupDao;
-import com.startup.project.entities.*;
+import com.startup.project.configurations.SecurityConfiguration;
+import com.startup.project.entities.Startup;
+import com.startup.project.entities.StartupDetail;
 import com.startup.project.services.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.io.File;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Sonik on 14.09.2017.
  */
 public class TestAppClass {
-    public static class Test {
-        private String a;
-
-        public String getA() {
-            return a;
-        }
-    }
-
     public static void main(String[] args) {
-        try (AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(ModelConfiguration.class)) {
+        try (AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(ModelConfiguration.class, SecurityConfiguration.class)) {
 
             UserRoleService userRoleService = ctx.getBean(UserRoleService.class);
             UserService userService = ctx.getBean(UserService.class);
@@ -34,6 +23,10 @@ public class TestAppClass {
             StartupDetailService startupDetailService = ctx.getBean(StartupDetailService.class);
             InvestorService investorService = ctx.getBean(InvestorService.class);
 
+//            Properties property = System.getProperties();
+//            for (Map.Entry<Object, Object> objectObjectEntry : property.entrySet()) {
+//                System.out.println(objectObjectEntry.getKey() + " : " + objectObjectEntry.getValue());
+//            }
 
 //            System.out.println(userService.getAll());
 //
@@ -95,31 +88,31 @@ public class TestAppClass {
 //            startupService.update(startup);
 
 
-//            StartupDetail startupDetail = new StartupDetail();
-//            startupDetail.setCurrentState("idea for startup");
-//            startupDetail.setBusinessModel("Sales");
-//            startupDetail.setCompetitors("Internet sellers");
-//            startupDetail.setGrossProfit("120 000 $");
-//            startupDetail.setNetIncome("45 000 $");
-//            startupDetail.setTypeOfProperty("private business");
-//            startupDetail.setProperty("office + car");
-//            startupDetail.setProblemOrOpportunity("Many competitors on market");
+            StartupDetail startupDetail = new StartupDetail();
+            startupDetail.setCurrentState("Теперь русский текст");
+            startupDetail.setBusinessModel("И еще");
+            startupDetail.setCompetitors("та-та-та");
+            startupDetail.setGrossProfit("120 000 $");
+            startupDetail.setNetIncome("45 000 $");
+            startupDetail.setTypeOfProperty("ПП");
+            startupDetail.setProperty("office + car");
+            startupDetail.setProblemOrOpportunity("Many competitors on market");
 
 //            startupDetailService.save(startupDetail);
 
-//            Startup startup = new Startup();
-//            startup.setStartupName("Something New");
-//            startup.setDescription("new Startup");
-//            startup.setIdea("todoSomething");
-//            startup.setProjectStage("Only on paper");
-//            startup.setIndustry("IT");
-//            startup.setCountry("us");
-////            startup.setInvestorList(investorList);
-//            startup.setStartupDetail(startupDetail);
-//            startup.setStartupCost(new BigDecimal(100_000));
-//            startup.setOwnerUser(userService.getByEmail("abram@email.com"));
+            Startup startup = new Startup();
+            startup.setStartupName("Новый стартап");
+            startup.setDescription("Просто стартап");
+            startup.setIdea("Еще один");
+            startup.setProjectStage("Only on paper");
+            startup.setIndustry("IT");
+            startup.setCountry("us");
+//            startup.setInvestorList(investorList);
+            startup.setStartupDetail(startupDetail);
+            startup.setStartupCost(new BigDecimal(100_000));
+            startup.setOwnerUser(userService.getByEmail("abram@email.com"));
 
-//            startupService.save(startup);
+            startupService.save(startup);
 
 //            List<Startup> startupOnPage = startupService.getStartupOnPage(4, 2);
 //            for (Startup startup2 : startupOnPage) {
@@ -134,11 +127,10 @@ public class TestAppClass {
 //                System.out.println("WEB-INF/jpeg/sleek-sports-car.jpg файл удален");
 //            }else System.out.println("Файла WEB-INF/jpeg/sleek-sports-car.jpg не обнаружено");
 
-            List<Startup> startupList = startupService.searchByCounty("us");
-            startupList.forEach(startup -> System.out.println(startup.getStartupName()));
+//            List<Startup> startupList = startupService.searchByCounty("us");
+//            startupList.forEach(startup -> System.out.println(startup.getStartupName()));
 
 
-            ctx.close();
         }
     }
 }

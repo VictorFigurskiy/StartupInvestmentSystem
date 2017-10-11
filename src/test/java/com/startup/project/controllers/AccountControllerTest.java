@@ -84,20 +84,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    @Ignore
     public void editUserForm() throws Exception {
-
-        int id = 1;
-        when(userService.getById(id)).thenReturn(user);
-
-        mvc.perform(MockMvcRequestBuilders.post("/account/edit-page").requestAttr("userId",id)
-                .with(SecurityMockMvcRequestPostProcessors.user("user")
-                        .roles("USER")))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.model().attribute("userForEdit", user))
-                .andExpect(MockMvcResultMatchers.view().name("edit_account"));
-
-
     }
 
     @Test

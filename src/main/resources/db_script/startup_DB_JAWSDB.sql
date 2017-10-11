@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS heroku_8875eba0abc2d41 /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE heroku_8875eba0abc2d41;
+CREATE DATABASE  IF NOT EXISTS ubzusu62u4vac81q /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE ubzusu62u4vac81q;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: startups_db

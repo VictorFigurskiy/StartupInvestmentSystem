@@ -58,6 +58,23 @@ public class ModelConfiguration {
 //        return dataSource;
 //    }
 
+//    @Bean
+//    public BasicDataSource dataSource() throws URISyntaxException {
+////        URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
+//        URI dbUri = new URI("mysql://a7pfxplnyomk00xa:gg0pygsi1lc41ztw@cvktne7b4wbj4ks1.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/ubzusu62u4vac81q");
+//
+//        String username = dbUri.getUserInfo().split(":")[0];
+//        String password = dbUri.getUserInfo().split(":")[1];
+//        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
+//
+//        BasicDataSource basicDataSource = new BasicDataSource();
+//        basicDataSource.setUrl(dbUrl);
+//        basicDataSource.setUsername(username);
+//        basicDataSource.setPassword(password);
+//        basicDataSource.setDriverClassName(driver);
+//        return basicDataSource;
+//    }
+
     @Bean
     public BasicDataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));

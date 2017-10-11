@@ -344,7 +344,7 @@ footer nav ul li a {
 }
 
 .navbar-background-team {
-    background: url(/static/image/hands-1920.jpg) no-repeat center;
+    background: url(/static/image/hands-1920-600.jpg) no-repeat center;
     -webkit-background-size: 110%;
     background-size: 110%;
     margin-top: -50px;
@@ -497,7 +497,7 @@ footer nav ul li a {
 }
 
 .navbar-background-contacts{
-    background: url(/static/image/contacts.jpg) no-repeat center;
+    background: url(/static/image/contacts1.jpg) no-repeat center;
     -webkit-background-size: 100%;
     background-size: 100%;
     margin-top: -50px;
