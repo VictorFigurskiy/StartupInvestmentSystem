@@ -92,6 +92,13 @@ public class UserServiceTest {
     }
 
     @Test
+    public void updateUserDataTest() throws Exception{
+        doAnswer(invocationOnMock -> null).when(userDao).update(user);
+        userService.updateUserData(user);
+        verify(userDao, atLeastOnce()).update(user);
+    }
+
+    @Test
     public void updatePassword() throws Exception {
         when(user.getPassword()).thenReturn("123");
         when(passwordEncoder.encode("123")).thenReturn("coded123");

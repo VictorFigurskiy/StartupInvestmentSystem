@@ -431,6 +431,21 @@ footer nav ul li a {
     display: none;
 }
 
+.team_info_a{
+    width: 100%;
+    background: #fff;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.3);
+    border-radius: 3px;
+    padding: 7px 28px 7px 28px;
+    font-family: MyWebFont;
+}
+
+.team_info_a a:hover{
+    background: #b2b2b2; !important;
+}
+
 /*
   about_project static page
  */

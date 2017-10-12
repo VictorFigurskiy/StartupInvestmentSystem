@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
 import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
 import org.springframework.test.context.ContextConfiguration;
@@ -76,7 +77,7 @@ public class EditStartupControllerTest {
         when(startupService.getById(startupId)).thenReturn(startup);
         when(startup.getStartupDetail()).thenReturn(startupDetail);
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/edit_startup/update")
+        mockMvc.perform(MockMvcRequestBuilders.post("/edit_startup/update").contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE)
                 .param("startup_id", "1").requestAttr("Startup", startup).requestAttr("StartupDetail", startupDetail)
                 .with(SecurityMockMvcRequestPostProcessors.user("user").roles("USER")))
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/account"))
