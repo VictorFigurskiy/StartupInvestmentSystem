@@ -531,3 +531,13 @@ footer nav ul li a {
 .navbar-background-contacts {
     height: 500px;
 }
+.team .item .item_img_dimon {
+    display: inline-block;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: url(/static/image/Dimon_photo.jpeg) no-repeat center center;
+    background-size: 100%;
+    border: 2px solid #e6ffe1;
+}
