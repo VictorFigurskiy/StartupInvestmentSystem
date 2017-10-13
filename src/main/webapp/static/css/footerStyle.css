@@ -377,7 +377,6 @@ footer nav ul li a {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: url(/static/image/yanovets.jpg) no-repeat center center;
     background-size: 100%;
     border: 2px solid #e6ffe1;
 }
@@ -528,9 +527,11 @@ footer nav ul li a {
     margin-top: -50px;
     background-position-y: 0px;
 }
+
 .navbar-background-contacts {
     height: 500px;
 }
+
 .team .item .item_img_dimon {
     display: inline-block;
     overflow: hidden;
