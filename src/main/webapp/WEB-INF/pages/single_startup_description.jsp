@@ -114,7 +114,16 @@
                 <form method="post" action="${contextPath}/investment">
                     <input type="hidden" name="startup_id" value="${startup.id}">
                     <div style="margin-bottom: -14px;">
-                        <input class="btn btn-primary" type="submit" value="Инвестировать в стартап" style="width: 359px; height: 52px; font-size: x-large; background: #4F9EE1;">
+                        <c:choose>
+                            <c:when test="${investmentsSum >= startup.startupCost}">
+                            <h3>Необходимая сумма собрана!!!</h3>
+                            <p>Поздравляем владельца стартапа и инвесторов, связатся с владельцем стартапа можно по почте
+                                    ${startup.ownerUser.email} или по телефону ${startup.ownerUser.phone}</p>
+                            </c:when>
+                            <c:otherwise>
+                                <input class="btn btn-primary" type="submit" value="Инвестировать в стартап" style="width: 359px; height: 52px; font-size: x-large; background: #4F9EE1;">
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                     <div class="panel-heading" style="height: 32px; margin-bottom: 9px;">
                         <h3>Необходимо: ${startup.startupCost.intValue()}$</h3>

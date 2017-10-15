@@ -159,7 +159,7 @@
 
                             <tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd">
                                 <a href="${contextPath}/startup_description/${investment.startupId}" style="color: #333;">
-                                    <li>${investment.startupName}
+                                    <li style="margin-left: 14px;">${investment.startupName}
                                 <c:forEach items="${currentUser.startupList}" var="startup">
                                     <c:if test="${investment.startupId==startup.id}"> (you owner)</c:if>
                                 </c:forEach>
