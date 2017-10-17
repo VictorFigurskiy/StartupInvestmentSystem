@@ -96,8 +96,7 @@
                 <li><a href="${contextPath}/" style="color: #353535;">Назад</a>
                 </li>
                 <li class="active"><c:out value="${startup.startupName}"/></li>
-                <li class="active" style="float: right;">Дата создания: ${startup.time.toLocaleString().substring(0,10)}</li>
-
+                <li class="active" style="float: right;">Дата создания:  ${startup.time.toLocalDateTime().dayOfMonth} - <c:if test="${startup.time.toLocalDateTime().monthValue <= 9}">0</c:if>${startup.time.toLocalDateTime().monthValue} - ${startup.time.toLocalDateTime().year}</li>
             </ol>
         </div>
     </div>
