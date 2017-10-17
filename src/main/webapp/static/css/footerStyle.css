@@ -538,7 +538,7 @@ footer nav ul li a {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: url(/static/image/Dimon_photo.jpeg) no-repeat center center;
+    background: url(/static/image/Dimon_photo.jpeg) no-repeat;
     background-size: 100%;
     border: 2px solid #e6ffe1;
 }
@@ -565,5 +565,5 @@ footer nav ul li a {
 .statistic_button:focus,
 .statistic_button:hover{
     text-decoration: none;
-    background-color: #f5f5f5 !important;
+    /*background-color: #f5f5f5 !important;*/
 }

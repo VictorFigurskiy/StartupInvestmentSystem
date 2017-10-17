@@ -15,8 +15,8 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
 
     private static final String LOCATION = "C:\\Users\\Sonik\\Desktop\\TempForTest\\"; // Temporary location where files will be stored
 
-    private static final long MAX_FILE_SIZE = 5242880; // 5MB : Max file size.
-                                                            // Beyond that size spring will throw exception.
+    private static final long MAX_FILE_SIZE = 5242880; // 5MB : Max file size. Beyond that size spring will throw exception.
+
     private static final long MAX_REQUEST_SIZE = 20971520; // 20MB : Total request size containing Multi part.
 
     private static final int FILE_SIZE_THRESHOLD = 0; // Size threshold after which files will be written to disk
