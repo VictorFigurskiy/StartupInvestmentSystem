@@ -121,7 +121,7 @@
                           <c:forEach items="${currentUser.startupList}" var="startup">
                               <div  style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
                                   <a class="account_a" href="${contextPath}/startup_description/${startup.id}" style="color: #000000;">
-                                      <li style="width: auto; float: left; margin-right: 20px; margin-top: 3px; margin-left: 14px;">${startup.startupName}</li>
+                                      <li style="width: auto; float: left; margin-right: 20px; margin-top: 3px;">${startup.startupName}</li>
                                   </a>
                                   <div style="float: right;">
                                   <form method="post" action="/edit_startup/update_page">
@@ -159,10 +159,10 @@
 
                             <tr style="border-bottom: 1px solid #ddd"><td style="padding: 10px 10px 10px 15px; border-right: 1px solid #ddd">
                                 <a href="${contextPath}/startup_description/${investment.startupId}" style="color: #333;">
-                                    <li style="margin-left: 14px;">${investment.startupName}
-                                <c:forEach items="${currentUser.startupList}" var="startup">
-                                    <c:if test="${investment.startupId==startup.id}"> (you owner)</c:if>
-                                </c:forEach>
+                                    <li>${investment.startupName}
+                                <%--<c:forEach items="${currentUser.startupList}" var="startup">--%>
+                                    <%--<c:if test="${investment.startupId==startup.id}"> (you owner)</c:if>--%>
+                                <%--</c:forEach>--%>
                             </li>
                                 </a></td>
                                 <td style="text-align: center">${investment.sumInvestment}$</td></tr>

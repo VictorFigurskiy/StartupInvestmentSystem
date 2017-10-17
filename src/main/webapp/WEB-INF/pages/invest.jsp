@@ -91,10 +91,16 @@
     <div class="row">
         <%--Alert message--%>
 
-                <div class="alert alert-info alert-dismissable" style="width: 70%; margin-left: 15%">
+                <div class="alert alert-info alert-dismissable" style="width: 70%; margin-left: 15%; <c:if test="${isOwner}">color: rgba(255,10,0,0.84)</c:if>">
                     <a class="panel-close close" data-dismiss="alert" style="margin-top: 11px">×</a>
                     <i class="fa fa-info" style="margin-right: 5px;"></i><strong>Внимание!</strong>
-                    <i>Инвестируя даный проект Вы соглашаетесь с правилами работы нашего сервиса и обязуетесь выплатить заявленую Вами сумму владельцу данного проекта!</i>
+
+                    <i>
+                    <c:choose>
+                        <c:when test="${isOwner}">Вы являетесь владельцем данного проекта, и в этом случае вам запрещено инвестировать в проект!</c:when>
+                        <c:otherwise >Инвестируя даный проект Вы соглашаетесь с правилами работы нашего сервиса и обязуетесь выплатить заявленую Вами сумму владельцу данного проекта!</c:otherwise>
+                    </c:choose>
+                    </i>
                 </div>
 
         <!-- left column -->
@@ -128,7 +134,7 @@
                                         <form method="post" action="${contextPath}/investment/confirm">
                                             <input hidden name="startupId" value="${startup.id}">
                                             <input style="width: 60%; height: 30px; border-radius: 4px; border: 1px solid darkgray; padding-left: 5px; margin-bottom: 15px" type="number" name="sum" min="10" max="9999999999" step="10" value="10"  required><strong>, $</strong>
-                                            <input style="float: right; height: 30px" class="confirm_invest_button" type="submit" value="Инвестировать" title="Инвестировать">
+                                            <input style="float: right; height: 30px; <c:if test="${isOwner}">color:#9a9a9a; background: rgba(255,10,0,0.25)</c:if>" class="confirm_invest_button" type="submit" value="Инвестировать" title="Инвестировать" <c:if test="${isOwner}">disabled</c:if>>
                                             <span style="display: block; display: block; padding: 3px; border: 1px solid #bce8f1; border-radius: 5px; background: #d9edf7;">
                                                 <input type="checkbox" required="" style="margin: 4px 10px; float: left; ">
                                             Я принимаю условия работы сервиса.

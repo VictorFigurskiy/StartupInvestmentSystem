@@ -5,6 +5,7 @@ import com.startup.project.entities.StartupDetail;
 import com.startup.project.entities.User;
 import com.startup.project.services.StartupService;
 import com.startup.project.services.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/add_startup")
 public class AddStartupController {
+
+    private static final Logger LOGGER = Logger.getLogger(AddStartupController.class);
 
     @Autowired
     private StartupService startupService;
@@ -33,6 +36,7 @@ public class AddStartupController {
         modelAndView.setViewName("add_startup");
         modelAndView.addObject("startupReg", new Startup());
         modelAndView.addObject("startupDetailReg", new StartupDetail());
+        LOGGER.info("Method 'setStartupModel' worked is successfully");
         return modelAndView;
     }
 
@@ -51,7 +55,7 @@ public class AddStartupController {
         User user = userService.getByEmail(principal.getUsername());
         startup.setOwnerUser(user);
         startupService.save(startup);
-
+        LOGGER.info("Method 'addStartup' worked is successfully");
         return "redirect:/account";
     }
 

@@ -4,6 +4,7 @@ import com.startup.project.entities.User;
 import com.startup.project.services.UserService;
 import com.startup.project.validator.MultiValidator;
 import com.startup.project.validator.ValidateType;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/registration")
 public class RegistrationController {
+
+    private static final Logger LOGGER = Logger.getLogger(RegistrationController.class);
+
 
     @Autowired
     private MultiValidator validator;
@@ -36,6 +40,7 @@ public class RegistrationController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("register");
         modelAndView.addObject("userFormRegist", new User());
+        LOGGER.info("Method 'setUserModel' worked successfully");
         return modelAndView;
     }
 
@@ -50,6 +55,7 @@ public class RegistrationController {
         validator.validate(user, bindingResult, ValidateType.FULL);
         if (bindingResult.hasErrors()) return "register";
         userService.save(user);
+        LOGGER.info("Method 'addNewUser' worked successfully");
         return "redirect:/";
     }
 }

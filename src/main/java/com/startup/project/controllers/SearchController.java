@@ -2,6 +2,7 @@ package com.startup.project.controllers;
 
 import com.startup.project.entities.Startup;
 import com.startup.project.services.StartupService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,8 @@ import java.util.List;
 @RequestMapping(value = "/search")
 public class SearchController {
 
+    private static final Logger LOGGER = Logger.getLogger(SearchController  .class);
+
     @Autowired
     private StartupService startupService;
 
@@ -34,6 +37,7 @@ public class SearchController {
         List<Startup> startupList = startupService.searchByName(name);
         modelAndView.addObject("startupList", startupList);
         modelAndView.setViewName("index");
+        LOGGER.info("Method 'findByName' worked successfully");
         return modelAndView;
     }
 
@@ -49,6 +53,7 @@ public class SearchController {
         List<Startup> startupList = startupService.searchByCounty(country);
         modelAndView.addObject("startupList", startupList);
         modelAndView.setViewName("index");
+        LOGGER.info("Method 'findByCountry' worked successfully");
         return modelAndView;
     }
 }

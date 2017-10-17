@@ -4,6 +4,7 @@ import com.startup.project.entities.Investor;
 import com.startup.project.entities.Startup;
 import com.startup.project.entities.StartupDetail;
 import com.startup.project.services.StartupService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/startup_description")
 public class StartupDescriptionController {
+
+    private static final Logger LOGGER = Logger.getLogger(StartupDescriptionController.class);
 
     @Autowired
     private StartupService startupService;
@@ -45,6 +48,7 @@ public class StartupDescriptionController {
         modelAndView.addObject("investmentsSum", investmentsSum);
         modelAndView.addObject("startup", startup);
         modelAndView.addObject("startupDetail", startupDetail);
+        LOGGER.info("Method 'startupDescription' worked successfully");
         return modelAndView;
     }
 }

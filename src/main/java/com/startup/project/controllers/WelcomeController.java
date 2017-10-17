@@ -3,6 +3,7 @@ package com.startup.project.controllers;
 import com.startup.project.entities.Startup;
 import com.startup.project.services.StartupService;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,8 @@ import java.util.List;
 @RequestMapping(value = "/")
 public class WelcomeController {
 
+    private static final Logger LOGGER = Logger.getLogger(WelcomeController.class);
+
     @Autowired
     private StartupService startupService;
 
@@ -34,6 +37,7 @@ public class WelcomeController {
         modelAndView.setViewName("index");
         List<Startup> startupList = startupService.getAll();
         modelAndView.addObject("startupList", startupList);
+        LOGGER.info("Method 'welcome' worked successfully");
         return modelAndView;
     }
 
@@ -45,6 +49,7 @@ public class WelcomeController {
 
     @PostMapping
     public String mainPage() {
+        LOGGER.info("Method 'mainPage' worked successfully");
         return "redirect:/";
     }
 
@@ -58,6 +63,7 @@ public class WelcomeController {
     public ModelAndView errorPage(ModelAndView modelAndView) {
         modelAndView.setViewName("login");
         modelAndView.addObject("errorLogin", "Неправильно введены данные логина или пароля, попробуйте еще раз!");
+        LOGGER.info("Method 'errorPage' worked successfully");
         return modelAndView;
     }
 
@@ -68,6 +74,7 @@ public class WelcomeController {
      */
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public String logout() {
+        LOGGER.info("Method 'logout' worked successfully");
         return "redirect:/";
     }
 

@@ -3,6 +3,7 @@ package com.startup.project.controllers;
 import com.startup.project.entities.Startup;
 import com.startup.project.entities.StartupDetail;
 import com.startup.project.services.StartupService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/edit_startup")
 public class EditStartupController {
+
+    private static final Logger LOGGER = Logger.getLogger(EditStartupController.class);
 
     @Autowired
     private StartupService startupService;
@@ -30,6 +33,7 @@ public class EditStartupController {
         StartupDetail startupDetail = startup.getStartupDetail();
         modelAndView.addObject("startup", startup);
         modelAndView.addObject("startupDetail", startupDetail);
+        LOGGER.info("Method 'editStartupPage' worked successfully");
         return modelAndView;
     }
 
@@ -69,7 +73,7 @@ public class EditStartupController {
         startupDetailFromDB.setCurrentState(startupDetail.getCurrentState());
 
         startupService.update(startupFromDB);
-
+        LOGGER.info("Method 'updateStartup' worked successfully");
         return "redirect:/account";
     }
 
@@ -83,6 +87,7 @@ public class EditStartupController {
     public String deleteStartup(@RequestParam("startup_id") Integer startup_id) {
         Startup startup = startupService.getById(startup_id);
         startupService.delete(startup);
+        LOGGER.info("Method 'deleteStartup' worked successfully");
         return "redirect:/account";
     }
 }

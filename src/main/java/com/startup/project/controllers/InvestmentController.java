@@ -5,6 +5,7 @@ import com.startup.project.entities.Startup;
 import com.startup.project.entities.User;
 import com.startup.project.services.StartupService;
 import com.startup.project.services.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +21,8 @@ import java.math.BigDecimal;
 @Controller
 @RequestMapping("/investment")
 public class InvestmentController {
+
+    private static final Logger LOGGER = Logger.getLogger(InvestmentController.class);
 
     @Autowired
     private UserService userService;
@@ -39,8 +42,12 @@ public class InvestmentController {
         Startup startUpById = startupService.getById(id);
         UserDetails currentPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User currentUserbyEmail = userService.getByEmail(currentPrincipal.getUsername());
+        if(currentUserbyEmail.getStartupList().stream().anyMatch(startup -> startup.getId() == id)){
+            model.addAttribute("isOwner", true);
+        }
         model.addAttribute("startup", startUpById);
         model.addAttribute("user", currentUserbyEmail);
+        LOGGER.info("Method 'investmentPage' worked successfully");
         return "invest";
     }
 
@@ -65,7 +72,7 @@ public class InvestmentController {
         startupById.getInvestorList().add(investor);
 
         startupService.update(startupById);
-
+        LOGGER.info("Method 'confirmInvest' worked successfully");
         return "redirect:/startup_description/" + startupId;
     }
 }
