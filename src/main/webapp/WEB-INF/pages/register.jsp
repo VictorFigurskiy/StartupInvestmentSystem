@@ -93,7 +93,7 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="email"></form:errors></span>
+        <span style="margin-left:230px; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="email"></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="inputEmail">Email:</label>
             <div class="col-xs-9">
@@ -102,7 +102,7 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="password" ></form:errors></span>
+        <span style="margin-left:230px; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="password" ></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="inputPassword">Пароль:</label>
             <div class="col-xs-9">
@@ -111,7 +111,7 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="confirmPassword"></form:errors></span>
+        <span style="margin-left:230px; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="confirmPassword"></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="confirmPassword">Подтвердите пароль:</label>
             <div class="col-xs-9">
@@ -120,7 +120,7 @@
                 </spring:bind>
             </div>
         </div>
-        <span style="margin-left:18%; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="phone" ></form:errors></span>
+        <span style="margin-left:230px; font: 13px Arial; color: red; position: absolute; margin-top: -16px"><form:errors path="phone" ></form:errors></span>
         <div class="form-group">
             <label class="control-label col-xs-3" for="phoneNumber">Телефон:</label>
             <div class="col-xs-9">
