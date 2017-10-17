@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping(value = "/search")
 public class SearchController {
 
-    private static final Logger LOGGER = Logger.getLogger(SearchController  .class);
+    private static final Logger LOGGER = Logger.getLogger(SearchController.class);
 
     @Autowired
     private StartupService startupService;

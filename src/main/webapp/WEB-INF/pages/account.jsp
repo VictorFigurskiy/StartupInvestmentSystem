@@ -120,14 +120,19 @@
                     <c:if test="${currentUser.startupList.size()>0}">
                           <c:forEach items="${currentUser.startupList}" var="startup">
                               <div  style="border-bottom: #ddd solid 1px; padding: 6px 1px; display: table; width: 100%">
-                                  <a class="account_a" href="${contextPath}/startup_description/${startup.id}" style="color: #000000;">
+                                  <div style="width: auto; max-width: 83%; float: left;">
+                                      <a class="account_a" href="${contextPath}/startup_description/${startup.id}" style="color: #000000;">
                                       <li style="width: auto; float: left; margin-right: 20px; margin-top: 3px;">${startup.startupName}</li>
-                                  </a>
+                                      </a>
+                                  </div>
                                   <div style="float: right;">
-                                  <form method="post" action="/edit_startup/update_page">
+                                  <form method="post" action="/edit_startup/update_page" style="float: left">
                                       <input hidden="" name="id" value="${startup.id}">
                                       <input class="account_buttons" type="submit" value="Редактировать" title="Просмотр, редактирование и удаление стартапа">
                                   </form>
+                                      <a class="statistic_button" style="color: black; text-align: center; float: left" href="${contextPath}/startup_description/${startup.id}/investors">
+                                          <div class="account_buttons" style="width:auto; height: auto; margin-left: 5px">Статистика</div>
+                                      </a>
                                   </div>
                               </div>
                         </c:forEach>

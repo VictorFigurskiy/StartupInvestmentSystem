@@ -542,3 +542,28 @@ footer nav ul li a {
     background-size: 100%;
     border: 2px solid #e6ffe1;
 }
+.table_investors_det{
+
+}
+
+.table_investors_det th{
+    padding: 5px;
+    border-bottom: darkgray solid 1px;
+    background: #cdcdcd;
+    text-align: center;
+}
+
+.table_investors_det td{
+    border-top: darkgray solid 1px;
+    padding: 10px;
+}
+
+.statistic_button{
+    text-decoration: none;
+}
+
+.statistic_button:focus,
+.statistic_button:hover{
+    text-decoration: none;
+    background-color: #f5f5f5 !important;
+}

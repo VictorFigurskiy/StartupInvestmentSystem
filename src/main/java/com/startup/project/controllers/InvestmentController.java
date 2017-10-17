@@ -35,7 +35,7 @@ public class InvestmentController {
      *
      * @param model - visual display of current user's information.
      * @param id    - unique value of startup for database.
-     * @@return page with the name "invest"
+     * @return page with the name "invest"
      */
     @PostMapping
     public String investmentPage(@RequestParam("startup_id") int id, Model model) {
