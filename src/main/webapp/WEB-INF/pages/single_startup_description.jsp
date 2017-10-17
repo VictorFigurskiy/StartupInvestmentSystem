@@ -96,7 +96,8 @@
                 <li><a href="${contextPath}/" style="color: #353535;">Назад</a>
                 </li>
                 <li class="active"><c:out value="${startup.startupName}"/></li>
-                <li class="active"></li>
+                <li class="active" style="float: right;">Дата создания: ${startup.time.toLocaleString().substring(0,10)}</li>
+
             </ol>
         </div>
     </div>
