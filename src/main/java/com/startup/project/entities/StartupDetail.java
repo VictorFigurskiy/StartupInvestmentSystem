@@ -29,9 +29,6 @@ public class StartupDetail {
     @Column(name = "BUSINESS_MODEL", length = 500)
     private String businessModel;           //Бизнес-модель
 
-//    @OneToOne(mappedBy = "startupDetail")
-//    private Startup startup;
-
     public Integer getId() {
         return id;
     }

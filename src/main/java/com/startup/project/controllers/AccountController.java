@@ -28,8 +28,6 @@ import java.util.Set;
  */
 @Controller
 @RequestMapping("/account")
-
-
 public class AccountController {
 
     @Autowired
