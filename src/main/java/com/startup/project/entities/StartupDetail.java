@@ -104,18 +104,4 @@ public class StartupDetail {
         this.businessModel = businessModel;
     }
 
-    @Override
-    public String toString() {
-        return "StartupDetail{" +
-                "id=" + id +
-                ", currentState='" + currentState + '\'' +
-                ", grossProfit='" + grossProfit + '\'' +
-                ", netIncome='" + netIncome + '\'' +
-                ", typeOfProperty='" + typeOfProperty + '\'' +
-                ", property='" + property + '\'' +
-                ", problemOrOpportunity='" + problemOrOpportunity + '\'' +
-                ", competitors='" + competitors + '\'' +
-                ", businessModel='" + businessModel + '\'' +
-                '}';
-    }
 }

@@ -13,9 +13,8 @@ import org.springframework.stereotype.Repository;
  * K - {@link Integer}
  * V - {@link User}
  *
- *
- * @author  Sonik
- * @since   13.09.2017
+ * @author Sonik
+ * @since 13.09.2017
  */
 @Repository
 public class UserDaoImpl extends AbstractGenericDaoImpl<Integer, User> implements UserDao {
@@ -25,7 +24,8 @@ public class UserDaoImpl extends AbstractGenericDaoImpl<Integer, User> implement
 
     /**
      * Initializes a new instance {@link UserDaoImpl}
-     * @param sessionFactory  initial value
+     *
+     * @param sessionFactory initial value
      */
     @Autowired
     public UserDaoImpl(SessionFactory sessionFactory) {
@@ -35,9 +35,9 @@ public class UserDaoImpl extends AbstractGenericDaoImpl<Integer, User> implement
 
 
     /**
-     *  Searching {@link User} by unique email
+     * Searching {@link User} by unique email
      *
-     * @param email  email
+     * @param email email
      * @return {@code User} or null if user not exist
      */
     @Override

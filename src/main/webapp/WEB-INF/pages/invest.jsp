@@ -92,7 +92,9 @@
         <%--Alert message--%>
 
                 <div class="alert alert-info alert-dismissable" style="width: 70%; margin-left: 15%; <c:if test="${isOwner}">color: rgba(255,10,0,0.84)</c:if>">
-                    <a class="panel-close close" data-dismiss="alert" style="margin-top: 11px">×</a>
+                    <a class="panel-close close" data-dismiss="alert" style="margin-top:
+                    <c:if test="${isOwner}">2</c:if>
+                    <c:if test="${!isOwner}">11</c:if>px">×</a>
                     <i class="fa fa-info" style="margin-right: 5px;"></i><strong>Внимание!</strong>
 
                     <i>

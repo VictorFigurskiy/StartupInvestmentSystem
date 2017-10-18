@@ -150,20 +150,5 @@ public class Startup {
         this.imageLink = imageLink;
     }
 
-    @Override
-    public String toString() {
-        return "Startup{" +
-                "id=" + id +
-                ", startupName='" + startupName + '\'' +
-                ", description='" + description + '\'' +
-                ", idea='" + idea + '\'' +
-                ", industry='" + industry + '\'' +
-                ", country='" + country + '\'' +
-                ", projectStage='" + projectStage + '\'' +
-                ", startupCost=" + startupCost +
-                ", time=" + time +
-                ", investorList=" + investorList +
-                ", startupDetail=" + startupDetail +
-                '}';
-    }
+
 }

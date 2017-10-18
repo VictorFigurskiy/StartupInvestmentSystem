@@ -61,11 +61,4 @@ public class Investor {
         this.investorUser = investorUser;
     }
 
-    @Override
-    public String toString() {
-        return "Investor{" +
-                "Id=" + Id +
-                ", investments=" + investments +
-                '}';
-    }
 }

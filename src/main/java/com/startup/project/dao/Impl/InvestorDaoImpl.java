@@ -20,10 +20,10 @@ import java.util.*;
  * K - {@link Integer}
  * V - {@link Investor}
  *
- * @author  Sonik
- * @since   14.09.2017
+ * @author Sonik
+ * @since 14.09.2017
  */
-    @Repository
+@Repository
 public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> implements InvestorDao {
 
     private SessionFactory sessionFactory;
@@ -31,7 +31,8 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
 
     /**
      * Initializes a new instance {@link InvestorDaoImpl}
-     * @param sessionFactory  initial value
+     *
+     * @param sessionFactory initial value
      */
     @Autowired
     public InvestorDaoImpl(SessionFactory sessionFactory) {
@@ -41,10 +42,10 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
 
 
     /**
-     *  Calculating of total cost of all investments of a particular user
+     * Calculating of total cost of all investments of a particular user
      *
-     *  @param userId   user Id in database
-     * @return  {@link List} of {@link Investment} that contains amount of investment and name
+     * @param userId user Id in database
+     * @return {@link List} of {@link Investment} that contains amount of investment and name
      */
     @Override
     public List<Investment> getStartUpSumInvest(int userId) {
@@ -73,7 +74,7 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
 
             investmentList = new ArrayList<>(Arrays.asList(investments));
 
-            LOGGER.info("Investments list contains "+ investmentList.size() +" elements!");
+            LOGGER.info("Investments list contains " + investmentList.size() + " elements!");
         } else {
             LOGGER.info("Investments list is empty!!!");
         }
@@ -83,8 +84,9 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
 
 
     /**
-     *  Delete all investment by user Id
-     * @param id  user Id
+     * Delete all investment by user Id
+     *
+     * @param id user Id
      */
     @Override
     public void deleteInvestorByUserId(Integer id) {
@@ -93,6 +95,6 @@ public class InvestorDaoImpl extends AbstractGenericDaoImpl<Integer, Investor> i
         session.createQuery("delete from Investor investor where investor.investorUser.id=:id")
                 .setParameter("id", id);
 
-        LOGGER.info("Investor with id: "+ id +" deleted successfully!");
+        LOGGER.info("Investor with id: " + id + " deleted successfully!");
     }
 }

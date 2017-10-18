@@ -13,9 +13,8 @@ import org.springframework.stereotype.Repository;
  * K - {@link Integer}
  * V - {@link UserRole}
  *
- *
- * @author  Sonik
- * @since   13.09.2017
+ * @author Sonik
+ * @since 13.09.2017
  */
 @Repository
 public class UserRoleDaoImpl extends AbstractGenericDaoImpl<Integer, UserRole> implements UserRoleDao {
@@ -23,7 +22,8 @@ public class UserRoleDaoImpl extends AbstractGenericDaoImpl<Integer, UserRole> i
 
     /**
      * Initializes a new instance {@link UserRoleDaoImpl}
-     * @param sessionFactory  initial value
+     *
+     * @param sessionFactory initial value
      */
     @Autowired
     public UserRoleDaoImpl(SessionFactory sessionFactory) {

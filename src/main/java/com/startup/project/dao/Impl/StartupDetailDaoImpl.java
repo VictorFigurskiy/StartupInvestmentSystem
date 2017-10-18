@@ -13,9 +13,8 @@ import org.springframework.stereotype.Repository;
  * K - {@link Integer}
  * V - {@link StartupDetail}
  *
- *
- * @author  Sonik
- * @since   13.09.2017
+ * @author Sonik
+ * @since 13.09.2017
  */
 @Repository
 public class StartupDetailDaoImpl extends AbstractGenericDaoImpl<Integer, StartupDetail> implements StartupDetailDao {
@@ -23,7 +22,8 @@ public class StartupDetailDaoImpl extends AbstractGenericDaoImpl<Integer, Startu
 
     /**
      * Initializes a new instance {@link StartupDetailDaoImpl}
-     * @param sessionFactory  initial value
+     *
+     * @param sessionFactory initial value
      */
     @Autowired
     public StartupDetailDaoImpl(SessionFactory sessionFactory) {

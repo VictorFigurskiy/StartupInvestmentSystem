@@ -18,9 +18,8 @@ import java.util.List;
  * K - {@link Integer}
  * V - {@link Startup}
  *
- *
- * @author  Sonik
- * @since   13.09.2017
+ * @author Sonik
+ * @since 13.09.2017
  */
 @Repository
 public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> implements StartupDao {
@@ -30,7 +29,8 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
 
     /**
      * Initializes a new instance {@link StartupDaoImpl}
-     * @param sessionFactory  initial value
+     *
+     * @param sessionFactory initial value
      */
     @Autowired
     public StartupDaoImpl(SessionFactory sessionFactory) {
@@ -42,8 +42,8 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
     /**
      * With helpful this method, we can implement paging of {@link Startup} records on website
      *
-     * @param page  number of page
-     * @param size  count of records what we want to show
+     * @param page number of page
+     * @param size count of records what we want to show
      * @return {@code List<Startup>} result list
      */
     @SuppressWarnings("unchecked")
@@ -54,10 +54,10 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
         criteria.setMaxResults(size);
         LOGGER.info("Hibernate query 'getStartupOnPage' is done successfully");
         List<Startup> startupList = criteria.list();
-        if (startupList.isEmpty()){
+        if (startupList.isEmpty()) {
             LOGGER.info("Startup list 'getStartupOnPage' is empty!");
-        }else {
-            LOGGER.info("Startup list 'getStartupOnPage' contains "+ startupList.size() +" elements!");
+        } else {
+            LOGGER.info("Startup list 'getStartupOnPage' contains " + startupList.size() + " elements!");
         }
         return startupList;
     }
@@ -67,10 +67,8 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
      * With helpful this method we can do a custom select of {@code Startup} by industry
      *
      * @param industry  industry name of {@link com.startup.project.entities.StartupDetail}
-     *                   that contain in {@code Startup}
-     *
+     *                  that contain in {@code Startup}
      * @param limit     count of records what we want to see
-     *
      * @param excludeId {@code Startup} Id that will exclude him in result list
      * @return {@code List<Startup>} result list
      */
@@ -87,16 +85,16 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
         if (startupList.isEmpty()) {
             LOGGER.info("Startup list 'searching by industry' is empty!");
         } else {
-            LOGGER.info("Startup list 'searching by industry' contains "+ startupList.size() +" elements!");
+            LOGGER.info("Startup list 'searching by industry' contains " + startupList.size() + " elements!");
         }
         return startupList;
     }
 
 
     /**
-     *  Searching {@code Startup}'s by matching in name
+     * Searching {@code Startup}'s by matching in name
      *
-     * @param name  name that we type for searching
+     * @param name name that we type for searching
      * @return {@code List<Startup>} result list
      */
     @Override
@@ -109,7 +107,7 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
         if (startupList.isEmpty()) {
             LOGGER.info("Startup list 'searching by name' is empty!");
         } else {
-            LOGGER.info("Startup list 'searching by name' contains "+ startupList.size() +" elements!");
+            LOGGER.info("Startup list 'searching by name' contains " + startupList.size() + " elements!");
         }
         return startupList;
     }
@@ -119,7 +117,7 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
      * Searching {@code Startup}'s by country
      *
      * @param county name of country that we choose for searching
-     * @return       {@code List<Startup>} result list
+     * @return {@code List<Startup>} result list
      */
     @Override
     public List<Startup> searchByCounty(String county) {
@@ -131,7 +129,7 @@ public class StartupDaoImpl extends AbstractGenericDaoImpl<Integer, Startup> imp
         if (startupList.isEmpty()) {
             LOGGER.info("Startup list 'searching by country' is empty!");
         } else {
-            LOGGER.info("Startup list 'searching by country' contains"+ startupList.size() +" elements!");
+            LOGGER.info("Startup list 'searching by country' contains" + startupList.size() + " elements!");
         }
         return startupList;
     }

@@ -27,6 +27,7 @@ public class AddStartupController {
 
     /**
      * This method shows form for add startup by current user.
+     *
      * @return visual display of form for add startup by current user.
      */
 
@@ -42,7 +43,8 @@ public class AddStartupController {
 
     /**
      * This method adds new startup to database by current user.
-     * @param startup - entity with main information about startup.
+     *
+     * @param startup       - entity with main information about startup.
      * @param startupDetail - entity with secondary information about startup.
      * @return page with the name "account".
      */

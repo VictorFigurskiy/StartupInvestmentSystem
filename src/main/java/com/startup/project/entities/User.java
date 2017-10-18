@@ -118,16 +118,4 @@ public class User {
         this.previousEmail = previousEmail;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", userRoles=" + userRoles +
-                ", startupList=" + startupList +
-                '}';
-    }
 }

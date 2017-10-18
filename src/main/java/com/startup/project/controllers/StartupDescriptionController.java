@@ -62,6 +62,13 @@ public class StartupDescriptionController {
         return modelAndView;
     }
 
+    /**
+     * This method needed for represent statistic for each project({@link Startup})
+     *
+     * @param id    {@code Startup} Id
+     * @param model
+     * @return {@code String} for passing view(jsp page)
+     */
     @RequestMapping(value = "/{id}/investors", method = RequestMethod.GET)
     public String startupInvestors(@PathVariable("id") int id, Model model) {
         UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -69,12 +76,13 @@ public class StartupDescriptionController {
         if (byEmail.getStartupList().stream().noneMatch(startup -> startup.getId() == id)) {
             String message = String.format("Стартап с id: %s не являеться Вашим", id);
             model.addAttribute("message", message);
+            LOGGER.info("User "+ principal.getUsername() +" transition on error page!");
             return "error_page";
         }
 
         Startup startupById = startupService.getById(id);
         Map<Integer, Integer> investorAmountMoneyForEveryStartup = new HashMap<>();
-        startupById.getInvestorList().stream().distinct().forEach(invest1->{
+        startupById.getInvestorList().stream().distinct().forEach(invest1 -> {
             int sum = startupById.getInvestorList().stream()
                     .filter(invest2 -> Objects.equals(invest2.getInvestorUser().getId(), invest1.getInvestorUser().getId()))
                     .map(Investor::getInvestments)

@@ -42,7 +42,7 @@ public class InvestmentController {
         Startup startUpById = startupService.getById(id);
         UserDetails currentPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User currentUserbyEmail = userService.getByEmail(currentPrincipal.getUsername());
-        if(currentUserbyEmail.getStartupList().stream().anyMatch(startup -> startup.getId() == id)){
+        if (currentUserbyEmail.getStartupList().stream().anyMatch(startup -> startup.getId() == id)) {
             model.addAttribute("isOwner", true);
         }
         model.addAttribute("startup", startUpById);

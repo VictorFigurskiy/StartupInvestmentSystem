@@ -46,6 +46,7 @@ public class RegistrationController {
 
     /**
      * This method adds new {@code User} into database
+     *
      * @param user          - instance {@link User} from web form.
      * @param bindingResult - object with possible errors.
      * @return main page.

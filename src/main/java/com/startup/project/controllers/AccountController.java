@@ -44,7 +44,8 @@ public class AccountController {
     private static final Logger LOGGER = Logger.getLogger(AccountController.class);
 
     /**
-     *This method identify user(through test user's email) and shows account page with current information about user.
+     * This method identify user(through test user's email) and shows account page with current information about user.
+     *
      * @param model - visual display of current user's information.
      * @return page with the name "account"
      */
@@ -61,7 +62,8 @@ public class AccountController {
 
     /**
      * This method shows form for edit user's information.
-     * @param id- unique value of users for database.
+     *
+     * @param id-    unique value of users for database.
      * @param model- visual display of current user's information.
      * @return page with the name "edit_account"
      */
@@ -75,7 +77,8 @@ public class AccountController {
 
     /**
      * This method shows form for edit user's password.
-     * @param id - unique value of users for database.
+     *
+     * @param id    - unique value of users for database.
      * @param model - visual display of current user's information.
      * @return page with the name "edit_password"
      */
@@ -89,14 +92,15 @@ public class AccountController {
 
     /**
      * This method validates input data with allowable password form.
-     * @param user - current user.
+     *
+     * @param user          - current user.
      * @param bindingResult - object with possible errors.
      * @return page with the name "edit_password" if method has some errors or
      * return page with the name "account" if method works successfully.
      */
     @RequestMapping(value = "/editpass", method = RequestMethod.POST)
     public String updatePassword(@ModelAttribute("userForEdit") User user, BindingResult bindingResult) {
-        validator.validate(user,bindingResult, ValidateType.PASSWORD);
+        validator.validate(user, bindingResult, ValidateType.PASSWORD);
         if (bindingResult.hasErrors()) return "edit_password";
         User dbUser = userService.getById(user.getId());
         dbUser.setPassword(user.getPassword());
@@ -107,7 +111,8 @@ public class AccountController {
 
     /**
      * This method validates input data with allowable user form.
-     * @param user - current user.
+     *
+     * @param user          - current user.
      * @param bindingResult - object with possible errors.
      * @return page with the name "edit_account" if method has some errors or
      * return page with the name "account" if method works successfully.
@@ -141,6 +146,7 @@ public class AccountController {
 
     /**
      * This method delete current user from database.
+     *
      * @param userId - unique value of users for database.
      * @return home page.
      */

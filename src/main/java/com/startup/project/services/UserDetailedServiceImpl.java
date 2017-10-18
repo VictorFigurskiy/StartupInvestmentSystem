@@ -26,6 +26,7 @@ public class UserDetailedServiceImpl implements UserDetailsService {
 
     /**
      * This method load user by username.
+     *
      * @param email - unique value of user's email.
      * @return particular user with such lines as: password & role.
      * @throws UsernameNotFoundException if user not found by username.
